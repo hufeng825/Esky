@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		96B98A0D1845C56D002E8552 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98A0C1845C56D002E8552 /* Foundation.framework */; };
+		96B98A0F1845C56D002E8552 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98A0E1845C56D002E8552 /* CoreGraphics.framework */; };
+		96B98A111845C56D002E8552 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98A101845C56D002E8552 /* UIKit.framework */; };
+		96B98A171845C56D002E8552 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96B98A151845C56D002E8552 /* InfoPlist.strings */; };
+		96B98A191845C56D002E8552 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A181845C56D002E8552 /* main.m */; };
+		96B98A1D1845C56D002E8552 /* ESAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A1C1845C56D002E8552 /* ESAppDelegate.m */; };
+		96B98A201845C56D002E8552 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B98A1E1845C56D002E8552 /* Main.storyboard */; };
+		96B98A231845C56D002E8552 /* ESViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A221845C56D002E8552 /* ESViewController.m */; };
+		96B98A251845C56D002E8552 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B98A241845C56D002E8552 /* Images.xcassets */; };
+		96B98A2C1845C56D002E8552 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98A2B1845C56D002E8552 /* XCTest.framework */; };
+		96B98A2D1845C56D002E8552 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98A0C1845C56D002E8552 /* Foundation.framework */; };
+		96B98A2E1845C56D002E8552 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98A101845C56D002E8552 /* UIKit.framework */; };
+		96B98A361845C56D002E8552 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96B98A341845C56D002E8552 /* InfoPlist.strings */; };
+		96B98A381845C56D002E8552 /* EskyAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A371845C56D002E8552 /* EskyAppTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		96B98A2F1845C56D002E8552 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96B98A011845C56D002E8552 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96B98A081845C56D002E8552;
+			remoteInfo = EskyApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		96B98A091845C56D002E8552 /* EskyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EskyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96B98A0C1845C56D002E8552 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		96B98A0E1845C56D002E8552 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		96B98A101845C56D002E8552 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		96B98A141845C56D002E8552 /* EskyApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EskyApp-Info.plist"; sourceTree = "<group>"; };
+		96B98A161845C56D002E8552 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		96B98A181845C56D002E8552 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		96B98A1A1845C56D002E8552 /* EskyApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EskyApp-Prefix.pch"; sourceTree = "<group>"; };
+		96B98A1B1845C56D002E8552 /* ESAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESAppDelegate.h; sourceTree = "<group>"; };
+		96B98A1C1845C56D002E8552 /* ESAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESAppDelegate.m; sourceTree = "<group>"; };
+		96B98A1F1845C56D002E8552 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		96B98A211845C56D002E8552 /* ESViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESViewController.h; sourceTree = "<group>"; };
+		96B98A221845C56D002E8552 /* ESViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESViewController.m; sourceTree = "<group>"; };
+		96B98A241845C56D002E8552 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		96B98A2A1845C56D002E8552 /* EskyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EskyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96B98A2B1845C56D002E8552 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		96B98A331845C56D002E8552 /* EskyAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EskyAppTests-Info.plist"; sourceTree = "<group>"; };
+		96B98A351845C56D002E8552 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		96B98A371845C56D002E8552 /* EskyAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EskyAppTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96B98A061845C56D002E8552 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96B98A0F1845C56D002E8552 /* CoreGraphics.framework in Frameworks */,
+				96B98A111845C56D002E8552 /* UIKit.framework in Frameworks */,
+				96B98A0D1845C56D002E8552 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96B98A271845C56D002E8552 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96B98A2C1845C56D002E8552 /* XCTest.framework in Frameworks */,
+				96B98A2E1845C56D002E8552 /* UIKit.framework in Frameworks */,
+				96B98A2D1845C56D002E8552 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		96B98A001845C56D002E8552 = {
+			isa = PBXGroup;
+			children = (
+				96B98A121845C56D002E8552 /* EskyApp */,
+				96B98A311845C56D002E8552 /* EskyAppTests */,
+				96B98A0B1845C56D002E8552 /* Frameworks */,
+				96B98A0A1845C56D002E8552 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		96B98A0A1845C56D002E8552 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96B98A091845C56D002E8552 /* EskyApp.app */,
+				96B98A2A1845C56D002E8552 /* EskyAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96B98A0B1845C56D002E8552 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96B98A0C1845C56D002E8552 /* Foundation.framework */,
+				96B98A0E1845C56D002E8552 /* CoreGraphics.framework */,
+				96B98A101845C56D002E8552 /* UIKit.framework */,
+				96B98A2B1845C56D002E8552 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96B98A121845C56D002E8552 /* EskyApp */ = {
+			isa = PBXGroup;
+			children = (
+				96B98A1B1845C56D002E8552 /* ESAppDelegate.h */,
+				96B98A1C1845C56D002E8552 /* ESAppDelegate.m */,
+				96B98A1E1845C56D002E8552 /* Main.storyboard */,
+				96B98A211845C56D002E8552 /* ESViewController.h */,
+				96B98A221845C56D002E8552 /* ESViewController.m */,
+				96B98A241845C56D002E8552 /* Images.xcassets */,
+				96B98A131845C56D002E8552 /* Supporting Files */,
+			);
+			path = EskyApp;
+			sourceTree = "<group>";
+		};
+		96B98A131845C56D002E8552 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				96B98A141845C56D002E8552 /* EskyApp-Info.plist */,
+				96B98A151845C56D002E8552 /* InfoPlist.strings */,
+				96B98A181845C56D002E8552 /* main.m */,
+				96B98A1A1845C56D002E8552 /* EskyApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96B98A311845C56D002E8552 /* EskyAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				96B98A371845C56D002E8552 /* EskyAppTests.m */,
+				96B98A321845C56D002E8552 /* Supporting Files */,
+			);
+			path = EskyAppTests;
+			sourceTree = "<group>";
+		};
+		96B98A321845C56D002E8552 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				96B98A331845C56D002E8552 /* EskyAppTests-Info.plist */,
+				96B98A341845C56D002E8552 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96B98A081845C56D002E8552 /* EskyApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96B98A3B1845C56D002E8552 /* Build configuration list for PBXNativeTarget "EskyApp" */;
+			buildPhases = (
+				96B98A051845C56D002E8552 /* Sources */,
+				96B98A061845C56D002E8552 /* Frameworks */,
+				96B98A071845C56D002E8552 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EskyApp;
+			productName = EskyApp;
+			productReference = 96B98A091845C56D002E8552 /* EskyApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		96B98A291845C56D002E8552 /* EskyAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96B98A3E1845C56D002E8552 /* Build configuration list for PBXNativeTarget "EskyAppTests" */;
+			buildPhases = (
+				96B98A261845C56D002E8552 /* Sources */,
+				96B98A271845C56D002E8552 /* Frameworks */,
+				96B98A281845C56D002E8552 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96B98A301845C56D002E8552 /* PBXTargetDependency */,
+			);
+			name = EskyAppTests;
+			productName = EskyAppTests;
+			productReference = 96B98A2A1845C56D002E8552 /* EskyAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96B98A011845C56D002E8552 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ES;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = fashion;
+				TargetAttributes = {
+					96B98A291845C56D002E8552 = {
+						TestTargetID = 96B98A081845C56D002E8552;
+					};
+				};
+			};
+			buildConfigurationList = 96B98A041845C56D002E8552 /* Build configuration list for PBXProject "EskyApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 96B98A001845C56D002E8552;
+			productRefGroup = 96B98A0A1845C56D002E8552 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96B98A081845C56D002E8552 /* EskyApp */,
+				96B98A291845C56D002E8552 /* EskyAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96B98A071845C56D002E8552 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96B98A251845C56D002E8552 /* Images.xcassets in Resources */,
+				96B98A171845C56D002E8552 /* InfoPlist.strings in Resources */,
+				96B98A201845C56D002E8552 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96B98A281845C56D002E8552 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96B98A361845C56D002E8552 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96B98A051845C56D002E8552 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96B98A231845C56D002E8552 /* ESViewController.m in Sources */,
+				96B98A1D1845C56D002E8552 /* ESAppDelegate.m in Sources */,
+				96B98A191845C56D002E8552 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96B98A261845C56D002E8552 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96B98A381845C56D002E8552 /* EskyAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		96B98A301845C56D002E8552 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96B98A081845C56D002E8552 /* EskyApp */;
+			targetProxy = 96B98A2F1845C56D002E8552 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		96B98A151845C56D002E8552 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96B98A161845C56D002E8552 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		96B98A1E1845C56D002E8552 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96B98A1F1845C56D002E8552 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		96B98A341845C56D002E8552 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96B98A351845C56D002E8552 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		96B98A391845C56D002E8552 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		96B98A3A1845C56D002E8552 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		96B98A3C1845C56D002E8552 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EskyApp/EskyApp-Prefix.pch";
+				INFOPLIST_FILE = "EskyApp/EskyApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		96B98A3D1845C56D002E8552 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EskyApp/EskyApp-Prefix.pch";
+				INFOPLIST_FILE = "EskyApp/EskyApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		96B98A3F1845C56D002E8552 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EskyApp.app/EskyApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EskyApp/EskyApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "EskyAppTests/EskyAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		96B98A401845C56D002E8552 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EskyApp.app/EskyApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EskyApp/EskyApp-Prefix.pch";
+				INFOPLIST_FILE = "EskyAppTests/EskyAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96B98A041845C56D002E8552 /* Build configuration list for PBXProject "EskyApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96B98A391845C56D002E8552 /* Debug */,
+				96B98A3A1845C56D002E8552 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96B98A3B1845C56D002E8552 /* Build configuration list for PBXNativeTarget "EskyApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96B98A3C1845C56D002E8552 /* Debug */,
+				96B98A3D1845C56D002E8552 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		96B98A3E1845C56D002E8552 /* Build configuration list for PBXNativeTarget "EskyAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96B98A3F1845C56D002E8552 /* Debug */,
+				96B98A401845C56D002E8552 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96B98A011845C56D002E8552 /* Project object */;
+}
