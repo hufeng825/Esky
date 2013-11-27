@@ -11,7 +11,7 @@
 
 
 
-@interface FABaseViewController : UIViewController
+@interface ESBaseViewController : UIViewController
 //@property (nonatomic,strong)
 @property (nonatomic, strong) HFBaseHttpRequest *hfClient;
 

@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FABaseViewController.h"
+#import "ESBaseViewController.h"
 
 
 #import "UIWebImageView.h"
-@interface FAMainViewController :FABaseViewController
+@interface ESMainViewController :ESBaseViewController
 
 @end

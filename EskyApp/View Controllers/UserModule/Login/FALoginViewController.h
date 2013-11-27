@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "FAInputView.h"
-#import "FABaseViewController.h"
+#import "ESBaseViewController.h"
 
 #import <ShareSDK/ShareSDK.h>
 
-@interface FALoginViewController :FABaseViewController <ISSShareViewDelegate,ISSViewDelegate>
+@interface FALoginViewController :ESBaseViewController <ISSShareViewDelegate,ISSViewDelegate>
 
 @property (weak, nonatomic) IBOutlet FAInputView *logoNameInput;
 @property (weak, nonatomic) IBOutlet FAInputView *mmInput;

@@ -6,13 +6,13 @@
 //  Copyright (c) 2013年 fashion. All rights reserved.
 //
 
-#import "FABaseViewController.h"
+#import "ESBaseViewController.h"
 
-@interface FABaseViewController ()
+@interface ESBaseViewController ()
 
 @end
 
-@implementation FABaseViewController
+@implementation ESBaseViewController
 
 @synthesize  hfClient;
 

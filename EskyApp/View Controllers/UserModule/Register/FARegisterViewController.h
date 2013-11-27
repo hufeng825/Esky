@@ -6,14 +6,14 @@
 //  Copyright (c) 2013年 fashion. All rights reserved.
 //
 
-#import "FABaseViewController.h"
+#import "ESBaseViewController.h"
 #import "FAHeaderIconImageView.h"
 
 #import "FAInputView.h"
 
 
 
-@interface FARegisterViewController : FABaseViewController<UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface FARegisterViewController : ESBaseViewController<UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet FAHeaderIconImageView *headIconImageView;
 @property (weak, nonatomic) IBOutlet UIButton *registButton;

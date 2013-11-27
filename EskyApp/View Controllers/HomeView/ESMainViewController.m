@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 fashion. All rights reserved.
 //
 
-#import "FAMainViewController.h"
+#import "ESMainViewController.h"
 
 #import "FAConfig.h"
 
@@ -14,12 +14,12 @@
 #import "FALoginViewController.h"
 
 
-@interface FAMainViewController ()
+@interface ESMainViewController ()
 @property (weak, nonatomic) IBOutlet UIWebImageView *testimg;
 
 @end
 
-@implementation FAMainViewController
+@implementation ESMainViewController
 
 - (void)viewOnWillDisplay:(UIViewController *)viewController shareType:(ShareType)shareType
 {
