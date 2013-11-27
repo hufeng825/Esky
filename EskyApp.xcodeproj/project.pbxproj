@@ -483,14 +483,14 @@
 		96B98A411845C643002E8552 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				96B98A501845C643002E8552 /* FABaseModel */,
+				96B98A481845C643002E8552 /* Config */,
 				96B98A421845C643002E8552 /* BaseViewController */,
 				96B98A461845C643002E8552 /* CommonCH.h */,
 				96B98A471845C643002E8552 /* CommonCH.m */,
-				96B98A481845C643002E8552 /* Config */,
 				96B98A4F1845C643002E8552 /* CONSTS.h */,
-				96B98A501845C643002E8552 /* FABaseModel */,
 				96B98A531845C643002E8552 /* FACommonMacros.h */,
-				96B98A541845C643002E8552 /* GobalPaths */,
+				96B98A541845C643002E8552 /* Theme */,
 				96B98A651845C643002E8552 /* HFHttpRequest */,
 				96B98A6F1845C643002E8552 /* XIBUtils */,
 			);
@@ -529,7 +529,7 @@
 			path = FABaseModel;
 			sourceTree = "<group>";
 		};
-		96B98A541845C643002E8552 /* GobalPaths */ = {
+		96B98A541845C643002E8552 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
 				96B98B7D1845C700002E8552 /* woman */,
@@ -539,6 +539,7 @@
 				96B98A5D1845C643002E8552 /* Settings.bundle */,
 				96B98A5E1845C643002E8552 /* themes.plist */,
 			);
+			name = Theme;
 			path = GobalPaths;
 			sourceTree = "<group>";
 		};

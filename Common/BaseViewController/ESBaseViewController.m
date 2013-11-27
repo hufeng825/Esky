@@ -62,13 +62,10 @@
 {
   
     
-    UIColor *bgColor = [UIColor colorWithPatternImage:[image imageByScalingProportionallyToMinimumSize:self.view.frame.size]];
-    
-    
     if ([self.view isKindOfClass:[UITableView class]]) {
         UIView *viewi = [[UIView alloc] initWithFrame:self.view.bounds];
         viewi.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        viewi.backgroundColor = bgColor;
+        viewi.layer.contents = (id)image.CGImage;
         UITableView *tView = (UITableView *)self.view;
         
         if ([tView respondsToSelector:@selector(setBackgroundView:)]) {
@@ -76,13 +73,13 @@
         }
     }
     
-    self.view.backgroundColor = bgColor;
+    self.view.layer.contents = (id)image.CGImage;
 }
 
 
 - (void)themeChanged
 {
-   [self changeBaseBackgourndColorWithImageName:[[FAThemeManager sharedManager] themeImageWithName:@"bg@2x.jpg"]];
+   [self changeBaseBackgourndColorWithImageName:[[FAThemeManager sharedManager] themeImageWithName:@"bg.jpg"]];
 }
 /*------------------------------------------
  *设置statubar

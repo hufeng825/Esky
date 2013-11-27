@@ -27,12 +27,8 @@
      */
     
     //    [IQKeyBoardManager installKeyboardManager];
-    
-    if (!TTIsStringWithAnyText([USER_DEFAULT objectForKey:kThemeChangedNotification])) {
-        [[FAThemeManager sharedManager] setThemeName:@"man"] ;
-    }
-    [FAThemeManager sharedManager] ;
-    
+
+    [self themeFunction];
     
     /**
      注册SDK应用，此应用请到http://www.sharesdk.cn中进行注册申请。
@@ -40,8 +36,6 @@
      **/
     [ShareSDK registerApp:@"iosv1101"];
     
-    //如果使用服务中配置的app信息，请把初始化代码改为下面的初始化方法。
-    //    [ShareSDK registerApp:@"iosv1101" useAppTrusteeship:YES];
     
     //转换链接标记
     [ShareSDK convertUrlEnabled:YES];
@@ -156,6 +150,22 @@
     
 }
 
+//主题设置
+
+-(void) themeFunction
+{
+    NSString * lastSaveTheme = [USER_DEFAULT objectForKey:kThemeChangedNotification];
+    if (!TTIsStringWithAnyText(lastSaveTheme)) {
+        [[FAThemeManager sharedManager] setThemeName:@"woman"] ;
+    }
+    else if(![ [[FAThemeManager sharedManager] themeName]
+              isEqualToString:lastSaveTheme])
+    {
+        [[FAThemeManager sharedManager] setThemeName:lastSaveTheme] ;
+    }
+  
+}
+
 - (BOOL)application:(UIApplication *)application
       handleOpenURL:(NSURL *)url
 {
@@ -177,7 +187,6 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
@@ -190,6 +199,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
+    [self themeFunction];
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
