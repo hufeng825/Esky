@@ -30,9 +30,10 @@
 //获取电池状态
 + (NSInteger) getBatteryState;
 
-// 内存信息
-+ (unsigned long)freeMemory;
-+ (unsigned long)usedMemory;
+// 内存硬盘信息
++ (NSString *)getFreeMemory;
++ (NSString *)getDiskUsed;
+
 
 
 @end
