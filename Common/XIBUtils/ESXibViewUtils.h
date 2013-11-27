@@ -1,9 +1,9 @@
 //
-//  FAXibViewUtils.h
+//  ESXibViewUtils.h
 
 #import <UIKit/UIKit.h>
 
-@interface FAXibViewUtils : NSObject
+@interface ESXibViewUtils : NSObject
 
 + (id)loadViewFromXibNamed:(NSString*)xibName withFileOwner:(id)fileOwner;
 

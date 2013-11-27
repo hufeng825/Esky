@@ -30,7 +30,7 @@
 @end
 
 
-@interface FAInputView : FAXibView<UITextFieldDelegate>
+@interface FAInputView : ESXibView<UITextFieldDelegate>
 
 @property (nonatomic, weak) UIView * customView;
 

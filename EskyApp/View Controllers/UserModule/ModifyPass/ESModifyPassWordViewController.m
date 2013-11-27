@@ -1,5 +1,5 @@
 //
-//  FAModifyPassWordViewController.m
+//  ESModifyPassWordViewController.m
 //  Esquire
 //
 //  Created by jason on 13-11-19.

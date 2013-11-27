@@ -1,8 +1,8 @@
 //
-//  FAXibView.h
+//  ESXibView.h
 
 #import <UIKit/UIKit.h>
 
-@interface FAXibView : UIView
+@interface ESXibView : UIView
 + (id)loadFromXib;
 @end

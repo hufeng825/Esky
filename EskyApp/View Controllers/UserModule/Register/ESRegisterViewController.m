@@ -1,5 +1,5 @@
 //
-//  FARegisterViewController.m
+//  ESRegisterViewController.m
 //  Esquire
 //
 //  Created by jason on 13-11-18.

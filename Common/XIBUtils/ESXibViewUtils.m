@@ -2,9 +2,9 @@
 //  FAXibViewUtils.m
 
 
-#import "FAXibViewUtils.h"
+#import "ESXibViewUtils.h"
 
-@implementation FAXibViewUtils
+@implementation ESXibViewUtils
 
 + (id)loadViewFromXibNamed:(NSString*)xibName withFileOwner:(id)fileOwner
 {
@@ -18,7 +18,7 @@
 
 + (id)loadViewFromXibNamed:(NSString*)xibName
 {
-    return [FAXibViewUtils loadViewFromXibNamed:xibName withFileOwner:self];
+    return [ESXibViewUtils loadViewFromXibNamed:xibName withFileOwner:self];
 }
 
 @end
