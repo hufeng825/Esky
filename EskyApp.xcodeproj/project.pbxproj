@@ -22,10 +22,10 @@
 		96B98A741845C643002E8552 /* ESBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A441845C643002E8552 /* ESBaseViewController.m */; };
 		96B98A751845C643002E8552 /* ESBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B98A451845C643002E8552 /* ESBaseViewController.xib */; };
 		96B98A761845C643002E8552 /* CommonCH.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A471845C643002E8552 /* CommonCH.m */; };
-		96B98A771845C643002E8552 /* FAConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A4A1845C643002E8552 /* FAConfig.m */; };
-		96B98A781845C643002E8552 /* FAMainUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A4C1845C643002E8552 /* FAMainUser.m */; };
-		96B98A791845C643002E8552 /* FAUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A4E1845C643002E8552 /* FAUserInfo.m */; };
-		96B98A7A1845C643002E8552 /* FABaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A521845C643002E8552 /* FABaseModel.m */; };
+		96B98A771845C643002E8552 /* ESConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A4A1845C643002E8552 /* ESConfig.m */; };
+		96B98A781845C643002E8552 /* ESMainUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A4C1845C643002E8552 /* ESMainUser.m */; };
+		96B98A791845C643002E8552 /* ESUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A4E1845C643002E8552 /* ESUserInfo.m */; };
+		96B98A7A1845C643002E8552 /* ESBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A521845C643002E8552 /* ESBaseModel.m */; };
 		96B98A7B1845C643002E8552 /* FAThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A561845C643002E8552 /* FAThemeManager.m */; };
 		96B98A811845C643002E8552 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96B98A5D1845C643002E8552 /* Settings.bundle */; };
 		96B98A821845C643002E8552 /* themes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96B98A5E1845C643002E8552 /* themes.plist */; };
@@ -98,12 +98,12 @@
 		96B98B7E1845C700002E8552 /* woman in Resources */ = {isa = PBXBuildFile; fileRef = 96B98B7D1845C700002E8552 /* woman */; };
 		96B98B931845C81E002E8552 /* ESMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98B841845C81E002E8552 /* ESMainViewController.m */; };
 		96B98B941845C81E002E8552 /* ESMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B98B851845C81E002E8552 /* ESMainViewController.xib */; };
-		96B98B951845C81E002E8552 /* FALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98B891845C81E002E8552 /* FALoginViewController.m */; };
-		96B98B961845C81E002E8552 /* FALoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B98B8A1845C81E002E8552 /* FALoginViewController.xib */; };
-		96B98B971845C81E002E8552 /* FAModifyPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98B8D1845C81E002E8552 /* FAModifyPassWordViewController.m */; };
-		96B98B981845C81E002E8552 /* FAModifyPassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B98B8E1845C81E002E8552 /* FAModifyPassWordViewController.xib */; };
-		96B98B991845C81E002E8552 /* FARegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98B911845C81E002E8552 /* FARegisterViewController.m */; };
-		96B98B9A1845C81E002E8552 /* FARegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B98B921845C81E002E8552 /* FARegisterViewController.xib */; };
+		96B98B951845C81E002E8552 /* ESLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98B891845C81E002E8552 /* ESLoginViewController.m */; };
+		96B98B961845C81E002E8552 /* ESLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B98B8A1845C81E002E8552 /* ESLoginViewController.xib */; };
+		96B98B971845C81E002E8552 /* ESModifyPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98B8D1845C81E002E8552 /* ESModifyPassWordViewController.m */; };
+		96B98B981845C81E002E8552 /* ESModifyPassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B98B8E1845C81E002E8552 /* ESModifyPassWordViewController.xib */; };
+		96B98B991845C81E002E8552 /* ESRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98B911845C81E002E8552 /* ESRegisterViewController.m */; };
+		96B98B9A1845C81E002E8552 /* ESRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B98B921845C81E002E8552 /* ESRegisterViewController.xib */; };
 		96B98B9C1845CA26002E8552 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98B9B1845CA26002E8552 /* CoreTelephony.framework */; };
 		96B98B9E1845CA32002E8552 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98B9D1845CA32002E8552 /* QuartzCore.framework */; };
 		96B98BA01845CA3E002E8552 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98B9F1845CA3E002E8552 /* MessageUI.framework */; };
@@ -169,16 +169,16 @@
 		96B98A451845C643002E8552 /* ESBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESBaseViewController.xib; sourceTree = "<group>"; };
 		96B98A461845C643002E8552 /* CommonCH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonCH.h; sourceTree = "<group>"; };
 		96B98A471845C643002E8552 /* CommonCH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonCH.m; sourceTree = "<group>"; };
-		96B98A491845C643002E8552 /* FAConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAConfig.h; sourceTree = "<group>"; };
-		96B98A4A1845C643002E8552 /* FAConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAConfig.m; sourceTree = "<group>"; };
-		96B98A4B1845C643002E8552 /* FAMainUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAMainUser.h; sourceTree = "<group>"; };
-		96B98A4C1845C643002E8552 /* FAMainUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAMainUser.m; sourceTree = "<group>"; };
-		96B98A4D1845C643002E8552 /* FAUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAUserInfo.h; sourceTree = "<group>"; };
-		96B98A4E1845C643002E8552 /* FAUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAUserInfo.m; sourceTree = "<group>"; };
+		96B98A491845C643002E8552 /* ESConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESConfig.h; sourceTree = "<group>"; };
+		96B98A4A1845C643002E8552 /* ESConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESConfig.m; sourceTree = "<group>"; };
+		96B98A4B1845C643002E8552 /* ESMainUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESMainUser.h; sourceTree = "<group>"; };
+		96B98A4C1845C643002E8552 /* ESMainUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESMainUser.m; sourceTree = "<group>"; };
+		96B98A4D1845C643002E8552 /* ESUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESUserInfo.h; sourceTree = "<group>"; };
+		96B98A4E1845C643002E8552 /* ESUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESUserInfo.m; sourceTree = "<group>"; };
 		96B98A4F1845C643002E8552 /* CONSTS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONSTS.h; sourceTree = "<group>"; };
-		96B98A511845C643002E8552 /* FABaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABaseModel.h; sourceTree = "<group>"; };
-		96B98A521845C643002E8552 /* FABaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABaseModel.m; sourceTree = "<group>"; };
-		96B98A531845C643002E8552 /* FACommonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FACommonMacros.h; sourceTree = "<group>"; };
+		96B98A511845C643002E8552 /* ESBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBaseModel.h; sourceTree = "<group>"; };
+		96B98A521845C643002E8552 /* ESBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBaseModel.m; sourceTree = "<group>"; };
+		96B98A531845C643002E8552 /* ESCommonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESCommonMacros.h; sourceTree = "<group>"; };
 		96B98A551845C643002E8552 /* FAThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAThemeManager.h; sourceTree = "<group>"; };
 		96B98A561845C643002E8552 /* FAThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAThemeManager.m; sourceTree = "<group>"; };
 		96B98A5D1845C643002E8552 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -305,15 +305,15 @@
 		96B98B831845C81E002E8552 /* ESMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESMainViewController.h; sourceTree = "<group>"; };
 		96B98B841845C81E002E8552 /* ESMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESMainViewController.m; sourceTree = "<group>"; };
 		96B98B851845C81E002E8552 /* ESMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESMainViewController.xib; sourceTree = "<group>"; };
-		96B98B881845C81E002E8552 /* FALoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FALoginViewController.h; sourceTree = "<group>"; };
-		96B98B891845C81E002E8552 /* FALoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FALoginViewController.m; sourceTree = "<group>"; };
-		96B98B8A1845C81E002E8552 /* FALoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FALoginViewController.xib; sourceTree = "<group>"; };
-		96B98B8C1845C81E002E8552 /* FAModifyPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAModifyPassWordViewController.h; sourceTree = "<group>"; };
-		96B98B8D1845C81E002E8552 /* FAModifyPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAModifyPassWordViewController.m; sourceTree = "<group>"; };
-		96B98B8E1845C81E002E8552 /* FAModifyPassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FAModifyPassWordViewController.xib; sourceTree = "<group>"; };
-		96B98B901845C81E002E8552 /* FARegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FARegisterViewController.h; sourceTree = "<group>"; };
-		96B98B911845C81E002E8552 /* FARegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FARegisterViewController.m; sourceTree = "<group>"; };
-		96B98B921845C81E002E8552 /* FARegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FARegisterViewController.xib; sourceTree = "<group>"; };
+		96B98B881845C81E002E8552 /* ESLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESLoginViewController.h; sourceTree = "<group>"; };
+		96B98B891845C81E002E8552 /* ESLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESLoginViewController.m; sourceTree = "<group>"; };
+		96B98B8A1845C81E002E8552 /* ESLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESLoginViewController.xib; sourceTree = "<group>"; };
+		96B98B8C1845C81E002E8552 /* ESModifyPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESModifyPassWordViewController.h; sourceTree = "<group>"; };
+		96B98B8D1845C81E002E8552 /* ESModifyPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESModifyPassWordViewController.m; sourceTree = "<group>"; };
+		96B98B8E1845C81E002E8552 /* ESModifyPassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESModifyPassWordViewController.xib; sourceTree = "<group>"; };
+		96B98B901845C81E002E8552 /* ESRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRegisterViewController.h; sourceTree = "<group>"; };
+		96B98B911845C81E002E8552 /* ESRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRegisterViewController.m; sourceTree = "<group>"; };
+		96B98B921845C81E002E8552 /* ESRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESRegisterViewController.xib; sourceTree = "<group>"; };
 		96B98B9B1845CA26002E8552 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		96B98B9D1845CA32002E8552 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		96B98B9F1845CA3E002E8552 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -345,6 +345,7 @@
 		96B98BC51845E58F002E8552 /* rest_mm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rest_mm.png; sourceTree = "<group>"; };
 		96B98BC61845E58F002E8552 /* translate_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = translate_bg.png; sourceTree = "<group>"; };
 		96B98BC71845E58F002E8552 /* translate_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "translate_bg@2x.png"; sourceTree = "<group>"; };
+		96CEEBDA1845FAFD0045F15E /* HXDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXDebug.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,8 +489,9 @@
 				96B98A421845C643002E8552 /* BaseViewController */,
 				96B98A461845C643002E8552 /* CommonCH.h */,
 				96B98A471845C643002E8552 /* CommonCH.m */,
+				96CEEBDA1845FAFD0045F15E /* HXDebug.h */,
 				96B98A4F1845C643002E8552 /* CONSTS.h */,
-				96B98A531845C643002E8552 /* FACommonMacros.h */,
+				96B98A531845C643002E8552 /* ESCommonMacros.h */,
 				96B98A541845C643002E8552 /* Theme */,
 				96B98A651845C643002E8552 /* HFHttpRequest */,
 				96B98A6F1845C643002E8552 /* XIBUtils */,
@@ -510,12 +512,12 @@
 		96B98A481845C643002E8552 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				96B98A491845C643002E8552 /* FAConfig.h */,
-				96B98A4A1845C643002E8552 /* FAConfig.m */,
-				96B98A4B1845C643002E8552 /* FAMainUser.h */,
-				96B98A4C1845C643002E8552 /* FAMainUser.m */,
-				96B98A4D1845C643002E8552 /* FAUserInfo.h */,
-				96B98A4E1845C643002E8552 /* FAUserInfo.m */,
+				96B98A491845C643002E8552 /* ESConfig.h */,
+				96B98A4A1845C643002E8552 /* ESConfig.m */,
+				96B98A4B1845C643002E8552 /* ESMainUser.h */,
+				96B98A4C1845C643002E8552 /* ESMainUser.m */,
+				96B98A4D1845C643002E8552 /* ESUserInfo.h */,
+				96B98A4E1845C643002E8552 /* ESUserInfo.m */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -523,8 +525,8 @@
 		96B98A501845C643002E8552 /* FABaseModel */ = {
 			isa = PBXGroup;
 			children = (
-				96B98A511845C643002E8552 /* FABaseModel.h */,
-				96B98A521845C643002E8552 /* FABaseModel.m */,
+				96B98A511845C643002E8552 /* ESBaseModel.h */,
+				96B98A521845C643002E8552 /* ESBaseModel.m */,
 			);
 			path = FABaseModel;
 			sourceTree = "<group>";
@@ -922,9 +924,9 @@
 		96B98B871845C81E002E8552 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				96B98B881845C81E002E8552 /* FALoginViewController.h */,
-				96B98B891845C81E002E8552 /* FALoginViewController.m */,
-				96B98B8A1845C81E002E8552 /* FALoginViewController.xib */,
+				96B98B881845C81E002E8552 /* ESLoginViewController.h */,
+				96B98B891845C81E002E8552 /* ESLoginViewController.m */,
+				96B98B8A1845C81E002E8552 /* ESLoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -932,9 +934,9 @@
 		96B98B8B1845C81E002E8552 /* ModifyPass */ = {
 			isa = PBXGroup;
 			children = (
-				96B98B8C1845C81E002E8552 /* FAModifyPassWordViewController.h */,
-				96B98B8D1845C81E002E8552 /* FAModifyPassWordViewController.m */,
-				96B98B8E1845C81E002E8552 /* FAModifyPassWordViewController.xib */,
+				96B98B8C1845C81E002E8552 /* ESModifyPassWordViewController.h */,
+				96B98B8D1845C81E002E8552 /* ESModifyPassWordViewController.m */,
+				96B98B8E1845C81E002E8552 /* ESModifyPassWordViewController.xib */,
 			);
 			path = ModifyPass;
 			sourceTree = "<group>";
@@ -942,9 +944,9 @@
 		96B98B8F1845C81E002E8552 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				96B98B901845C81E002E8552 /* FARegisterViewController.h */,
-				96B98B911845C81E002E8552 /* FARegisterViewController.m */,
-				96B98B921845C81E002E8552 /* FARegisterViewController.xib */,
+				96B98B901845C81E002E8552 /* ESRegisterViewController.h */,
+				96B98B911845C81E002E8552 /* ESRegisterViewController.m */,
+				96B98B921845C81E002E8552 /* ESRegisterViewController.xib */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -1083,7 +1085,7 @@
 				96B98BD21845E58F002E8552 /* e-sky@2x.png in Resources */,
 				96B98B691845C6B8002E8552 /* ShareSDKLocalizable.strings in Resources */,
 				96B98BD41845E58F002E8552 /* icon_head@2x.png in Resources */,
-				96B98B9A1845C81E002E8552 /* FARegisterViewController.xib in Resources */,
+				96B98B9A1845C81E002E8552 /* ESRegisterViewController.xib in Resources */,
 				96B98B721845C6B8002E8552 /* ShareSDKiPhoneDefaultShareViewUI.bundle in Resources */,
 				96B98BD51845E58F002E8552 /* icon_qq.png in Resources */,
 				96B98A821845C643002E8552 /* themes.plist in Resources */,
@@ -1091,7 +1093,7 @@
 				96B98BDB1845E58F002E8552 /* translate_bg.png in Resources */,
 				96B98A251845C56D002E8552 /* Images.xcassets in Resources */,
 				96B98B941845C81E002E8552 /* ESMainViewController.xib in Resources */,
-				96B98B961845C81E002E8552 /* FALoginViewController.xib in Resources */,
+				96B98B961845C81E002E8552 /* ESLoginViewController.xib in Resources */,
 				96B98B531845C6B8002E8552 /* FAInputView.xib in Resources */,
 				96B98A751845C643002E8552 /* ESBaseViewController.xib in Resources */,
 				96B98BCD1845E58F002E8552 /* check_true@2x.png in Resources */,
@@ -1104,7 +1106,7 @@
 				96B98B7C1845C6FA002E8552 /* man in Resources */,
 				96B98B6A1845C6B8002E8552 /* Resource.bundle in Resources */,
 				96B98BCA1845E58F002E8552 /* bt_grey.png in Resources */,
-				96B98B981845C81E002E8552 /* FAModifyPassWordViewController.xib in Resources */,
+				96B98B981845C81E002E8552 /* ESModifyPassWordViewController.xib in Resources */,
 				96B98BC91845E58F002E8552 /* bt_blue@2x.png in Resources */,
 				96B98BDC1845E58F002E8552 /* translate_bg@2x.png in Resources */,
 				96B98BD31845E58F002E8552 /* icon_head.png in Resources */,
@@ -1134,13 +1136,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96B98B991845C81E002E8552 /* FARegisterViewController.m in Sources */,
+				96B98B991845C81E002E8552 /* ESRegisterViewController.m in Sources */,
 				96B98B781845C6B8002E8552 /* UIView+Additions.m in Sources */,
 				96B98B7A1845C6B8002E8552 /* UIWebImageView.m in Sources */,
 				96B98B481845C6B8002E8552 /* AFURLSessionManager.m in Sources */,
 				96B98B4D1845C6B8002E8552 /* UIImageView+AFNetworking.m in Sources */,
 				96B98B451845C6B8002E8552 /* AFURLConnectionOperation.m in Sources */,
-				96B98A771845C643002E8552 /* FAConfig.m in Sources */,
+				96B98A771845C643002E8552 /* ESConfig.m in Sources */,
 				96B98B621845C6B8002E8552 /* SSKeychainQuery.m in Sources */,
 				96B98B4F1845C6B8002E8552 /* UIWebView+AFNetworking.m in Sources */,
 				96B98B421845C6B8002E8552 /* AFHTTPSessionManager.m in Sources */,
@@ -1149,9 +1151,9 @@
 				96B98B561845C6B8002E8552 /* JTDateMappings.m in Sources */,
 				96B98A8D1845C643002E8552 /* FAXibViewUtils.m in Sources */,
 				96B98B501845C6B8002E8552 /* EGOCache.m in Sources */,
-				96B98A791845C643002E8552 /* FAUserInfo.m in Sources */,
+				96B98A791845C643002E8552 /* ESUserInfo.m in Sources */,
 				96B98A7B1845C643002E8552 /* FAThemeManager.m in Sources */,
-				96B98A7A1845C643002E8552 /* FABaseModel.m in Sources */,
+				96B98A7A1845C643002E8552 /* ESBaseModel.m in Sources */,
 				96B98B441845C6B8002E8552 /* AFSecurityPolicy.m in Sources */,
 				96B98B571845C6B8002E8552 /* JTMappings.m in Sources */,
 				96B98B551845C6B8002E8552 /* JTDataMappings.m in Sources */,
@@ -1166,7 +1168,7 @@
 				96B98B5F1845C6B8002E8552 /* NSDictionary+Safe.m in Sources */,
 				96B98A8A1845C643002E8552 /* HFHttpRequestResult.m in Sources */,
 				96B98A741845C643002E8552 /* ESBaseViewController.m in Sources */,
-				96B98B951845C81E002E8552 /* FALoginViewController.m in Sources */,
+				96B98B951845C81E002E8552 /* ESLoginViewController.m in Sources */,
 				96B98B4B1845C6B8002E8552 /* UIAlertView+AFNetworking.m in Sources */,
 				96B98A8B1845C643002E8552 /* HFHttpResponArguments.m in Sources */,
 				96B98B581845C6B8002E8552 /* JTSetMappings.m in Sources */,
@@ -1174,11 +1176,11 @@
 				96B98A761845C643002E8552 /* CommonCH.m in Sources */,
 				96B98B5D1845C6B8002E8552 /* MBProgressHUD.m in Sources */,
 				96B98B511845C6B8002E8552 /* FAHeaderIconImageView.m in Sources */,
-				96B98A781845C643002E8552 /* FAMainUser.m in Sources */,
+				96B98A781845C643002E8552 /* ESMainUser.m in Sources */,
 				96B98A8C1845C643002E8552 /* FAXibView.m in Sources */,
 				96B98B461845C6B8002E8552 /* AFURLRequestSerialization.m in Sources */,
 				96B98B491845C6B8002E8552 /* AFNetworkActivityIndicatorManager.m in Sources */,
-				96B98B971845C81E002E8552 /* FAModifyPassWordViewController.m in Sources */,
+				96B98B971845C81E002E8552 /* ESModifyPassWordViewController.m in Sources */,
 				96B98B791845C6B8002E8552 /* UIViewController+KNSemiModal.m in Sources */,
 				96B98B591845C6B8002E8552 /* JTValidMappingKey.m in Sources */,
 				96B98B401845C6B8002E8552 /* AFHTTPRequestOperation.m in Sources */,
@@ -1427,6 +1429,7 @@
 				96B98A3D1845C56D002E8552 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96B98A3E1845C56D002E8552 /* Build configuration list for PBXNativeTarget "EskyAppTests" */ = {
 			isa = XCConfigurationList;
@@ -1435,6 +1438,7 @@
 				96B98A401845C56D002E8552 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

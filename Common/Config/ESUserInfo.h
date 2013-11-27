@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 fashion. All rights reserved.
 //
 
-#import "FABaseModel.h"
+#import "ESBaseModel.h"
 
-@interface FAUserInfo : FABaseModel{
+@interface ESUserInfo : ESBaseModel{
     // 指定用户的性别
     NSString *_gender;
     

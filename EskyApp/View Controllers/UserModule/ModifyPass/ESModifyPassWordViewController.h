@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ESBaseViewController.h"
 
-@interface FAModifyPassWordViewController : ESBaseViewController<UITextFieldDelegate>
+@interface ESModifyPassWordViewController : ESBaseViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *cancleBt;
 @property (weak, nonatomic) IBOutlet UIButton *okBt;

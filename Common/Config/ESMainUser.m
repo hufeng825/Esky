@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 fashion. All rights reserved.
 //
 
-#import "FAMainUser.h"
+#import "ESMainUser.h"
 
 // mainUser持久化文件名
 #define kMainUserFileName @"user"
@@ -23,9 +23,9 @@
 #define kLastLoginUserName  @"kLastLoginUserName"
 
 
-@interface FAMainUser ()
+@interface ESMainUser ()
 // 从持久化数据中读取mainUser
-+ (FAMainUser *)readFromDisk:(NSString *)userId;
++ (ESMainUser *)readFromDisk:(NSString *)userId;
 
 // 持久化路径
 + (NSString *)persistPath:(NSString *)userId;
@@ -33,12 +33,12 @@
 @end
 
 
-static FAMainUser* _instance = nil;
+static ESMainUser* _instance = nil;
 
-@implementation FAMainUser
+@implementation ESMainUser
 
 
-+ (FAMainUser *) getInstance {
++ (ESMainUser *) getInstance {
     
 	@synchronized(self) {
 		if (_instance == nil) {
@@ -47,9 +47,9 @@ static FAMainUser* _instance = nil;
             NSString *userId = [defaults objectForKey:kLastLoginUserId];
             
             if (userId) {
-                _instance = [FAMainUser readFromDisk:userId];
+                _instance = [ESMainUser readFromDisk:userId];
                 if (!_instance) {
-                    _instance = [[FAMainUser alloc] init]; // assignment not done here
+                    _instance = [[ESMainUser alloc] init]; // assignment not done here
 #if TARGET_IPHONE_SIMULATOR     //如果是模拟器
                     _instance.selectedCityId = [NSNumber numberWithInt:290];
                     _instance.selectedCityName = @"北京";
@@ -58,7 +58,7 @@ static FAMainUser* _instance = nil;
                 
             } else {
                 // 从未登录过的逻辑
-                _instance = [[FAMainUser alloc] init];
+                _instance = [[ESMainUser alloc] init];
 #if TARGET_IPHONE_SIMULATOR     //如果是模拟器
                 _instance.selectedCityId = [NSNumber numberWithInt:290];
                 _instance.selectedCityName = @"北京";
@@ -123,20 +123,20 @@ static FAMainUser* _instance = nil;
     [defaults synchronize];
 	
 	if (userId) {
-        NSString *persistPath = [FAMainUser persistPath:userId];
+        NSString *persistPath = [ESMainUser persistPath:userId];
         [NSKeyedArchiver archiveRootObject:self toFile:persistPath];
 	}
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)logout {
-	FAMainUser *mainUser = _instance;
+	ESMainUser *mainUser = _instance;
      mainUser.isLogin = NO;
 	[mainUser clear];
 	NSString *userIdtmp = [self.userId copy];
     self.userId = nil;
 	if (userIdtmp) {
-        NSString *persistPath = [FAMainUser persistPath:userIdtmp];
+        NSString *persistPath = [ESMainUser persistPath:userIdtmp];
         NSFileManager *fileMgr = [NSFileManager defaultManager];
         [fileMgr removeItemAtPath:persistPath error:nil];
 	}
@@ -159,8 +159,8 @@ static FAMainUser* _instance = nil;
 }
 
 // 从持久化数据中读取mainUser
-+ (FAMainUser *)readFromDisk:(NSString *)userId{
-    NSString *userFile = [FAMainUser persistPath:userId];
++ (ESMainUser *)readFromDisk:(NSString *)userId{
+    NSString *userFile = [ESMainUser persistPath:userId];
     return [NSKeyedUnarchiver unarchiveObjectWithFile:userFile];
 }
 
@@ -190,7 +190,7 @@ static FAMainUser* _instance = nil;
 
 // 公共文件夹路径
 + (NSString *)commonPath{
-    NSString *path = [[FAMainUser documentPath] stringByAppendingPathComponent:kCommonDir];
+    NSString *path = [[ESMainUser documentPath] stringByAppendingPathComponent:kCommonDir];
     
     NSFileManager *fileMgr = [NSFileManager defaultManager];
     if (![fileMgr fileExistsAtPath:path]) {
@@ -209,7 +209,7 @@ static FAMainUser* _instance = nil;
 
 // 用户路径
 - (NSString *)userDocumentPath{
-    NSString *path = [[FAMainUser documentPath] stringByAppendingPathComponent:self.userId];
+    NSString *path = [[ESMainUser documentPath] stringByAppendingPathComponent:self.userId];
     
     NSFileManager *fileMgr = [NSFileManager defaultManager];
     if (![fileMgr fileExistsAtPath:path]) {
@@ -227,7 +227,7 @@ static FAMainUser* _instance = nil;
 }
 
 + (NSString *)persistPath:(NSString *)userId{
-    NSString *dirPath = [[FAMainUser documentPath] stringByAppendingPathComponent:userId];
+    NSString *dirPath = [[ESMainUser documentPath] stringByAppendingPathComponent:userId];
     
     NSFileManager *fileMgr = [NSFileManager defaultManager];
     if (![fileMgr fileExistsAtPath:dirPath]) {
@@ -246,7 +246,7 @@ static FAMainUser* _instance = nil;
 }
 
 - (NSString*)splashPath{
-    NSString *dirPath = [[FAMainUser commonPath] stringByAppendingPathComponent:kSplashDir];
+    NSString *dirPath = [[ESMainUser commonPath] stringByAppendingPathComponent:kSplashDir];
     
     NSFileManager *fileMgr = [NSFileManager defaultManager];
     if (![fileMgr fileExistsAtPath:dirPath]) {
@@ -265,7 +265,7 @@ static FAMainUser* _instance = nil;
 }
 
 - (NSString*)splashDataPath{
-    NSString *dirPath = [[FAMainUser commonPath] stringByAppendingPathComponent:kSplashDir];
+    NSString *dirPath = [[ESMainUser commonPath] stringByAppendingPathComponent:kSplashDir];
     
     NSFileManager *fileMgr = [NSFileManager defaultManager];
     if (![fileMgr fileExistsAtPath:dirPath]) {

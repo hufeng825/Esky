@@ -6,14 +6,14 @@
 //  Copyright (c) 2013年 fashion. All rights reserved.
 //
 
-#import "FAModifyPassWordViewController.h"
+#import "ESModifyPassWordViewController.h"
 #import "UIViewController+KNSemiModal.h"
 
-@interface FAModifyPassWordViewController ()
+@interface ESModifyPassWordViewController ()
 
 @end
 
-@implementation FAModifyPassWordViewController
+@implementation ESModifyPassWordViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

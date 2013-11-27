@@ -6,10 +6,10 @@
 //  Copyright (c) 2013年 fashion. All rights reserved.
 //
 
-#import "FABaseModel.h"
+#import "ESBaseModel.h"
 #import <objc/runtime.h>
 
-@implementation FABaseModel
+@implementation ESBaseModel
 
 
 -(void)encodeWithCoder:(NSCoder *)aCoder{

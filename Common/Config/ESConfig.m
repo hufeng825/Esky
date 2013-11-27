@@ -6,15 +6,15 @@
 //  Copyright (c) 2013年 fashion. All rights reserved.
 //
 
-#import "FAConfig.h"
-#import "FAMainUser.h"
+#import "ESConfig.h"
+#import "ESMainUser.h"
 
 
 
-static FAConfig *_globalConfig = nil;
+static ESConfig *_globalConfig = nil;
 
 
-@implementation FAConfig
+@implementation ESConfig
 
 
 - (NSString *)udid{
@@ -22,17 +22,17 @@ static FAConfig *_globalConfig = nil;
 //    return [UIDevice macAddress];
 }
 
-+ (FAConfig* )globalConfig {
++ (ESConfig* )globalConfig {
 
     @synchronized (self){
         if(!_globalConfig) {
-            _globalConfig = [[FAConfig alloc] init];
+            _globalConfig = [[ESConfig alloc] init];
         }
     }
     return _globalConfig;
 }
 
-+ (void)setGlobalConfig:(FAConfig *)config {
++ (void)setGlobalConfig:(ESConfig *)config {
     if (_globalConfig != config) {
         _globalConfig = config;
     }
@@ -83,7 +83,7 @@ static FAConfig *_globalConfig = nil;
                            otherStr, @"other",
                            nil];
         NSString* sidStr = @"";
-        NSString* sid = [FAMainUser getInstance].userId;
+        NSString* sid = [ESMainUser getInstance].userId;
         if(!sid){
             sidStr = @"";
         }
@@ -102,13 +102,13 @@ static FAConfig *_globalConfig = nil;
 
 - (void)updateUserAgent
 {
-    NSString* sid = [FAMainUser getInstance].userId;
+    NSString* sid = [ESMainUser getInstance].userId;
     UIDevice *device = [UIDevice currentDevice];
     UIScreen *screen = [UIScreen mainScreen];
     CGSize screenSize = screen.bounds.size;
     NSString* cityId = @"";
-    if([FAMainUser getInstance].currentCityId){
-        cityId = [NSString stringWithFormat:@"%d",[[FAMainUser getInstance].currentCityId intValue]];
+    if([ESMainUser getInstance].currentCityId){
+        cityId = [NSString stringWithFormat:@"%d",[[ESMainUser getInstance].currentCityId intValue]];
     }
     
     self.userAgent = [NSString stringWithFormat:@"{\"mac\":\"%@\",\"deviceName\":\"%@\",\"deviceVersion\":\"%@\",\"screen\":\"%@\",\"clientVersion\":\"%@\",\"sid\":\"%@\"}",[UIDevice macAddress],self.deviceModel,device.systemVersion,[NSString stringWithFormat:@"%.0f*%.0f", screenSize.width, screenSize.height],self.appversion,sid];

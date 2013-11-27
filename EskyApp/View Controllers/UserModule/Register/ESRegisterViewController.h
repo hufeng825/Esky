@@ -13,7 +13,7 @@
 
 
 
-@interface FARegisterViewController : ESBaseViewController<UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ESRegisterViewController : ESBaseViewController<UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet FAHeaderIconImageView *headIconImageView;
 @property (weak, nonatomic) IBOutlet UIButton *registButton;

@@ -6,14 +6,14 @@
 //  Copyright (c) 2013年 fashion. All rights reserved.
 //
 
-#import "FALoginViewController.h"
+#import "ESLoginViewController.h"
 
 #import "UIViewController+KNSemiModal.h"
-#import "FARegisterViewController.h"
-#import "FAModifyPassWordViewController.h"
+#import "ESRegisterViewController.h"
+#import "ESModifyPassWordViewController.h"
 
 
-@interface FALoginViewController ()
+@interface ESLoginViewController ()
 {
     
     __weak IBOutlet UIScrollView *bgScrollView;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation FALoginViewController
+@implementation ESLoginViewController
 #define EmailTag 1001
 #define MMTag 1002
 
@@ -130,7 +130,7 @@
 
 - (IBAction)resetPassClick:(id)sender {
     [self viewEndEdit];
-    FAModifyPassWordViewController *semiVC = [[FAModifyPassWordViewController alloc]init];
+    ESModifyPassWordViewController *semiVC = [[ESModifyPassWordViewController alloc]init];
     [self presentSemiViewController:semiVC withOptions:@{
                                                          KNSemiModalOptionKeys.pushParentBack    : @(YES),
                                                          KNSemiModalOptionKeys.animationDuration : @(.5),
@@ -138,7 +138,7 @@
 }
 
 - (IBAction)regesitClick:(id)sender {
-    FARegisterViewController *rg = [[FARegisterViewController alloc]init];
+    ESRegisterViewController *rg = [[ESRegisterViewController alloc]init];
     [self presentViewController:rg animated:YES completion:Nil];
 }
 

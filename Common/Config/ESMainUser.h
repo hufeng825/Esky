@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 fashion. All rights reserved.
 //
 
-#import "FABaseModel.h"
+#import "ESBaseModel.h"
 
-@interface FAMainUser : FABaseModel
+@interface ESMainUser : ESBaseModel
 
 {
     // 登录名
@@ -61,7 +61,7 @@
 @property (nonatomic, copy)NSString* weiboNickName;
 @property (nonatomic, assign) BOOL isLogin;
 
-+ (FAMainUser*)getInstance;
++ (ESMainUser*)getInstance;
 
 /**
  * 持久化存档。

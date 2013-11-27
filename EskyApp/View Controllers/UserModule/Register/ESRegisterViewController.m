@@ -6,17 +6,17 @@
 //  Copyright (c) 2013年 fashion. All rights reserved.
 //
 
-#import "FARegisterViewController.h"
+#import "ESRegisterViewController.h"
 
 
 
-@interface FARegisterViewController ()
+@interface ESRegisterViewController ()
 {
 NSUInteger selectedTextFieldTag;
 }
 @end
 
-@implementation FARegisterViewController
+@implementation ESRegisterViewController
 
 #define NumTextFields 3
 #define TextFieldBeginTag 100

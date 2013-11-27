@@ -1,6 +1,6 @@
 //
-//  ITTCommonMacros.h
-//  iTotemFrame
+//  ESCommonMacros.h
+//  
 //
 //  Created by jason on 6/15/12.
 //  Copyright (c) 2013 fashion. All rights reserved.

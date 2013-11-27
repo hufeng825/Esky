@@ -8,10 +8,10 @@
 
 #import "ESMainViewController.h"
 
-#import "FAConfig.h"
+#import "ESConfig.h"
 
 
-#import "FALoginViewController.h"
+#import "ESLoginViewController.h"
 
 
 @interface ESMainViewController ()
@@ -192,12 +192,12 @@
 //    
     [self thirdLog];
     
-    NSLog(@"%@",[[FAConfig globalConfig]userAgent]);
+    NSLog(@"%@",[[ESConfig globalConfig]userAgent]);
     
     
 
     
-    FALoginViewController *lg = [[FALoginViewController alloc]init];
+    ESLoginViewController *lg = [[ESLoginViewController alloc]init];
     [self.navigationController presentViewController:lg animated:YES completion:nil];
 
 }

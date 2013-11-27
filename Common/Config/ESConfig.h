@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 fashion. All rights reserved.
 //
 
-#import "FABaseModel.h"
+#import "ESBaseModel.h"
 
-@interface FAConfig : FABaseModel{
+@interface ESConfig : ESBaseModel{
     //应用App Store的ID（AppleID）
     NSString *_appStoreId;
     // 应用App Store的Bundle ID
@@ -32,8 +32,8 @@
     NSString* _userAgent;
 }
 
-+ (FAConfig* )globalConfig;
-+ (void)setGlobalConfig:(FAConfig *)config;
++ (ESConfig* )globalConfig;
++ (void)setGlobalConfig:(ESConfig *)config;
 
 
 // udid 取设备 MAC(兼容)

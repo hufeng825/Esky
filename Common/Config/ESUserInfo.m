@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 fashion. All rights reserved.
 //
 
-#import "FAUserInfo.h"
+#import "ESUserInfo.h"
 
-@implementation FAUserInfo
+@implementation ESUserInfo
 
 
 - (id)initWithDictionary:(NSDictionary *)info{
