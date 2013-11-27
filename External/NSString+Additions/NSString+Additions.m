@@ -1,0 +1,382 @@
+//
+//  NSString+Additions.m
+//  Pluto
+//
+//  Created by Zheng Yue on 12-10-21.
+//
+//
+
+#import "NSString+Additions.h"
+#include <ifaddrs.h>
+#include <arpa/inet.h>
+#import <mach/mach.h>
+#import <mach/mach_host.h>
+#import <CommonCrypto/CommonDigest.h>
+
+@implementation NSString (HF)
+/*---------------------------------------------------------------------------
+ * URL
+ *--------------------------------------------------------------------------*/
+- (NSString*)URLencodeWithEncoding:(NSStringEncoding)stringEncoding {
+	//!  @  $  &  (  )  =  +  ~  `  ;  '  :  ,  /  ?
+	//%21%40%24%26%28%29%3D%2B%7E%60%3B%27%3A%2C%2F%3F
+	NSArray *escapeChars = [NSArray arrayWithObjects:@";" , @"/" , @"?" , @":" ,
+							@"@" , @"&" , @"=" , @"+" ,    @"$" , @"," ,
+							@"!", @"'", @"(", @")", @"*", nil];
+	
+	NSArray *replaceChars = [NSArray arrayWithObjects:@"%3B" , @"%2F", @"%3F" , @"%3A" ,
+							 @"%40" , @"%26" , @"%3D" , @"%2B" , @"%24" , @"%2C" ,
+							 @"%21", @"%27", @"%28", @"%29", @"%2A", nil];
+	
+	NSUInteger len = [escapeChars count];
+	
+	NSMutableString *temp = [[self stringByAddingPercentEscapesUsingEncoding:stringEncoding] mutableCopy];
+	int i;
+	for (i = 0; i < len; i++) {
+		[temp replaceOccurrencesOfString:[escapeChars objectAtIndex:i]
+							  withString:[replaceChars objectAtIndex:i]
+								 options:NSLiteralSearch
+								   range:NSMakeRange(0, [temp length])];
+	}
+	
+	NSString *outStr = [NSString stringWithString:temp];
+    
+	return outStr ;
+}
+
+
+- (NSString *) stringFromMD5{
+    
+    if(self == nil || [self length] == 0)
+        return nil;
+    
+    const char *value = [self UTF8String];
+    
+    unsigned char outputBuffer[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(value, strlen(value), outputBuffer);
+    
+    NSMutableString *outputString = [[NSMutableString alloc] initWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    for(NSInteger count = 0; count < CC_MD5_DIGEST_LENGTH; count++){
+        [outputString appendFormat:@"%02x",outputBuffer[count]];
+    }
+    
+    return outputString ;
+}
+
+-(NSString*)URLencodeWithEncodingUTF8{
+	return [self URLencodeWithEncoding:NSUTF8StringEncoding];
+}
+
++ (NSString *)getIPAddress
+{
+	NSString *address = @"Unknown";
+	struct ifaddrs *interfaces = NULL;
+	struct ifaddrs *temp_addr = NULL;
+	int success = 0;
+    
+	// retrieve the current interfaces - returns 0 on success
+	success = getifaddrs(&interfaces);
+	if (success == 0){
+		// Loop through linked lvalidatet of interfaces
+		temp_addr = interfaces;
+		while(temp_addr != NULL){
+			if(temp_addr->ifa_addr->sa_family == AF_INET){
+				// Check if interface is en0 which is the wifi connection on the iPhone
+                //                address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+                //                NSLog(@"address: %@", [NSString stringWithUTF8String:temp_addr->ifa_name]);
+				if([@(temp_addr->ifa_name) isEqualToString:@"en0"]){
+					// Get NSString from C String
+					address = @(inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr));
+				}
+			}
+            
+			temp_addr = temp_addr->ifa_next;
+		}
+	}
+    
+	// Free memory
+	freeifaddrs(interfaces);
+    
+	return address;
+    
+    //    char iphone_ip[255];
+    //    strcpy(iphone_ip,"127.0.0.1"); // if everything fails
+    //    NSHost* myhost =[NSHost currentHost];
+    //    if (myhost)
+    //    {
+    //        NSString *ad = [myhost address];
+    //        if (ad)
+    //            strcpy(iphone_ip,[ad cStringUsingEncoding: NSISOLatin1StringEncoding]);
+    //    }
+    //    return [NSString stringWithFormat:@"%s",iphone_ip];
+}
+
+
+
+
+/*---------------------------------------------------------------------------
+ * 根据format来格式化形式为"20121010"的字符串
+ * 格式化的3个参数顺序是年、月、日
+*--------------------------------------------------------------------------*/
+
+- (NSString*)dateStringWithFormat:(NSString*)format
+{
+    NSUInteger n = self.length;
+    if(n < 6) return self;
+    
+    NSString *year = [self substringToIndex:4];
+    NSRange range;
+    range.location = 4;
+    range.length = 2;
+    NSString *month = [self substringWithRange:range];
+    NSString *day = @"";
+    if(n > 6) {
+        day = [self substringFromIndex:6];
+    }
+    return [NSString stringWithFormat:format, year, month, day];
+}
+
+
+-(BOOL)isMatchedByRegex:(NSString *)str
+{
+    NSPredicate *test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", str];
+	return [test evaluateWithObject:self];
+}
+
+/*---------------------------------------------------------------------------
+ * 把形式为"20121010"的字符串转成"2012年10月10日"
+ *--------------------------------------------------------------------------*/
+
+- (NSString*)ymdString
+{
+    return [self dateStringWithFormat:@"%@年%@月%@日"];
+}
+
+- (NSString*)ymdStringWithSeperator:(NSString*)seperator
+{
+    return [self dateStringWithFormat:[NSString stringWithFormat:@"%%@%@%%@%@%%@", seperator, seperator]];
+}
+
+/*---------------------------------------------------------------------------
+ * 把形式为"20121010"的字符串转成"2012年10月"
+ *--------------------------------------------------------------------------*/
+
+- (NSString*)ymString
+{
+    return [self dateStringWithFormat:@"%@年%@月"];
+}
+
+/*---------------------------------------------------------------------------
+ * 把形式为"20121010"的字符串转成"10-10"
+ *--------------------------------------------------------------------------*/
+- (NSString*)mdString
+{
+    return [self mdStringWithSeperator:@"-"];
+}
+
+- (NSString*)mdStringWithSeperator:(NSString*)seperator
+{
+    if(self.length < 8) return self;
+    
+    NSRange range;
+    range.location = 4;
+    range.length = 2;
+    NSString *month = [self substringWithRange:range];
+    range.location = 6;
+    NSString *day = [self substringWithRange:range];
+    return [NSString stringWithFormat:@"%@%@%@", month, seperator, day];
+}
+
+/*---------------------------------------------------------------------------
+ * 把形式为"123456"的字符串，格式化成"12:34"的形式
+*--------------------------------------------------------------------------*/
+- (NSString*)hmString
+{
+    if(self.length < 6) return self;
+    
+    NSRange range;
+    range.location = 2;
+    range.length = 2;
+    NSString *hour = [self substringToIndex:2];
+    NSString *minute = [self substringWithRange:range];
+    return [NSString stringWithFormat:@"%@:%@", hour, minute];
+}
+
+/*---------------------------------------------------------------------------
+ * 返回"201212"形式或"2012年12月"的日期字符串的下一个月
+ * 例如，"201210" 返回 "201211"
+ *      "2012年12月" 返回 "2013月01月"
+ *--------------------------------------------------------------------------*/
+- (NSString*)nextMonth
+{
+    if(self.length != 6 && self.length != 8) return self;
+    NSInteger month;
+    NSInteger year = [[self substringToIndex:4] integerValue];;
+    if(self.length == 6) {
+        month = [[self substringFromIndex:4] integerValue];
+    } else {
+        NSRange range;
+        range.location = 5;
+        range.length = 2;
+        month = [[self substringWithRange:range] integerValue];
+    }
+    month++;
+    if(month > 12) {
+        year++;
+        month = 1;
+    }
+    return [NSString stringWithFormat:@"%ld%02ld", (long)year, (long)month];
+}
+
+/*---------------------------------------------------------------------------
+ * 格式化输出带货币前缀的金额字符串
+ * 例如如果输入为空，symbol="$" 则输出"$0.00"
+ * 如果输入为"1.22", symbol="￥"，则输出"￥1.22"
+ *--------------------------------------------------------------------------*/
+- (NSString*)amountStringWithSymbol:(NSString*)symbol
+{
+    NSString *result;
+    if(self == nil || [self isEqualToString:@""]) {
+        result = [NSString stringWithFormat:@"%@0.00", symbol];
+    } else {
+        result = [NSString stringWithFormat:@"%@%@", symbol, self];
+    }
+    return result;
+}
+
+/*---------------------------------------------------------------------------
+ * 输出以元为单位的金额数字
+ * 返回以分为单位的字符串
+ *--------------------------------------------------------------------------*/
++ (NSString*)fenStringWithDecimalNumber:(NSDecimalNumber*)number
+{
+    NSDecimalNumber *fen = [number decimalNumberByMultiplyingByPowerOf10:2];
+    return [fen stringValue];
+}
+
+-(BOOL)validateContainsString:(NSString *)findStr
+{
+    NSRange textRange;
+    textRange =[self rangeOfString:findStr];
+    return (textRange.location != NSNotFound);
+}
+
+- (BOOL)validateContainsString:(NSString*)string options:(NSStringCompareOptions)options {
+	return [self rangeOfString:string options:options].location == NSNotFound ? NO : YES;
+}
+
+/*---------------------------------------------------------------------------
+ * 返回含有中文字符串的长度
+ * 1个中文=2个英文
+ *--------------------------------------------------------------------------*/
+
+-(NSUInteger)lengthToInt
+{
+    //去掉空格
+    NSString *st = [self  stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    int strlength = 0;
+    char* p = (char*)[st cStringUsingEncoding:NSUnicodeStringEncoding];
+    for (int i=0 ; i<[st lengthOfBytesUsingEncoding:NSUnicodeStringEncoding] ;i++) {
+        if (*p) {
+            p++;
+            strlength++;
+        }
+        else {
+            p++;
+        }
+        
+    }
+    return strlength;
+}
+/*---------------------------------------------------------------------------
+ * 返回含有字符串中中文和全角字符的个数
+ * 没有返回 0
+ * 例如 @"i'm a 苹果。..." 返回 3 -》「 苹 果 。 」
+ *--------------------------------------------------------------------------*/
+-(NSUInteger) gotChineseCount
+{
+    NSUInteger length = [self length];
+    NSUInteger count=0;
+    for (int i=0; i<length; ++i)
+    {
+        NSRange range = NSMakeRange(i, 1);
+        NSString *subString = [self substringWithRange:range];
+        const char    *cString = [subString UTF8String];
+        if (strlen(cString) == 3)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+//验证是否是数字
+-(BOOL)validateNumberStr
+{
+    NSString *number =@"0123456789";
+    NSCharacterSet * cs =[[NSCharacterSet characterSetWithCharactersInString:number]invertedSet];
+    NSString * comparStr = [[self componentsSeparatedByCharactersInSet:cs]componentsJoinedByString:@""];
+    return [self isEqualToString:comparStr];
+}
+//验证是否是字母
+-(BOOL)validateLetterStr
+{
+    return [self isMatchedByRegex:@"^([A-Za-z]+$"];
+}
+
+
+//验证身份证
+-(BOOL)validatePersonCard
+{
+//    NSLog(@"%d",[self length]);
+    /*招行那帮东西之前让做简单验证
+      验证15位纯数字 18位纯数字 或者17位纯数字+X
+      后来又要做严格验证因此现在改用正则
+     */
+    /*
+    if ([self length]!= 15 && [self length] != 18)
+    {
+        return NO;
+    }
+    else if ( ([self length] == 18 ||[self length] ==15) && [self isNumberStr])
+    {
+        return YES;
+    }
+    else if ([self length] == 18  && ([[self substringToIndex:17] isNumberStr] && [self hasSuffix:@"X"]))
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }*/
+    return [self isMatchedByRegex:@"^((1[1-5])|(2[1-3])|(3[1-7])|(4[1-6])|(5[0-4])|(6[1-5])|71|(8[12])|91)\\d{4}((19\\d{2}(0[13-9]|1[012])(0[1-9]|[12]\\d|30))|(19\\d{2}(0[13578]|1[02])31)|(19\\d{2}02(0[1-9]|1\\d|2[0-8]))|(19([13579][26]|[2468][048]|0[48])0229))\\d{3}(\\d|X|x)?$"];
+}
+
+-(BOOL)validateNameStr
+{
+	return [self isMatchedByRegex:@"^([A-Za-z]|[\u4E00-\u9FA5])+$"];
+};
+
+
+
+//验证邮箱
+-(BOOL)validateEmailAddress
+{
+    
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    
+    return [emailTest evaluateWithObject:self];
+    
+}
+//验证是否是电话号码
+- (BOOL)validateCellPhone
+{
+	NSString *phoneRegex = @"((\\d{11})|^((\\d{7,8})|(\\d{4}|\\d{3})-(\\d{7,8})|(\\d{4}|\\d{3})-(\\d{7,8})-(\\d{4}|\\d{3}|\\d{2}|\\d{1})|(\\d{7,8})-(\\d{4}|\\d{3}|\\d{2}|\\d{1}))$)";
+	NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", phoneRegex];
+	return [phoneTest evaluateWithObject:self];
+}
+
+@end
