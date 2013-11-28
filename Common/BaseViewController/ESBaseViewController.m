@@ -111,10 +111,10 @@
 
 
 #pragma mark  -  网络请求
-- (HFBaseHttpRequest *)hfClient
+- (HFHttpRequestOperationManager *)hfClient
 {
     if (!hfClient) {
-        self.hfClient = [HFBaseHttpRequest client];
+        self.hfClient = [HFHttpRequestOperationManager client];
     }
     
     return hfClient;

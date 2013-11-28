@@ -5,11 +5,11 @@
 //  Created by jason on 12-10-20.
 //  Copyright (c) 2012年 jason. All rights reserved.
 //
-#import "HFBaseHttpRequest.h"
+#import "HFHttpRequestOperationManager.h"
 //#import "HFURL.h"
 
 
-@implementation HFBaseHttpRequest
+@implementation HFHttpRequestOperationManager
 
 
 -(id)initWithBaseURL:(NSURL *)url
@@ -31,9 +31,9 @@
 
 
 //非单例模式
-+(HFBaseHttpRequest *)client
++(HFHttpRequestOperationManager *)client
 {
-    HFBaseHttpRequest *client = [[self alloc]initWithBaseURL:nil];
+    HFHttpRequestOperationManager *client = [[self alloc]initWithBaseURL:nil];
     #if !__has_feature(objc_arc)
         [client autorelease];
     #endif
@@ -42,14 +42,14 @@
 
 
 //单例模式
-+(HFBaseHttpRequest *)sharedClient
++(HFHttpRequestOperationManager *)sharedClient
 {
-    static HFBaseHttpRequest *sharedHttpRequest = nil;
+    static HFHttpRequestOperationManager *sharedHttpRequest = nil;
     static dispatch_once_t onceToken =0;
     
     dispatch_once(&onceToken, ^{
         if(!sharedHttpRequest)
-            sharedHttpRequest = [[HFBaseHttpRequest alloc] initWithBaseURL:nil];
+            sharedHttpRequest = [[HFHttpRequestOperationManager alloc] initWithBaseURL:nil];
 
     });
     return sharedHttpRequest;
@@ -107,53 +107,35 @@
 #pragma mark - 网络状态改变后的一些处理
 - (void)reachabilityStatusChangeBlock
 {
-//    //    operation.JSONReadingOptions = NSJSONReadingAllowFragments;
-//    //设置网络状态切换模式
-//    [self setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status)
-//     {
-//         switch (status)
-//         {
-//             case AFNetworkReachabilityStatusUnknown:
-//                 NSLog(@"AFNetworkReachabilityStatusUnknown");
-//                 break;
-//             case AFNetworkReachabilityStatusNotReachable:
-//                 NSLog(@"AFNetworkReachabilityStatusNotReachable");
-//                 break;
-//             case AFNetworkReachabilityStatusReachableViaWWAN:
-//                 NSLog(@"AFNetworkReachabilityStatusReachableViaWWAN");
-//                 break;
-//             case AFNetworkReachabilityStatusReachableViaWiFi:
-//                 NSLog(@"AFNetworkReachabilityStatusReachableViaWiFi");
-//                 break;
-//                 
-//             default:
-//                 NSLog(@"AFNetworkReachabilityStatusUnknown");
-//                 break;
-//         }
-//     }
-//         ];
+//        .JSONReadingOptions = NSJSONReadingAllowFragments;
+    NSOperationQueue *operationQueue = self.operationQueue;
+    //设置网络状态切换模式
+    [self.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status)
+     {
+         switch (status)
+         {
+             case AFNetworkReachabilityStatusUnknown:
+                 ESDINFO(@"AFNetworkReachabilityStatusUnknown");
+                 break;
+             case AFNetworkReachabilityStatusNotReachable:
+                 ESDINFO(@"AFNetworkReachabilityStatusNotReachable");
+                 break;
+             case AFNetworkReachabilityStatusReachableViaWWAN:
+                 ESDINFO(@"AFNetworkReachabilityStatusReachableViaWWAN");
+                 break;
+             case AFNetworkReachabilityStatusReachableViaWiFi:
+                 ESDINFO(@"AFNetworkReachabilityStatusReachableViaWiFi");
+                 [operationQueue setSuspended:NO];
+                 break;
+                 
+             default:
+                 ESDINFO(@"AFNetworkReachabilityStatusUnknown");
+                 [operationQueue setSuspended:YES];
+                 break;
+         }
+     }
+         ];
 }
-
-
-#pragma mark - 错误处理
-//- (AFFailCallBlock )failResponHandling:(HFHttpFailCallBlock)failRespon
-//{
-//    //此处可以追加默认错误
-//    HFHttpFailCallBlock failRespons = ^(AFHTTPRequestOperation *operation, NSError *error)
-//    {
-////            HFDERROR(@"网络请求错误: %@",[error description]);
-//            HFAlert_T_M_BT(@"错误警告", @"网络出错，请检查您的网络设置", @"确定");
-//            if (failRespon) {
-//                failRespon(operation,error);
-//            }
-//     };
-//    #if !__has_feature(objc_arc)
-//    return [[failRespons copy]autorelease];
-//    #else
-//    return [failRespons copy];
-//    #endif
-//}
-//
 
 
 #pragma mark - 成功处理
@@ -248,7 +230,11 @@
                            success:sucessRespon
                            failure:errorRespon];
     }
+    
     [requestOperation setDownloadProgressBlock:responArguments.progressBlock];
+    
+    [self reachabilityStatusChangeBlock];
+    
     [self cachePolicy:responArguments.cachePolicy
               request:(NSMutableURLRequest*)requestOperation.request ];
 }

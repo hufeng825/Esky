@@ -24,12 +24,12 @@ typedef enum
 
 
 
-@interface HFBaseHttpRequest : AFHTTPRequestOperationManager
+@interface HFHttpRequestOperationManager : AFHTTPRequestOperationManager
 
 
-+(HFBaseHttpRequest *)sharedClient;
++(HFHttpRequestOperationManager *)sharedClient;
 
-+(HFBaseHttpRequest *)client;
++(HFHttpRequestOperationManager *)client;
 
 
 -(void)Url:(NSString*)url

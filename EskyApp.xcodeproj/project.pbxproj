@@ -29,7 +29,7 @@
 		96B98A7B1845C643002E8552 /* FAThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A561845C643002E8552 /* FAThemeManager.m */; };
 		96B98A811845C643002E8552 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96B98A5D1845C643002E8552 /* Settings.bundle */; };
 		96B98A821845C643002E8552 /* themes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96B98A5E1845C643002E8552 /* themes.plist */; };
-		96B98A881845C643002E8552 /* HFBaseHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A671845C643002E8552 /* HFBaseHttpRequest.m */; };
+		96B98A881845C643002E8552 /* HFHttpRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A671845C643002E8552 /* HFHttpRequestOperationManager.m */; };
 		96B98A891845C643002E8552 /* HFHttpConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A691845C643002E8552 /* HFHttpConfigure.m */; };
 		96B98A8A1845C643002E8552 /* HFHttpRequestResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A6C1845C643002E8552 /* HFHttpRequestResult.m */; };
 		96B98A8B1845C643002E8552 /* HFHttpResponArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98A6E1845C643002E8552 /* HFHttpResponArguments.m */; };
@@ -183,8 +183,8 @@
 		96B98A561845C643002E8552 /* FAThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAThemeManager.m; sourceTree = "<group>"; };
 		96B98A5D1845C643002E8552 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		96B98A5E1845C643002E8552 /* themes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = themes.plist; sourceTree = "<group>"; };
-		96B98A661845C643002E8552 /* HFBaseHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFBaseHttpRequest.h; sourceTree = "<group>"; };
-		96B98A671845C643002E8552 /* HFBaseHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFBaseHttpRequest.m; sourceTree = "<group>"; };
+		96B98A661845C643002E8552 /* HFHttpRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpRequestOperationManager.h; sourceTree = "<group>"; };
+		96B98A671845C643002E8552 /* HFHttpRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpRequestOperationManager.m; sourceTree = "<group>"; };
 		96B98A681845C643002E8552 /* HFHttpConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpConfigure.h; sourceTree = "<group>"; };
 		96B98A691845C643002E8552 /* HFHttpConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpConfigure.m; sourceTree = "<group>"; };
 		96B98A6A1845C643002E8552 /* HFHttpDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpDefine.h; sourceTree = "<group>"; };
@@ -345,7 +345,7 @@
 		96B98BC51845E58F002E8552 /* rest_mm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rest_mm.png; sourceTree = "<group>"; };
 		96B98BC61845E58F002E8552 /* translate_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = translate_bg.png; sourceTree = "<group>"; };
 		96B98BC71845E58F002E8552 /* translate_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "translate_bg@2x.png"; sourceTree = "<group>"; };
-		96CEEBDA1845FAFD0045F15E /* HXDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXDebug.h; sourceTree = "<group>"; };
+		96CEEBDA1845FAFD0045F15E /* ESDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDebug.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -489,7 +489,7 @@
 				96B98A421845C643002E8552 /* BaseViewController */,
 				96B98A461845C643002E8552 /* CommonCH.h */,
 				96B98A471845C643002E8552 /* CommonCH.m */,
-				96CEEBDA1845FAFD0045F15E /* HXDebug.h */,
+				96CEEBDA1845FAFD0045F15E /* ESDebug.h */,
 				96B98A4F1845C643002E8552 /* CONSTS.h */,
 				96B98A531845C643002E8552 /* ESCommonMacros.h */,
 				96B98A541845C643002E8552 /* Theme */,
@@ -549,8 +549,8 @@
 		96B98A651845C643002E8552 /* HFHttpRequest */ = {
 			isa = PBXGroup;
 			children = (
-				96B98A661845C643002E8552 /* HFBaseHttpRequest.h */,
-				96B98A671845C643002E8552 /* HFBaseHttpRequest.m */,
+				96B98A661845C643002E8552 /* HFHttpRequestOperationManager.h */,
+				96B98A671845C643002E8552 /* HFHttpRequestOperationManager.m */,
 				96B98A681845C643002E8552 /* HFHttpConfigure.h */,
 				96B98A691845C643002E8552 /* HFHttpConfigure.m */,
 				96B98A6A1845C643002E8552 /* HFHttpDefine.h */,
@@ -1161,7 +1161,7 @@
 				96B98B4E1845C6B8002E8552 /* UIProgressView+AFNetworking.m in Sources */,
 				96B98B611845C6B8002E8552 /* SSKeychain.m in Sources */,
 				96B98B4C1845C6B8002E8552 /* UIButton+AFNetworking.m in Sources */,
-				96B98A881845C643002E8552 /* HFBaseHttpRequest.m in Sources */,
+				96B98A881845C643002E8552 /* HFHttpRequestOperationManager.m in Sources */,
 				96B98B931845C81E002E8552 /* ESMainViewController.m in Sources */,
 				96B98B771845C6B8002E8552 /* UIImage+Extensions.m in Sources */,
 				96B98A1D1845C56D002E8552 /* ESAppDelegate.m in Sources */,
