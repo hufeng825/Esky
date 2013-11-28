@@ -12,7 +12,7 @@
 
 #import <ShareSDK/ShareSDK.h>
 
-@interface ESLoginViewController :ESBaseViewController <ISSShareViewDelegate,ISSViewDelegate>
+@interface ESLoginViewController :ESBaseViewController <ISSShareViewDelegate,ISSViewDelegate,UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet FAInputView *logoNameInput;
 @property (weak, nonatomic) IBOutlet FAInputView *mmInput;

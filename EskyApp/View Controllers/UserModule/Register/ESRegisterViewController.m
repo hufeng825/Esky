@@ -58,7 +58,24 @@ NSUInteger selectedTextFieldTag;
 
     [self.headIconImageView.singleTap addTarget:self action:@selector(BtClick)];
     [self initInputs];
+    
+    
+    UITapGestureRecognizer *  singletap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    [singletap setNumberOfTapsRequired:1];
+    singletap.delegate = self;
+    [self.bgScrollView addGestureRecognizer:singletap];
 }
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+        return YES;
+}
+-(void)handleSingleTap:(id)sender
+{
+    [self.bgScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+    [self.view endEditing:YES];
+}
+
+
 
 -(void)initInputs
 {

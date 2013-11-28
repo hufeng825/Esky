@@ -35,7 +35,11 @@
 //        [self showWarning:@"邮箱格式错误" yOffset:-40.f];
 
     });
+    
+
 }
+
+
 
 -(void) viewWillDisappear:(BOOL)animated
 {

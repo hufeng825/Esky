@@ -42,6 +42,11 @@
     // Do any additional setup after loading the view from its nib.
     [bgScrollView setContentSize:CGSizeMake(self.view.width, self.view.height+15)];
     [self initInputs];
+    
+    UITapGestureRecognizer *  singletap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    [singletap setNumberOfTapsRequired:1];
+    singletap.delegate = self;
+    [bgScrollView addGestureRecognizer:singletap];
 
 }
 
@@ -67,6 +72,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    return YES;
+}
+-(void)handleSingleTap:(id)sender
+{
+    [self viewEndEdit];
+}
+
 
 #pragma mark themeChanged
 
