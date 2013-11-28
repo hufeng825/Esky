@@ -5,11 +5,11 @@
 //  Created by jason on 12-10-20.
 //  Copyright (c) 2012年 jason. All rights reserved.
 //
-#import "HFHttpRequestOperationManager.h"
+#import "HFHttpRequestManager.h"
 //#import "HFURL.h"
 
 
-@implementation HFHttpRequestOperationManager
+@implementation HFHttpRequestManager
 
 
 -(id)initWithBaseURL:(NSURL *)url
@@ -31,9 +31,9 @@
 
 
 //非单例模式
-+(HFHttpRequestOperationManager *)client
++(HFHttpRequestManager *)client
 {
-    HFHttpRequestOperationManager *client = [[self alloc]initWithBaseURL:nil];
+    HFHttpRequestManager *client = [[self alloc]initWithBaseURL:nil];
     #if !__has_feature(objc_arc)
         [client autorelease];
     #endif
@@ -42,14 +42,14 @@
 
 
 //单例模式
-+(HFHttpRequestOperationManager *)sharedClient
++(HFHttpRequestManager *)sharedClient
 {
-    static HFHttpRequestOperationManager *sharedHttpRequest = nil;
+    static HFHttpRequestManager *sharedHttpRequest = nil;
     static dispatch_once_t onceToken =0;
     
     dispatch_once(&onceToken, ^{
         if(!sharedHttpRequest)
-            sharedHttpRequest = [[HFHttpRequestOperationManager alloc] initWithBaseURL:nil];
+            sharedHttpRequest = [[HFHttpRequestManager alloc] initWithBaseURL:nil];
 
     });
     return sharedHttpRequest;

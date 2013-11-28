@@ -148,7 +148,7 @@
     [self presentSemiViewController:semiVC withOptions:@{
                                                          KNSemiModalOptionKeys.pushParentBack    : @(YES),
                                                          KNSemiModalOptionKeys.animationDuration : @(.5),
-                                                         KNSemiModalOptionKeys.shadowOpacity     : @(0.3)                                                         }];
+                                                         KNSemiModalOptionKeys.shadowOpacity     : @(0.5)                                                         }];
 }
 
 - (IBAction)regesitClick:(id)sender {

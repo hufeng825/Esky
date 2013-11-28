@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HFHttpRequestOperationManager.h"
+#import "HFHttpRequestManager.h"
 
 
 
 @interface ESBaseViewController : UIViewController
 //@property (nonatomic,strong)
-@property (nonatomic, strong) HFHttpRequestOperationManager *hfClient;
+@property (nonatomic, strong) HFHttpRequestManager *hfClient;
 
 
 

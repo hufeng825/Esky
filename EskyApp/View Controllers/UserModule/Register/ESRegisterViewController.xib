@@ -39,7 +39,7 @@
                             <string key="text">我是Esky
 我从事时尚行业已经有80年的历史了,
 现在我就是您的私享生活管家!</string>
-                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="11"/>
                             <color key="textColor" red="0.21568627450980393" green="0.12941176470588234" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
