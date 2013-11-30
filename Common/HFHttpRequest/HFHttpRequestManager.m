@@ -163,9 +163,11 @@
     AFFailCallBlock failRespon = ^(AFHTTPRequestOperation *operation, NSError *error)
     {
         HFHttpErrorRequestResult *errorRequest = [[HFHttpErrorRequestResult alloc] initWithRequest:operation.request userInfo:userInfo];
-        HFAlert_T_M_BT(@"错误警告", @"网络出错，请检查您的网络设置", @"确定");
-        if (callBack) {
-            callBack(errorRequest);
+        if (error.code != -999) {//异步取消
+            HFAlert_T_M_BT(@"错误警告", @"网络出错，请检查您的网络设置", @"确定");
+            if (callBack) {
+                callBack(errorRequest);
+            }
         }
     };
     return [failRespon copy];
