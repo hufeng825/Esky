@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		962977E31849C32500F3EACD /* libSinaWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98B201845C6B8002E8552 /* libSinaWeiboSDK.a */; };
+		962977E41849C32800F3EACD /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98B231845C6B8002E8552 /* libWeiboSDK.a */; };
+		962977E51849C32B00F3EACD /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98B271845C6B8002E8552 /* libWeChatSDK.a */; };
 		96B98A0D1845C56D002E8552 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98A0C1845C56D002E8552 /* Foundation.framework */; };
 		96B98A0F1845C56D002E8552 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98A0E1845C56D002E8552 /* CoreGraphics.framework */; };
 		96B98A111845C56D002E8552 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98A101845C56D002E8552 /* UIKit.framework */; };
@@ -80,9 +83,6 @@
 		96B98B6A1845C6B8002E8552 /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96B98B191845C6B8002E8552 /* Resource.bundle */; };
 		96B98B6B1845C6B8002E8552 /* ShareSDKCoreService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98B1A1845C6B8002E8552 /* ShareSDKCoreService.framework */; };
 		96B98B6C1845C6B8002E8552 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98B1E1845C6B8002E8552 /* TencentOpenAPI.framework */; };
-		96B98B6D1845C6B8002E8552 /* libSinaWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98B201845C6B8002E8552 /* libSinaWeiboSDK.a */; };
-		96B98B6E1845C6B8002E8552 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98B231845C6B8002E8552 /* libWeiboSDK.a */; };
-		96B98B6F1845C6B8002E8552 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98B271845C6B8002E8552 /* libWeChatSDK.a */; };
 		96B98B701845C6B8002E8552 /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98B2A1845C6B8002E8552 /* ShareSDK.framework */; };
 		96B98B711845C6B8002E8552 /* ShareSDKiPhoneAppRecommendShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98B2C1845C6B8002E8552 /* ShareSDKiPhoneAppRecommendShareViewUI.framework */; };
 		96B98B721845C6B8002E8552 /* ShareSDKiPhoneDefaultShareViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96B98B2D1845C6B8002E8552 /* ShareSDKiPhoneDefaultShareViewUI.bundle */; };
@@ -361,11 +361,13 @@
 				96B98BA41845CB28002E8552 /* MobileCoreServices.framework in Frameworks */,
 				96B98BA21845CACA002E8552 /* Security.framework in Frameworks */,
 				96B98BA01845CA3E002E8552 /* MessageUI.framework in Frameworks */,
+				962977E31849C32500F3EACD /* libSinaWeiboSDK.a in Frameworks */,
 				96B98B9E1845CA32002E8552 /* QuartzCore.framework in Frameworks */,
 				96B98B9C1845CA26002E8552 /* CoreTelephony.framework in Frameworks */,
-				96B98B6F1845C6B8002E8552 /* libWeChatSDK.a in Frameworks */,
 				96B98B6B1845C6B8002E8552 /* ShareSDKCoreService.framework in Frameworks */,
 				96B98A0F1845C56D002E8552 /* CoreGraphics.framework in Frameworks */,
+				962977E41849C32800F3EACD /* libWeiboSDK.a in Frameworks */,
+				962977E51849C32B00F3EACD /* libWeChatSDK.a in Frameworks */,
 				96B98A111845C56D002E8552 /* UIKit.framework in Frameworks */,
 				96B98B671845C6B8002E8552 /* WeChatConnection.framework in Frameworks */,
 				96B98B681845C6B8002E8552 /* AGCommon.framework in Frameworks */,
@@ -376,10 +378,8 @@
 				96B98B701845C6B8002E8552 /* ShareSDK.framework in Frameworks */,
 				96B98B731845C6B8002E8552 /* ShareSDKiPhoneDefaultShareViewUI.framework in Frameworks */,
 				96B98B711845C6B8002E8552 /* ShareSDKiPhoneAppRecommendShareViewUI.framework in Frameworks */,
-				96B98B6E1845C6B8002E8552 /* libWeiboSDK.a in Frameworks */,
 				96B98B6C1845C6B8002E8552 /* TencentOpenAPI.framework in Frameworks */,
 				96B98B661845C6B8002E8552 /* SinaWeiboConnection.framework in Frameworks */,
-				96B98B6D1845C6B8002E8552 /* libSinaWeiboSDK.a in Frameworks */,
 				96B98B631845C6B8002E8552 /* MailConnection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1333,9 +1333,7 @@
 				INFOPLIST_FILE = "EskyApp/EskyApp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/jason/Desktop/EskyApp/External/ShareSDK_v2.6/Extend/SinaWeiboSDK,
-					/Users/jason/Desktop/EskyApp/External/ShareSDK_v2.6/Extend/TencentWeiboSDK,
-					/Users/jason/Desktop/EskyApp/External/ShareSDK_v2.6/Extend/WeChatSDK,
+					"$(SRCROOT)/External/ShareSDK_v2.6/Extend/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1360,9 +1358,7 @@
 				INFOPLIST_FILE = "EskyApp/EskyApp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/jason/Desktop/EskyApp/External/ShareSDK_v2.6/Extend/SinaWeiboSDK,
-					/Users/jason/Desktop/EskyApp/External/ShareSDK_v2.6/Extend/TencentWeiboSDK,
-					/Users/jason/Desktop/EskyApp/External/ShareSDK_v2.6/Extend/WeChatSDK,
+					"$(SRCROOT)/External/ShareSDK_v2.6/Extend/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
