@@ -37,4 +37,13 @@ typedef enum
     method:(HFHttpMethod)method
     ResponArgument:(HFHttpResponArguments *)responArguments;
 
+- (void)cancelRequestByURI:(NSString *)uri;
+
+- (void)pauseAll;
+
+- (void)resumeAll;
+
+- (void)stopAll;
+
+
 @end

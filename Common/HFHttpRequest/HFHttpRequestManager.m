@@ -8,6 +8,7 @@
 #import "HFHttpRequestManager.h"
 //#import "HFURL.h"
 
+#define kUserInfoKey @"uri"
 
 @implementation HFHttpRequestManager
 
@@ -237,8 +238,40 @@
     
     [self cachePolicy:responArguments.cachePolicy
               request:(NSMutableURLRequest*)requestOperation.request ];
+    requestOperation.userInfo = @{kUserInfoKey: url};
 }
 
+
+#pragma mark - cancel request
+
+- (void)cancelRequestByURI:(NSString *)uri
+{
+    NSArray *operations = [self.operationQueue operations];
+    
+    for (AFHTTPRequestOperation *op in operations) {
+        if ([uri isEqualToString:[op.userInfo objectForKey:kUserInfoKey]]) {
+            [op cancel];
+        }
+    }
+    
+}
+
+
+- (void)pauseAll {
+    
+    [self.operationQueue setSuspended: YES];
+}
+
+- (void)resumeAll {
+    
+    [self.operationQueue setSuspended: NO];
+}
+
+
+- (void)stopAll {
+    
+    [self.operationQueue cancelAllOperations];
+}
 
 - (NSString *) describeDictionary :(NSDictionary *)dict
 {
