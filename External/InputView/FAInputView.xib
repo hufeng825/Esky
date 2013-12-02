@@ -21,7 +21,7 @@
                     <rect key="frame" x="94" y="0.0" width="187" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert"/>
                 </textField>
                 <imageView userInteractionEnabled="NO" tag="102" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_true.png" id="EJK-7x-aiW">

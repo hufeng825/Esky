@@ -10,6 +10,10 @@
 		962977E31849C32500F3EACD /* libSinaWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98B201845C6B8002E8552 /* libSinaWeiboSDK.a */; };
 		962977E41849C32800F3EACD /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98B231845C6B8002E8552 /* libWeiboSDK.a */; };
 		962977E51849C32B00F3EACD /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98B271845C6B8002E8552 /* libWeChatSDK.a */; };
+		9688BD64184C8E2B00F9A8E9 /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD63184C8E2B00F9A8E9 /* LoginRequest.m */; };
+		9688BD67184C903B00F9A8E9 /* HFHttpRequestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD66184C903B00F9A8E9 /* HFHttpRequestObject.m */; };
+		9688BD6B184C963400F9A8E9 /* NSData+HFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD6A184C963400F9A8E9 /* NSData+HFExtension.m */; };
+		9688BD6E184C9A5B00F9A8E9 /* NSDate+HFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD6D184C9A5B00F9A8E9 /* NSDate+HFExtension.m */; };
 		96B98A0D1845C56D002E8552 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98A0C1845C56D002E8552 /* Foundation.framework */; };
 		96B98A0F1845C56D002E8552 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98A0E1845C56D002E8552 /* CoreGraphics.framework */; };
 		96B98A111845C56D002E8552 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98A101845C56D002E8552 /* UIKit.framework */; };
@@ -148,6 +152,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9688BD62184C8E2B00F9A8E9 /* LoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginRequest.h; path = Request/LogoinRequest/LoginRequest.h; sourceTree = "<group>"; };
+		9688BD63184C8E2B00F9A8E9 /* LoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginRequest.m; path = Request/LogoinRequest/LoginRequest.m; sourceTree = "<group>"; };
+		9688BD65184C903B00F9A8E9 /* HFHttpRequestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpRequestObject.h; sourceTree = "<group>"; };
+		9688BD66184C903B00F9A8E9 /* HFHttpRequestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpRequestObject.m; sourceTree = "<group>"; };
+		9688BD69184C963400F9A8E9 /* NSData+HFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+HFExtension.h"; path = "NSData+Additions/NSData+HFExtension.h"; sourceTree = "<group>"; };
+		9688BD6A184C963400F9A8E9 /* NSData+HFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+HFExtension.m"; path = "NSData+Additions/NSData+HFExtension.m"; sourceTree = "<group>"; };
+		9688BD6C184C9A5B00F9A8E9 /* NSDate+HFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+HFExtension.h"; path = "NSDate+Additons/NSDate+HFExtension.h"; sourceTree = "<group>"; };
+		9688BD6D184C9A5B00F9A8E9 /* NSDate+HFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+HFExtension.m"; path = "NSDate+Additons/NSDate+HFExtension.m"; sourceTree = "<group>"; };
 		96B98A091845C56D002E8552 /* EskyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EskyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B98A0C1845C56D002E8552 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96B98A0E1845C56D002E8552 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -397,6 +409,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9688BD60184C8D2B00F9A8E9 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				96B98B3D1845C6B8002E8552 /* UIWebImageView */,
+				96B98AE41845C6B8002E8552 /* HeaderIconImageView */,
+				96B98AFB1845C6B8002E8552 /* MBProgressHUD */,
+				96B98AE71845C6B8002E8552 /* InputView */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		9688BD61184C8D6000F9A8E9 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				9688BD62184C8E2B00F9A8E9 /* LoginRequest.h */,
+				9688BD63184C8E2B00F9A8E9 /* LoginRequest.m */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
+		9688BD68184C95F000F9A8E9 /* NSData+Additions */ = {
+			isa = PBXGroup;
+			children = (
+				9688BD69184C963400F9A8E9 /* NSData+HFExtension.h */,
+				9688BD6A184C963400F9A8E9 /* NSData+HFExtension.m */,
+			);
+			name = "NSData+Additions";
+			sourceTree = "<group>";
+		};
 		96B98A001845C56D002E8552 = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +481,7 @@
 		96B98A121845C56D002E8552 /* EskyApp */ = {
 			isa = PBXGroup;
 			children = (
+				9688BD61184C8D6000F9A8E9 /* Request */,
 				96B98B811845C81E002E8552 /* View Controllers */,
 				96B98A411845C643002E8552 /* Common */,
 				96B98A1B1845C56D002E8552 /* ESAppDelegate.h */,
@@ -550,6 +592,8 @@
 			isa = PBXGroup;
 			children = (
 				96B98A661845C643002E8552 /* HFHttpRequestManager.h */,
+				9688BD65184C903B00F9A8E9 /* HFHttpRequestObject.h */,
+				9688BD66184C903B00F9A8E9 /* HFHttpRequestObject.m */,
 				96B98A671845C643002E8552 /* HFHttpRequestManager.m */,
 				96B98A681845C643002E8552 /* HFHttpConfigure.h */,
 				96B98A691845C643002E8552 /* HFHttpConfigure.m */,
@@ -576,17 +620,14 @@
 		96B98ABB1845C6B8002E8552 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				9688BD60184C8D2B00F9A8E9 /* UIKit */,
 				96B98BAF1845E506002E8552 /* Addition */,
 				96B98ABC1845C6B8002E8552 /* AFNetworking */,
 				96B98AE11845C6B8002E8552 /* EGOCache */,
-				96B98AE41845C6B8002E8552 /* HeaderIconImageView */,
-				96B98AE71845C6B8002E8552 /* InputView */,
 				96B98AEB1845C6B8002E8552 /* IQKeyBoardManager */,
 				96B98AEE1845C6B8002E8552 /* JTObjectMapping */,
-				96B98AFB1845C6B8002E8552 /* MBProgressHUD */,
 				96B98B091845C6B8002E8552 /* Security */,
 				96B98B0E1845C6B8002E8552 /* ShareSDK_v2.6 */,
-				96B98B3D1845C6B8002E8552 /* UIWebImageView */,
 			);
 			path = External;
 			sourceTree = SOURCE_ROOT;
@@ -955,6 +996,7 @@
 		96B98BAF1845E506002E8552 /* Addition */ = {
 			isa = PBXGroup;
 			children = (
+				9688BD68184C95F000F9A8E9 /* NSData+Additions */,
 				96B98B001845C6B8002E8552 /* NSArray+Additions */,
 				96B98B031845C6B8002E8552 /* NSDictionary+Addition */,
 				96B98B061845C6B8002E8552 /* NSString+Additions */,
@@ -962,6 +1004,8 @@
 				96B98B341845C6B8002E8552 /* UIImage+Extensions */,
 				96B98B371845C6B8002E8552 /* UIView+Additions */,
 				96B98B3A1845C6B8002E8552 /* UIViewController+KNSemiModal */,
+				9688BD6C184C9A5B00F9A8E9 /* NSDate+HFExtension.h */,
+				9688BD6D184C9A5B00F9A8E9 /* NSDate+HFExtension.m */,
 			);
 			name = Addition;
 			sourceTree = "<group>";
@@ -1145,6 +1189,8 @@
 				96B98B451845C6B8002E8552 /* AFURLConnectionOperation.m in Sources */,
 				96B98A771845C643002E8552 /* ESConfig.m in Sources */,
 				96B98B621845C6B8002E8552 /* SSKeychainQuery.m in Sources */,
+				9688BD6E184C9A5B00F9A8E9 /* NSDate+HFExtension.m in Sources */,
+				9688BD67184C903B00F9A8E9 /* HFHttpRequestObject.m in Sources */,
 				96B98B4F1845C6B8002E8552 /* UIWebView+AFNetworking.m in Sources */,
 				96B98B421845C6B8002E8552 /* AFHTTPSessionManager.m in Sources */,
 				96B98B431845C6B8002E8552 /* AFNetworkReachabilityManager.m in Sources */,
@@ -1158,6 +1204,7 @@
 				96B98B441845C6B8002E8552 /* AFSecurityPolicy.m in Sources */,
 				96B98B571845C6B8002E8552 /* JTMappings.m in Sources */,
 				96B98B551845C6B8002E8552 /* JTDataMappings.m in Sources */,
+				9688BD64184C8E2B00F9A8E9 /* LoginRequest.m in Sources */,
 				96B98B4E1845C6B8002E8552 /* UIProgressView+AFNetworking.m in Sources */,
 				96B98B611845C6B8002E8552 /* SSKeychain.m in Sources */,
 				96B98B4C1845C6B8002E8552 /* UIButton+AFNetworking.m in Sources */,
@@ -1184,6 +1231,7 @@
 				96B98B971845C81E002E8552 /* ESModifyPassWordViewController.m in Sources */,
 				96B98B791845C6B8002E8552 /* UIViewController+KNSemiModal.m in Sources */,
 				96B98B591845C6B8002E8552 /* JTValidMappingKey.m in Sources */,
+				9688BD6B184C963400F9A8E9 /* NSData+HFExtension.m in Sources */,
 				96B98B401845C6B8002E8552 /* AFHTTPRequestOperation.m in Sources */,
 				96B98B5A1845C6B8002E8552 /* NSObject+JTObjectMapping.m in Sources */,
 				96B98B541845C6B8002E8552 /* IQKeyBoardManager.m in Sources */,
