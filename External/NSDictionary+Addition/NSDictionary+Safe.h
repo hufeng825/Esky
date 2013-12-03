@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDictionary (HXFrame)
+@interface NSDictionary (HFExtension)
 // jason: return an empty string if the value is NSNull or not a string.
 - (NSString *)stringForKey:(id)key;
 

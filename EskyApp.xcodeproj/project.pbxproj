@@ -591,9 +591,9 @@
 		96B98A651845C643002E8552 /* HFHttpRequest */ = {
 			isa = PBXGroup;
 			children = (
-				96B98A661845C643002E8552 /* HFHttpRequestManager.h */,
 				9688BD65184C903B00F9A8E9 /* HFHttpRequestObject.h */,
 				9688BD66184C903B00F9A8E9 /* HFHttpRequestObject.m */,
+				96B98A661845C643002E8552 /* HFHttpRequestManager.h */,
 				96B98A671845C643002E8552 /* HFHttpRequestManager.m */,
 				96B98A681845C643002E8552 /* HFHttpConfigure.h */,
 				96B98A691845C643002E8552 /* HFHttpConfigure.m */,

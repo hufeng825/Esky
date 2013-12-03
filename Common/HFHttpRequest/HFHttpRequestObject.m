@@ -69,9 +69,13 @@
 {
     assert(key != nil);
     if (value == nil)
+    {
         [self removeObjectForKey:key];
+    }
     else
+    {
         [self setObject:value forKey:key];
+    }
     
 }
 

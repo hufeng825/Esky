@@ -9,7 +9,7 @@
 #import "NSDictionary+Safe.h"
 NSString * const kEmptyString = @"";
 
-@implementation NSDictionary (HXFrame)
+@implementation NSDictionary (HFExtension)
 
 - (NSString *)stringForKey:(id)key
 {

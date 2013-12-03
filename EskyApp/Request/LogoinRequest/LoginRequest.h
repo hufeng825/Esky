@@ -7,11 +7,13 @@
 //
 
 #import "HFHttpRequestManager.h"
+#import "HFHttpRequestObject.h"
+
 
 @interface LoginRequest : HFHttpRequestManager
 
 @end
 
-@interface LoginArgument : NSObject
+@interface LoginArgument : HFHttpRequestObject
 
 @end
