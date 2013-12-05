@@ -13,4 +13,13 @@
 
 @interface ESRequestParameters : HFHttpRequestParameters
 
+//注册接口
+
+-(ESRequestParameters *) requestRegisterParametersWith:(NSString *)email
+                                              userName:(NSString *)userName
+                                              nickName:(NSString *)nickName
+                                                avatar:(NSString *)avatarpath
+                                              password:(NSString *)password;
+
+
 @end
