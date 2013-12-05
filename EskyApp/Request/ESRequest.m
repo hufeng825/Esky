@@ -1,13 +1,13 @@
 //
-//  HFHttpRequestObject.h
+//  LogRequest.m
 //  EskyApp
 //
 //  Created by jason on 13-12-2.
 //  Copyright (c) 2013年 fashion. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "ESRequest.h"
 
-@interface HFHttpRequestObject : NSMutableDictionary
+@implementation ESRequest
 
 @end

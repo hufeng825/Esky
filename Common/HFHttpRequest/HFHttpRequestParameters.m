@@ -6,12 +6,12 @@
 //  Copyright (c) 2013年 fashion. All rights reserved.
 //
 
-#import "HFHttpRequestObject.h"
+#import "HFHttpRequestParameters.h"
 #import "NSString+Additions.h"
 #import "NSData+HFExtension.h"
 #import "NSDate+HFExtension.h"
 
-@implementation HFHttpRequestObject
+@implementation HFHttpRequestParameters
 
 - (NSArray *)allKeys
 {

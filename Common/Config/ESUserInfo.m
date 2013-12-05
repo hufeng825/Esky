@@ -24,8 +24,8 @@
         self.tinyurl = [info stringForKey:@"tinyurl"];
         self.headurl = [info stringForKey:@"headurl"];
         self.mainurl = [info stringForKey:@"mainurl"];
-        self.online = [[info objectForKey:@"online"] boolValue];
-        self.isRegister = [[info objectForKey:@"isRegister"]boolValue];
+        self.online = [[info stringForKey:@"online"] boolValue];
+        self.isRegister = [[info stringForKey:@"isRegister"]boolValue];
         self.phoneNum = [info stringForKey:@"phoneNum"];
         self.userName = [info stringForKey:@"userName"];
         }
