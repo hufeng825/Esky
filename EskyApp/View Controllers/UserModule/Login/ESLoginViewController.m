@@ -12,6 +12,8 @@
 #import "ESRegisterViewController.h"
 #import "ESModifyPassWordViewController.h"
 
+#import "ESRequest.h"
+
 
 @interface ESLoginViewController ()
 {
@@ -155,6 +157,16 @@
     [self presentViewController:rg animated:YES completion:Nil];
 }
 
+- (IBAction)loginClick:(id)sender {
+    ESRequestParameters *postObject = [ESRequestParameters requestLoginParameters:self.logoNameInput.text passWord:self.mmInput.text];
+    
+    [ESRequest loginRequest:@"http://192.168.24.95:8080/account/register.json" sucessRespon:^(HFHttpRequestResult *result) {
+        NSLog(@"%@",result.Json);
+    } failRespon:^(HFHttpErrorRequestResult *erroresult) {
+        NSLog(@"%@",[erroresult.error description]);
+    } requestParameter:postObject];
+}
+
 - (IBAction)qqloginClick:(id)sender {
     
     id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
@@ -226,6 +238,8 @@
          
      }];
 }
+
+
 
 - (void)viewOnWillDisplay:(UIViewController *)viewController shareType:(ShareType)shareType
 {

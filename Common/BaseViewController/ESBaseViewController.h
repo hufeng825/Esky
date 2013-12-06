@@ -12,16 +12,6 @@
 
 
 @interface ESBaseViewController : UIViewController
-//@property (nonatomic,strong)
-@property (nonatomic, strong) HFHttpRequestManager *hfClient;
-
-
-
--(void)postUrl:(NSString*)url
- postArguments:(NSDictionary *)parameters
-ResponArgument:(HFHttpResponArguments *)responArguments;
--(void)gettUrl:(NSString*)url
-ResponArgument:(HFHttpResponArguments *)responArguments;
 
 -(void)themeChanged;
 

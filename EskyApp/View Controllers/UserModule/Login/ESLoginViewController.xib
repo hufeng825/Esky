@@ -71,6 +71,9 @@
                             <state key="normal" title="登录" backgroundImage="bt_grey.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="loginClick:" destination="-1" eventType="touchUpInside" id="SNC-q4-IDY"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uWN-cy-qNA">
                             <rect key="frame" x="7" y="408" width="145" height="68"/>

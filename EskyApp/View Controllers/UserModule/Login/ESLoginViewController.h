@@ -25,5 +25,6 @@
 - (IBAction)regesitClick:(id)sender;
 - (IBAction)qqloginClick:(id)sender;
 - (IBAction)sinaLoginClick:(id)sender;
+- (IBAction)loginClick:(id)sender;
 
 @end

@@ -49,7 +49,16 @@
 
 
 
-@interface HFHttpRequestParameters : NSMutableDictionary
+@interface HFHttpRequestParameters : NSObject
+{
+    
+@protected
+__weak	NSMutableDictionary*	_args;
+
+}
+
+@property (nonatomic,weak,readonly) NSDictionary *arg;
+
 
 - (NSArray *)allKeys;
 

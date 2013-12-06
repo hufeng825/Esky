@@ -46,6 +46,8 @@
 
 @property (nonatomic, weak) id<FATextFieldDelegate>delegate;
 
+@property (nonatomic, copy) NSString * text;
+
 -(void)setData:(NSString *)infoTitle placeStr:(NSString *)placeStr delegate:(id)delgate;
 
 -(void) becomeFirstResponder;

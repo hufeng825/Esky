@@ -14,7 +14,6 @@
 
 @implementation ESBaseViewController
 
-@synthesize  hfClient;
 
 
 - (id)init
@@ -110,31 +109,6 @@
 }
 
 
-#pragma mark  -  网络请求
-- (HFHttpRequestManager *)hfClient
-{
-    if (!hfClient) {
-        self.hfClient = [HFHttpRequestManager client];
-    }
-    
-    return hfClient;
-}
-
-
-- (void)postUrl         :(NSString *)url
-        postArguments   :(NSDictionary *)parameters
-        ResponArgument  :(HFHttpResponArguments *)responArguments
-{
-    [self.hfClient Url:url parameters:parameters method:POSTHttpMethod ResponArgument:responArguments];
-}
-
-
-
-- (void)gettUrl         :(NSString *)url
-        ResponArgument  :(HFHttpResponArguments *)responArguments
-{
-    [self.hfClient Url:url parameters:nil method:GETHttpMethod ResponArgument:responArguments];
-}
 
 #pragma mark -
 #pragma mark Execution code
@@ -167,10 +141,7 @@
     return NO;
 }
 
-- (void)dealloc
-{
-    [[hfClient operationQueue]cancelAllOperations];
-}
+
 
 
 

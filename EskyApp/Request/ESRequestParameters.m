@@ -10,7 +10,7 @@
 
 @implementation ESRequestParameters
 
--(ESRequestParameters *) requestRegisterParametersWith:(NSString *)email
++ (ESRequestParameters *) requestRegisterParametersWith:(NSString *)email
                                               userName:(NSString *)userName
                                               nickName:(NSString *)nickName
                                                 avatar:(NSString *)avatarpath
@@ -22,8 +22,17 @@
     [parameter setString:nickName forKey:@"nickName"];
     [parameter setString:[password stringFromMD5] forKey:@"password"];
     NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:avatarpath], 0.5);
-    [parameter setObject:imageData forKey:@"avatar"];
+//    [parameter setObject:imageData forKey:@"avatar"];
     return parameter;
 };
 
+
++ (ESRequestParameters *) requestLoginParameters:(NSString *)username
+                                        passWord:(NSString *)passWord
+{
+    ESRequestParameters *parameter = [[ESRequestParameters alloc] init];
+    [parameter setString:username forKey:@"username"];
+    [parameter setString:passWord forKey:@"password"];
+    return parameter;
+};
 @end

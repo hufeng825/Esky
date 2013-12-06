@@ -13,102 +13,108 @@
 
 @implementation HFHttpRequestParameters
 
+@synthesize     arg = _args;
+
 - (NSArray *)allKeys
 {
-	return [self allKeys];
+	return [_args allKeys];
 }
 
 - (NSArray *)allValues
 {
-    return [self allValues];
+    return [_args allValues];
 }
 
 
-- (NSString *)stringForKey:(NSString *)key
+- (id) init {
+	self = [super init];
+	if (self) {
+		_args = [[NSMutableDictionary alloc] init];
+	}
+	return self;
+}
+
+- (NSString*)stringForKey:(NSString*)key
 {
-    return [self objectForKey:key];
+    return [_args objectForKey:key];
 }
 
-- (NSInteger)intForKey:(NSString *)key
+- (NSInteger)intForKey:(NSString*)key
 {
 	return [[self stringForKey:key] intValue];
 }
 
-- (double)doubleForKey:(NSString *)key
+- (double)doubleForKey:(NSString*)key
 {
 	return [[self stringForKey:key] longLongValue];
 }
 
 
-- (BOOL)boolForKey:(NSString *)key
+- (BOOL)boolForKey:(NSString*)key
 {
 	return [[self stringForKey:key] boolValue];
 }
 
 
-- (NSDate *)dateForKey:(NSString *)key
+- (NSDate*)dateForKey:(NSString*)key
 {
     return [self dateForKey:key withFormat:@"yyyy-MM-dd HH:mm:ss"];
 }
 
 
-- (NSDate *)dateForKey:(NSString *)key withFormat:(NSString *)format
+- (NSDate*)dateForKey:(NSString*)key withFormat:(NSString*)format
 {
 	return [NSDate dateWithString:[self stringForKey:key] format:format];
 }
 
-- (NSData *)dataForKey:(NSString *)key
+- (NSData*)dataForKey:(NSString*)key
 {
 	return [NSData dataFromBase64String:[self stringForKey:key]];
 }
 
 
 
-- (void)setString:(NSString *)value forKey:(NSString *)key
+- (void)setString:(NSString*)value forKey:(NSString*)key
 {
     assert(key != nil);
     if (value == nil)
-    {
-        [self removeObjectForKey:key];
-    }
+        [_args removeObjectForKey:key];
     else
-    {
-        [self setObject:value forKey:key];
-    }
+        [_args setObject:value forKey:key];
     
 }
 
 
-- (void)setInt:(NSInteger)value forKey:(NSString *)key
+- (void)setInt:(NSInteger)value forKey:(NSString*)key
 {
-	[self setString:[NSString stringWithFormat:@"%ld", (long)value] forKey:key];
+	[self setString:[NSString stringWithFormat:@"%d", value] forKey:key];
 }
 
 
-- (void)setDouble:(double)value forKey:(NSString *)key
+- (void)setDouble:(double)value forKey:(NSString*)key
 {
 	[self setString:[NSString stringWithFormat:@"%f", value] forKey:key];
 }
 
-- (void)setBool:(BOOL)value forKey:(NSString *)key
+- (void)setBool:(BOOL)value forKey:(NSString*)key
 {
 	[self setString:(value == NO) ? @"0" : @"1" forKey:key];
 }
 
 
-- (void)setDate:(NSDate *)value forKey:(NSString *)key
+- (void)setDate:(NSDate*)value forKey:(NSString*)key
 {
 	[self setDate:value forKey:key withFormat:@"yyyy-MM-dd HH:mm:ss"];
 }
 
 
-- (void)setDate:(NSDate *)value forKey:(NSString *)key withFormat:(NSString *)format
+- (void)setDate:(NSDate*)value forKey:(NSString*)key withFormat:(NSString*)format
 {
 	[self setString:[NSString stringWithDate:value format:format] forKey:key];
 }
 
 
-- (void)setData:(NSData *)value forKey:(NSString *)key
+- (void)setData:(NSData*)value forKey:(NSString*)key
 {
 	[self setString:[NSString base64StringFromData:value] forKey:key];
 }

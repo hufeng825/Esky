@@ -100,22 +100,22 @@
     
     
     
-    HFHttpResponArguments *responArgument =  [[HFHttpResponArguments alloc]init];
-    responArgument.sucessRespon = HFHttp_Success_BLOCK
-    {
-        NSLog(@"%@",result.Json);
-    };
-    
-
-
-    
-    
-    NSString *url = @"http://api.t.sina.com.cn/provinces.json";
-    NSLog(@"%lu",(unsigned long)[url gotChineseCount]);
-
-    [self gettUrl:url ResponArgument:responArgument];
-    
-    url = @"http://httpbin.org/post";
+//    HFHttpResponArguments *responArgument =  [[HFHttpResponArguments alloc]init];
+//    responArgument.sucessRespon = HFHttp_Success_BLOCK
+//    {
+//        NSLog(@"%@",result.Json);
+//    };
+//    
+//
+//
+//    
+//    
+//    NSString *url = @"http://api.t.sina.com.cn/provinces.json";
+//    NSLog(@"%lu",(unsigned long)[url gotChineseCount]);
+//
+//    [self gettUrl:url ResponArgument:responArgument];
+//    
+//    url = @"http://httpbin.org/post";
 
     
     

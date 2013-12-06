@@ -7,9 +7,19 @@
 //
 
 #import "HFHttpRequestManager.h"
-
+#import "HFHttpRequestParameters.h"
+#import "ESRequestParameters.h"
 
 @interface ESRequest : HFHttpRequestManager
+
+
+
+
++ (void) loginRequest :(NSString *)url
+         sucessRespon :(HFHttpSuccessCallBack)sucessRespon
+            failRespon:(HFHttpErrorRequestCallBack)failRespon
+      requestParameter:(ESRequestParameters *)requestParameter;
+
 
 @end
 

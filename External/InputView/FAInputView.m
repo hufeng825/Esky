@@ -81,6 +81,10 @@
     return (UIImageView *) [self.customView viewWithTag:102];
 }
 
+-(NSString *)text
+{
+    return  [self textField].text;
+}
 
 -(void)setPlaceholderText:(NSString *)placeholderText
 {
