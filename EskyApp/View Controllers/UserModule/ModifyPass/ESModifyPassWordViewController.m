@@ -17,7 +17,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self                      = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
@@ -28,15 +28,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    double delayInSeconds = .1;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    double delayInSeconds     = .1;
+    dispatch_time_t popTime   = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
        // [self showSuccessView];
 //        [self showWarning:@"邮箱格式错误" yOffset:-40.f];
         [self.mmInput becomeFirstResponder];
 
     });
-    
+
 
 }
 
@@ -49,10 +49,10 @@
 }
 
 -(void)themeChanged
-{    
+{
     [self.okBt setBackgroundImage:[[FAThemeManager sharedManager]themeImageWithName:@"bt.png"] forState:UIControlStateNormal];
     [self.successBt setBackgroundImage:[[FAThemeManager sharedManager]themeImageWithName:@"bt.png"] forState:UIControlStateNormal];
-    
+
 }
 
 

@@ -111,7 +111,8 @@ NSUInteger selectedTextFieldTag;
     [self presentViewController:ipc animated:YES completion:Nil];
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info{
     NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
     if ([mediaType isEqualToString:@"public.image"]){
         // UIImage *selectedImage = [info objectForKey:UIImagePickerControllerOriginalImage];
