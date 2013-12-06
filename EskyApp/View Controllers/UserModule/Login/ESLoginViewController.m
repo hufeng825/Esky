@@ -95,7 +95,7 @@
 -(void)keyboarShow:(FAInputView *)inputView
 {
     if (is4InchScreen()) {
-        [self setBgContentOffsetAnimation:190];
+        [self setBgContentOffsetAnimation:140];
     }
     else{
         [self setBgContentOffsetAnimation:200];
@@ -106,7 +106,7 @@
 //因为runloop原因 所以setContentOffset animation 有时候卡顿 所以重写此方法
 -(void)setBgContentOffsetAnimation:(CGFloat )OffsetY
 {
-    [UIView animateWithDuration:.25 animations:^{
+    [UIView animateWithDuration:.5 animations:^{
         bgScrollView.contentOffset = CGPointMake(0, OffsetY);
     }];
 }
@@ -135,7 +135,6 @@
     else if(textField.tag == MMTag)
     {
         [self.view endEditing:YES];
-        [bgScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
         [self setBgContentOffsetAnimation:0];
     }
        return YES;

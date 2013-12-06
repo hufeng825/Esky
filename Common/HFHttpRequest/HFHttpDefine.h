@@ -10,7 +10,7 @@
 #define HFFrame_Header_h
 #import "HFHttpRequestResult.h"
 #import "AFHTTPRequestOperation.h"
-
+#import "HFHttpRequestParameters.h"
 
 #define HFHttp_Success_BLOCK ^(HFHttpRequestResult *result)
 
@@ -27,12 +27,14 @@ typedef  void(^AFSucessResponBlock) (AFHTTPRequestOperation *operation, id respo
 
 typedef  void(^AFFailCallBlock)     (AFHTTPRequestOperation *operation, NSError *error);
 
+typedef  void(^AFUploadBlock)       (id<AFMultipartFormData> formData) ;
 
 
 typedef  void (^HFHttpSuccessCallBack)      (HFHttpRequestResult *result);
 
 typedef  void (^HFHttpErrorRequestCallBack) (HFHttpErrorRequestResult *erroresult);
 
+typedef  void (^HFHttpUploadCallBack) (id<HFMultipartFormData> formData);
 
 typedef  void (^HFHttpDownloadProgressCallBlock)(NSUInteger bytesRead,
                                                  long long totalBytesRead,

@@ -5,10 +5,10 @@
 	<key>kThemeColor</key>
 	<string>153,153,153</string>
 	<key>kInputTitleColor</key>
-	<string>195,20,41</string>
+	<string>133,133,133</string>
 	<key>kInputActiveColor</key>
-	<string>255,255,255</string>
+	<string>133,133,133</string>
 	<key>kInputNormalColor</key>
-	<string>153,153,153</string>
+	<string>133,133,133</string>
 </dict>
 </plist>

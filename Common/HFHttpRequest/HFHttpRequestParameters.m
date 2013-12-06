@@ -81,7 +81,7 @@
 
 - (void)setInt:(NSInteger)value forKey:(NSString *)key
 {
-	[self setString:[NSString stringWithFormat:@"%d", value] forKey:key];
+	[self setString:[NSString stringWithFormat:@"%ld", (long)value] forKey:key];
 }
 
 
@@ -115,3 +115,5 @@
 
 
 @end
+
+

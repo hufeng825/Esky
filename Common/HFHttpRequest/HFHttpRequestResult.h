@@ -21,7 +21,9 @@
 
 @property (nonatomic,copy) NSURLRequest *request;
 
-- (HFHttpRequestResult*)initWithData:(id)Json request:(NSURLRequest *)request userInfo:(id)userInfo;
+- (HFHttpRequestResult *)initWithData:(id)Json
+                              request:(NSURLRequest *)request
+                              userInfo:(id)userInfo;
 
 - (BOOL)isSuccess;
 - (BOOL)isSessionTimeoutError;
@@ -41,6 +43,6 @@
 @property (nonatomic,copy) id userInfo;
 
 
--(HFHttpErrorRequestResult*) initWithRequest:(NSURLRequest *)request userInfo:(id)userInfo;
+-(HFHttpErrorRequestResult *) initWithRequest:(NSURLRequest *)request userInfo:(id)userInfo;
 //@property (nonatomic,copy) 
 @end

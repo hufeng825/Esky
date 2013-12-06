@@ -7,6 +7,47 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AFURLRequestSerialization.h"
+
+@protocol  HFMultipartFormData <AFMultipartFormData>
+
+@optional
+
+- (BOOL)appendPartWithFileURL:(NSURL *)fileURL
+                         name:(NSString *)name
+                        error:(NSError * __autoreleasing *)error;
+
+
+- (BOOL)appendPartWithFileURL:(NSURL *)fileURL
+                         name:(NSString *)name
+                     fileName:(NSString *)fileName
+                     mimeType:(NSString *)mimeType
+                        error:(NSError * __autoreleasing *)error;
+
+
+- (void)appendPartWithInputStream:(NSInputStream *)inputStream
+                             name:(NSString *)name
+                         fileName:(NSString *)fileName
+                           length:(int64_t)length
+                         mimeType:(NSString *)mimeType;
+
+- (void)appendPartWithFileData:(NSData *)data
+                          name:(NSString *)name
+                      fileName:(NSString *)fileName
+                      mimeType:(NSString *)mimeType;
+
+- (void)appendPartWithFormData:(NSData *)data
+                          name:(NSString *)name;
+
+
+- (void)appendPartWithHeaders:(NSDictionary *)headers
+                         body:(NSData *)body;
+
+- (void)throttleBandwidthWithPacketSize:(NSUInteger)numberOfBytes
+                                  delay:(NSTimeInterval)delay;
+@end
+
+
 
 @interface HFHttpRequestParameters : NSMutableDictionary
 
@@ -43,3 +84,4 @@
 - (void)setData:(NSData *)value forKey:(NSString *)key;
 
 @end
+

@@ -30,7 +30,7 @@ static const char BASE64_CHAR_TABLE[64] = {
 	if (data == nil)
 		return nil;
     
-	int length = [data length];
+	NSUInteger length = [data length];
     
 	const unsigned char *bytes = [data bytes];
 	NSMutableString *result = [NSMutableString stringWithCapacity:length];

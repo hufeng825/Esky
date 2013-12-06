@@ -141,7 +141,7 @@
 
 #pragma mark - 成功处理
 -(AFSucessResponBlock)sucessHandling:(HFHttpSuccessCallBack)callBack
-                              userInfo:(id)userInfo
+                            userInfo:(id)userInfo
 {
     AFSucessResponBlock sucessRespon =  ^(AFHTTPRequestOperation *operation, id responseObject)
     {
@@ -171,6 +171,18 @@
         }
     };
     return [failRespon copy];
+}
+
+#pragma mark - 提交文件
+-(AFUploadBlock)uploadHanding:(HFHttpUploadCallBack)callBack
+{
+    AFUploadBlock uploadBlock = ^(id<HFMultipartFormData> formData)
+    {
+        if (callBack) {
+            callBack(formData);
+        }
+    };
+    return [uploadBlock copy];
 }
 
 
@@ -242,6 +254,53 @@
               request:(NSMutableURLRequest*)requestOperation.request ];
     requestOperation.userInfo = @{kUserInfoKey: url};
 }
+
+- (void)Url:(NSString *)url
+ parameters:(NSDictionary *)parameters
+ ResponArgument:(HFHttpResponArguments *)responArguments
+ uploadBlock:(HFHttpUploadCallBack)uploadBlock
+
+{
+    if (!responArguments) {
+        responArguments = [[HFHttpResponArguments alloc]init];
+#if !__has_feature(objc_arc)
+        [responArguments autorelease];
+#endif
+    }
+    
+    NSString *urlStr = [self formatUrlStr:url];
+    
+    //设置错误处理
+    AFFailCallBlock     errorRespon = [self failHandling:responArguments.failRespon
+                                                userInfo:responArguments.userInfo ];
+    
+    AFSucessResponBlock sucessRespon = [self sucessHandling:responArguments.sucessRespon
+                                                   userInfo:responArguments.userInfo];
+    
+    AFUploadBlock uploadRespon = [self uploadHanding:uploadBlock];
+    
+    AFHTTPRequestOperation *requestOperation ;
+    
+    //打印url
+    [self logUrl:urlStr parameters:parameters];
+    
+    requestOperation =  [self POST:urlStr
+                            parameters:parameters
+                            constructingBodyWithBlock:uploadRespon
+                            success:sucessRespon
+                            failure:errorRespon];
+  
+    
+    [requestOperation setDownloadProgressBlock:responArguments.progressBlock];
+    
+    [self reachabilityStatusChangeBlock];
+    
+    [self cachePolicy:responArguments.cachePolicy
+              request:(NSMutableURLRequest*)requestOperation.request ];
+    
+    requestOperation.userInfo = @{kUserInfoKey: url};
+}
+
 
 
 #pragma mark - cancel request

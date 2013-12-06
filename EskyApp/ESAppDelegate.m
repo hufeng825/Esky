@@ -146,8 +146,7 @@
     [ShareSDK importTencentWeiboClass:[WBApi class]];
     
     //导入微信需要的外部库类型，如果不需要微信分享可以不调用此方法
-    [ShareSDK importWeChatClass:[WXApi class]];
-    
+    [ShareSDK importWeChatClass:[WXApi class]];    
 }
 
 //主题设置

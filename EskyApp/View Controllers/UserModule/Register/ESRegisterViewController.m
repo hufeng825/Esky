@@ -143,7 +143,7 @@ NSUInteger selectedTextFieldTag;
 //因为runloop原因 所以setContentOffset animation 有时候卡顿 所以重写此方法
 -(void)setBgContentOffsetAnimation:(CGFloat )OffsetY
 {
-    [UIView animateWithDuration:.25 animations:^{
+    [UIView animateWithDuration:.5 animations:^{
         self.bgScrollView.contentOffset = CGPointMake(0, OffsetY);
     }];
 }

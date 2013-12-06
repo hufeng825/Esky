@@ -20,30 +20,35 @@ typedef enum
     POSTHttpMethod,//content type = @"application/x-www-form-urlencoded"
     GETHttpMethod
     
-}HFHttpMethod ;
+} HFHttpMethod ;
 
 
 
 @interface HFHttpRequestManager : AFHTTPRequestOperationManager
 
 
-+(HFHttpRequestManager *)sharedClient;
++ (HFHttpRequestManager *)sharedClient;
 
-+(HFHttpRequestManager *)client;
++ (HFHttpRequestManager *)client;
 
 
--(void)Url:(NSString*)url
-    parameters:(NSDictionary *)parameters
-    method:(HFHttpMethod)method
-    ResponArgument:(HFHttpResponArguments *)responArguments;
+- (void) Url:(NSString *)url
+         parameters:(NSDictionary *)parameters
+         method:(HFHttpMethod)method
+         ResponArgument:(HFHttpResponArguments *)responArguments;
 
-- (void)cancelRequestByURI:(NSString *)uri;
+- (void) Url:(NSString *)url
+         parameters:(NSDictionary *)parameters
+         ResponArgument:(HFHttpResponArguments *)responArguments
+         uploadBlock:(HFHttpUploadCallBack)uploadBlock;
 
-- (void)pauseAll;
+- (void) cancelRequestByURI:(NSString *)uri;
 
-- (void)resumeAll;
+- (void) pauseAll;
 
-- (void)stopAll;
+- (void) resumeAll;
+
+- (void) stopAll;
 
 
 @end

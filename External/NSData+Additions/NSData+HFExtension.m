@@ -41,7 +41,7 @@ static unsigned char BASE64_BYTE_TABLE[256] = {
 		return nil;
 	
 	const char* chars = [str UTF8String];
-	int charLen = [str length];
+	NSUInteger charLen = [str length];
 	
 	size_t bufferSize = (charLen / BASE64_UNIT_SIZE) * BINARY_UNIT_SIZE;
 	unsigned char *buffer = (unsigned char*)malloc(bufferSize);
