@@ -160,7 +160,7 @@
 - (IBAction)loginClick:(id)sender {
     ESRequestParameters *postObject = [ESRequestParameters requestLoginParameters:self.logoNameInput.text passWord:self.mmInput.text];
     
-    [ESRequest loginRequest:@"http://192.168.24.95:8080/account/register.json" sucessRespon:^(HFHttpRequestResult *result) {
+    [ESRequest loginRequest:@"http://esky.esquire.com.cn:8080/account/register.json" sucessRespon:^(HFHttpRequestResult *result) {
         NSLog(@"%@",result.Json);
     } failRespon:^(HFHttpErrorRequestResult *erroresult) {
         NSLog(@"%@",[erroresult.error description]);

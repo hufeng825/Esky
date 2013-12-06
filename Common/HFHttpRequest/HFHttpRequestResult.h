@@ -43,6 +43,6 @@
 @property (nonatomic,copy) id userInfo;
 
 
--(HFHttpErrorRequestResult *) initWithRequest:(NSURLRequest *)request userInfo:(id)userInfo;
+-(HFHttpErrorRequestResult *) initWithRequest:(NSURLRequest *)request error:(NSError *)error userInfo:(id)userInfo;
 //@property (nonatomic,copy) 
 @end

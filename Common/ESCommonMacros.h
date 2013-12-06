@@ -68,6 +68,8 @@ objectAtIndex : 0];
 // ios版本
 #define IOSVersion              [[[UIDevice currentDevice] systemVersion] floatValue];
 
+#define NEW(CLASS_NAME)  [[CLASS_NAME alloc]init]
+
 #define HFAlert(fmt, ...)                                                                                                                                                                               \
 {                                                                                                                                                                                                   \
 UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:fmt,##__VA_ARGS__] delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil] ; \

@@ -145,7 +145,7 @@
 }
 
 
--(HFHttpErrorRequestResult*) initWithRequest:(NSURLRequest *)request userInfo:(id)userInfo
+-(HFHttpErrorRequestResult*) initWithRequest:(NSURLRequest *)request error:(NSError *)error userInfo:(id)userInfo
 {
     self =[self init];
     if (self)
@@ -153,6 +153,7 @@
         // Custom initializatison
         _userInfo = [userInfo copy];
         _request = [request copy];
+        _error = [error copy];
     }
     return self;}
 

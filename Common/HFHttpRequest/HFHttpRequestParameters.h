@@ -53,11 +53,11 @@
 {
     
 @protected
-__weak	NSMutableDictionary*	_args;
+	NSMutableDictionary*	_args;
 
 }
 
-@property (nonatomic,weak,readonly) NSDictionary *arg;
+@property (nonatomic,copy,readonly) NSDictionary *arg;
 
 
 - (NSArray *)allKeys;

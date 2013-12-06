@@ -21,7 +21,7 @@
     [parameter setString:userName forKey:@"userName"];
     [parameter setString:nickName forKey:@"nickName"];
     [parameter setString:[password stringFromMD5] forKey:@"password"];
-    NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:avatarpath], 0.5);
+//    NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:avatarpath], 0.5);
 //    [parameter setObject:imageData forKey:@"avatar"];
     return parameter;
 };

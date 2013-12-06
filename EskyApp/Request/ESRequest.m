@@ -21,10 +21,10 @@
 
 
 + (void)postUrl         :(NSString *)url
-        postArguments   :(ESRequestParameters *)parameters
+        postArguments   :(NSDictionary *)parameters
         ResponArgument  :(HFHttpResponArguments *)responArguments
 {
-    [ [ self  sharedClient] Url:url parameters:(NSDictionary *)parameters method:POSTHttpMethod ResponArgument:responArguments];
+    [ [ self  sharedClient] Url:url parameters:parameters method:POSTHttpMethod ResponArgument:responArguments];
 }
 
 
@@ -44,9 +44,10 @@
       requestParameter:(ESRequestParameters *)requestParameter
             
 {
-    [self httpResponArguments].sucessRespon = sucessRespon;
-    [self httpResponArguments].failRespon = failRespon;
-    [self postUrl:url postArguments:requestParameter ResponArgument:[self  httpResponArguments]];
+    HFHttpResponArguments *arguments = NEW(HFHttpResponArguments);
+    arguments.sucessRespon = sucessRespon;
+    arguments.failRespon = failRespon;
+    [self postUrl:url postArguments:requestParameter.arg ResponArgument:arguments];
 };
 
 @end
