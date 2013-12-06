@@ -113,7 +113,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:.5];
-//    [self.customView setBackgroundColor: RGBACOLOR(0,0,0,.5)];
+    [self.customView setBackgroundColor: RGBACOLOR(255,255,255,.9)];
     [self.infoImageView setAlpha:.4];
     [self setActiveColor];
     [self.infoImageView setImage:[UIImage imageNamed:@"check_true.png"]];
