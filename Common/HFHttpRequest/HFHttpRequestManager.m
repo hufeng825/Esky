@@ -22,7 +22,6 @@
     [self.requestSerializer setStringEncoding:NSUTF8StringEncoding];
     [self.responseSerializer setAcceptableContentTypes:
         [NSSet setWithObjects:  @"application/json",
-               @"application/x-www-form-urlencoded",
                                       @"image/jpeg",
                                        @"text/json",
                                  @"text/javascript",

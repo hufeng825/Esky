@@ -69,4 +69,16 @@
 
 }
 
++ (void) registerRequest :(HFHttpSuccessCallBack)sucessRespon
+               failRespon:(HFHttpErrorRequestCallBack)failRespon
+           progressRespon:(HFHttpDownloadProgressCallBlock)progressRespon
+         requestParameter:(ESRequestParameters *)requestParameter
+{
+    HFHttpResponArguments *arguments = NEW(HFHttpResponArguments);
+    arguments.sucessRespon = sucessRespon;
+    arguments.failRespon = failRespon;
+    arguments.progressBlock = progressRespon;
+    [self postUrl:requestParameter.requestPath postArguments:requestParameter.arg responArgument:arguments];
+}
+
 @end

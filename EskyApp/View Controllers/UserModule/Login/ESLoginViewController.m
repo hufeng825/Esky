@@ -137,6 +137,7 @@
     {
         [self.view endEditing:YES];
         [self setBgContentOffsetAnimation:0];
+        [self login];
     }
        return YES;
 }
@@ -174,18 +175,21 @@
 }
 
 - (IBAction)loginClick:(id)sender {
+    [self login];
+}
+
+-(void)login
+{
     if ([self checkParameter]) {
-        ESRequestParameters *postObject  = [ESRequestParameters requestLoginParametersWithUsername:_logoNameInput.text passWord:_mmInput.text];
+        ESRequestParameters *postObject  = [ESRequestParameters requestLoginParametersWithUsername:@"test@test.com" passWord:[@"test" stringFromMD5]];
         [ESRequest loginRequest:^(HFHttpRequestResult *result) {
             NSLog(@"");
+            ESUserModel *user = [ESUserModel objectFromJSONObject:result.data mapping:nil];
         } failRespon:^(HFHttpErrorRequestResult *erroresult) {
             NSLog(@"");
         } requestParameter:postObject];
     }
-
 }
-
-
 
 - (IBAction)qqloginClick:(id)sender {
 
