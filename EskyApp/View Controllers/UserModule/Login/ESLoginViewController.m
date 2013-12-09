@@ -44,12 +44,11 @@
     // Do any additional setup after loading the view from its nib.
     [bgScrollView setContentSize:CGSizeMake(self.view.width, self.view.height+15)];
     [self initInputs];
-
-    UITapGestureRecognizer *  singletap              = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    
+    UITapGestureRecognizer *  singletap  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     [singletap setNumberOfTapsRequired:1];
-    singletap.delegate                               = self;
+    singletap.delegate = self;
     [bgScrollView addGestureRecognizer:singletap];
-
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -143,6 +142,22 @@
 }
 
 
+-(BOOL) checkParameter
+{
+    if (!TTIsStringWithAnyText(_logoNameInput.text)) {
+        [self showWarning:@"请输入您的用户名"];
+        [_logoNameInput setIsError:YES];
+    }
+    else if(!TTIsStringWithAnyText(_mmInput.text)){
+        [self showWarning:@"密码输入错误"];
+        [_mmInput setIsError:YES];
+    }
+    else{
+        return YES;
+    }
+    return NO;
+}
+
 - (IBAction)resetPassClick:(id)sender {
     [self viewEndEdit];
     ESModifyPassWordViewController *semiVC = [[ESModifyPassWordViewController alloc]init];
@@ -154,18 +169,23 @@
 
 - (IBAction)regesitClick:(id)sender {
     ESRegisterViewController *rg = [[ESRegisterViewController alloc]init];
-    [self presentViewController:rg animated:YES completion:Nil];
+     UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:rg];
+    [self presentViewController:nv animated:YES completion:Nil];
 }
 
 - (IBAction)loginClick:(id)sender {
-    ESRequestParameters *postObject  = [ESRequestParameters requestLoginParameters:self.logoNameInput.text passWord:self.mmInput.text];
+    if ([self checkParameter]) {
+        ESRequestParameters *postObject  = [ESRequestParameters requestLoginParametersWithUsername:_logoNameInput.text passWord:_mmInput.text];
+        [ESRequest loginRequest:^(HFHttpRequestResult *result) {
+            NSLog(@"");
+        } failRespon:^(HFHttpErrorRequestResult *erroresult) {
+            NSLog(@"");
+        } requestParameter:postObject];
+    }
 
-    [ESRequest loginRequest:@"http://esky.esquire.com.cn:8080/account/register.json" sucessRespon:^(HFHttpRequestResult *result) {
-        NSLog(@"%@",result.Json);
-    } failRespon:^(HFHttpErrorRequestResult *erroresult) {
-        NSLog(@"%@",[erroresult.error description]);
-    } requestParameter:postObject];
 }
+
+
 
 - (IBAction)qqloginClick:(id)sender {
 
@@ -209,34 +229,28 @@
      {
          if (result)
          {
-
-             //创建分享内容
-
-    id<ISSContent> publishContent   = [ShareSDK content:@"content"
-                                                defaultContent:@"ceshi"
-                                                         image:[ShareSDK imageWithPath:nil]
-                                                         title:nil
-                                                           url:nil
-                                                   description:nil
-                                                     mediaType:SSPublishContentMediaTypeText];
-             [ShareSDK shareContent:publishContent
-                               type:ShareTypeSinaWeibo
-                        authOptions:nil
-                      statusBarTips:YES
-                             result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
-                                 if (state == SSPublishContentStateSuccess)
-                                 {
-                                     NSLog(@"分享成功");
-                                 }
-                                 else if (state == SSPublishContentStateFail)
-                                 {
-//                                     NSLog(@"分享失败,错误码:%d,错误描述:%@", [error errorCode],  [error errorDescription]);
-                                 }
-                             }];
-
-         }
-
-     }];
+            //创建分享内容
+            id<ISSContent> publishContent   = [ShareSDK content:@"content"
+                                                        defaultContent:@"ceshi"
+                                                        image:[ShareSDK imageWithPath:nil]
+                                                        title:nil
+                                                        url:nil
+                                                        description:nil
+                                                        mediaType:SSPublishContentMediaTypeText];
+                     [ShareSDK shareContent:publishContent
+                                       type:ShareTypeSinaWeibo
+                                authOptions:nil
+                              statusBarTips:YES
+                                     result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                                         if (state == SSPublishContentStateSuccess){
+                                             NSLog(@"分享成功");
+                                         }
+                                         else if (state == SSPublishContentStateFail){
+        //                                     NSLog(@"分享失败,错误码:%d,错误描述:%@", [error errorCode],  [error errorDescription]);
+                                         }
+                                     }];
+                 }
+         }];
 }
 
 
@@ -253,7 +267,7 @@
 
     [viewController.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     viewController.navigationItem.rightBarButtonItem = nil;
-    viewController.title                             = logTitleStr;
+    viewController.title = logTitleStr;
 
 //    UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
 //    [viewController.view addSubview:button];

@@ -54,11 +54,14 @@
     
 @protected
 	NSMutableDictionary*	_args;
+    NSString* _requestPath;
 
 }
 
 @property (nonatomic,copy,readonly) NSDictionary *arg;
+@property (nonatomic,copy,readwrite) NSString *requestPath;
 
+- (void)stringWithHost:(NSString *)host api:(NSString *)api;
 
 - (NSArray *)allKeys;
 

@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSData (HFExtension)
-+ (NSData*) dataFromBase64String: (NSString*)str;
+
++ (NSData *) dataFromBase64String:(NSString *)str;
+
 @end

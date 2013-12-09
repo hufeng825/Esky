@@ -22,9 +22,11 @@
     [self.requestSerializer setStringEncoding:NSUTF8StringEncoding];
     [self.responseSerializer setAcceptableContentTypes:
         [NSSet setWithObjects:  @"application/json",
-                                @"text/json",
-                                @"text/javascript",
-                                @"text/plain",
+               @"application/x-www-form-urlencoded",
+                                      @"image/jpeg",
+                                       @"text/json",
+                                 @"text/javascript",
+                                       @"text/plain",
                                 @"text/html", nil]
      ];
     return self;
@@ -63,16 +65,7 @@
 
 - (NSString *)formatUrlStr:(NSString *)url
 {
-    NSString *urlStr=nil;//如果含有中文或者全角字符 则进行UTF-8格式化
-    if ([url gotChineseCount]>0)
-    {
-        urlStr = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    }
-    else
-    {
-        urlStr = url;
-    }
-    return urlStr;
+    return [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 
 

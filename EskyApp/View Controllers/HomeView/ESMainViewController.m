@@ -198,7 +198,7 @@
 
 
 
-    ESLoginViewController *lg                        = [[ESLoginViewController alloc]init];
+    ESLoginViewController *lg = [[ESLoginViewController alloc]initWithNibName:@"ESLoginViewController" bundle:nil];
     [self.navigationController presentViewController:lg animated:YES completion:nil];
 
 }

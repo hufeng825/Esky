@@ -14,6 +14,13 @@
 @implementation HFHttpRequestParameters
 
 @synthesize     arg = _args;
+@synthesize     requestPath = _requestPath;
+
+
+- (void)stringWithHost:(NSString *)host api:(NSString *)api
+{
+    _requestPath = [NSString stringWithFormat:@"%@%@",host,api];
+}
 
 - (NSArray *)allKeys
 {

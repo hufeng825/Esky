@@ -15,7 +15,7 @@
 #define toCF (CFTypeRef)
 #endif
 
-#define MAX_IMAGEPIX 200.0          // max pix 200.0px
+#define MAX_IMAGEPIX 256.0          // max pix 200.0px
 #define MAX_IMAGEDATA_LEN 50000.0   // max data length 5K
 
 

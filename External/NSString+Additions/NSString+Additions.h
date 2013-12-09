@@ -55,6 +55,8 @@
 
 -(BOOL)validateNameStr;//只准有字母和英文
 
+-(BOOL)validatePassWord;
+
 -(BOOL)validateEmailAddress;
 
 -(BOOL)validateCellPhone;

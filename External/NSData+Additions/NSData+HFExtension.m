@@ -7,6 +7,7 @@
 //
 
 #import "NSData+HFExtension.h"
+#import <CommonCrypto/CommonDigest.h>
 
 #define xx 65
 static unsigned char BASE64_BYTE_TABLE[256] = {
@@ -83,4 +84,6 @@ static unsigned char BASE64_BYTE_TABLE[256] = {
     free(buffer);
     return data;
 }
+
+
 @end

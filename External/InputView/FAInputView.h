@@ -52,4 +52,6 @@
 
 -(void) becomeFirstResponder;
 
+-(void) setFontSize:(CGFloat)fontSize;
+
 @end

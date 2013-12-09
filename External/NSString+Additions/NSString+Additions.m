@@ -12,6 +12,7 @@
 #import <mach/mach.h>
 #import <mach/mach_host.h>
 #import <CommonCrypto/CommonDigest.h>
+#import "NSData+HFExtension.h"
 
 
 static const char BASE64_CHAR_TABLE[64] = {
@@ -139,9 +140,13 @@ static const char BASE64_CHAR_TABLE[64] = {
     return outputString ;
 }
 
+
+
 -(NSString*)URLencodeWithEncodingUTF8{
 	return [self URLencodeWithEncoding:NSUTF8StringEncoding];
 }
+
+
 
 + (NSString *)getIPAddress
 {
@@ -447,6 +452,20 @@ static const char BASE64_CHAR_TABLE[64] = {
     return [emailTest evaluateWithObject:self];
     
 }
+
+//验证密码
+-(BOOL)validatePassWord
+{
+    
+    NSString *passWordRegex = @"^(\\w){4,12}$";
+    
+    NSPredicate *passWordTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", passWordRegex];
+    
+    return [passWordTest evaluateWithObject:self];
+    
+}
+
+
 //验证是否是电话号码
 - (BOOL)validateCellPhone
 {

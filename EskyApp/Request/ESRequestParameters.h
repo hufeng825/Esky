@@ -9,20 +9,23 @@
 #import <Foundation/Foundation.h>
 #import "HFHttpRequestParameters.h"
 
+static NSString * const kAliYun_API_HOST = @"http://esky.esquire.com.cn:8080/trends/";
+static NSString * const kYangYI_API_HOST = @"http://192.168.24.95:8081/trends/";
+
 
 
 @interface ESRequestParameters : HFHttpRequestParameters
 
 //注册接口
 
-+ (ESRequestParameters *) requestRegisterParametersWith:(NSString *)email
++ (ESRequestParameters *) requestRegisterParametersWithEmail:(NSString *)email
                                               userName: (NSString *)userName
                                               nickName: (NSString *)nickName
                                                 avatar: (NSString *)avatarpath
                                               password: (NSString *)password;
 
 
-+ (ESRequestParameters *) requestLoginParameters:(NSString *)username
++ (ESRequestParameters *) requestLoginParametersWithUsername:(NSString *)username
                                         passWord:(NSString *)passWord;
 
 @end

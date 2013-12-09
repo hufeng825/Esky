@@ -18,9 +18,9 @@
 
 - (id)init
 {
-//    NSString    *clssName = NSStringFromClass([self class]);
-//    NSString    *xibName = is4InchScreen() ?[NSString stringWithFormat:@"%@_4inch", clssName] : clssName;
-    NSString    *xibName = NSStringFromClass([self class]);
+    NSString    *clssName = NSStringFromClass([self class]);
+    NSString    *xibName = is4InchScreen() ?[NSString stringWithFormat:@"%@_4inch", clssName] : clssName;
+//    NSString    *xibName = NSStringFromClass([self class]);
     
     self = [super initWithNibName:xibName bundle:nil];
     
@@ -136,6 +136,9 @@
         [hudView removeFromSuperview];
     }];
 }
+
+
+
 
 - (BOOL)disablesAutomaticKeyboardDismissal {
     return NO;

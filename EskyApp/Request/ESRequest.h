@@ -14,11 +14,17 @@
 
 
 
-
-+ (void) loginRequest :(NSString *)url
-         sucessRespon :(HFHttpSuccessCallBack)sucessRespon
++ (void) loginRequest :(HFHttpSuccessCallBack)sucessRespon
             failRespon:(HFHttpErrorRequestCallBack)failRespon
       requestParameter:(ESRequestParameters *)requestParameter;
+
+
+
++ (void) registerRequest :(HFHttpSuccessCallBack)sucessRespon
+               failRespon:(HFHttpErrorRequestCallBack)failRespon
+           progressRespon:(HFHttpDownloadProgressCallBlock)progressRespon
+         requestParameter:(ESRequestParameters *)requestParameter
+              uploadBlock:(HFHttpUploadCallBack)uploadBlock;
 
 
 @end

@@ -37,18 +37,16 @@
     self.customView = [FAInputView loadFromXib];
     [self addSubview:_customView];
     self.textField.delegate = self;
-//    self.state = YES;
     
-
+    [self.customView setHeight:self.height];
+    
     [self setBackgroundColor:[UIColor clearColor]];
-    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(themeChanged:) name:kThemeChangedNotification object:nil];
     [self customTextColor];
     [self.infoImageView setAlpha:.4];
-
-
 }
+
 
 - (void)themeChanged:(NSNotification*)notification
 {
@@ -64,6 +62,11 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+-(void) setFontSize:(CGFloat)fontSize
+{
+    [self.textField setFont:[UIFont systemFontOfSize:fontSize]];
 }
 
 -(UILabel *) infoLabel
@@ -199,7 +202,7 @@
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationDuration:.5];
         [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.infoImageView cache:YES];
-        if (_isError == NO)
+        if (_isError == YES)
         {
             [self.infoImageView setImage:[UIImage imageNamed:@"check_wrong.png"]];
         }
@@ -210,19 +213,20 @@
             [UIView commitAnimations];});
     }
     [self.infoImageView setAlpha:1];
-
 }
+
 
 -(void)setData:(NSString *)infoTitle placeStr:(NSString *)placeStr delegate:(id)delgate
 {
     if (TTIsStringWithAnyText(infoTitle)) {
         self.infoLabel.hidden = NO;
-        [self.textField setFrame:CGRectMake(90, 0, 185, 50)];
+        [self.textField setFrame:CGRectMake(90, 0, 185,self.height)];
     }
     else{
         self.infoLabel.hidden= YES;
-        [self.textField setFrame:CGRectMake(44,0,185,50)];
+        [self.textField setFrame:CGRectMake(44,0,185,self.height)];
     }
+    
     [self.infoImageView setAlpha:.4];
     self.infoLabel.text = infoTitle;
     self.placeholderText = placeStr;

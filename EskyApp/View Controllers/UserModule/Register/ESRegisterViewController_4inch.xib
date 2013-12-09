@@ -18,23 +18,23 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="1">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" id="qEp-9O-nu9">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="e-sky.png" id="o30-va-zZk">
-                            <rect key="frame" x="10" y="67" width="80" height="120"/>
+                            <rect key="frame" x="10" y="67" width="80" height="123"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dialogue_bg.png" id="OrZ-Hs-IEO">
-                            <rect key="frame" x="101" y="81" width="207" height="55"/>
+                            <rect key="frame" x="101" y="90" width="207" height="55"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6cb-GV-ybE">
-                            <rect key="frame" x="119" y="84" width="188" height="48"/>
+                            <rect key="frame" x="120" y="93" width="188" height="48"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <string key="text">我是Esky
 我从事时尚行业已经有80年的历史了,
@@ -44,39 +44,39 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" id="eWR-gl-YUf" userLabel="InputViewContain">
-                            <rect key="frame" x="0.0" y="140" width="320" height="432"/>
+                            <rect key="frame" x="0.0" y="150" width="320" height="426"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="translate_bg.png" id="OFD-Of-Ye2">
-                                    <rect key="frame" x="0.0" y="47" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="41" width="320" height="57"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_head.png" id="A5m-Ov-Nhg" customClass="FAHeaderIconImageView">
-                                    <rect key="frame" x="119" y="4" width="82" height="82"/>
+                                    <rect key="frame" x="119" y="3" width="82" height="82"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <view tag="1000" contentMode="scaleToFill" id="vhs-JT-fGP" customClass="FAInputView">
-                                    <rect key="frame" x="0.0" y="90" width="320" height="46"/>
+                                    <rect key="frame" x="0.0" y="100" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </view>
                                 <view tag="1001" contentMode="scaleToFill" id="5wd-vy-QJm" customClass="FAInputView">
-                                    <rect key="frame" x="0.0" y="137" width="320" height="46"/>
+                                    <rect key="frame" x="0.0" y="151" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </view>
                                 <view tag="1002" contentMode="scaleToFill" id="Cgk-cA-Bmz" customClass="FAInputView">
-                                    <rect key="frame" x="0.0" y="184" width="320" height="46"/>
+                                    <rect key="frame" x="0.0" y="202" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </view>
                                 <view tag="1003" contentMode="scaleToFill" id="CRn-fV-1tG" customClass="FAInputView">
-                                    <rect key="frame" x="0.0" y="231" width="320" height="46"/>
+                                    <rect key="frame" x="0.0" y="253" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="LXg-e9-jlZ">
-                                    <rect key="frame" x="8" y="281" width="305" height="55"/>
+                                    <rect key="frame" x="8" y="310" width="305" height="67"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                     <state key="normal" title="立即注册">
@@ -97,7 +97,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
     <resources>

@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet FAInputView *verifyInput;
 @property (weak, nonatomic) IBOutlet FAInputView *nickNameInput;
 
+- (IBAction)registerClicked:(id)sender;
 
 
 @end

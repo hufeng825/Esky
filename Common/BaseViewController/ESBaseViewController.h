@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HFHttpRequestManager.h"
-
+#import "ESRequest.h"
 
 
 @interface ESBaseViewController : UIViewController
