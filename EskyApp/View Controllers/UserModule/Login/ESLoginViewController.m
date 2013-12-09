@@ -145,7 +145,7 @@
 
 - (IBAction)resetPassClick:(id)sender {
     [self viewEndEdit];
-    ESModifyPassWordViewController *semiVC           = [[ESModifyPassWordViewController alloc]init];
+    ESModifyPassWordViewController *semiVC = [[ESModifyPassWordViewController alloc]init];
     [self presentSemiViewController:semiVC withOptions:@{
                                                          KNSemiModalOptionKeys.pushParentBack    : @(YES),
                                                          KNSemiModalOptionKeys.animationDuration : @(.5),
@@ -153,12 +153,12 @@
 }
 
 - (IBAction)regesitClick:(id)sender {
-    ESRegisterViewController *rg                     = [[ESRegisterViewController alloc]init];
+    ESRegisterViewController *rg = [[ESRegisterViewController alloc]init];
     [self presentViewController:rg animated:YES completion:Nil];
 }
 
 - (IBAction)loginClick:(id)sender {
-    ESRequestParameters *postObject                  = [ESRequestParameters requestLoginParameters:self.logoNameInput.text passWord:self.mmInput.text];
+    ESRequestParameters *postObject  = [ESRequestParameters requestLoginParameters:self.logoNameInput.text passWord:self.mmInput.text];
 
     [ESRequest loginRequest:@"http://esky.esquire.com.cn:8080/account/register.json" sucessRespon:^(HFHttpRequestResult *result) {
         NSLog(@"%@",result.Json);
@@ -169,7 +169,7 @@
 
 - (IBAction)qqloginClick:(id)sender {
 
-    id<ISSAuthOptions> authOptions                   = [ShareSDK authOptionsWithAutoAuth:YES
+    id<ISSAuthOptions> authOptions  = [ShareSDK authOptionsWithAutoAuth:YES
 
                                                          allowCallback:YES
 
@@ -195,7 +195,7 @@
 
 - (IBAction)sinaLoginClick:(id)sender {
 
-    id<ISSAuthOptions> authOptions                   = [ShareSDK authOptionsWithAutoAuth:YES
+    id<ISSAuthOptions> authOptions  = [ShareSDK authOptionsWithAutoAuth:YES
 
                                                          allowCallback:YES
 
@@ -212,7 +212,7 @@
 
              //创建分享内容
 
-    id<ISSContent> publishContent                    = [ShareSDK content:@"content"
+    id<ISSContent> publishContent   = [ShareSDK content:@"content"
                                                 defaultContent:@"ceshi"
                                                          image:[ShareSDK imageWithPath:nil]
                                                          title:nil
@@ -246,9 +246,9 @@
     //    [viewController.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"iPhoneNavigationBarBG.png"]];
     NSString *logTitleStr ;
     if (shareType == ShareTypeSinaWeibo) {
-    logTitleStr                                      = @"新浪私享家登录";
+        logTitleStr  = @"新浪私享家登录";
     }else if(shareType == ShareTypeQQSpace ){
-    logTitleStr                                      = @"QQ私享家登录";
+        logTitleStr = @"QQ私享家登录";
     }
 
     [viewController.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];

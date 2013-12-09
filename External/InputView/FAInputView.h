@@ -42,7 +42,7 @@
 
 @property (nonatomic, weak) UILabel * infoLabel;
 
-@property (nonatomic, assign) BOOL state;
+@property (nonatomic, assign) BOOL isError;
 
 @property (nonatomic, weak) id<FATextFieldDelegate>delegate;
 

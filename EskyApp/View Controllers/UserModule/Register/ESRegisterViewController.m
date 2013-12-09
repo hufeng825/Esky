@@ -194,7 +194,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
         && ![textField.textField.text validateEmailAddress]
         ) {
         [self showWarning:@"邮箱格式错误"];
-        [textField setState:NO];
+        [textField setIsError:NO];
     }
     else if (textField.tag == MMTag) {
         
@@ -203,8 +203,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
      if(![textField.textField.text isEqualToString:_mmInput.textField.text])
      {
          [self showWarning:@"密码不匹配啊"];
-         [_mmInput setState:NO];
-         [_verifyInput setState:NO];
+         [_mmInput setIsError:NO];
+         [_verifyInput setIsError:NO];
      }
     }
 }

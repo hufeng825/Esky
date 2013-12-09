@@ -188,18 +188,18 @@
     return YES;
 }
 
--(void)setState:(BOOL)state
+-(void)setIsError:(BOOL)isError
 {
 
 //    if (_state !=state)
     {
-        _state = state;
+        _isError = isError;
 //        state == NO ? [self.infoImageView setImage:[UIImage imageNamed:@"check_true.png"]] : [self.infoImageView setImage:[UIImage imageNamed:@"check_wrong.png"]];
         dispatch_async(dispatch_get_main_queue(), ^{
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationDuration:.5];
         [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.infoImageView cache:YES];
-        if (_state == NO)
+        if (_isError == NO)
         {
             [self.infoImageView setImage:[UIImage imageNamed:@"check_wrong.png"]];
         }
