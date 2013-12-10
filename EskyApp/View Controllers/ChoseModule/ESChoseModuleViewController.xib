@@ -6,7 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ESChoseModuleViewController">
             <connections>
+                <outlet property="hintLabel" destination="8FT-WD-PWE" id="4cd-yE-658"/>
+                <outlet property="manBt" destination="9iZ-V9-NiC" id="bvk-x9-QUo"/>
                 <outlet property="view" destination="1" id="3"/>
+                <outlet property="womanBt" destination="pkv-MN-sib" id="FUt-ZC-KUz"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

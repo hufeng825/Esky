@@ -12,65 +12,12 @@
 #import <mach/mach.h>
 #import <mach/mach_host.h>
 #import <CommonCrypto/CommonDigest.h>
-#import "NSData+HFExtension.h"
 
 
-static const char BASE64_CHAR_TABLE[64] = {
-	'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
-	'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f',
-	'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
-	'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'
-};
 
 
 @implementation NSString (HF)
 
-
-
-+ (NSString*) base64StringFromData: (NSData*)data {
-	if (data == nil)
-		return nil;
-    
-	NSUInteger length = [data length];
-    
-	const unsigned char *bytes = [data bytes];
-	NSMutableString *result = [NSMutableString stringWithCapacity:length];
-	unsigned long ixtext = 0;
-	long ctremaining = 0;
-	unsigned char bufIn[3], bufOut[4];
-	short i = 0;
-	short charsonline = 0, ctcopy = 0;
-	unsigned long ix = 0;
-	while( YES ) {
-		ctremaining = length - ixtext;
-		if( ctremaining <= 0 ) break;
-		for( i = 0; i < 3; i++ ) {
-			ix = ixtext + i;
-			if( ix < length ) bufIn[i] = bytes[ix];
-			else bufIn [i] = 0;
-		}
-		bufOut [0] = (bufIn [0] & 0xFC) >> 2;
-		bufOut [1] = ((bufIn [0] & 0x03) << 4) | ((bufIn [1] & 0xF0) >> 4);
-		bufOut [2] = ((bufIn [1] & 0x0F) << 2) | ((bufIn [2] & 0xC0) >> 6);
-		bufOut [3] = bufIn [2] & 0x3F;
-		ctcopy = 4;
-		switch( ctremaining ) {
-			case 1:
-                ctcopy = 2;
-                break;
-			case 2:
-                ctcopy = 3;
-                break;
-		}
-		for( i = 0; i < ctcopy; i++ )
-			[result appendFormat:@"%c", BASE64_CHAR_TABLE[bufOut[i]]];
-		for( i = ctcopy; i < 4; i++ )
-			[result appendString:@"="];
-		ixtext += 3;
-		charsonline += 4;
-	}
-	return result;
-}
 
 
 + (id)stringWithFormat:(NSString *)format array:(NSArray*) arguments {

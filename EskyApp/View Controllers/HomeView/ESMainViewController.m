@@ -198,12 +198,10 @@
 
 
 
-//    ESLoginViewController *lg = [[ESLoginViewController alloc]initWithNibName:@"ESLoginViewController" bundle:nil];
-//    [self.navigationController presentViewController:lg animated:YES completion:nil];
+    ESLoginViewController *lg = [[ESLoginViewController alloc]initWithNibName:@"ESLoginViewController" bundle:nil];
+    [self.navigationController presentViewController:lg animated:YES completion:nil];
     
-        ESChoseModuleViewController *choseModuleVc = [[ESChoseModuleViewController alloc]initWithNibName:@"ESChoseModuleViewController" bundle:nil];
-        choseModuleVc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        [self.navigationController presentViewController:choseModuleVc animated:YES completion:nil];
+
 }
 
 
@@ -214,14 +212,20 @@
     UIButton *loginBtn                               = [UIButton buttonWithType:UIButtonTypeCustom];
     [loginBtn setTitle:@"title" forState:UIControlStateNormal];
     [loginBtn setBackgroundColor:[UIColor redColor]];
-    loginBtn.frame                                   = CGRectMake((self.view.frame.size.width - 173.0) / 2, (self.view.frame.size.height - 32.0) / 2, 173.0, 32.0);
-    loginBtn.autoresizingMask                        = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
+    loginBtn.frame = CGRectMake((self.view.frame.size.width - 173.0) / 2, (self.view.frame.size.height - 32.0) / 2, 173.0, 32.0);
+    loginBtn.autoresizingMask  = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
     [loginBtn addTarget:self action:@selector(loginBtnClickHandler:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:loginBtn];
 }
 
 - (void)loginBtnClickHandler:(id)sender
 {
+//    __block ESChoseModuleViewController *choseModuleVc = [[ESChoseModuleViewController alloc]initWithNibName:@"ESChoseModuleViewController" bundle:nil];
+//    choseModuleVc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+//    [self.navigationController presentViewController:choseModuleVc animated:YES completion:^{
+//        [choseModuleVc startAnimation];
+//    }];
+    
 //    id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
 //
 //                                                         allowCallback:YES

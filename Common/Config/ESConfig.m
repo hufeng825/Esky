@@ -106,11 +106,11 @@ static ESConfig *_globalConfig = nil;
     UIDevice *device = [UIDevice currentDevice];
     UIScreen *screen = [UIScreen mainScreen];
     CGSize screenSize = screen.bounds.size;
-    NSString* cityId = @"";
-    if([ESMainUser getInstance].currentCityId){
-        cityId = [NSString stringWithFormat:@"%d",[[ESMainUser getInstance].currentCityId intValue]];
-    }
-    
+//    NSString* cityId = @"";
+//    if([ESMainUser getInstance].currentCityId){
+//        cityId = [NSString stringWithFormat:@"%d",[[ESMainUser getInstance].currentCityId intValue]];
+//    }
+//    
     self.userAgent = [NSString stringWithFormat:@"{\"mac\":\"%@\",\"deviceName\":\"%@\",\"deviceVersion\":\"%@\",\"screen\":\"%@\",\"clientVersion\":\"%@\",\"sid\":\"%@\"}",[UIDevice macAddress],self.deviceModel,device.systemVersion,[NSString stringWithFormat:@"%.0f*%.0f", screenSize.width, screenSize.height],self.appversion,sid];
 }
 

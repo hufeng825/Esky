@@ -131,7 +131,7 @@
 -(BOOL)textFieldShouldReturn:(FAInputView *)textField
 {
     if (textField.tag == EmailTag) {
-        [self.mmInput becomeFirstResponder];
+        [self.mmInput becomeFirstRespond];
 
     }
     else if(textField.tag == MMTag)

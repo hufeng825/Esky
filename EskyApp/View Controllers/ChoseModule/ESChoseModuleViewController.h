@@ -14,5 +14,6 @@
 
 - (IBAction)womanBtClicked:(id)sender;
 
+- (void)startAnimation;
 
 @end

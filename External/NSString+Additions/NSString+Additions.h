@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 @interface NSString (HF)
 
-+ (NSString*) base64StringFromData: (NSData*)data;
 
 + (id)stringWithFormat:(NSString *)format array:(NSArray*) arguments;
 

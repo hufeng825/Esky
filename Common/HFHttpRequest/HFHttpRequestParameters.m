@@ -8,7 +8,7 @@
 
 #import "HFHttpRequestParameters.h"
 #import "NSString+Additions.h"
-#import "NSData+HFExtension.h"
+#import "Base64.h"
 #import "NSDate+HFExtension.h"
 
 @implementation HFHttpRequestParameters
@@ -76,7 +76,7 @@
 
 - (NSData*)dataForKey:(NSString*)key
 {
-	return [NSData dataFromBase64String:[self stringForKey:key]];
+	return [NSData dataWithBase64EncodedString:[self stringForKey:key]];
 }
 
 
@@ -123,7 +123,7 @@
 
 - (void)setData:(NSData*)value forKey:(NSString*)key
 {
-	[self setString:[NSString base64StringFromData:value] forKey:key];
+	[self setString:[value base64EncodedString] forKey:key];
 }
 
 

@@ -185,14 +185,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 -(BOOL)textFieldShouldReturn:(FAInputView *)textField
 {
     if (textField.tag == EmailTag) {
-        [self.mmInput becomeFirstResponder];
+        [self.mmInput becomeFirstRespond];
       
     }
     else if(textField.tag == MMTag){
-        [self.verifyInput becomeFirstResponder];
+        [self.verifyInput becomeFirstRespond];
     }
     else if(textField.tag == VMMTag){
-        [self.nickNameInput becomeFirstResponder];
+        [self.nickNameInput becomeFirstRespond];
         if (!is4InchScreen()){
         [self.bgScrollView setContentOffset:CGPointMake(0, 230) animated:YES];
         }

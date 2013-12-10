@@ -50,7 +50,7 @@
 
 -(void)setData:(NSString *)infoTitle placeStr:(NSString *)placeStr delegate:(id)delgate;
 
--(void) becomeFirstResponder;
+-(void) becomeFirstRespond;
 
 -(void) setFontSize:(CGFloat)fontSize;
 

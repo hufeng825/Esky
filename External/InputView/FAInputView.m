@@ -110,7 +110,7 @@
     self.textField.textColor = [[FAThemeManager sharedManager] themeColorWithName:@"kInputNormalColor"];
 }
 
--(void) becomeFirstResponder
+-(void) becomeFirstRespond
 {
     [self.textField becomeFirstResponder];
 }
