@@ -10,6 +10,7 @@
 
 #import "ESConfig.h"
 
+#import "ESChoseModuleViewController.h"
 
 #import "ESLoginViewController.h"
 
@@ -52,17 +53,16 @@
     {
         [_testimg setImageWithURLStr:@"http://hufeng825.github.io/img/hufeng825.jpg" placeholderImage:_testimg.image success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
 
-    CATransition *transtion                          = [CATransition animation];
-    transtion.duration                               = 2;
-            [transtion setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-            [transtion setType:@"oglFlip"];
+        CATransition *transtion  = [CATransition animation];
+        transtion.duration  = 2;
+        [transtion setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+        [transtion setType:@"oglFlip"];
 
-            [transtion setSubtype:kCATransitionFromRight];
+        [transtion setSubtype:kCATransitionFromRight];
 
-            [_testimg.layer addAnimation:transtion forKey:@"transtionKey"];
-            [_testimg setImage:image];
-        } failure:
-         nil]
+        [_testimg.layer addAnimation:transtion forKey:@"transtionKey"];
+        [_testimg setImage:image];
+        } failure:nil]
         ;
     });
 //
@@ -198,9 +198,12 @@
 
 
 
-    ESLoginViewController *lg = [[ESLoginViewController alloc]initWithNibName:@"ESLoginViewController" bundle:nil];
-    [self.navigationController presentViewController:lg animated:YES completion:nil];
-
+//    ESLoginViewController *lg = [[ESLoginViewController alloc]initWithNibName:@"ESLoginViewController" bundle:nil];
+//    [self.navigationController presentViewController:lg animated:YES completion:nil];
+    
+        ESChoseModuleViewController *choseModuleVc = [[ESChoseModuleViewController alloc]initWithNibName:@"ESChoseModuleViewController" bundle:nil];
+        choseModuleVc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self.navigationController presentViewController:choseModuleVc animated:YES completion:nil];
 }
 
 

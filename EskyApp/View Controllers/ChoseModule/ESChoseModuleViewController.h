@@ -10,4 +10,9 @@
 
 @interface ESChoseModuleViewController : ESBaseViewController
 
+- (IBAction)manBtClicked:(id)sender;
+
+- (IBAction)womanBtClicked:(id)sender;
+
+
 @end

@@ -35,4 +35,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark BtClicked
+
+- (IBAction)manBtClicked:(id)sender{
+    [[FAThemeManager sharedManager] setThemeName:@"man"] ;
+    [self goBack];
+}
+
+- (IBAction)womanBtClicked:(id)sender {
+    [[FAThemeManager sharedManager] setThemeName:@"woman"] ;
+    [self goBack];
+}
+
+
 @end
