@@ -19,15 +19,17 @@
     if (!self) {
         return nil;
     }
-    [self.requestSerializer setStringEncoding:NSUTF8StringEncoding];
-    [self.responseSerializer setAcceptableContentTypes:
-        [NSSet setWithObjects:  @"application/json",
-                                      @"image/jpeg",
-                                       @"text/json",
-                                 @"text/javascript",
-                                       @"text/plain",
-                                @"text/html", nil]
-     ];
+
+   NSSet * contextSet = [NSSet setWithObjects:
+     @"application/json",
+     @"image/jpeg",
+     @"text/json",
+     @"text/javascript",
+     @"text/plain",
+     @"text/html", nil];
+    [self.requestSerializer setHTTPMethodsEncodingParametersInURI:contextSet];
+
+    [self.responseSerializer setAcceptableContentTypes:contextSet];
     return self;
 }
 

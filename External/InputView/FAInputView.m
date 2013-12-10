@@ -89,6 +89,11 @@
     return  [self textField].text;
 }
 
+-(void) setSecureTextEntry:(BOOL) secureTextEntry
+{
+    [self.textField setSecureTextEntry:secureTextEntry];
+}
+
 -(void)setPlaceholderText:(NSString *)placeholderText
 {
     self.textField.placeholder = placeholderText;

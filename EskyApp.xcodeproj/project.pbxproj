@@ -11,6 +11,8 @@
 		962977E41849C32800F3EACD /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98B231845C6B8002E8552 /* libWeiboSDK.a */; };
 		962977E51849C32B00F3EACD /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98B271845C6B8002E8552 /* libWeChatSDK.a */; };
 		9645ED7B1855C708004643C9 /* ESUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9645ED7A1855C708004643C9 /* ESUserModel.m */; };
+		9645ED801856C487004643C9 /* ESChoseModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9645ED7E1856C487004643C9 /* ESChoseModuleViewController.m */; };
+		9645ED811856C487004643C9 /* ESChoseModuleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9645ED7F1856C487004643C9 /* ESChoseModuleViewController.xib */; };
 		9688BD67184C903B00F9A8E9 /* HFHttpRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD66184C903B00F9A8E9 /* HFHttpRequestParameters.m */; };
 		9688BD6B184C963400F9A8E9 /* NSData+HFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD6A184C963400F9A8E9 /* NSData+HFExtension.m */; };
 		9688BD6E184C9A5B00F9A8E9 /* NSDate+HFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD6D184C9A5B00F9A8E9 /* NSDate+HFExtension.m */; };
@@ -157,6 +159,9 @@
 /* Begin PBXFileReference section */
 		9645ED791855C708004643C9 /* ESUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESUserModel.h; path = Request/Model/ESUserModel.h; sourceTree = "<group>"; };
 		9645ED7A1855C708004643C9 /* ESUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESUserModel.m; path = Request/Model/ESUserModel.m; sourceTree = "<group>"; };
+		9645ED7D1856C487004643C9 /* ESChoseModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESChoseModuleViewController.h; path = ChoseModule/ESChoseModuleViewController.h; sourceTree = "<group>"; };
+		9645ED7E1856C487004643C9 /* ESChoseModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESChoseModuleViewController.m; path = ChoseModule/ESChoseModuleViewController.m; sourceTree = "<group>"; };
+		9645ED7F1856C487004643C9 /* ESChoseModuleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESChoseModuleViewController.xib; path = ChoseModule/ESChoseModuleViewController.xib; sourceTree = "<group>"; };
 		9688BD65184C903B00F9A8E9 /* HFHttpRequestParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpRequestParameters.h; sourceTree = "<group>"; };
 		9688BD66184C903B00F9A8E9 /* HFHttpRequestParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpRequestParameters.m; sourceTree = "<group>"; };
 		9688BD69184C963400F9A8E9 /* NSData+HFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+HFExtension.h"; path = "NSData+Additions/NSData+HFExtension.h"; sourceTree = "<group>"; };
@@ -424,6 +429,16 @@
 				9645ED7A1855C708004643C9 /* ESUserModel.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		9645ED7C1856C416004643C9 /* ChoseModule */ = {
+			isa = PBXGroup;
+			children = (
+				9645ED7D1856C487004643C9 /* ESChoseModuleViewController.h */,
+				9645ED7E1856C487004643C9 /* ESChoseModuleViewController.m */,
+				9645ED7F1856C487004643C9 /* ESChoseModuleViewController.xib */,
+			);
+			name = ChoseModule;
 			sourceTree = "<group>";
 		};
 		9688BD60184C8D2B00F9A8E9 /* UIKit */ = {
@@ -957,6 +972,7 @@
 		96B98B811845C81E002E8552 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9645ED7C1856C416004643C9 /* ChoseModule */,
 				96B98B821845C81E002E8552 /* HomeView */,
 				96B98B861845C81E002E8552 /* UserModule */,
 			);
@@ -1168,6 +1184,7 @@
 				96B98B741845C6B8002E8552 /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */,
 				96B98A811845C643002E8552 /* Settings.bundle in Resources */,
 				96B98BD91845E58F002E8552 /* reset_mm@2x.png in Resources */,
+				9645ED811856C487004643C9 /* ESChoseModuleViewController.xib in Resources */,
 				96B98BD11845E58F002E8552 /* e-sky.png in Resources */,
 				96B98BDA1845E58F002E8552 /* rest_mm.png in Resources */,
 				96B98B7C1845C6FA002E8552 /* man in Resources */,
@@ -1233,6 +1250,7 @@
 				96B98A881845C643002E8552 /* HFHttpRequestManager.m in Sources */,
 				96B98B931845C81E002E8552 /* ESMainViewController.m in Sources */,
 				96B98B771845C6B8002E8552 /* UIImage+Extensions.m in Sources */,
+				9645ED801856C487004643C9 /* ESChoseModuleViewController.m in Sources */,
 				96B98A1D1845C56D002E8552 /* ESAppDelegate.m in Sources */,
 				96B98B411845C6B8002E8552 /* AFHTTPRequestOperationManager.m in Sources */,
 				96B98B5F1845C6B8002E8552 /* NSDictionary+Safe.m in Sources */,

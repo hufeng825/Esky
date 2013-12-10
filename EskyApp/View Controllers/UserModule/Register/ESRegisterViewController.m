@@ -92,6 +92,9 @@
     [self.verifyInput.textField setKeyboardType:UIKeyboardTypeASCIICapable];
     [self.nickNameInput.textField setKeyboardType:UIKeyboardTypeNamePhonePad];
     
+    [self.mmInput setSecureTextEntry:YES];
+    [self.verifyInput setSecureTextEntry:YES];
+    
     if (!is4InchScreen()) {
         [self.emailInput setFontSize:17];
         [self.mmInput setFontSize:17];
@@ -245,39 +248,39 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 
 -(void) registerRequest
 {
-    if([self checkParameter])
-    {
+//    if([self checkParameter])
+//    {
+//        ESRequestParameters *parameters = [ESRequestParameters requestRegisterParametersWithEmail:_emailInput.text userName:_mmInput.text nickName:_nickNameInput.text avatar:nil password:_mmInput.text];
+//        NSData *imageData = UIImageJPEGRepresentation(_headIconImageView.image, 0.5);
+//        [parameters setData:imageData forKey:@"avatar"];
+//        //[self createLoading];
+//        
+//    [ESRequest registerRequest:^(HFHttpRequestResult *result) {
+//        
+//    } failRespon:^(HFHttpErrorRequestResult *erroresult) {
+//        
+//    } progressRespon:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+//        NSLog(@"%lld",totalBytesRead);
+//    } requestParameter:parameters];
         ESRequestParameters *parameters = [ESRequestParameters requestRegisterParametersWithEmail:_emailInput.text userName:_mmInput.text nickName:_nickNameInput.text avatar:nil password:_mmInput.text];
-        NSData *imageData = UIImageJPEGRepresentation(_headIconImageView.image, 0.5);
-        [parameters setData:imageData forKey:@"avatar"];
-        //[self createLoading];
-        
-    [ESRequest registerRequest:^(HFHttpRequestResult *result) {
-        
-    } failRespon:^(HFHttpErrorRequestResult *erroresult) {
-        
-    } progressRespon:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
-        NSLog(@"%lld",totalBytesRead);
-    } requestParameter:parameters];
-        
-//        [ESRequest registerRequest:^(HFHttpRequestResult *result) {
-//            HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"checkmark.png"]];
-//            [HUD showWhileExecuting:@selector(showProgressTask) onTarget:self withObject:nil animated:YES];
-//
-//        } failRespon:^(HFHttpErrorRequestResult *erroresult) {
-//            HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"checkmark.png"]];
-//            HUD.labelText = @"failed" ;
-//            [HUD showWhileExecuting:@selector(showProgressTask) onTarget:self withObject:nil animated:YES];
-//
-//        } progressRespon:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
-//            float percentDone = ((float)((int)totalBytesRead) / (float)((int)totalBytesExpectedToRead));
-//            HUD.progress = percentDone;
-//            HUD.labelText = [NSString stringWithFormat:@"%f",percentDone];
-//        } requestParameter:parameters uploadBlock:^(id<HFMultipartFormData> formData) {
-//            NSData *imageData = UIImageJPEGRepresentation(_headIconImageView.image, 0.5);
-//            [formData appendPartWithFormData:imageData  name:@"avatar" ];
-//        }];
-    }
+        [ESRequest registerRequest:^(HFHttpRequestResult *result) {
+            HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"checkmark.png"]];
+            [HUD showWhileExecuting:@selector(showProgressTask) onTarget:self withObject:nil animated:YES];
+
+        } failRespon:^(HFHttpErrorRequestResult *erroresult) {
+            HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"checkmark.png"]];
+            HUD.labelText = @"failed" ;
+            [HUD showWhileExecuting:@selector(showProgressTask) onTarget:self withObject:nil animated:YES];
+
+        } progressRespon:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+            float percentDone = ((float)((int)totalBytesRead) / (float)((int)totalBytesExpectedToRead));
+            HUD.progress = percentDone;
+            HUD.labelText = [NSString stringWithFormat:@"%f",percentDone];
+        } requestParameter:parameters uploadBlock:^(id<HFMultipartFormData> formData) {
+            NSData *imageData = UIImageJPEGRepresentation(_headIconImageView.image, 0.5);
+            [formData appendPartWithFormData:imageData  name:@"avatar" ];
+        }];
+//    }
 }
 
 #pragma mark loading

@@ -67,6 +67,7 @@
 
     [self.logoNameInput.textField setKeyboardType:UIKeyboardTypeEmailAddress];
     [self.mmInput.textField setKeyboardType:UIKeyboardTypeASCIICapable];
+    [self.mmInput setSecureTextEntry:YES];
 }
 - (void)didReceiveMemoryWarning
 {

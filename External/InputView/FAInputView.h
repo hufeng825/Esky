@@ -54,4 +54,6 @@
 
 -(void) setFontSize:(CGFloat)fontSize;
 
+-(void) setSecureTextEntry:(BOOL) secureTextEntry;
+
 @end
