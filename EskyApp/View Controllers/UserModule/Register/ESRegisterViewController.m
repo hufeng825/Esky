@@ -7,13 +7,21 @@
 //
 
 #import "ESRegisterViewController.h"
+#import "QiniuPutPolicy.h"
 
+static NSString *QiniuAccessKey = @"Kqq_hZ-Ck1SepnkIlF9SISCI4MZCyiQkRblLv4Q_";
+static NSString *QiniuSecretKey = @"9zE3jpWBDBQf98-hsy8-52e7Sowe1DbdJtwrAHz-";
+static NSString *QiniuBucketName = @"hufeng";
 
 @interface ESRegisterViewController ()
 {
     NSUInteger selectedTextFieldTag;
     UIImage *avatarImage;
     MBProgressHUD *HUD;
+    QiniuSimpleUploader *uploader;
+    NSString *headUrlStr;
+    BOOL isUpload ;
+    BOOL isNotificationRegister;
 }
 @end
 
@@ -62,6 +70,9 @@
     [singletap setNumberOfTapsRequired:1];
     singletap.delegate = self;
     [self.bgScrollView addGestureRecognizer:singletap];
+    
+    isUpload = NO;
+    isNotificationRegister = NO;
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
@@ -131,6 +142,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
             dispatch_async(dispatch_get_main_queue(), ^{
                 //回调或者说是通知主线程刷新，
                 self.headIconImageView.image = image;
+                [self uploadContent];
             });
         });
     }
@@ -205,9 +217,12 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 
 - (void)textFieldDidEndEditing:(FAInputView *)textField
 {
-    if (textField.tag ==EmailTag
-        && ![textField.text validateEmailAddress]
-        ) {
+    //如果用户没输入则不进行校验
+    if (!TTIsStringWithAnyText(textField.text)) {
+        return;
+    }
+   else if (textField.tag ==EmailTag
+        && ![textField.text validateEmailAddress]) {
         [self showWarning:@"邮箱格式错误"];
         [textField setIsError:YES];
     }
@@ -223,6 +238,9 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
          [_mmInput setIsError:YES];
          [_verifyInput setIsError:YES];
       }
+    }
+    else{
+        [textField setIsError:NO];
     }
 }
 
@@ -248,40 +266,109 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 
 -(void) registerRequest
 {
-//    if([self checkParameter])
-//    {
-//        ESRequestParameters *parameters = [ESRequestParameters requestRegisterParametersWithEmail:_emailInput.text userName:_mmInput.text nickName:_nickNameInput.text avatar:nil password:_mmInput.text];
-//        NSData *imageData = UIImageJPEGRepresentation(_headIconImageView.image, 0.5);
-//        [parameters setData:imageData forKey:@"avatar"];
-//        //[self createLoading];
-//        
-//    [ESRequest registerRequest:^(HFHttpRequestResult *result) {
-//        
-//    } failRespon:^(HFHttpErrorRequestResult *erroresult) {
-//        
-//    } progressRespon:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
-//        NSLog(@"%lld",totalBytesRead);
-//    } requestParameter:parameters];
-        ESRequestParameters *parameters = [ESRequestParameters requestRegisterParametersWithEmail:_emailInput.text userName:_mmInput.text nickName:_nickNameInput.text avatar:nil password:_mmInput.text];
+    if([self checkParameter]){
+        ESRequestParameters *parameters = [ESRequestParameters requestRegisterParametersWithEmail:_emailInput.text userName:_mmInput.text nickName:_nickNameInput.text avatar:headUrlStr password:_mmInput.text];
         [ESRequest registerRequest:^(HFHttpRequestResult *result) {
-            HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"checkmark.png"]];
-            [HUD showWhileExecuting:@selector(showProgressTask) onTarget:self withObject:nil animated:YES];
-
+            NSLog(@"%@",result.Json);
         } failRespon:^(HFHttpErrorRequestResult *erroresult) {
-            HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"checkmark.png"]];
-            HUD.labelText = @"failed" ;
-            [HUD showWhileExecuting:@selector(showProgressTask) onTarget:self withObject:nil animated:YES];
-
-        } progressRespon:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
-            float percentDone = ((float)((int)totalBytesRead) / (float)((int)totalBytesExpectedToRead));
-            HUD.progress = percentDone;
-            HUD.labelText = [NSString stringWithFormat:@"%f",percentDone];
-        } requestParameter:parameters uploadBlock:^(id<HFMultipartFormData> formData) {
-            NSData *imageData = UIImageJPEGRepresentation(_headIconImageView.image, 0.5);
-            [formData appendPartWithFormData:imageData  name:@"avatar" ];
-        }];
-//    }
+            
+        } progressRespon:nil requestParameter:parameters];
+    }
 }
+
+
+#pragma mark 上传图片到七牛服务器
+
+- (void)uploadContent {
+    //obtaining saving path
+    if (!self.headIconImageView.image.accessibilityIdentifier) {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat: @"yyyyMMddHHmmss"];
+        NSString *timeDesc = [formatter stringFromDate:[NSDate date]];
+        //Optionally for time zone conversions
+        [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+        NSString *key = [NSString stringWithFormat:@"%@%@", timeDesc, @".jpg"];
+        NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:key];
+        NSData *imageData = UIImageJPEGRepresentation(_headIconImageView.image,1);
+        [imageData writeToFile:filePath atomically:YES];
+        [self uploadFile:filePath bucket:QiniuBucketName key:key];
+        isUpload = YES;
+    }
+        
+}
+
+- (NSString *)tokenWithScope:(NSString *)scope
+{
+    QiniuPutPolicy *policy = [QiniuPutPolicy new];
+    policy.scope = scope;
+    return [policy makeToken:QiniuAccessKey secretKey:QiniuSecretKey];
+}
+
+
+- (void)uploadFile:(NSString *)filePath bucket:(NSString *)bucket key:(NSString *)key {
+    
+    NSFileManager *manager = [NSFileManager defaultManager];
+    if ([manager fileExistsAtPath:filePath]) {
+        uploader = [QiniuSimpleUploader uploaderWithToken:[self tokenWithScope:bucket]];
+        uploader.delegate = self;
+        [uploader uploadFile:filePath key:key extra:nil];
+    }
+}
+
+// Progress updated.
+- (void)uploadProgressUpdated:(NSString *)filePath percent:(float)percent
+{
+    NSString *message = [NSString stringWithFormat:@"Progress of uploading %@ is: %.2f%%",  filePath, percent * 100];
+    NSLog(@"%@", message);
+ 
+}
+
+// Upload completed successfully.
+- (void)uploadSucceeded:(NSString *)filePath ret:(NSDictionary *)ret
+{
+    NSString *hash = [ret stringForKey:@"hash"];
+    NSString *message = [NSString stringWithFormat:@"Successfully uploaded %@ with hash: %@",  filePath, hash];
+    [self clearCache:filePath];
+    NSString *urlStr = [NSString stringWithFormat:@"http://%@.qiniudn.com/%@",QiniuBucketName,[ret stringForKey:@"key"]];
+    NSLog(@"%@", message);
+    headUrlStr = urlStr ;
+    isUpload = NO ;
+    if (isNotificationRegister) {
+        [self registerRequest];
+    }
+}
+
+-(void) clearCache:(NSString *)filePath
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError * error;
+    BOOL removed =[fileManager removeItemAtPath:filePath error:&error];
+    if(removed ==NO)
+    {
+        NSLog(@"removed ==NO");
+    }
+    if(error)
+    {
+        NSLog(@"%@", [error description]);
+    }
+}
+
+- (void)uploadFailed:(NSString *)filePath error:(NSError *)error
+{
+    NSString *message = @"";
+    
+    // For first-time users, this is an easy-to-forget preparation step.
+    if ([QiniuAccessKey hasPrefix:@"<Please"]) {
+        message = @"Please replace kAccessKey, kSecretKey and kBucketName with proper values. These values were defined on the top of QiniuViewController.m";
+    } else {
+        message = [NSString stringWithFormat:@"Failed uploading %@ with error: %@",  filePath, error];
+    }
+    ESDERROR(@"%@", message);
+    [self showWarning:@"头像上传失败 您可以稍后在重新进行修改"];
+    headUrlStr = nil;
+    isUpload = NO;
+}
+
 
 #pragma mark loading
 -(void) createLoading
@@ -306,6 +393,12 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 #pragma mark 注册按钮点击
 
 - (IBAction)registerClicked:(id)sender {
-    [self registerRequest];
+    if (!isUpload) {
+        //如果正在上传头像则退出将上传结束执行注册flag表示为可以
+        isNotificationRegister = YES;
+    }else{
+        [self registerRequest];
+    }
+    
 }
 @end

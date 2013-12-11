@@ -27,9 +27,12 @@
      @"text/javascript",
      @"text/plain",
      @"text/html", nil];
+    
     [self.requestSerializer setHTTPMethodsEncodingParametersInURI:contextSet];
 
     [self.responseSerializer setAcceptableContentTypes:contextSet];
+    
+
     return self;
 }
 
@@ -81,6 +84,7 @@
 	}
 	return @"";
 }
+
 
 
 

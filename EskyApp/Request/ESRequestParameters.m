@@ -18,13 +18,12 @@
 {
     ESRequestParameters *parameter = [[ESRequestParameters alloc] init];
     
-    [parameter stringWithHost:kYangYI_API_HOST api:@"account/register.json"];
+    [parameter stringWithHost:API_HOST api:@"account/register.json"];
     [parameter setString:email forKey:@"email"];
     [parameter setString:userName forKey:@"username"];
     [parameter setString:nickName forKey:@"nickname"];
     [parameter setString:[password  stringFromMD5] forKey:@"password"];
-    
-//    [parameter setObject:imageData forKey:@"avatar"];
+    [parameter setString:avatarpath forKey:@"avatar"];
     return parameter;
 };
 
@@ -34,7 +33,7 @@
                                                     passWord:(NSString *)passWord
 {
     ESRequestParameters *parameter = [[ESRequestParameters alloc] init];
-    [parameter stringWithHost:kAliYun_API_HOST api:@"account/login.json"];
+    [parameter stringWithHost:API_HOST api:@"account/login.json"];
     [parameter setString:username forKey:@"username"];
     [parameter setString:passWord forKey:@"password"];
     return parameter;

@@ -22,11 +22,6 @@
 
 
 
-+ (void) registerRequest :(HFHttpSuccessCallBack)sucessRespon
-               failRespon:(HFHttpErrorRequestCallBack)failRespon
-           progressRespon:(HFHttpDownloadProgressCallBlock)progressRespon
-         requestParameter:(ESRequestParameters *)requestParameter
-              uploadBlock:(HFHttpUploadCallBack)uploadBlock;
 
 + (void) registerRequest :(HFHttpSuccessCallBack)sucessRespon
                failRespon:(HFHttpErrorRequestCallBack)failRespon

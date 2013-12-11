@@ -159,6 +159,7 @@
 		96C90CA1185814DF005C4ECB /* QiniuPutExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C90C8F185814DF005C4ECB /* QiniuPutExtra.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		96C90CA2185814DF005C4ECB /* QiniuSimpleUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C90C91185814DF005C4ECB /* QiniuSimpleUploader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		96C90CA3185814DF005C4ECB /* QiniuUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C90C94185814DF005C4ECB /* QiniuUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		96C90CA618583CE2005C4ECB /* QiniuPutPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C90CA518583CE2005C4ECB /* QiniuPutPolicy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		96F8AA6A1856FAFC000612C5 /* CSAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8AA691856FAFC000612C5 /* CSAnimation.m */; };
 		96F8AA6E185715AD000612C5 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8AA6D185715AD000612C5 /* Base64.m */; };
 		96F8AA72185719A7000612C5 /* NSData+MD5Digest.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8AA71185719A7000612C5 /* NSData+MD5Digest.m */; };
@@ -425,6 +426,8 @@
 		96C90C92185814DF005C4ECB /* QiniuUploadDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiniuUploadDelegate.h; sourceTree = "<group>"; };
 		96C90C93185814DF005C4ECB /* QiniuUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiniuUtils.h; sourceTree = "<group>"; };
 		96C90C94185814DF005C4ECB /* QiniuUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiniuUtils.m; sourceTree = "<group>"; };
+		96C90CA418583CE2005C4ECB /* QiniuPutPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiniuPutPolicy.h; sourceTree = "<group>"; };
+		96C90CA518583CE2005C4ECB /* QiniuPutPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiniuPutPolicy.m; sourceTree = "<group>"; };
 		96CEEBDA1845FAFD0045F15E /* ESDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDebug.h; sourceTree = "<group>"; };
 		96F8AA681856FAFC000612C5 /* CSAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAnimation.h; sourceTree = "<group>"; };
 		96F8AA691856FAFC000612C5 /* CSAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAnimation.m; sourceTree = "<group>"; };
@@ -1153,6 +1156,8 @@
 				96C90C90185814DF005C4ECB /* QiniuSimpleUploader.h */,
 				96C90C91185814DF005C4ECB /* QiniuSimpleUploader.m */,
 				96C90C92185814DF005C4ECB /* QiniuUploadDelegate.h */,
+				96C90CA418583CE2005C4ECB /* QiniuPutPolicy.h */,
+				96C90CA518583CE2005C4ECB /* QiniuPutPolicy.m */,
 				96C90C93185814DF005C4ECB /* QiniuUtils.h */,
 				96C90C94185814DF005C4ECB /* QiniuUtils.m */,
 			);
@@ -1413,6 +1418,7 @@
 				96B98B931845C81E002E8552 /* ESMainViewController.m in Sources */,
 				96B98B771845C6B8002E8552 /* UIImage+Extensions.m in Sources */,
 				96F8AA6A1856FAFC000612C5 /* CSAnimation.m in Sources */,
+				96C90CA618583CE2005C4ECB /* QiniuPutPolicy.m in Sources */,
 				96C90C99185814DF005C4ECB /* ASIFormDataRequest.m in Sources */,
 				9645ED801856C487004643C9 /* ESChoseModuleViewController.m in Sources */,
 				96C90C9F185814DF005C4ECB /* GTMBase64.m in Sources */,

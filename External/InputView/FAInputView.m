@@ -148,9 +148,9 @@
     dispatch_async(dispatch_get_main_queue(), ^{
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:.5];
-    if (!TTIsStringWithAnyText(textField.text)) {
-        [self.infoImageView setAlpha:.4];
-    }
+//    if (!TTIsStringWithAnyText(textField.text)) {
+//        [self.infoImageView setAlpha:.4];
+//    }
     [self.customView setBackgroundColor: RGBACOLOR(255,255,255,1)];
     [self setNormeColor];
     [UIView commitAnimations];
@@ -207,6 +207,7 @@
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationDuration:.5];
         [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.infoImageView cache:YES];
+        [self.infoImageView setAlpha:1];
         if (_isError == YES)
         {
             [self.infoImageView setImage:[UIImage imageNamed:@"check_wrong.png"]];
@@ -217,7 +218,6 @@
         }
             [UIView commitAnimations];});
     }
-    [self.infoImageView setAlpha:1];
 }
 
 

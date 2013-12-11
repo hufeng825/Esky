@@ -55,19 +55,6 @@
     [self postUrl:requestParameter.requestPath postArguments:requestParameter.arg responArgument:arguments];
 };
 
-+ (void) registerRequest :(HFHttpSuccessCallBack)sucessRespon
-               failRespon:(HFHttpErrorRequestCallBack)failRespon
-           progressRespon:(HFHttpDownloadProgressCallBlock)progressRespon
-         requestParameter:(ESRequestParameters *)requestParameter
-              uploadBlock:(HFHttpUploadCallBack)uploadBlock
-{
-    HFHttpResponArguments *arguments = NEW(HFHttpResponArguments);
-    arguments.sucessRespon = sucessRespon;
-    arguments.failRespon = failRespon;
-    arguments.progressBlock = progressRespon;
-    [self postUrl:requestParameter.requestPath postArguments:requestParameter.arg  uploadBlock:uploadBlock responArgument:arguments];
-
-}
 
 + (void) registerRequest :(HFHttpSuccessCallBack)sucessRespon
                failRespon:(HFHttpErrorRequestCallBack)failRespon

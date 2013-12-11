@@ -11,12 +11,14 @@
 
 #import "FAInputView.h"
 
-
+#import "QiniuUploadDelegate.h"
+#import "QiniuSimpleUploader.h"
 
 @interface ESRegisterViewController : ESBaseViewController<UITextFieldDelegate,
                                                             UIImagePickerControllerDelegate,
                                                             UIGestureRecognizerDelegate,
-                                                            UINavigationControllerDelegate>
+                                                            UINavigationControllerDelegate,
+                                                            QiniuUploadDelegate>
 
 @property (weak, nonatomic) IBOutlet FAHeaderIconImageView *headIconImageView;
 @property (weak, nonatomic) IBOutlet UIButton *registButton;

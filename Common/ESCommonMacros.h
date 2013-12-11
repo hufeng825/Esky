@@ -16,8 +16,7 @@
 
 //#define DATA_ENV [DataEnvironment sharedDataEnvironment]
 
-#define ImageNamed(_pointer) [UIImage imageNamed:[UIUtil imageName:_pointer]]
-
+#define ImageNamed(_pointer) [UIImage imageNamed:_pointer]]
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - common functions 
@@ -80,6 +79,9 @@ UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSSt
 {                                                                                                                                                               \
 UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:t message:m delegate:nil cancelButtonTitle:bt otherButtonTitles:nil] ; [alert1 show]; \
 }
+
+
+
 
 
 
