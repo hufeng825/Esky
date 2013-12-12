@@ -33,8 +33,7 @@
 
     viewController.navigationItem.leftBarButtonItem  = Nil;
 
-
-    UIButton *button                                 = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    UIButton *button  = [UIButton buttonWithType:UIButtonTypeContactAdd];
     [viewController.view addSubview:button];
 
  }
@@ -199,17 +198,26 @@
 
 
     ESLoginViewController *lg = [[ESLoginViewController alloc]initWithNibName:@"ESLoginViewController" bundle:nil];
-    [self.navigationController presentViewController:lg animated:YES completion:nil];
+    [self.navigationController presentViewController:lg animated:YES completion:^{
+        [self chooseModule];
+    }];
     
+  
 
 }
 
 
+-(void) chooseModule{
+    ESChoseModuleViewController *choseModuleVc = [[ESChoseModuleViewController alloc]initWithNibName:@"ESChoseModuleViewController" bundle:nil];
+    choseModuleVc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self.presentedViewController presentViewController:choseModuleVc animated:NO completion:nil];
+}
 
--(void)thirdLog
+
+-(void) thirdLog
 {
 
-    UIButton *loginBtn                               = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *loginBtn  = [UIButton buttonWithType:UIButtonTypeCustom];
     [loginBtn setTitle:@"title" forState:UIControlStateNormal];
     [loginBtn setBackgroundColor:[UIColor redColor]];
     loginBtn.frame = CGRectMake((self.view.frame.size.width - 173.0) / 2, (self.view.frame.size.height - 32.0) / 2, 173.0, 32.0);
@@ -220,11 +228,7 @@
 
 - (void)loginBtnClickHandler:(id)sender
 {
-//    __block ESChoseModuleViewController *choseModuleVc = [[ESChoseModuleViewController alloc]initWithNibName:@"ESChoseModuleViewController" bundle:nil];
-//    choseModuleVc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-//    [self.navigationController presentViewController:choseModuleVc animated:YES completion:^{
-//        [choseModuleVc startAnimation];
-//    }];
+
     
 //    id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
 //

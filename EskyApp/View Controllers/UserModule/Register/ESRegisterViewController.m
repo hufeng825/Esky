@@ -187,7 +187,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 - (BOOL)textFieldShouldBeginEditing:(FAInputView *)textField
 {
     [self keyboarShow:textField];
-    if (textField.tag == VMMTag) {
+    if (textField.tag == VMMTag && !TTIsStringWithAnyText(textField.text)) {
         [_mmInput setIsError:NO];
     }
     return YES;

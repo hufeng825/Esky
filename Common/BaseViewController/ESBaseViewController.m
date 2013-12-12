@@ -38,6 +38,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(themeChanged) name:kThemeChangedNotification object:nil];
     }
     return self;
 }
@@ -145,7 +146,9 @@
 }
 
 
-
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 
 @end
