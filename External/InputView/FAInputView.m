@@ -220,6 +220,12 @@
     }
 }
 
+-(void) resetView
+{
+    self.textField.text = nil;
+    [self.infoImageView setAlpha:.4];
+    [self.infoImageView setImage:[UIImage imageNamed:@"check_true.png"]];
+}
 
 -(void)setData:(NSString *)infoTitle placeStr:(NSString *)placeStr delegate:(id)delgate
 {

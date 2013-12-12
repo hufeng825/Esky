@@ -20,7 +20,7 @@ static NSString *QiniuBucketName = @"hufeng";
     MBProgressHUD *HUD;
     QiniuSimpleUploader *uploader;
     NSString *headUrlStr;
-    BOOL isUpload ;
+    BOOL isUploading ;
     BOOL isNotificationRegister;
 }
 @end
@@ -71,7 +71,7 @@ static NSString *QiniuBucketName = @"hufeng";
     singletap.delegate = self;
     [self.bgScrollView addGestureRecognizer:singletap];
     
-    isUpload = NO;
+    isUploading = NO;
     isNotificationRegister = NO;
 }
 
@@ -171,15 +171,18 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 //因为runloop原因 所以setContentOffset animation 有时候卡顿 所以重写此方法
 -(void)setBgContentOffsetAnimation:(CGFloat )OffsetY
 {
-    [UIView animateWithDuration:.5 animations:^{
-        self.bgScrollView.contentOffset = CGPointMake(0, OffsetY);
-    }];
+    if (self.bgScrollView.contentOffset.y != OffsetY) {
+        [UIView animateWithDuration:.5 animations:^{
+            self.bgScrollView.contentOffset = CGPointMake(0, OffsetY);
+        }];
+
+    }
 }
 
 
 -(void)keyboarShow:(FAInputView *)inputView
 {
-    [self setBgContentOffsetAnimation:180];
+    [self setBgContentOffsetAnimation:175];
 }
 
 #pragma mark - textFieldDelegate
@@ -187,8 +190,10 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 - (BOOL)textFieldShouldBeginEditing:(FAInputView *)textField
 {
     [self keyboarShow:textField];
-    if (textField.tag == VMMTag && !TTIsStringWithAnyText(textField.text)) {
-        [_mmInput setIsError:NO];
+    if (textField.tag == MMTag) {
+        [self.verifyInput resetView];
+    }else if(textField.tag == VMMTag && TTIsStringWithAnyText(textField.text)){
+        [self.mmInput setIsError:NO];
     }
     return YES;
 }
@@ -211,7 +216,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     }
     else if(textField.tag == NickNameTag){
     }
-    [self checkParameter];
+    [self registerClicked:nil];
     return YES;
 }
 
@@ -221,27 +226,30 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     if (!TTIsStringWithAnyText(textField.text)) {
         return;
     }
-   else if (textField.tag ==EmailTag
+   if (textField.tag ==EmailTag
         && ![textField.text validateEmailAddress]) {
         [self showWarning:@"邮箱格式错误"];
         [textField setIsError:YES];
+       return;
     }
-    else if (textField.tag == MMTag) {
+   if (textField.tag == MMTag) {
         if(![textField.text validatePassWord]){
             [self showWarning:@"密码格式错误"];
             [_mmInput setIsError:YES];
+            return;
         }
     }
-    else if (textField.tag == VMMTag){
-     if(![textField.textField.text isEqualToString:_mmInput.textField.text]){
+    if (textField.tag == VMMTag){
+     if(![textField.text isEqualToString:_mmInput.text]){
          [self showWarning:@"密码不匹配啊"];
-         [_mmInput setIsError:YES];
          [_verifyInput setIsError:YES];
-      }
+         return;
+     }else if(_mmInput.isError){
+         [_verifyInput setIsError:YES];
+         return ;
+     }
     }
-    else{
-        [textField setIsError:NO];
-    }
+    [textField setIsError:NO];
 }
 
 -(BOOL) checkParameter
@@ -252,6 +260,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     }
     else if(![_mmInput.text validatePassWord] || ![_mmInput.text isEqualToString:_verifyInput.text]){
         [self showWarning:@"密码输入错误"];
+        [_verifyInput setIsError:YES];
         [_mmInput setIsError:YES];
     }
     else if (!TTIsStringWithAnyText(_nickNameInput.text)){
@@ -292,7 +301,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
         NSData *imageData = UIImageJPEGRepresentation(_headIconImageView.image,1);
         [imageData writeToFile:filePath atomically:YES];
         [self uploadFile:filePath bucket:QiniuBucketName key:key];
-        isUpload = YES;
+        isUploading = YES;
     }
         
 }
@@ -332,7 +341,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     NSString *urlStr = [NSString stringWithFormat:@"http://%@.qiniudn.com/%@",QiniuBucketName,[ret stringForKey:@"key"]];
     NSLog(@"%@", message);
     headUrlStr = urlStr ;
-    isUpload = NO ;
+    isUploading = NO ;
     if (isNotificationRegister) {
         [self registerRequest];
     }
@@ -366,7 +375,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     ESDERROR(@"%@", message);
     [self showWarning:@"头像上传失败 您可以稍后在重新进行修改"];
     headUrlStr = nil;
-    isUpload = NO;
+    isUploading = NO;
 }
 
 
@@ -393,11 +402,13 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 #pragma mark 注册按钮点击
 
 - (IBAction)registerClicked:(id)sender {
-    if (!isUpload) {
-        //如果正在上传头像则退出将上传结束执行注册flag表示为可以
-        isNotificationRegister = YES;
-    }else{
+    if (!isUploading) {
+        //如果正在上传头像没有在上传状态执行创建帐号
+        isNotificationRegister = NO;
         [self registerRequest];
+    }else{
+        //如果正在上传头像则设置通知表示告诉上传成功后执行创建帐号
+        isNotificationRegister = YES;
     }
     
 }

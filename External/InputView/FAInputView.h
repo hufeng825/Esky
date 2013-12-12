@@ -56,4 +56,6 @@
 
 -(void) setSecureTextEntry:(BOOL) secureTextEntry;
 
+-(void) resetView;
+
 @end
