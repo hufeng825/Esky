@@ -221,7 +221,7 @@
     CFStringRef uuidStringRef = CFUUIDCreateString(NULL, uuidRef);
     CFRelease(uuidRef);
     NSString *uniqueId = (__bridge NSString *)uuidStringRef;
-    return uniqueId;
+    return [uniqueId stringByReplacingOccurrencesOfString :@"-" withString:@""];
 }
 
 

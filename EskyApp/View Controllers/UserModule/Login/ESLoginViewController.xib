@@ -111,6 +111,6 @@
         <image name="bt_grey.png" width="145" height="68"/>
         <image name="icon_qq.png" width="41" height="45"/>
         <image name="icon_weibo.png" width="50" height="40"/>
-        <image name="rest_mm.png" width="72" height="21"/>
+        <image name="rest_mm.png" width="73" height="19"/>
     </resources>
 </document>

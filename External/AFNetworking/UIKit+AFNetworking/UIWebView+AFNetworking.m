@@ -133,15 +133,15 @@ static char kAFHTTPRequestOperationKey;
     [self.af_HTTPRequestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id __unused responseObject) {
         NSData *data = success ? success(operation.response, operation.responseData) : operation.responseData;
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wgnu"
-        [weakSelf loadData:data MIMEType:(MIMEType ?: [operation.response MIMEType]) textEncodingName:(textEncodingName ?: [operation.response textEncodingName]) baseURL:[operation.response URL]];
-#pragma clang diagnostic pop
-    } failure:^(AFHTTPRequestOperation * __unused operation, NSError *error) {
-        if (failure) {
-            failure(error);
-        }
-    }];
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wgnu"
+            [weakSelf loadData:data MIMEType:(MIMEType ?: [operation.response MIMEType]) textEncodingName:(textEncodingName ?: [operation.response textEncodingName]) baseURL:[operation.response URL]];
+    #pragma clang diagnostic pop
+        } failure:^(AFHTTPRequestOperation * __unused operation, NSError *error) {
+            if (failure) {
+                failure(error);
+            }
+        }];
 
     [self.af_HTTPRequestOperation start];
 }

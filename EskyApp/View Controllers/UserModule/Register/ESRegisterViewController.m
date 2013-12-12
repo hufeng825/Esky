@@ -137,11 +137,12 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     if ([mediaType isEqualToString:@"public.image"]){
         // UIImage *selectedImage = [info objectForKey:UIImagePickerControllerOriginalImage];
         __block UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+        __weak  __typeof(self)weakSelf = self;
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             image = [image compressedImage];
             dispatch_async(dispatch_get_main_queue(), ^{
                 //回调或者说是通知主线程刷新，
-                self.headIconImageView.image = image;
+                weakSelf.headIconImageView.image = image;
                 [self uploadContent];
             });
         });
@@ -254,7 +255,12 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 
 -(BOOL) checkParameter
 {
-    if (![_emailInput.text validateEmailAddress]) {
+    if ([self.headIconImageView.image.accessibilityIdentifier hasPrefix:@"icon_head"] ) {
+        [self setBgContentOffsetAnimation:0];
+        [self showWarning:@"设置一个头像吧"];
+        [self.view endEditing:YES];
+    }
+    else if (![_emailInput.text validateEmailAddress]) {
         [self showWarning:@"邮箱格式错误"];
         [_emailInput setIsError:YES];
     }
@@ -278,11 +284,13 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 -(void) registerRequest
 {
     if([self checkParameter]){
+        __weak __typeof(self)weakSelf = self;
         ESRequestParameters *parameters = [ESRequestParameters requestRegisterParametersWithEmail:_emailInput.text userName:_mmInput.text nickName:_nickNameInput.text avatar:headUrlStr password:_mmInput.text];
         [ESRequest registerRequest:^(HFHttpRequestResult *result) {
             NSLog(@"%@",result.Json);
             if ([result isSuccess]) {
-                HFAlert_T_M_BT(result.message,result.Json,@"ok");
+                HFAlert_T_M_BT(result.message,@"注册成功" ,@"ok");
+                [weakSelf.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
             }else{
                 [result showErrorMessage];
             }
@@ -297,8 +305,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 
 - (void)uploadContent {
     //obtaining saving path
-    if (!self.headIconImageView.image.accessibilityIdentifier) {
-      
+    if (![self.headIconImageView.image.accessibilityIdentifier hasPrefix:@"icon_head"] ) {
         //Optionally for time zone conversions
         NSString *key = [NSString stringWithFormat:@"%@%@", [NSString makeUniqueString], @".jpg"];
         NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:key];

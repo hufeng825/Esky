@@ -187,7 +187,6 @@
                                                 authManagerViewDelegate:self];
     [ShareSDK getUserInfoWithType:ShareTypeQQSpace authOptions:authOptions result:^(BOOL result, id<ISSPlatformUser> userInfo, id<ICMErrorInfo> error){
          if (result) {
-             
              HFAlert(@"登录成功");
              [self goBack];
          }
@@ -236,12 +235,13 @@
 {
     if ([self checkParameter]) {
         ESRequestParameters *postObject  = [ESRequestParameters requestLoginParametersWithUsername:_logoNameInput.text passWord:[_mmInput.text stringFromMD5]];
+        __weak  __typeof(self)weakSelf= self;
         [ESRequest loginRequest:^(HFHttpRequestResult *result) {
             NSLog(@"");
             if ([result isSuccess]) {
                 ESUserModel *user = [ESUserModel objectFromJSONObject:result.data mapping:nil];
                 [result showErrorMessage];
-                [self goBack];
+                [weakSelf goBack];
             }else{
                 [result showErrorMessage];
             }
