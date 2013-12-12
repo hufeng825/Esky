@@ -144,7 +144,7 @@
     AFSucessResponBlock sucessRespon =  ^(AFHTTPRequestOperation *operation, id responseObject)
     {
         HFHttpRequestResult *result = [[HFHttpRequestResult alloc]initWithData:responseObject
-                                                                       request:operation.request userInfo:userInfo];
+                                                                        request:operation.request userInfo:userInfo];
         if (callBack) {
             callBack(result);
         }

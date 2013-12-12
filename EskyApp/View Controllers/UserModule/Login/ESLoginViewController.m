@@ -28,6 +28,13 @@
 #define MMTag 1002
 
 
+#pragma mark themeChanged
+
+-(void)themeChanged{
+    [super themeChanged];
+    [self.loginBt setBackgroundImage:[[FAThemeManager sharedManager]themeImageWithName:@"bt.png"] forState:UIControlStateNormal];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self                                             = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -69,8 +76,8 @@
     [self.mmInput.textField setKeyboardType:UIKeyboardTypeASCIICapable];
     [self.mmInput setSecureTextEntry:YES];
 }
-- (void)didReceiveMemoryWarning
-{
+
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -78,24 +85,16 @@
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     return YES;
 }
+
 -(void)handleSingleTap:(id)sender
 {
     [self viewEndEdit];
 }
 
 
-#pragma mark themeChanged
 
--(void)themeChanged
-{
-    [super themeChanged];
 
-    [self.loginBt setBackgroundImage:[[FAThemeManager sharedManager]themeImageWithName:@"bt.png"] forState:UIControlStateNormal];
-
-}
-
--(void)keyboarShow:(FAInputView *)inputView
-{
+-(void)keyboarShow:(FAInputView *)inputView{
     if (is4InchScreen()) {
         [self setBgContentOffsetAnimation:140];
     }
@@ -109,7 +108,7 @@
 -(void)setBgContentOffsetAnimation:(CGFloat )OffsetY
 {
     [UIView animateWithDuration:.5 animations:^{
-    bgScrollView.contentOffset                       = CGPointMake(0, OffsetY);
+    bgScrollView.contentOffset = CGPointMake(0, OffsetY);
     }];
 }
 
@@ -132,10 +131,8 @@
 {
     if (textField.tag == EmailTag) {
         [self.mmInput becomeFirstRespond];
-
     }
-    else if(textField.tag == MMTag)
-    {
+    else if(textField.tag == MMTag){
         [self.view endEditing:YES];
         [self setBgContentOffsetAnimation:0];
         [self login];
@@ -160,9 +157,12 @@
     return NO;
 }
 
+#pragma mark
+#pragma mark Click
+
 - (IBAction)resetPassClick:(id)sender {
     [self viewEndEdit];
-    ESModifyPassWordViewController *semiVC = [[ESModifyPassWordViewController alloc]init];
+    ESModifyPassWordViewController *semiVC = [[ESModifyPassWordViewController alloc]initWithNibName:@"ESModifyPassWordViewController" bundle:nil];
     [self presentSemiViewController:semiVC withOptions:@{
                                                          KNSemiModalOptionKeys.pushParentBack    : @(YES),
                                                          KNSemiModalOptionKeys.animationDuration : @(.5),
@@ -179,84 +179,78 @@
     [self login];
 }
 
+- (IBAction) qqloginClick:(id)sender {
+    id<ISSAuthOptions> authOptions  = [ShareSDK authOptionsWithAutoAuth:YES
+                                                          allowCallback:YES
+                                                          authViewStyle:SSAuthViewStyleModal
+                                                           viewDelegate:self
+                                                authManagerViewDelegate:self];
+    [ShareSDK getUserInfoWithType:ShareTypeQQSpace authOptions:authOptions result:^(BOOL result, id<ISSPlatformUser> userInfo, id<ICMErrorInfo> error){
+         if (result) {
+             
+             HFAlert(@"登录成功");
+             [self goBack];
+         }
+     }];
+    
+    
+}
+
+- (IBAction)sinaLoginClick:(id)sender {
+    id<ISSAuthOptions> authOptions  = [ShareSDK authOptionsWithAutoAuth:YES
+                                                          allowCallback:YES
+                                                          authViewStyle:SSAuthViewStyleModal
+                                                           viewDelegate:self
+                                                authManagerViewDelegate:self];
+    [ShareSDK getUserInfoWithType:ShareTypeSinaWeibo authOptions:authOptions result:^(BOOL result, id<ISSPlatformUser> userInfo, id<ICMErrorInfo> error){
+         if (result){
+             //创建分享内容
+             id<ISSContent> publishContent   = [ShareSDK content:@"content"
+                                                  defaultContent:@"ceshi"
+                                                           image:[ShareSDK imageWithPath:nil]
+                                                           title:nil
+                                                             url:nil
+                                                     description:nil
+                                                       mediaType:SSPublishContentMediaTypeText];
+             [ShareSDK shareContent:publishContent
+                               type:ShareTypeSinaWeibo
+                        authOptions:nil
+                      statusBarTips:YES
+                             result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                                 if (state == SSPublishContentStateSuccess){
+                                     NSLog(@"分享成功");
+                                 }
+                                 else if (state == SSPublishContentStateFail){
+                                     //                                     NSLog(@"分享失败,错误码:%d,错误描述:%@", [error errorCode],  [error errorDescription]);
+                                 }
+                             }];
+         }
+     }];
+}
+
+
+#pragma mark
+
+
 -(void)login
 {
     if ([self checkParameter]) {
-        ESRequestParameters *postObject  = [ESRequestParameters requestLoginParametersWithUsername:@"test@test.com" passWord:[@"test" stringFromMD5]];
+        ESRequestParameters *postObject  = [ESRequestParameters requestLoginParametersWithUsername:_logoNameInput.text passWord:[_mmInput.text stringFromMD5]];
         [ESRequest loginRequest:^(HFHttpRequestResult *result) {
             NSLog(@"");
-            ESUserModel *user = [ESUserModel objectFromJSONObject:result.data mapping:nil];
+            if ([result isSuccess]) {
+                ESUserModel *user = [ESUserModel objectFromJSONObject:result.data mapping:nil];
+                [result showErrorMessage];
+                [self goBack];
+            }else{
+                [result showErrorMessage];
+            }
         } failRespon:^(HFHttpErrorRequestResult *erroresult) {
             NSLog(@"");
         } requestParameter:postObject];
     }
 }
 
-- (IBAction)qqloginClick:(id)sender {
-
-    id<ISSAuthOptions> authOptions  = [ShareSDK authOptionsWithAutoAuth:YES
-
-                                                         allowCallback:YES
-
-                                                         authViewStyle:SSAuthViewStyleModal
-
-                                                          viewDelegate:self
-
-                                               authManagerViewDelegate:self];
-
-    [ShareSDK getUserInfoWithType:ShareTypeQQSpace authOptions:authOptions result:^(BOOL result, id<ISSPlatformUser> userInfo, id<ICMErrorInfo> error)
-     {
-         if (result)
-         {
-
-             HFAlert(@"登录成功");
-             [self goBack];
-         }
-
-     }];
-
-
-}
-
-- (IBAction)sinaLoginClick:(id)sender {
-
-    id<ISSAuthOptions> authOptions  = [ShareSDK authOptionsWithAutoAuth:YES
-
-                                                         allowCallback:YES
-
-                                                         authViewStyle:SSAuthViewStyleModal
-
-                                                          viewDelegate:self
-
-                                               authManagerViewDelegate:self];
-
-    [ShareSDK getUserInfoWithType:ShareTypeSinaWeibo authOptions:authOptions result:^(BOOL result, id<ISSPlatformUser> userInfo, id<ICMErrorInfo> error)
-     {
-         if (result)
-         {
-            //创建分享内容
-            id<ISSContent> publishContent   = [ShareSDK content:@"content"
-                                                        defaultContent:@"ceshi"
-                                                        image:[ShareSDK imageWithPath:nil]
-                                                        title:nil
-                                                        url:nil
-                                                        description:nil
-                                                        mediaType:SSPublishContentMediaTypeText];
-                     [ShareSDK shareContent:publishContent
-                                       type:ShareTypeSinaWeibo
-                                authOptions:nil
-                              statusBarTips:YES
-                                     result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
-                                         if (state == SSPublishContentStateSuccess){
-                                             NSLog(@"分享成功");
-                                         }
-                                         else if (state == SSPublishContentStateFail){
-        //                                     NSLog(@"分享失败,错误码:%d,错误描述:%@", [error errorCode],  [error errorDescription]);
-                                         }
-                                     }];
-                 }
-         }];
-}
 
 
 
@@ -279,5 +273,9 @@
 
 }
 
+- (void)dealloc
+{
+    NSLog(@"###########");
+}
 
 @end

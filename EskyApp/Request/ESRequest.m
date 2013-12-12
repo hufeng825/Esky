@@ -41,8 +41,11 @@
     [ [ self sharedClient] Url:url parameters:nil method:GETHttpMethod ResponArgument:responArguments];
 }
 
+#pragma mark --
 
 #pragma mark  -  开始网络请求
+
+
 
 + (void) loginRequest :(HFHttpSuccessCallBack)sucessRespon
             failRespon:(HFHttpErrorRequestCallBack)failRespon
@@ -67,5 +70,16 @@
     arguments.progressBlock = progressRespon;
     [self postUrl:requestParameter.requestPath postArguments:requestParameter.arg responArgument:arguments];
 }
+
++ (void) resetPasswordRequest :(HFHttpSuccessCallBack)sucessRespon
+                           failRespon:(HFHttpErrorRequestCallBack)failRespon
+                     requestParameter:(ESRequestParameters *)requestParameter
+{
+    HFHttpResponArguments *arguments = NEW(HFHttpResponArguments);
+    arguments.sucessRespon = sucessRespon;
+    arguments.failRespon = failRespon;
+    [self postUrl:requestParameter.requestPath postArguments:requestParameter.arg responArgument:arguments];
+}
+
 
 @end

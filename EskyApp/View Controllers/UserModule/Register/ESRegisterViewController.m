@@ -273,12 +273,19 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     return NO;
 }
 
+#pragma mark Click
+
 -(void) registerRequest
 {
     if([self checkParameter]){
         ESRequestParameters *parameters = [ESRequestParameters requestRegisterParametersWithEmail:_emailInput.text userName:_mmInput.text nickName:_nickNameInput.text avatar:headUrlStr password:_mmInput.text];
         [ESRequest registerRequest:^(HFHttpRequestResult *result) {
             NSLog(@"%@",result.Json);
+            if ([result isSuccess]) {
+                HFAlert_T_M_BT(result.message,result.Json,@"ok");
+            }else{
+                [result showErrorMessage];
+            }
         } failRespon:^(HFHttpErrorRequestResult *erroresult) {
             
         } progressRespon:nil requestParameter:parameters];

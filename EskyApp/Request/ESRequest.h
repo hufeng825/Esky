@@ -21,12 +21,14 @@
       requestParameter:(ESRequestParameters *)requestParameter;
 
 
-
-
 + (void) registerRequest :(HFHttpSuccessCallBack)sucessRespon
                failRespon:(HFHttpErrorRequestCallBack)failRespon
            progressRespon:(HFHttpDownloadProgressCallBlock)progressRespon
          requestParameter:(ESRequestParameters *)requestParameter;
+
++ (void) resetPasswordRequest :(HFHttpSuccessCallBack)sucessRespon
+                           failRespon:(HFHttpErrorRequestCallBack)failRespon
+                     requestParameter:(ESRequestParameters *)requestParameter;
 
 @end
 

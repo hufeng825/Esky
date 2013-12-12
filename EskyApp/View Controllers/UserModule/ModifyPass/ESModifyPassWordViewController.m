@@ -8,6 +8,8 @@
 
 #import "ESModifyPassWordViewController.h"
 #import "UIViewController+KNSemiModal.h"
+#import "ESRequest.h"
+
 
 @interface ESModifyPassWordViewController ()
 
@@ -15,9 +17,19 @@
 
 @implementation ESModifyPassWordViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+#pragma mark themeChanged
+
+-(void)themeChanged
+
 {
-    self                      = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    [self.successBt setBackgroundImage:[[FAThemeManager sharedManager]themeImageWithName:@"bt.png"] forState:UIControlStateNormal];
+    [self.okBt setBackgroundImage:[[FAThemeManager sharedManager]themeImageWithName:@"bt.png"] forState:UIControlStateNormal];
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+
+{
+    self  = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
@@ -25,6 +37,7 @@
 }
 
 - (void)viewDidLoad
+
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -36,35 +49,28 @@
         [self.mmInput becomeFirstResponder];
 
     });
-
-
 }
 
 
 
 -(void) viewWillDisappear:(BOOL)animated
+
 {
     [super viewWillDisappear:animated];
     [self.view endEditing:YES];
 }
 
--(void)themeChanged
-{
-    [self.okBt setBackgroundImage:[[FAThemeManager sharedManager]themeImageWithName:@"bt.png"] forState:UIControlStateNormal];
-    [self.successBt setBackgroundImage:[[FAThemeManager sharedManager]themeImageWithName:@"bt.png"] forState:UIControlStateNormal];
-
-}
-
-
 
 -(void)showSuccessView
+
 {
-    HFAlert(@"d");
     [self.view bringSubviewToFront:self.successView];
     [self.successView setHidden:NO];
 }
 
-- (void)resizeSemiModalViewHeight:(CGFloat) height{
+- (void)resizeSemiModalViewHeight:(CGFloat) height
+
+{
     UIViewController * parent = [self.view containingViewController];
     if ([parent respondsToSelector:@selector(resizeSemiView:)]) {
         [parent resizeSemiView:CGSizeMake(self.view.width,height)];
@@ -72,27 +78,52 @@
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+
 {
     [self resizeSemiModalViewHeight:440];
     return YES;
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
+
 {
     [self.view endEditing:YES];
     [self resizeSemiModalViewHeight:212];
+    [self resetPassWordRequest];
     return YES;
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField
+-(void)textFieldDidEndEditing:(UITextField *)textField
+
 {
     //注意此处 不然 可能导致键盘无法消退
-    if (![textField.text validateEmailAddress]
-        ) {
-        [self showWarning:@"邮箱格式错误"];
-    }
+    [self checkParameter];
 }
 
+-(BOOL) checkParameter
+
+{
+    if (![_mmInput.text validateEmailAddress]) {
+        [self showWarning:@"邮箱格式错误"];
+        return NO;
+    }
+    return YES;
+}
+
+-(void)resetPassWordRequest
+{
+    if ([self checkParameter]) {
+        ESRequestParameters *parameters = [ESRequestParameters requestResetPasswordParametersWithUsername:_mmInput.text];
+        [ESRequest resetPasswordRequest:^(HFHttpRequestResult *result) {
+            [result showErrorMessage];
+            if(result.isSuccess) {
+                [self dismissSemiModalView];
+            }
+        } failRespon:^(HFHttpErrorRequestResult *erroresult) {
+            
+        } requestParameter:parameters];
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -100,4 +131,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark Click 
+
+- (IBAction)cancleBtClick:(id)sender {
+    [self dismissSemiModalView];
+}
+
+- (IBAction)okBtClick:(id)sender {
+    [self resetPassWordRequest];
+}
 @end

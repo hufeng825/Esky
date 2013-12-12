@@ -17,4 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIView *successView;
 @property (weak, nonatomic) IBOutlet UITextField *mmInput;
 
+- (IBAction)cancleBtClick:(id)sender;
+
+- (IBAction)okBtClick:(id)sender;
+
 @end

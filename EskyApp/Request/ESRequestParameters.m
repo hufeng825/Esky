@@ -27,8 +27,6 @@
     return parameter;
 };
 
-
-
 + (ESRequestParameters *) requestLoginParametersWithUsername:(NSString *)username
                                                     passWord:(NSString *)passWord
 {
@@ -38,4 +36,14 @@
     [parameter setString:passWord forKey:@"password"];
     return parameter;
 };
+
++ (ESRequestParameters *) requestResetPasswordParametersWithUsername:(NSString *)username
+{
+    ESRequestParameters *parameter = [[ESRequestParameters alloc] init];
+    [parameter stringWithHost:API_HOST api:@"account/passwordReset.json"];
+    [parameter setString:username forKey:@"username"];
+    return parameter;
+};
+
+
 @end
