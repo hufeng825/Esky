@@ -291,12 +291,9 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 - (void)uploadContent {
     //obtaining saving path
     if (!self.headIconImageView.image.accessibilityIdentifier) {
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat: @"yyyyMMddHHmmss"];
-        NSString *timeDesc = [formatter stringFromDate:[NSDate date]];
+      
         //Optionally for time zone conversions
-        [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
-        NSString *key = [NSString stringWithFormat:@"%@%@", timeDesc, @".jpg"];
+        NSString *key = [NSString stringWithFormat:@"%@%@", [NSString makeUniqueString], @".jpg"];
         NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:key];
         NSData *imageData = UIImageJPEGRepresentation(_headIconImageView.image,1);
         [imageData writeToFile:filePath atomically:YES];

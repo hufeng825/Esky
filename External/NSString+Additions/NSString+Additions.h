@@ -16,31 +16,33 @@
 
 + (NSString *)getIPAddress;
 
-+ (NSString*)fenStringWithDecimalNumber:(NSDecimalNumber*)number;
++ (NSString *)fenStringWithDecimalNumber:(NSDecimalNumber *)number;
 
-- (NSString*)URLencodeWithEncoding:(NSStringEncoding)stringEncoding;
+- (NSString *)URLencodeWithEncoding:(NSStringEncoding)stringEncoding;
 
-- (NSString*)URLencodeWithEncodingUTF8;
+- (NSString *)URLencodeWithEncodingUTF8;
 
 - (NSString *)stringFromMD5;
 
-- (NSString*)dateStringWithFormat:(NSString*)format;
+- (NSString *)dateStringWithFormat:(NSString *)format;
 
-- (NSString*)ymdString;
+- (NSString *)ymdString;
 
-- (NSString*)ymdStringWithSeperator:(NSString*)seperator;
+- (NSString *)ymdStringWithSeperator:(NSString *)seperator;
 
-- (NSString*)ymString;
+- (NSString *)ymString;
 
-- (NSString*)mdString;
+- (NSString *)mdString;
 
-- (NSString*)mdStringWithSeperator:(NSString*)seperator;
++ (NSString *)makeUniqueString;
 
-- (NSString*)hmString;
+- (NSString *)mdStringWithSeperator:(NSString *)seperator;
 
-- (NSString*)nextMonth;
+- (NSString *)hmString;
 
-- (NSString*)amountStringWithSymbol:(NSString*)symbol;
+- (NSString *)nextMonth;
+
+- (NSString *)amountStringWithSymbol:(NSString *)symbol;
 
 -(NSUInteger)lengthToInt;//得到字符串长度 中英文混合情况下
 

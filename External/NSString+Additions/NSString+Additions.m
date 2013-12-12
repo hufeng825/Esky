@@ -215,6 +215,17 @@
     return [NSString stringWithFormat:@"%@%@%@", month, seperator, day];
 }
 
++(NSString *)makeUniqueString
+{
+    CFUUIDRef uuidRef = CFUUIDCreate(NULL);
+    CFStringRef uuidStringRef = CFUUIDCreateString(NULL, uuidRef);
+    CFRelease(uuidRef);
+    NSString *uniqueId = (__bridge NSString *)uuidStringRef;
+    return uniqueId;
+}
+
+
+
 /*---------------------------------------------------------------------------
  * 把形式为"123456"的字符串，格式化成"12:34"的形式
 *--------------------------------------------------------------------------*/
