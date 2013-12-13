@@ -80,6 +80,13 @@
 - (void)themeChanged
 {
    [self changeBaseBackgourndColorWithImageName:[[FAThemeManager sharedManager] themeImageWithName:@"bg.jpg"]];
+    UIColor *nvBartintColor = [[FAThemeManager sharedManager] themeColorWithName:@"kIconColor"];
+    [self.navigationController.navigationBar setTintColor:nvBartintColor];
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, .3);
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:nvBartintColor,NSShadowAttributeName:shadow,NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Bold" size:22.0]}];
+//    [self.navigationController.navigationBar setNeedsDisplay];
 }
 /*------------------------------------------
  *设置statubar

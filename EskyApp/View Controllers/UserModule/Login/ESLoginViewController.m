@@ -32,8 +32,6 @@
 
 -(void)themeChanged{
     [super themeChanged];
-    [[UINavigationBar appearance] setTintColor:[UIColor orangeColor]];
-
     [self.loginBt setBackgroundImage:[[FAThemeManager sharedManager]themeImageWithName:@"bt.png"] forState:UIControlStateNormal];
 }
 

@@ -44,8 +44,6 @@
     double delayInSeconds     = .1;
     dispatch_time_t popTime   = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-       // [self showSuccessView];
-//        [self showWarning:@"邮箱格式错误" yOffset:-40.f];
         [self.mmInput becomeFirstResponder];
 
     });
@@ -136,6 +134,8 @@
 }
 
 - (IBAction)okBtClick:(id)sender {
+    [self.view endEditing:YES];
+    [self resizeSemiModalViewHeight:212];
     [self resetPassWordRequest];
 }
 
