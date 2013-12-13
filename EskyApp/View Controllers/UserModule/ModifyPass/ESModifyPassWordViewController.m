@@ -117,11 +117,9 @@
         [ESRequest resetPasswordRequest:^(HFHttpRequestResult *result) {
             [result showErrorMessage];
             if(result.isSuccess) {
-                [self dismissSemiModalView];
+                [self showSuccessView];
             }
-        } failRespon:^(HFHttpErrorRequestResult *erroresult) {
-            
-        } requestParameter:parameters];
+        } failRespon:nil requestParameter:parameters];
     }
 }
 
@@ -139,5 +137,9 @@
 
 - (IBAction)okBtClick:(id)sender {
     [self resetPassWordRequest];
+}
+
+- (IBAction)successOkBtClick:(id)sender {
+    [self dismissSemiModalView];
 }
 @end

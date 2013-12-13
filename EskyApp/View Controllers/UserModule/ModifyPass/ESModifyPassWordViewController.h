@@ -21,4 +21,6 @@
 
 - (IBAction)okBtClick:(id)sender;
 
+- (IBAction)successOkBtClick:(id)sender;
+
 @end

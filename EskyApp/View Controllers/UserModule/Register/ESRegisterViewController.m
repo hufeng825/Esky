@@ -60,7 +60,9 @@ static NSString *QiniuBucketName = @"hufeng";
     
     
     [self.bgScrollView setContentSize:CGSizeMake(self.view.width, self.view.height+10)];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"<" style:UIBarButtonSystemItemStop  target:self action:@selector(goBack)];
+//     = [[UIBarButtonItem alloc]initWithTitle:@"<" style:UIBarButtonSystemItemStop  target:self action:@selector(goBack)];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back_btn"] style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
     
     [self.headIconImageView.singleTap addTarget:self action:@selector(BtClick)];
     [self initInputs];
@@ -191,8 +193,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 - (BOOL)textFieldShouldBeginEditing:(FAInputView *)textField
 {
     [self keyboarShow:textField];
-    if (textField.tag == MMTag) {
-        [self.verifyInput resetView];
+    if (textField.tag == MMTag && TTIsStringWithAnyText(textField.text)) {
+        [self.verifyInput resetErrorState];
     }else if(textField.tag == VMMTag && TTIsStringWithAnyText(textField.text)){
         [self.mmInput setIsError:NO];
     }
@@ -204,7 +206,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 {
     if (textField.tag == EmailTag) {
         [self.mmInput becomeFirstRespond];
-      
     }
     else if(textField.tag == MMTag){
         [self.verifyInput becomeFirstRespond];
@@ -285,7 +286,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 {
     if([self checkParameter]){
         __weak __typeof(self)weakSelf = self;
-        ESRequestParameters *parameters = [ESRequestParameters requestRegisterParametersWithEmail:_emailInput.text userName:_mmInput.text nickName:_nickNameInput.text avatar:headUrlStr password:_mmInput.text];
+        ESRequestParameters *parameters = [ESRequestParameters requestRegisterParametersWithUserName:_emailInput.text  nickName:_nickNameInput.text avatar:headUrlStr password:[_mmInput.text stringFromMD5]];
         [ESRequest registerRequest:^(HFHttpRequestResult *result) {
             NSLog(@"%@",result.Json);
             if ([result isSuccess]) {

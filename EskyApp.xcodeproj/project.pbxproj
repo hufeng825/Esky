@@ -160,6 +160,8 @@
 		96C90CA2185814DF005C4ECB /* QiniuSimpleUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C90C91185814DF005C4ECB /* QiniuSimpleUploader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		96C90CA3185814DF005C4ECB /* QiniuUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C90C94185814DF005C4ECB /* QiniuUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		96C90CA618583CE2005C4ECB /* QiniuPutPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C90CA518583CE2005C4ECB /* QiniuPutPolicy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		96C90CA9185AA48D005C4ECB /* back_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CA7185AA48D005C4ECB /* back_btn.png */; };
+		96C90CAA185AA48D005C4ECB /* back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CA8185AA48D005C4ECB /* back_btn@2x.png */; };
 		96F8AA6A1856FAFC000612C5 /* CSAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8AA691856FAFC000612C5 /* CSAnimation.m */; };
 		96F8AA6E185715AD000612C5 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8AA6D185715AD000612C5 /* Base64.m */; };
 		96F8AA72185719A7000612C5 /* NSData+MD5Digest.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8AA71185719A7000612C5 /* NSData+MD5Digest.m */; };
@@ -428,6 +430,8 @@
 		96C90C94185814DF005C4ECB /* QiniuUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiniuUtils.m; sourceTree = "<group>"; };
 		96C90CA418583CE2005C4ECB /* QiniuPutPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiniuPutPolicy.h; sourceTree = "<group>"; };
 		96C90CA518583CE2005C4ECB /* QiniuPutPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiniuPutPolicy.m; sourceTree = "<group>"; };
+		96C90CA7185AA48D005C4ECB /* back_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_btn.png; sourceTree = "<group>"; };
+		96C90CA8185AA48D005C4ECB /* back_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_btn@2x.png"; sourceTree = "<group>"; };
 		96CEEBDA1845FAFD0045F15E /* ESDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDebug.h; sourceTree = "<group>"; };
 		96F8AA681856FAFC000612C5 /* CSAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAnimation.h; sourceTree = "<group>"; };
 		96F8AA691856FAFC000612C5 /* CSAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAnimation.m; sourceTree = "<group>"; };
@@ -1117,6 +1121,8 @@
 		96B98BB21845E58F002E8552 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				96C90CA7185AA48D005C4ECB /* back_btn.png */,
+				96C90CA8185AA48D005C4ECB /* back_btn@2x.png */,
 				9645ED821856E2DA004643C9 /* choosebg.jpg */,
 				9645ED831856E2DA004643C9 /* choosebg@2x.jpg */,
 				96B98BB31845E58F002E8552 /* bt_blue.png */,
@@ -1328,8 +1334,10 @@
 				96B98B9A1845C81E002E8552 /* ESRegisterViewController.xib in Resources */,
 				96B98B721845C6B8002E8552 /* ShareSDKiPhoneDefaultShareViewUI.bundle in Resources */,
 				96B98BD51845E58F002E8552 /* icon_qq.png in Resources */,
+				96C90CAA185AA48D005C4ECB /* back_btn@2x.png in Resources */,
 				96B98A821845C643002E8552 /* themes.plist in Resources */,
 				96B98BD01845E58F002E8552 /* dialogue_bg@2x.png in Resources */,
+				96C90CA9185AA48D005C4ECB /* back_btn.png in Resources */,
 				96B98BDB1845E58F002E8552 /* translate_bg.png in Resources */,
 				96F9D7AF1855B4BA00C8ACE4 /* ESRegisterViewController_4inch.xib in Resources */,
 				96B98A251845C56D002E8552 /* Images.xcassets in Resources */,

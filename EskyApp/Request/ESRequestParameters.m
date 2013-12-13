@@ -10,8 +10,7 @@
 
 @implementation ESRequestParameters
 
-+ (ESRequestParameters *) requestRegisterParametersWithEmail:(NSString *)email
-                                              userName:(NSString *)userName
++ (ESRequestParameters *) requestRegisterParametersWithUserName:(NSString *)userName
                                               nickName:(NSString *)nickName
                                                 avatar:(NSString *)avatarpath
                                               password:(NSString *)password
@@ -19,7 +18,6 @@
     ESRequestParameters *parameter = [[ESRequestParameters alloc] init];
     
     [parameter stringWithHost:API_HOST api:@"account/register.json"];
-    [parameter setString:email forKey:@"email"];
     [parameter setString:userName forKey:@"username"];
     [parameter setString:nickName forKey:@"nickname"];
     [parameter setString:[password  stringFromMD5] forKey:@"password"];

@@ -58,4 +58,7 @@
 
 -(void) resetView;
 
+-(void) resetErrorState;
+
+
 @end

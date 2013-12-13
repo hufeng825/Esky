@@ -32,12 +32,14 @@
 
 -(void)themeChanged{
     [super themeChanged];
+    [[UINavigationBar appearance] setTintColor:[UIColor orangeColor]];
+
     [self.loginBt setBackgroundImage:[[FAThemeManager sharedManager]themeImageWithName:@"bt.png"] forState:UIControlStateNormal];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self                                             = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self  = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
