@@ -16,7 +16,7 @@ static NSString * const kAliYun_API_HOST = @"http://esky.esquire.com.cn:8080/tre
 static NSString * const kYangYI_API_HOST = @"http://192.168.24.95:8081/trends/";
 
 //static NSString * const API_HOST = kAliYun_API_HOST;
-#define API_HOST kYangYI_API_HOST
+#define API_HOST kAliYun_API_HOST
 
 @interface ESRequestParameters : HFHttpRequestParameters
 

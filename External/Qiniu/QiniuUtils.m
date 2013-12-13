@@ -19,7 +19,7 @@ NSError *qiniuError(int errorCode, NSString *errorDescription) {
 NSError *qiniuErrorWithRequest(ASIHTTPRequest *request) {
     NSDictionary *dic = nil;
     NSError *httpError = nil;
-    int errorCode = 400;
+    NSInteger errorCode = 400;
     
     if (request) {
         NSString *responseString = [request responseString];

@@ -80,6 +80,7 @@ static NSString *QiniuBucketName = @"hufeng";
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
         return YES;
 }
+
 -(void)handleSingleTap:(id)sender
 {
     [self.bgScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
@@ -139,6 +140,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     if ([mediaType isEqualToString:@"public.image"]){
         // UIImage *selectedImage = [info objectForKey:UIImagePickerControllerOriginalImage];
         __block UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+        avatarImage = [image copy];
         __weak  __typeof(self)weakSelf = self;
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             image = [image compressedImage];
@@ -256,7 +258,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 
 -(BOOL) checkParameter
 {
-    if ([self.headIconImageView.image.accessibilityIdentifier hasPrefix:@"icon_head"] ) {
+    if (!avatarImage) {
         [self setBgContentOffsetAnimation:0];
         [self showWarning:@"设置一个头像吧"];
         [self.view endEditing:YES];
@@ -306,7 +308,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 
 - (void)uploadContent {
     //obtaining saving path
-    if (![self.headIconImageView.image.accessibilityIdentifier hasPrefix:@"icon_head"] ) {
+    if (avatarImage) {
         //Optionally for time zone conversions
         NSString *key = [NSString stringWithFormat:@"%@%@", [NSString makeUniqueString], @".jpg"];
         NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:key];
@@ -414,6 +416,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 #pragma mark 注册按钮点击
 
 - (IBAction)registerClicked:(id)sender {
+    [self handleSingleTap:nil];
     if (!isUploading) {
         //如果正在上传头像没有在上传状态执行创建帐号
         isNotificationRegister = NO;

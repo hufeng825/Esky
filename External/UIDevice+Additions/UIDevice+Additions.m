@@ -153,10 +153,10 @@
         NSLog(@"Failed to fetch vm statistics");
     
     /* Stats in bytes */
-    natural_t mem_used = (vm_stat.active_count +
+    natural_t mem_used =  (vm_stat.active_count +
                           vm_stat.inactive_count +
-                          vm_stat.wire_count) * pagesize;
-    natural_t mem_free = vm_stat.free_count * pagesize;
+                          vm_stat.wire_count) * ((natural_t ) pagesize);
+    natural_t mem_free = vm_stat.free_count * ((natural_t ) pagesize);
     //  natural_t mem_total = mem_used + mem_free;
     return [NSString stringWithFormat:@"%0.1f MB used/%0.1f MB free", mem_used/1048576.f, mem_free/1048576.f];
     //    NSLog(@"used: %u free: %u total: %u", mem_used, mem_free, mem_total);

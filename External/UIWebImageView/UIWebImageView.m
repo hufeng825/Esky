@@ -73,7 +73,9 @@
              [NSString stringWithFormat:@"%lu",(unsigned long)[urlStr hash]]];
         } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error)
         {
-            failure(request,response,error);
+            if (failure) {
+                failure(request,response,error);
+            }
         }
          ];
     }
