@@ -16,17 +16,19 @@ static NSString *QiniuBucketName = @"hufeng";
 @interface ESRegisterViewController ()
 {
     NSUInteger selectedTextFieldTag;
-    UIImage *avatarImage;
     MBProgressHUD *HUD;
     QiniuSimpleUploader *uploader;
     NSString *headUrlStr;
     BOOL isUploading ;
     BOOL isNotificationRegister;
 }
+
+@property (nonatomic,copy) NSString *imageReferenceURL;
+
+
 @end
-
 @implementation ESRegisterViewController
-
+@synthesize imageReferenceURL;
 #define NumTextFields 3
 #define TextFieldBeginTag 100
 
@@ -139,17 +141,22 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
     if ([mediaType isEqualToString:@"public.image"]){
         // UIImage *selectedImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+      
         __block UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-        avatarImage = [image copy];
-        __weak  __typeof(self)weakSelf = self;
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            image = [image compressedImage];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                //回调或者说是通知主线程刷新，
-                weakSelf.headIconImageView.image = image;
-                [self uploadContent];
+        NSString *peferenceURL = [(NSURL *)[info objectForKey:@"UIImagePickerControllerReferenceURL"] absoluteString] ;
+        if (![imageReferenceURL isEqualToString: peferenceURL] ) {
+            self.imageReferenceURL = peferenceURL;
+            __weak  __typeof(self)weakSelf = self;
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                image = [image compressedImage];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    //回调或者说是通知主线程刷新，
+                    weakSelf.headIconImageView.image = image;
+                    [self uploadContent];
+                });
             });
-        });
+        }
+       
     }
     else if ([mediaType isEqualToString:@"public.movie"]){
         [self showWarning:@"暂不支持视频格式头像"];
@@ -258,7 +265,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 
 -(BOOL) checkParameter
 {
-    if (!avatarImage) {
+    if (!TTIsStringWithAnyText(imageReferenceURL)) {
         [self setBgContentOffsetAnimation:0];
         [self showWarning:@"设置一个头像吧"];
         [self.view endEditing:YES];
@@ -308,7 +315,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 
 - (void)uploadContent {
     //obtaining saving path
-    if (avatarImage) {
+    if (TTIsStringWithAnyText(imageReferenceURL)) {
         //Optionally for time zone conversions
         NSString *key = [NSString stringWithFormat:@"%@%@", [NSString makeUniqueString], @".jpg"];
         NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:key];
