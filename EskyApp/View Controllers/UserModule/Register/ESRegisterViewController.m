@@ -85,7 +85,7 @@ static NSString *QiniuBucketName = @"hufeng";
 
 -(void)handleSingleTap:(id)sender
 {
-    [self.bgScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+    [self setBgContentOffsetAnimation:0];
     [self.view endEditing:YES];
 }
 

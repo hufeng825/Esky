@@ -240,7 +240,7 @@
     }
     else{
         self.infoLabel.hidden= YES;
-        [self.textField setFrame:CGRectMake(44,0,185,self.height)];
+        [self.textField setFrame:CGRectMake(44,0,235,self.height)];
     }
     
     [self.infoImageView setAlpha:.4];
