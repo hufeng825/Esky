@@ -177,11 +177,10 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 {
     PECropViewController *controller = [[PECropViewController alloc] init];
     controller.delegate = self;
-    controller.image = self.headIconImageView.image;
     controller.cropAspectRatio = 1;
     controller.keepingCropAspectRatio = YES;
+    controller.image = self.headIconImageView.image;
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-    
     [self presentViewController:navigationController animated:YES completion:NULL];
 }
 
