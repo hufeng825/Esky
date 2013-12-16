@@ -25,7 +25,7 @@
                     <rect key="frame" x="5" y="452" width="150" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                    <state key="normal" title="男士" backgroundImage="man/bt.png">
+                    <state key="normal" backgroundImage="manBt.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -36,7 +36,7 @@
                     <rect key="frame" x="165" y="452" width="150" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                    <state key="normal" title="女士" backgroundImage="woman/bt.png">
+                    <state key="normal" backgroundImage="womanBt.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -58,7 +58,7 @@
     </objects>
     <resources>
         <image name="choosebg.jpg" width="320" height="480"/>
-        <image name="man/bt.png" width="300" height="68"/>
-        <image name="woman/bt.png" width="300" height="68"/>
+        <image name="manBt.png" width="150" height="70"/>
+        <image name="womanBt.png" width="150" height="70"/>
     </resources>
 </document>

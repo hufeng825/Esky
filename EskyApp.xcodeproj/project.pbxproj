@@ -168,6 +168,11 @@
 		96C90CC8185EC1F4005C4ECB /* PEPhotoCropEditor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CC0185EC1F4005C4ECB /* PEPhotoCropEditor.bundle */; };
 		96C90CC9185EC1F4005C4ECB /* PEResizeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C90CC2185EC1F4005C4ECB /* PEResizeControl.m */; };
 		96C90CCA185EC1F4005C4ECB /* UIImage+PECrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C90CC4185EC1F4005C4ECB /* UIImage+PECrop.m */; };
+		96C90CD0185EFB9D005C4ECB /* manBt.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CCB185EFB9D005C4ECB /* manBt.png */; };
+		96C90CD1185EFB9D005C4ECB /* manBt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CCC185EFB9D005C4ECB /* manBt@2x.png */; };
+		96C90CD2185EFB9D005C4ECB /* wenzi2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CCD185EFB9D005C4ECB /* wenzi2@2x.png */; };
+		96C90CD3185EFB9D005C4ECB /* womanBt.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CCE185EFB9D005C4ECB /* womanBt.png */; };
+		96C90CD4185EFB9D005C4ECB /* womanBt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CCF185EFB9D005C4ECB /* womanBt@2x.png */; };
 		96F8AA6A1856FAFC000612C5 /* CSAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8AA691856FAFC000612C5 /* CSAnimation.m */; };
 		96F8AA6E185715AD000612C5 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8AA6D185715AD000612C5 /* Base64.m */; };
 		96F8AA72185719A7000612C5 /* NSData+MD5Digest.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8AA71185719A7000612C5 /* NSData+MD5Digest.m */; };
@@ -449,6 +454,11 @@
 		96C90CC2185EC1F4005C4ECB /* PEResizeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEResizeControl.m; sourceTree = "<group>"; };
 		96C90CC3185EC1F4005C4ECB /* UIImage+PECrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PECrop.h"; sourceTree = "<group>"; };
 		96C90CC4185EC1F4005C4ECB /* UIImage+PECrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PECrop.m"; sourceTree = "<group>"; };
+		96C90CCB185EFB9D005C4ECB /* manBt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manBt.png; sourceTree = "<group>"; };
+		96C90CCC185EFB9D005C4ECB /* manBt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "manBt@2x.png"; sourceTree = "<group>"; };
+		96C90CCD185EFB9D005C4ECB /* wenzi2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wenzi2@2x.png"; sourceTree = "<group>"; };
+		96C90CCE185EFB9D005C4ECB /* womanBt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = womanBt.png; sourceTree = "<group>"; };
+		96C90CCF185EFB9D005C4ECB /* womanBt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "womanBt@2x.png"; sourceTree = "<group>"; };
 		96CEEBDA1845FAFD0045F15E /* ESDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDebug.h; sourceTree = "<group>"; };
 		96F8AA681856FAFC000612C5 /* CSAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAnimation.h; sourceTree = "<group>"; };
 		96F8AA691856FAFC000612C5 /* CSAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAnimation.m; sourceTree = "<group>"; };
@@ -1139,6 +1149,11 @@
 		96B98BB21845E58F002E8552 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				96C90CCB185EFB9D005C4ECB /* manBt.png */,
+				96C90CCC185EFB9D005C4ECB /* manBt@2x.png */,
+				96C90CCD185EFB9D005C4ECB /* wenzi2@2x.png */,
+				96C90CCE185EFB9D005C4ECB /* womanBt.png */,
+				96C90CCF185EFB9D005C4ECB /* womanBt@2x.png */,
 				96C90CA7185AA48D005C4ECB /* back_btn.png */,
 				96C90CA8185AA48D005C4ECB /* back_btn@2x.png */,
 				9645ED821856E2DA004643C9 /* choosebg.jpg */,
@@ -1367,11 +1382,13 @@
 				96B98BD21845E58F002E8552 /* e-sky@2x.png in Resources */,
 				96B98B691845C6B8002E8552 /* ShareSDKLocalizable.strings in Resources */,
 				96B98BD41845E58F002E8552 /* icon_head@2x.png in Resources */,
+				96C90CD2185EFB9D005C4ECB /* wenzi2@2x.png in Resources */,
 				96B98B9A1845C81E002E8552 /* ESRegisterViewController.xib in Resources */,
 				96B98B721845C6B8002E8552 /* ShareSDKiPhoneDefaultShareViewUI.bundle in Resources */,
 				96B98BD51845E58F002E8552 /* icon_qq.png in Resources */,
 				96C90CAA185AA48D005C4ECB /* back_btn@2x.png in Resources */,
 				96B98A821845C643002E8552 /* themes.plist in Resources */,
+				96C90CD1185EFB9D005C4ECB /* manBt@2x.png in Resources */,
 				96B98BD01845E58F002E8552 /* dialogue_bg@2x.png in Resources */,
 				96C90CA9185AA48D005C4ECB /* back_btn.png in Resources */,
 				96B98BDB1845E58F002E8552 /* translate_bg.png in Resources */,
@@ -1397,8 +1414,10 @@
 				96B98B981845C81E002E8552 /* ESModifyPassWordViewController.xib in Resources */,
 				96B98BC91845E58F002E8552 /* bt_blue@2x.png in Resources */,
 				96B98BDC1845E58F002E8552 /* translate_bg@2x.png in Resources */,
+				96C90CD4185EFB9D005C4ECB /* womanBt@2x.png in Resources */,
 				96B98BD31845E58F002E8552 /* icon_head.png in Resources */,
 				96B98BD71845E58F002E8552 /* icon_weibo.png in Resources */,
+				96C90CD3185EFB9D005C4ECB /* womanBt.png in Resources */,
 				96B98BCC1845E58F002E8552 /* check_true.png in Resources */,
 				96B98BD61845E58F002E8552 /* icon_qq@2x.png in Resources */,
 				96B98BD81845E58F002E8552 /* icon_weibo@2x.png in Resources */,
@@ -1406,6 +1425,7 @@
 				96C90CC8185EC1F4005C4ECB /* PEPhotoCropEditor.bundle in Resources */,
 				96B98B5C1845C6B8002E8552 /* checkmark@2x.png in Resources */,
 				96B98B7E1845C700002E8552 /* woman in Resources */,
+				96C90CD0185EFB9D005C4ECB /* manBt.png in Resources */,
 				96B98B5B1845C6B8002E8552 /* checkmark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
