@@ -440,4 +440,9 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     }
     
 }
+
+- (void)dealloc
+{
+    uploader.delegate = nil;
+}
 @end
