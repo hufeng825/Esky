@@ -49,23 +49,29 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
 {
     [super viewDidLoad];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                                                          target:self
-                                                                                          action:@selector(cancel:)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                           target:self
-                                                                                           action:@selector(done:)];
+    [self.navigationController setNavigationBarHidden:YES];
     
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                                    target:nil
                                                                                    action:nil];
-    UIBarButtonItem *constrainButton = [[UIBarButtonItem alloc] initWithTitle:PELocalizedString(@"Constrain", nil)
-                                                                        style:UIBarButtonItemStyleBordered
-                                                                       target:self
-                                                                       action:@selector(constrain:)];
-    self.toolbarItems = @[flexibleSpace, constrainButton, flexibleSpace];
-    self.navigationController.toolbarHidden = NO;
+//    UIBarButtonItem *constrainButton = [[UIBarButtonItem alloc] initWithTitle:PELocalizedString(@"Constrain", nil)
+//                                                                        style:UIBarButtonItemStyleBordered
+//                                                                       target:self
+//                                                                       action:@selector(constrain:)];
+//    self.toolbarItems = @[flexibleSpace, constrainButton, flexibleSpace];
+                                      
+    UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                  target:self
+                                                                 action:@selector(cancel:)];
     
+     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                                                         target:self
+                                                                                                                         action:@selector(done:)];
+    self.toolbarItems = @[leftBarButtonItem,flexibleSpace,rightBarButtonItem];
+    
+    self.navigationController.toolbarHidden = NO;
+    self.navigationController.toolbar.barStyle = UIBarStyleBlackTranslucent;
+    [self.navigationController.toolbar setTintColor:[UIColor whiteColor]];
     self.cropView.image = self.image;
 }
 

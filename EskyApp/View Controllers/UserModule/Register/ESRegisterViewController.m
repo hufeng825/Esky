@@ -179,7 +179,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     controller.delegate = self;
     controller.image = self.headIconImageView.image;
     controller.cropAspectRatio = 1;
-    
+    controller.keepingCropAspectRatio = YES;
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
     
     [self presentViewController:navigationController animated:YES completion:NULL];
