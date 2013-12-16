@@ -70,9 +70,9 @@
 {
     // Do any additional setup after loading the view from its nib.
     [self setSubViewHidden:NO];
-    [self startCanvasAnimationWithObject:_manBt duration:.8 delay:0 type:CSAnimationTypeZoomOut];
-    [self startCanvasAnimationWithObject:_womanBt duration:.8 delay:0 type:CSAnimationTypeZoomOut];
-    [self startCanvasAnimationWithObject:_hintLabel duration:.8 delay:0 type:CSAnimationTypeSlideDown];
+    [self startCanvasAnimationWithObject:_manBt duration:.8 delay:0 type:CSAnimationTypeFadeIn];
+    [self startCanvasAnimationWithObject:_womanBt duration:.8 delay:0 type:CSAnimationTypeFadeIn];
+    [self startCanvasAnimationWithObject:_hintLabel duration:.8 delay:0 type:CSAnimationTypeFadeIn];
 
 }
 

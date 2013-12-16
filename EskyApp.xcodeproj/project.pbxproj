@@ -64,7 +64,7 @@
 		96B98B4E1845C6B8002E8552 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98ADE1845C6B8002E8552 /* UIProgressView+AFNetworking.m */; };
 		96B98B4F1845C6B8002E8552 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98AE01845C6B8002E8552 /* UIWebView+AFNetworking.m */; };
 		96B98B501845C6B8002E8552 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98AE31845C6B8002E8552 /* EGOCache.m */; };
-		96B98B511845C6B8002E8552 /* FAHeaderIconImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98AE61845C6B8002E8552 /* FAHeaderIconImageView.m */; };
+		96B98B511845C6B8002E8552 /* ESHeaderIconImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98AE61845C6B8002E8552 /* ESHeaderIconImageView.m */; };
 		96B98B521845C6B8002E8552 /* FAInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98AE91845C6B8002E8552 /* FAInputView.m */; };
 		96B98B531845C6B8002E8552 /* FAInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B98AEA1845C6B8002E8552 /* FAInputView.xib */; };
 		96B98B541845C6B8002E8552 /* IQKeyBoardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B98AED1845C6B8002E8552 /* IQKeyBoardManager.m */; };
@@ -162,6 +162,12 @@
 		96C90CA618583CE2005C4ECB /* QiniuPutPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C90CA518583CE2005C4ECB /* QiniuPutPolicy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		96C90CA9185AA48D005C4ECB /* back_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CA7185AA48D005C4ECB /* back_btn.png */; };
 		96C90CAA185AA48D005C4ECB /* back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CA8185AA48D005C4ECB /* back_btn@2x.png */; };
+		96C90CC5185EC1F4005C4ECB /* PECropRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C90CBB185EC1F4005C4ECB /* PECropRectView.m */; };
+		96C90CC6185EC1F4005C4ECB /* PECropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C90CBD185EC1F4005C4ECB /* PECropView.m */; };
+		96C90CC7185EC1F4005C4ECB /* PECropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C90CBF185EC1F4005C4ECB /* PECropViewController.m */; };
+		96C90CC8185EC1F4005C4ECB /* PEPhotoCropEditor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CC0185EC1F4005C4ECB /* PEPhotoCropEditor.bundle */; };
+		96C90CC9185EC1F4005C4ECB /* PEResizeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C90CC2185EC1F4005C4ECB /* PEResizeControl.m */; };
+		96C90CCA185EC1F4005C4ECB /* UIImage+PECrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C90CC4185EC1F4005C4ECB /* UIImage+PECrop.m */; };
 		96F8AA6A1856FAFC000612C5 /* CSAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8AA691856FAFC000612C5 /* CSAnimation.m */; };
 		96F8AA6E185715AD000612C5 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8AA6D185715AD000612C5 /* Base64.m */; };
 		96F8AA72185719A7000612C5 /* NSData+MD5Digest.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8AA71185719A7000612C5 /* NSData+MD5Digest.m */; };
@@ -278,8 +284,8 @@
 		96B98AE01845C6B8002E8552 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		96B98AE21845C6B8002E8552 /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
 		96B98AE31845C6B8002E8552 /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
-		96B98AE51845C6B8002E8552 /* FAHeaderIconImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAHeaderIconImageView.h; sourceTree = "<group>"; };
-		96B98AE61845C6B8002E8552 /* FAHeaderIconImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAHeaderIconImageView.m; sourceTree = "<group>"; };
+		96B98AE51845C6B8002E8552 /* ESHeaderIconImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESHeaderIconImageView.h; sourceTree = "<group>"; };
+		96B98AE61845C6B8002E8552 /* ESHeaderIconImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESHeaderIconImageView.m; sourceTree = "<group>"; };
 		96B98AE81845C6B8002E8552 /* FAInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAInputView.h; sourceTree = "<group>"; };
 		96B98AE91845C6B8002E8552 /* FAInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAInputView.m; sourceTree = "<group>"; };
 		96B98AEA1845C6B8002E8552 /* FAInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FAInputView.xib; sourceTree = "<group>"; };
@@ -432,6 +438,17 @@
 		96C90CA518583CE2005C4ECB /* QiniuPutPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiniuPutPolicy.m; sourceTree = "<group>"; };
 		96C90CA7185AA48D005C4ECB /* back_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_btn.png; sourceTree = "<group>"; };
 		96C90CA8185AA48D005C4ECB /* back_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_btn@2x.png"; sourceTree = "<group>"; };
+		96C90CBA185EC1F4005C4ECB /* PECropRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropRectView.h; sourceTree = "<group>"; };
+		96C90CBB185EC1F4005C4ECB /* PECropRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropRectView.m; sourceTree = "<group>"; };
+		96C90CBC185EC1F4005C4ECB /* PECropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropView.h; sourceTree = "<group>"; };
+		96C90CBD185EC1F4005C4ECB /* PECropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropView.m; sourceTree = "<group>"; };
+		96C90CBE185EC1F4005C4ECB /* PECropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropViewController.h; sourceTree = "<group>"; };
+		96C90CBF185EC1F4005C4ECB /* PECropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropViewController.m; sourceTree = "<group>"; };
+		96C90CC0185EC1F4005C4ECB /* PEPhotoCropEditor.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PEPhotoCropEditor.bundle; sourceTree = "<group>"; };
+		96C90CC1185EC1F4005C4ECB /* PEResizeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEResizeControl.h; sourceTree = "<group>"; };
+		96C90CC2185EC1F4005C4ECB /* PEResizeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEResizeControl.m; sourceTree = "<group>"; };
+		96C90CC3185EC1F4005C4ECB /* UIImage+PECrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PECrop.h"; sourceTree = "<group>"; };
+		96C90CC4185EC1F4005C4ECB /* UIImage+PECrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PECrop.m"; sourceTree = "<group>"; };
 		96CEEBDA1845FAFD0045F15E /* ESDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDebug.h; sourceTree = "<group>"; };
 		96F8AA681856FAFC000612C5 /* CSAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAnimation.h; sourceTree = "<group>"; };
 		96F8AA691856FAFC000612C5 /* CSAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAnimation.m; sourceTree = "<group>"; };
@@ -799,8 +816,8 @@
 		96B98AE41845C6B8002E8552 /* HeaderIconImageView */ = {
 			isa = PBXGroup;
 			children = (
-				96B98AE51845C6B8002E8552 /* FAHeaderIconImageView.h */,
-				96B98AE61845C6B8002E8552 /* FAHeaderIconImageView.m */,
+				96B98AE51845C6B8002E8552 /* ESHeaderIconImageView.h */,
+				96B98AE61845C6B8002E8552 /* ESHeaderIconImageView.m */,
 			);
 			path = HeaderIconImageView;
 			sourceTree = "<group>";
@@ -1055,6 +1072,7 @@
 		96B98B861845C81E002E8552 /* UserModule */ = {
 			isa = PBXGroup;
 			children = (
+				96C90CB1185EA366005C4ECB /* CliperView */,
 				96B98B871845C81E002E8552 /* Login */,
 				96B98B8B1845C81E002E8552 /* ModifyPass */,
 				96B98B8F1845C81E002E8552 /* Register */,
@@ -1220,6 +1238,24 @@
 			path = JSONKit;
 			sourceTree = "<group>";
 		};
+		96C90CB1185EA366005C4ECB /* CliperView */ = {
+			isa = PBXGroup;
+			children = (
+				96C90CBA185EC1F4005C4ECB /* PECropRectView.h */,
+				96C90CBB185EC1F4005C4ECB /* PECropRectView.m */,
+				96C90CBC185EC1F4005C4ECB /* PECropView.h */,
+				96C90CBD185EC1F4005C4ECB /* PECropView.m */,
+				96C90CBE185EC1F4005C4ECB /* PECropViewController.h */,
+				96C90CBF185EC1F4005C4ECB /* PECropViewController.m */,
+				96C90CC0185EC1F4005C4ECB /* PEPhotoCropEditor.bundle */,
+				96C90CC1185EC1F4005C4ECB /* PEResizeControl.h */,
+				96C90CC2185EC1F4005C4ECB /* PEResizeControl.m */,
+				96C90CC3185EC1F4005C4ECB /* UIImage+PECrop.h */,
+				96C90CC4185EC1F4005C4ECB /* UIImage+PECrop.m */,
+			);
+			path = CliperView;
+			sourceTree = "<group>";
+		};
 		96F8AA671856FAFC000612C5 /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
@@ -1367,6 +1403,7 @@
 				96B98BD61845E58F002E8552 /* icon_qq@2x.png in Resources */,
 				96B98BD81845E58F002E8552 /* icon_weibo@2x.png in Resources */,
 				96B98BCF1845E58F002E8552 /* dialogue_bg.png in Resources */,
+				96C90CC8185EC1F4005C4ECB /* PEPhotoCropEditor.bundle in Resources */,
 				96B98B5C1845C6B8002E8552 /* checkmark@2x.png in Resources */,
 				96B98B7E1845C700002E8552 /* woman in Resources */,
 				96B98B5B1845C6B8002E8552 /* checkmark.png in Resources */,
@@ -1397,8 +1434,10 @@
 				96C90C9D185814DF005C4ECB /* Reachability.m in Sources */,
 				96C90C96185814DF005C4ECB /* ASIDataCompressor.m in Sources */,
 				96B98B451845C6B8002E8552 /* AFURLConnectionOperation.m in Sources */,
+				96C90CC7185EC1F4005C4ECB /* PECropViewController.m in Sources */,
 				9645ED7B1855C708004643C9 /* ESUserModel.m in Sources */,
 				96B98A771845C643002E8552 /* ESConfig.m in Sources */,
+				96C90CCA185EC1F4005C4ECB /* UIImage+PECrop.m in Sources */,
 				96B98B621845C6B8002E8552 /* SSKeychainQuery.m in Sources */,
 				9688BD6E184C9A5B00F9A8E9 /* NSDate+HFExtension.m in Sources */,
 				9688BD67184C903B00F9A8E9 /* HFHttpRequestParameters.m in Sources */,
@@ -1419,6 +1458,7 @@
 				96B98B571845C6B8002E8552 /* JTMappings.m in Sources */,
 				96B98B551845C6B8002E8552 /* JTDataMappings.m in Sources */,
 				96B98B4E1845C6B8002E8552 /* UIProgressView+AFNetworking.m in Sources */,
+				96C90CC6185EC1F4005C4ECB /* PECropView.m in Sources */,
 				96B98B611845C6B8002E8552 /* SSKeychain.m in Sources */,
 				96F8AA6E185715AD000612C5 /* Base64.m in Sources */,
 				96B98B4C1845C6B8002E8552 /* UIButton+AFNetworking.m in Sources */,
@@ -1446,11 +1486,13 @@
 				96B98A761845C643002E8552 /* CommonCH.m in Sources */,
 				96B98B5D1845C6B8002E8552 /* MBProgressHUD.m in Sources */,
 				96C90CA0185814DF005C4ECB /* JSONKit.m in Sources */,
-				96B98B511845C6B8002E8552 /* FAHeaderIconImageView.m in Sources */,
+				96B98B511845C6B8002E8552 /* ESHeaderIconImageView.m in Sources */,
 				96B98A781845C643002E8552 /* ESMainUser.m in Sources */,
+				96C90CC9185EC1F4005C4ECB /* PEResizeControl.m in Sources */,
 				96B98A8C1845C643002E8552 /* ESXibView.m in Sources */,
 				96B98B461845C6B8002E8552 /* AFURLRequestSerialization.m in Sources */,
 				96B98B491845C6B8002E8552 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				96C90CC5185EC1F4005C4ECB /* PECropRectView.m in Sources */,
 				96C90C9C185814DF005C4ECB /* ASINetworkQueue.m in Sources */,
 				96B98B971845C81E002E8552 /* ESModifyPassWordViewController.m in Sources */,
 				96B98B791845C6B8002E8552 /* UIViewController+KNSemiModal.m in Sources */,

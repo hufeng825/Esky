@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 fashion. All rights reserved.
 //
 
-#import "FAHeaderIconImageView.h"
+#import "ESHeaderIconImageView.h"
 
-@implementation FAHeaderIconImageView
+@implementation ESHeaderIconImageView
 
 - (id)initWithFrame:(CGRect)frame
 {

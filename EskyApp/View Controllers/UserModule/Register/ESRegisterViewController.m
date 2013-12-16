@@ -8,6 +8,7 @@
 
 #import "ESRegisterViewController.h"
 #import "QiniuPutPolicy.h"
+#import "PECropViewController.h"
 
 static NSString *QiniuAccessKey = @"Kqq_hZ-Ck1SepnkIlF9SISCI4MZCyiQkRblLv4Q_";
 static NSString *QiniuSecretKey = @"9zE3jpWBDBQf98-hsy8-52e7Sowe1DbdJtwrAHz-";
@@ -62,7 +63,6 @@ static NSString *QiniuBucketName = @"hufeng";
     
     
     [self.bgScrollView setContentSize:CGSizeMake(self.view.width, self.view.height+10)];
-//     = [[UIBarButtonItem alloc]initWithTitle:@"<" style:UIBarButtonSystemItemStop  target:self action:@selector(goBack)];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back_btn"] style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
     
@@ -136,33 +136,55 @@ static NSString *QiniuBucketName = @"hufeng";
 
 
 
+
+- (void)cropViewController:(PECropViewController *)controller didFinishCroppingImage:(UIImage *)croppedImage
+{
+    self.headIconImageView.image = croppedImage;
+    [controller dismissViewControllerAnimated:YES completion:NULL];
+    double delayInSeconds = 2.5;
+    __weak __typeof(self)weakSelf =self;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [weakSelf uploadContent];
+    });
+}
+
+- (void)cropViewControllerDidCancel:(PECropViewController *)controller
+{
+    [controller dismissViewControllerAnimated:YES completion:NULL];
+}
+
 - (void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary *)info{
     NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
     if ([mediaType isEqualToString:@"public.image"]){
-        // UIImage *selectedImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-      
-        __block UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+        UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
         NSString *peferenceURL = [(NSURL *)[info objectForKey:@"UIImagePickerControllerReferenceURL"] absoluteString] ;
-        if (![imageReferenceURL isEqualToString: peferenceURL] ) {
-            self.imageReferenceURL = peferenceURL;
-            __weak  __typeof(self)weakSelf = self;
-            dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                image = [image compressedImage];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    //回调或者说是通知主线程刷新，
-                    weakSelf.headIconImageView.image = image;
-                    [self uploadContent];
-                });
-            });
-        }
-       
+        self.headIconImageView.image = image;
+        self.imageReferenceURL = peferenceURL;
     }
     else if ([mediaType isEqualToString:@"public.movie"]){
         [self showWarning:@"暂不支持视频格式头像"];
     }
-    [picker dismissViewControllerAnimated:YES completion:nil];
+    [picker dismissViewControllerAnimated:YES completion:^{
+        [self openEditor:nil];
+    }];
 }
+
+#pragma mark -
+
+- (IBAction)openEditor:(id)sender
+{
+    PECropViewController *controller = [[PECropViewController alloc] init];
+    controller.delegate = self;
+    controller.image = self.headIconImageView.image;
+    controller.cropAspectRatio = 1;
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+    
+    [self presentViewController:navigationController animated:YES completion:NULL];
+}
+
 
 #pragma mark themeChanged
 
@@ -394,30 +416,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
         message = [NSString stringWithFormat:@"Failed uploading %@ with error: %@",  filePath, error];
     }
     ESDERROR(@"%@", message);
-    [self showWarning:@"头像上传失败 您可以稍后在重新进行修改"];
+    [self showWarning:@"头像上传失败"];
     headUrlStr = nil;
     isUploading = NO;
 }
 
 
 #pragma mark loading
--(void) createLoading
-{
-        HUD = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-        HUD.removeFromSuperViewOnHide = YES;
-        // Set determinate mode
-        HUD.mode = MBProgressHUDModeAnnularDeterminate;
-        
-        HUD.labelText = @"创建帐号ing";
-        
-        // myProgressTask uses the HUD instance to update progress
-//        [HUD showWhileExecuting:@selector(myProgressTask) onTarget:self withObject:nil animated:YES];
-}
 
-- (void)showProgressTask {
-	// This just increases the progress indicator in a loop
-		usleep(15000);
-}
 
 
 #pragma mark 注册按钮点击

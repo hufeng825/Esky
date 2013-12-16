@@ -7,7 +7,7 @@
 //
 
 #import "ESBaseViewController.h"
-#import "FAHeaderIconImageView.h"
+#import "ESHeaderIconImageView.h"
 
 #import "FAInputView.h"
 
@@ -20,7 +20,7 @@
                                                             UINavigationControllerDelegate,
                                                             QiniuUploadDelegate>
 
-@property (weak, nonatomic) IBOutlet FAHeaderIconImageView *headIconImageView;
+@property (weak, nonatomic) IBOutlet ESHeaderIconImageView *headIconImageView;
 @property (weak, nonatomic) IBOutlet UIButton *registButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
 

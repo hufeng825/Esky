@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FAHeaderIconImageView : UIImageView
+@interface ESHeaderIconImageView : UIImageView
 
 @property (nonatomic,strong)  UITapGestureRecognizer *singleTap ;
 
