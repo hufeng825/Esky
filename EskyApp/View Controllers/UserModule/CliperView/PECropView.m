@@ -97,6 +97,7 @@ static const CGFloat MarginRight = MarginLeft;
     self.bottomOverlayView = [[UIView alloc] init];
     self.bottomOverlayView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
     [self addSubview:self.bottomOverlayView];
+    
 }
 
 #pragma mark -
@@ -149,7 +150,12 @@ static const CGFloat MarginRight = MarginLeft;
         [self layoutCropRectViewWithCropRect:self.scrollView.frame];
         
         if (self.interfaceOrientation != interfaceOrientation) {
-            [self zoomToCropRect:self.scrollView.frame];
+            CGRect rect = CGRectMake(self.scrollView.frame.origin.x
+                                     ,_imageView.height/2-60,
+                                     self.scrollView.frame.size.width,
+                                     self.scrollView.frame.size.width
+                                     );
+            [self zoomToCropRect:rect];
         }
     }
     
@@ -395,7 +401,6 @@ static const CGFloat MarginRight = MarginLeft;
     if (CGRectEqualToRect(self.scrollView.frame, toRect)) {
         return;
     }
-    
     CGFloat width = CGRectGetWidth(toRect);
     CGFloat height = CGRectGetHeight(toRect);
     

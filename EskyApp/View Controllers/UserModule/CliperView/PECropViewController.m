@@ -73,7 +73,7 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
     self.navigationController.toolbar.barStyle = UIBarStyleBlackTranslucent;
     [self.navigationController.toolbar setTintColor:[UIColor whiteColor]];
     self.cropView.image = self.image;
-    }
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
