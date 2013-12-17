@@ -13,8 +13,6 @@
 		9645ED7B1855C708004643C9 /* ESUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9645ED7A1855C708004643C9 /* ESUserModel.m */; };
 		9645ED801856C487004643C9 /* ESChoseModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9645ED7E1856C487004643C9 /* ESChoseModuleViewController.m */; };
 		9645ED811856C487004643C9 /* ESChoseModuleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9645ED7F1856C487004643C9 /* ESChoseModuleViewController.xib */; };
-		9645ED841856E2DA004643C9 /* choosebg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9645ED821856E2DA004643C9 /* choosebg.jpg */; };
-		9645ED851856E2DA004643C9 /* choosebg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9645ED831856E2DA004643C9 /* choosebg@2x.jpg */; };
 		9688BD67184C903B00F9A8E9 /* HFHttpRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD66184C903B00F9A8E9 /* HFHttpRequestParameters.m */; };
 		9688BD6E184C9A5B00F9A8E9 /* NSDate+HFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD6D184C9A5B00F9A8E9 /* NSDate+HFExtension.m */; };
 		9688BD7118507A3A00F9A8E9 /* ESRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD7018507A3A00F9A8E9 /* ESRequestParameters.m */; };
@@ -173,6 +171,10 @@
 		96C90CD2185EFB9D005C4ECB /* wenzi2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CCD185EFB9D005C4ECB /* wenzi2@2x.png */; };
 		96C90CD3185EFB9D005C4ECB /* womanBt.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CCE185EFB9D005C4ECB /* womanBt.png */; };
 		96C90CD4185EFB9D005C4ECB /* womanBt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CCF185EFB9D005C4ECB /* womanBt@2x.png */; };
+		96C90CD7185F0011005C4ECB /* wenzi.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CD5185F0011005C4ECB /* wenzi.png */; };
+		96C90CD8185F0011005C4ECB /* wenzi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CD6185F0011005C4ECB /* wenzi@2x.png */; };
+		96C90CDB185F0204005C4ECB /* choosebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CD9185F0204005C4ECB /* choosebg.png */; };
+		96C90CDC185F0204005C4ECB /* choosebg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CDA185F0204005C4ECB /* choosebg@2x.png */; };
 		96F8AA6A1856FAFC000612C5 /* CSAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8AA691856FAFC000612C5 /* CSAnimation.m */; };
 		96F8AA6E185715AD000612C5 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8AA6D185715AD000612C5 /* Base64.m */; };
 		96F8AA72185719A7000612C5 /* NSData+MD5Digest.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8AA71185719A7000612C5 /* NSData+MD5Digest.m */; };
@@ -195,8 +197,6 @@
 		9645ED7D1856C487004643C9 /* ESChoseModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESChoseModuleViewController.h; path = ChoseModule/ESChoseModuleViewController.h; sourceTree = "<group>"; };
 		9645ED7E1856C487004643C9 /* ESChoseModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESChoseModuleViewController.m; path = ChoseModule/ESChoseModuleViewController.m; sourceTree = "<group>"; };
 		9645ED7F1856C487004643C9 /* ESChoseModuleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESChoseModuleViewController.xib; path = ChoseModule/ESChoseModuleViewController.xib; sourceTree = "<group>"; };
-		9645ED821856E2DA004643C9 /* choosebg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = choosebg.jpg; sourceTree = "<group>"; };
-		9645ED831856E2DA004643C9 /* choosebg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "choosebg@2x.jpg"; sourceTree = "<group>"; };
 		9688BD65184C903B00F9A8E9 /* HFHttpRequestParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpRequestParameters.h; sourceTree = "<group>"; };
 		9688BD66184C903B00F9A8E9 /* HFHttpRequestParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpRequestParameters.m; sourceTree = "<group>"; };
 		9688BD6C184C9A5B00F9A8E9 /* NSDate+HFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+HFExtension.h"; path = "NSDate+Additons/NSDate+HFExtension.h"; sourceTree = "<group>"; };
@@ -459,6 +459,10 @@
 		96C90CCD185EFB9D005C4ECB /* wenzi2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wenzi2@2x.png"; sourceTree = "<group>"; };
 		96C90CCE185EFB9D005C4ECB /* womanBt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = womanBt.png; sourceTree = "<group>"; };
 		96C90CCF185EFB9D005C4ECB /* womanBt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "womanBt@2x.png"; sourceTree = "<group>"; };
+		96C90CD5185F0011005C4ECB /* wenzi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wenzi.png; sourceTree = "<group>"; };
+		96C90CD6185F0011005C4ECB /* wenzi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wenzi@2x.png"; sourceTree = "<group>"; };
+		96C90CD9185F0204005C4ECB /* choosebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = choosebg.png; sourceTree = "<group>"; };
+		96C90CDA185F0204005C4ECB /* choosebg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "choosebg@2x.png"; sourceTree = "<group>"; };
 		96CEEBDA1845FAFD0045F15E /* ESDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDebug.h; sourceTree = "<group>"; };
 		96F8AA681856FAFC000612C5 /* CSAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAnimation.h; sourceTree = "<group>"; };
 		96F8AA691856FAFC000612C5 /* CSAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAnimation.m; sourceTree = "<group>"; };
@@ -1149,6 +1153,8 @@
 		96B98BB21845E58F002E8552 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				96C90CD5185F0011005C4ECB /* wenzi.png */,
+				96C90CD6185F0011005C4ECB /* wenzi@2x.png */,
 				96C90CCB185EFB9D005C4ECB /* manBt.png */,
 				96C90CCC185EFB9D005C4ECB /* manBt@2x.png */,
 				96C90CCD185EFB9D005C4ECB /* wenzi2@2x.png */,
@@ -1156,8 +1162,6 @@
 				96C90CCF185EFB9D005C4ECB /* womanBt@2x.png */,
 				96C90CA7185AA48D005C4ECB /* back_btn.png */,
 				96C90CA8185AA48D005C4ECB /* back_btn@2x.png */,
-				9645ED821856E2DA004643C9 /* choosebg.jpg */,
-				9645ED831856E2DA004643C9 /* choosebg@2x.jpg */,
 				96B98BB31845E58F002E8552 /* bt_blue.png */,
 				96B98BB41845E58F002E8552 /* bt_blue@2x.png */,
 				96B98BB51845E58F002E8552 /* bt_grey.png */,
@@ -1173,6 +1177,8 @@
 				96B98BBF1845E58F002E8552 /* icon_head@2x.png */,
 				96B98BC01845E58F002E8552 /* icon_qq.png */,
 				96B98BC11845E58F002E8552 /* icon_qq@2x.png */,
+				96C90CD9185F0204005C4ECB /* choosebg.png */,
+				96C90CDA185F0204005C4ECB /* choosebg@2x.png */,
 				96B98BC21845E58F002E8552 /* icon_weibo.png */,
 				96B98BC31845E58F002E8552 /* icon_weibo@2x.png */,
 				96B98BC41845E58F002E8552 /* reset_mm@2x.png */,
@@ -1378,8 +1384,10 @@
 			files = (
 				96B98BCE1845E58F002E8552 /* check_wrong@2x.png in Resources */,
 				96B98BC81845E58F002E8552 /* bt_blue.png in Resources */,
+				96C90CD8185F0011005C4ECB /* wenzi@2x.png in Resources */,
 				96B98BCB1845E58F002E8552 /* bt_grey@2x.png in Resources */,
 				96B98BD21845E58F002E8552 /* e-sky@2x.png in Resources */,
+				96C90CDC185F0204005C4ECB /* choosebg@2x.png in Resources */,
 				96B98B691845C6B8002E8552 /* ShareSDKLocalizable.strings in Resources */,
 				96B98BD41845E58F002E8552 /* icon_head@2x.png in Resources */,
 				96C90CD2185EFB9D005C4ECB /* wenzi2@2x.png in Resources */,
@@ -1389,6 +1397,7 @@
 				96C90CAA185AA48D005C4ECB /* back_btn@2x.png in Resources */,
 				96B98A821845C643002E8552 /* themes.plist in Resources */,
 				96C90CD1185EFB9D005C4ECB /* manBt@2x.png in Resources */,
+				96C90CD7185F0011005C4ECB /* wenzi.png in Resources */,
 				96B98BD01845E58F002E8552 /* dialogue_bg@2x.png in Resources */,
 				96C90CA9185AA48D005C4ECB /* back_btn.png in Resources */,
 				96B98BDB1845E58F002E8552 /* translate_bg.png in Resources */,
@@ -1399,18 +1408,17 @@
 				96B98B531845C6B8002E8552 /* FAInputView.xib in Resources */,
 				96B98A751845C643002E8552 /* ESBaseViewController.xib in Resources */,
 				96B98BCD1845E58F002E8552 /* check_true@2x.png in Resources */,
-				9645ED851856E2DA004643C9 /* choosebg@2x.jpg in Resources */,
 				96B98A171845C56D002E8552 /* InfoPlist.strings in Resources */,
 				96B98B741845C6B8002E8552 /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */,
 				96B98A811845C643002E8552 /* Settings.bundle in Resources */,
 				96B98BD91845E58F002E8552 /* reset_mm@2x.png in Resources */,
+				96C90CDB185F0204005C4ECB /* choosebg.png in Resources */,
 				9645ED811856C487004643C9 /* ESChoseModuleViewController.xib in Resources */,
 				96B98BD11845E58F002E8552 /* e-sky.png in Resources */,
 				96B98BDA1845E58F002E8552 /* rest_mm.png in Resources */,
 				96B98B7C1845C6FA002E8552 /* man in Resources */,
 				96B98B6A1845C6B8002E8552 /* Resource.bundle in Resources */,
 				96B98BCA1845E58F002E8552 /* bt_grey.png in Resources */,
-				9645ED841856E2DA004643C9 /* choosebg.jpg in Resources */,
 				96B98B981845C81E002E8552 /* ESModifyPassWordViewController.xib in Resources */,
 				96B98BC91845E58F002E8552 /* bt_blue@2x.png in Resources */,
 				96B98BDC1845E58F002E8552 /* translate_bg@2x.png in Resources */,

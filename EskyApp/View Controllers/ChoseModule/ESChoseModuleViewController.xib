@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ESChoseModuleViewController">
             <connections>
-                <outlet property="hintLabel" destination="8FT-WD-PWE" id="4cd-yE-658"/>
+                <outlet property="hintLabel" destination="318-nf-BvB" id="n9A-eb-4Tu"/>
                 <outlet property="manBt" destination="9iZ-V9-NiC" id="bvk-x9-QUo"/>
                 <outlet property="view" destination="1" id="3"/>
                 <outlet property="womanBt" destination="pkv-MN-sib" id="FUt-ZC-KUz"/>
@@ -17,9 +17,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choosebg.jpg" id="fgo-W6-jhL">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choosebg.png" id="fgo-W6-jhL">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wenzi.png" id="318-nf-BvB">
+                    <rect key="frame" x="91" y="406" width="138" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9iZ-V9-NiC">
                     <rect key="frame" x="5" y="452" width="150" height="70"/>
@@ -44,21 +48,15 @@
                         <action selector="womanBtClicked:" destination="-1" eventType="touchUpInside" id="gGG-hH-lWO"/>
                     </connections>
                 </button>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择您的性别" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8FT-WD-PWE">
-                    <rect key="frame" x="60" y="391" width="200" height="53"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
     <resources>
-        <image name="choosebg.jpg" width="320" height="480"/>
+        <image name="choosebg.png" width="320" height="480"/>
         <image name="manBt.png" width="150" height="70"/>
+        <image name="wenzi.png" width="138" height="20"/>
         <image name="womanBt.png" width="150" height="70"/>
     </resources>
 </document>
