@@ -234,7 +234,7 @@
 -(void)login
 {
     if ([self checkParameter]) {
-        ESRequestParameters *postObject  = [ESRequestParameters requestLoginParametersWithUsername:_logoNameInput.text passWord:[_mmInput.text stringFromMD5]];
+        ESRequestParameters *postObject  = [ESRequestParameters requestLoginParametersWithUsername:_logoNameInput.text email:_logoNameInput.text passWord:[_mmInput.text stringFromMD5]];
         __weak  __typeof(self)weakSelf= self;
         [ESRequest loginRequest:^(HFHttpRequestResult *result) {
             NSLog(@"");

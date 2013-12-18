@@ -23,16 +23,18 @@ static NSString * const kYangYI_API_HOST = @"http://192.168.24.95:8081/trends/";
 //注册接口
 
 + (ESRequestParameters *) requestRegisterParametersWithUserName: (NSString *)userName
-                                              nickName: (NSString *)nickName
-                                                avatar: (NSString *)avatarpath
-                                              password: (NSString *)password;
+                                                          email: (NSString *)email
+                                                       nickName: (NSString *)nickName
+                                                         avatar: (NSString *)avatarpath
+                                                       password: (NSString *)password;
 
 
 //登录接口
 + (ESRequestParameters *) requestLoginParametersWithUsername:(NSString *)username
-                                        passWord:(NSString *)passWord;
+                                                       email: (NSString *)email
+                                                    passWord:(NSString *)passWord;
 //重置密码接口
-+ (ESRequestParameters *) requestResetPasswordParametersWithUsername:(NSString *)username;
++ (ESRequestParameters *) requestResetPasswordParametersWithUsername:(NSString *)email;
 
 
 @end

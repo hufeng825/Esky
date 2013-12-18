@@ -316,7 +316,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 {
     if([self checkParameter]){
         __weak __typeof(self)weakSelf = self;
-        ESRequestParameters *parameters = [ESRequestParameters requestRegisterParametersWithUserName:_emailInput.text  nickName:_nickNameInput.text avatar:headUrlStr password:[_mmInput.text stringFromMD5]];
+        ESRequestParameters *parameters = [ESRequestParameters requestRegisterParametersWithUserName:@"" email:_emailInput.text  nickName:_nickNameInput.text avatar:headUrlStr password:[_mmInput.text stringFromMD5]];
         [ESRequest registerRequest:^(HFHttpRequestResult *result) {
             NSLog(@"%@",result.Json);
             if ([result isSuccess]) {

@@ -9,18 +9,17 @@
 #import "ESBaseViewController.h"
 
 @interface ESBaseViewController ()
-
+@property (nonatomic, readonly) UIView *statusBarBackgroundView;
 @end
 
 @implementation ESBaseViewController
-
+@synthesize statusBarBackgroundView;
 
 
 - (id)init
 {
     NSString    *clssName = NSStringFromClass([self class]);
     NSString    *xibName = is4InchScreen() ?[NSString stringWithFormat:@"%@_4inch", clssName] : clssName;
-//    NSString    *xibName = NSStringFromClass([self class]);
     
     self = [super initWithNibName:xibName bundle:nil];
     

@@ -36,11 +36,7 @@
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder{
-    //    if((self = [super init])) {
-    //        //decode properties/values
-    //        self.respCode       = [aDecoder decodeObjectForKey:@"respCode"];
-    //        self.respMsg   = [aDecoder decodeObjectForKey:@"respMsg"];
-    //    }
+
     if (self = [super init])
     {
         if (aDecoder == nil)
