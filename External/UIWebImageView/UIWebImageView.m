@@ -32,12 +32,15 @@
     __block UIImageView *viewImage = self;
     [self setImageWithURLStr:urlStr placeholderImage:placeholderImage success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image)
     {
-        viewImage.image  = [image imageByScalingToSize:viewImage.frame.size];
-        [
-         [EGOCache globalCache]setImage:image forKey:
-         [NSString stringWithFormat:@"%lu",(unsigned long)[urlStr hash]
-          ]
-         ];
+        dispatch_async(dispatch_get_main_queue(), ^(){
+            viewImage.image  = [image imageByScalingToSize:viewImage.frame.size];
+            [
+             [EGOCache globalCache]setImage:image forKey:
+             [NSString stringWithFormat:@"%lu",(unsigned long)[urlStr hash]
+              ]
+             ];
+        });
+        
         
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error)
       {
