@@ -8,6 +8,7 @@
 
 #ifndef HFFrame_Header_h
 #define HFFrame_Header_h
+
 #import "HFHttpRequestResult.h"
 #import "AFHTTPRequestOperation.h"
 #import "HFHttpRequestParameters.h"
@@ -22,25 +23,22 @@
 #define HFHttp_DownloadProgress_BLOCK ^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead)
 
 
+typedef void(^AFSucessResponBlock)(AFHTTPRequestOperation *operation, id responseObject);
 
-typedef  void(^AFSucessResponBlock) (AFHTTPRequestOperation *operation, id responseObject);
+typedef void(^AFFailCallBlock)(AFHTTPRequestOperation *operation, NSError *error);
 
-typedef  void(^AFFailCallBlock)     (AFHTTPRequestOperation *operation, NSError *error);
-
-typedef  void(^AFUploadBlock)       (id<AFMultipartFormData> formData) ;
-
-
-typedef  void (^HFHttpSuccessCallBack)      (HFHttpRequestResult *result);
-
-typedef  void (^HFHttpErrorRequestCallBack) (HFHttpErrorRequestResult *erroresult);
-
-typedef  void (^HFHttpUploadCallBack) (id<HFMultipartFormData> formData);
-
-typedef  void (^HFHttpDownloadProgressCallBlock)(NSUInteger bytesRead,
-                                                 long long totalBytesRead,
-                                                 long long totalBytesExpectedToRead);
+typedef void(^AFUploadBlock)(id <AFMultipartFormData> formData);
 
 
+typedef void (^HFHttpSuccessCallBack)(HFHttpRequestResult *result);
+
+typedef void (^HFHttpErrorRequestCallBack)(HFHttpErrorRequestResult *erroresult);
+
+typedef void (^HFHttpUploadCallBack)(id <HFMultipartFormData> formData);
+
+typedef void (^HFHttpDownloadProgressCallBlock)(NSUInteger bytesRead,
+        long long totalBytesRead,
+        long long totalBytesExpectedToRead);
 
 
 #endif

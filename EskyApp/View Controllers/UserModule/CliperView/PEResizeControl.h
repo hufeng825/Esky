@@ -11,15 +11,17 @@
 
 @interface PEResizeControl : UIView
 
-@property (nonatomic, weak) id delegate;
-@property (nonatomic, readonly) CGPoint translation;
+@property(nonatomic, weak) id delegate;
+@property(nonatomic, readonly) CGPoint translation;
 
 @end
 
 @protocol PEResizeConrolViewDelegate <NSObject>
 
 - (void)resizeConrolViewDidBeginResizing:(PEResizeControl *)resizeConrolView;
+
 - (void)resizeConrolViewDidResize:(PEResizeControl *)resizeConrolView;
+
 - (void)resizeConrolViewDidEndResizing:(PEResizeControl *)resizeConrolView;
 
 @end

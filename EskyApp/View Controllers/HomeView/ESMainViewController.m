@@ -16,14 +16,13 @@
 
 
 @interface ESMainViewController ()
-@property (weak, nonatomic) IBOutlet UIWebImageView *testimg;
+@property(weak, nonatomic) IBOutlet UIWebImageView *testimg;
 
 @end
 
 @implementation ESMainViewController
 
-- (void)viewOnWillDisplay:(UIViewController *)viewController shareType:(ShareType)shareType
-{
+- (void)viewOnWillDisplay:(UIViewController *)viewController shareType:(ShareType)shareType {
 //    [viewController.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"iPhoneNavigationBarBG.png"]];
 
 
@@ -31,47 +30,44 @@
     [viewController.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     viewController.navigationItem.rightBarButtonItem = nil;
 
-    viewController.navigationItem.leftBarButtonItem  = Nil;
+    viewController.navigationItem.leftBarButtonItem = Nil;
 
-    UIButton *button  = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
     [viewController.view addSubview:button];
 
- }
+}
 
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
 
-    self.navigationController.modalTransitionStyle   = UIModalTransitionStylePartialCurl;
+    self.navigationController.modalTransitionStyle = UIModalTransitionStylePartialCurl;
 
-    double delayInSeconds  = 2.0;
-    dispatch_time_t popTime   = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void)
-    {
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t) (delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
         [_testimg setImageWithURLStr:@"http://hufeng825.github.io/img/hufeng825s.jpg" placeholderImage:_testimg.image success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
 
-        CATransition *transtion  = [CATransition animation];
-        transtion.duration  = 2;
-        [transtion setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-        [transtion setType:@"oglFlip"];
+            CATransition *transtion = [CATransition animation];
+            transtion.duration = 2;
+            [transtion setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+            [transtion setType:@"oglFlip"];
 
-        [transtion setSubtype:kCATransitionFromRight];
+            [transtion setSubtype:kCATransitionFromRight];
 
-        [_testimg.layer addAnimation:transtion forKey:@"transtionKey"];
-        [_testimg setImage:image];
-        } failure:nil]
-        ;
+            [_testimg.layer addAnimation:transtion forKey:@"transtionKey"];
+            [_testimg setImage:image];
+        }                    failure:nil];
     });
 //
 
 
-    UIView *view1                                    = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 300, 300)];
-    view1.backgroundColor                            = [UIColor redColor];
+    UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+    view1.backgroundColor = [UIColor redColor];
 
-    UIView *view2                                    = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 300, 300)];
-    view2.backgroundColor                            = [UIColor yellowColor];
+    UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+    view2.backgroundColor = [UIColor yellowColor];
 
 
 
@@ -192,44 +188,39 @@
 //
     [self thirdLog];
 
-    NSLog(@"%@",[[ESConfig globalConfig]userAgent]);
+    NSLog(@"%@", [[ESConfig globalConfig] userAgent]);
 
 
-
-
-    ESLoginViewController *lg = [[ESLoginViewController alloc]initWithNibName:@"ESLoginViewController" bundle:nil];
+    ESLoginViewController *lg = [[ESLoginViewController alloc] initWithNibName:@"ESLoginViewController" bundle:nil];
     [self.navigationController presentViewController:lg animated:YES completion:^{
         [self chooseModule];
     }];
-    
-  
+
 
 }
 
 
--(void) chooseModule{
-    ESChoseModuleViewController *choseModuleVc = [[ESChoseModuleViewController alloc]initWithNibName:@"ESChoseModuleViewController" bundle:nil];
+- (void)chooseModule {
+    ESChoseModuleViewController *choseModuleVc = [[ESChoseModuleViewController alloc] initWithNibName:@"ESChoseModuleViewController" bundle:nil];
     choseModuleVc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self.presentedViewController presentViewController:choseModuleVc animated:NO completion:nil];
 }
 
 
--(void) thirdLog
-{
+- (void)thirdLog {
 
-    UIButton *loginBtn  = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [loginBtn setTitle:@"title" forState:UIControlStateNormal];
     [loginBtn setBackgroundColor:[UIColor redColor]];
     loginBtn.frame = CGRectMake((self.view.frame.size.width - 173.0) / 2, (self.view.frame.size.height - 32.0) / 2, 173.0, 32.0);
-    loginBtn.autoresizingMask  = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
+    loginBtn.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
     [loginBtn addTarget:self action:@selector(loginBtnClickHandler:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:loginBtn];
 }
 
-- (void)loginBtnClickHandler:(id)sender
-{
+- (void)loginBtnClickHandler:(id)sender {
 
-    
+
 //    id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
 //
 //                                                         allowCallback:YES
@@ -277,8 +268,7 @@
 
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

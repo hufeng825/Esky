@@ -11,11 +11,11 @@
 @implementation ESUserModel
 
 
-- (id)initWithDictionary:(NSDictionary *)info{
+- (id)initWithDictionary:(NSDictionary *)info {
     self = [super init];
-    
+
     if (self) {
-        @autoreleasepool{
+        @autoreleasepool {
             self.email = [info stringForKey:@"email"];
             self.userId = [info stringForKey:@"userId"];
             self.headUrl = [info stringForKey:@"avatar"];
@@ -23,7 +23,7 @@
             self.nickName = [info stringForKey:@"nickName"];
         }
     }
-    
+
     return self;
 }
 

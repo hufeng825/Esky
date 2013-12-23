@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "ESBaseViewController.h"
 
-@interface ESModifyPassWordViewController : ESBaseViewController<UITextFieldDelegate>
+@interface ESModifyPassWordViewController : ESBaseViewController <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UIButton *cancleBt;
-@property (weak, nonatomic) IBOutlet UIButton *okBt;
-@property (weak, nonatomic) IBOutlet UIButton *successBt;
-@property (weak, nonatomic) IBOutlet UIView *successView;
-@property (weak, nonatomic) IBOutlet UITextField *mmInput;
+@property(weak, nonatomic) IBOutlet UIButton *cancleBt;
+@property(weak, nonatomic) IBOutlet UIButton *okBt;
+@property(weak, nonatomic) IBOutlet UIButton *successBt;
+@property(weak, nonatomic) IBOutlet UIView *successView;
+@property(weak, nonatomic) IBOutlet UITextField *mmInput;
 
 - (IBAction)cancleBtClick:(id)sender;
 

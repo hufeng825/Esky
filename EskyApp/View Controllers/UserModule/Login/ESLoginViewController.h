@@ -12,19 +12,23 @@
 
 #import <ShareSDK/ShareSDK.h>
 
-@interface ESLoginViewController :ESBaseViewController <ISSShareViewDelegate,ISSViewDelegate,UIGestureRecognizerDelegate>
+@interface ESLoginViewController : ESBaseViewController <ISSShareViewDelegate, ISSViewDelegate, UIGestureRecognizerDelegate>
 
-@property (weak, nonatomic) IBOutlet FAInputView *logoNameInput;
-@property (weak, nonatomic) IBOutlet FAInputView *mmInput;
+@property(weak, nonatomic) IBOutlet FAInputView *logoNameInput;
+@property(weak, nonatomic) IBOutlet FAInputView *mmInput;
 
-@property (weak, nonatomic) IBOutlet UIButton *loginBt;
-@property (weak, nonatomic) IBOutlet UIButton *registerBt;
-@property (weak, nonatomic) IBOutlet UIButton *resetMmBt;
+@property(weak, nonatomic) IBOutlet UIButton *loginBt;
+@property(weak, nonatomic) IBOutlet UIButton *registerBt;
+@property(weak, nonatomic) IBOutlet UIButton *resetMmBt;
 
 - (IBAction)resetPassClick:(id)sender;
+
 - (IBAction)regesitClick:(id)sender;
+
 - (IBAction)qqloginClick:(id)sender;
+
 - (IBAction)sinaLoginClick:(id)sender;
+
 - (IBAction)loginClick:(id)sender;
 
 @end

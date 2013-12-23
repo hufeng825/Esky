@@ -12,52 +12,46 @@
 @implementation ESBaseModel
 
 
--(void)encodeWithCoder:(NSCoder *)aCoder{
+- (void)encodeWithCoder:(NSCoder *)aCoder {
     //    //encode properties/values
     //    [aCoder encodeObject:self.respCode forKey:@"respCode"];
     //    [aCoder encodeObject:self.respMsg  forKey:@"respMsg"];
     Class clazz = [self class];
     u_int count;
-    
-    objc_property_t* properties = class_copyPropertyList(clazz, &count);
-    NSMutableArray* propertyArray = [NSMutableArray arrayWithCapacity:count];
-    for (int i = 0; i < count ; i++)
-    {
-        const char* propertyName = property_getName(properties[i]);
+
+    objc_property_t *properties = class_copyPropertyList(clazz, &count);
+    NSMutableArray *propertyArray = [NSMutableArray arrayWithCapacity:count];
+    for (int i = 0; i < count; i++) {
+        const char *propertyName = property_getName(properties[i]);
         [propertyArray addObject:[NSString stringWithCString:propertyName encoding:NSUTF8StringEncoding]];
     }
     free(properties);
-    
-    for (NSString *name in propertyArray)
-    {
+
+    for (NSString *name in propertyArray) {
         id value = [self valueForKey:name];
         [aCoder encodeObject:value forKey:name];
     }
 }
 
--(id)initWithCoder:(NSCoder *)aDecoder{
+- (id)initWithCoder:(NSCoder *)aDecoder {
 
-    if (self = [super init])
-    {
-        if (aDecoder == nil)
-        {
+    if (self = [super init]) {
+        if (aDecoder == nil) {
             return self;
         }
-        
+
         Class clazz = [self class];
         u_int count;
-        
-        objc_property_t* properties = class_copyPropertyList(clazz, &count);
-        NSMutableArray* propertyArray = [NSMutableArray arrayWithCapacity:count];
-        for (int i = 0; i < count ; i++)
-        {
-            const char* propertyName = property_getName(properties[i]);
+
+        objc_property_t *properties = class_copyPropertyList(clazz, &count);
+        NSMutableArray *propertyArray = [NSMutableArray arrayWithCapacity:count];
+        for (int i = 0; i < count; i++) {
+            const char *propertyName = property_getName(properties[i]);
             [propertyArray addObject:[NSString stringWithCString:propertyName encoding:NSUTF8StringEncoding]];
         }
         free(properties);
-        
-        for (NSString *name in propertyArray)
-        {
+
+        for (NSString *name in propertyArray) {
             id value = [aDecoder decodeObjectForKey:name];
             [self setValue:value forKey:name];
         }

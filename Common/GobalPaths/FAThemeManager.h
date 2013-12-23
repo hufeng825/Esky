@@ -13,21 +13,21 @@
 
 
 // Fired every time @property style is changed (except during init)
-extern NSString * const RNThemeManagerDidChangeThemes;
+extern NSString *const RNThemeManagerDidChangeThemes;
 
 @interface FAThemeManager : NSObject
 
 // Singleton
-+ (FAThemeManager*)sharedManager;
++ (FAThemeManager *)sharedManager;
 
 //主题名称
-@property (nonatomic,strong) NSString *themeName;
+@property(nonatomic, strong) NSString *themeName;
 
 //themes.plist文件中存储的字典数据，是主题名称与主题路径
-@property (nonatomic,strong) NSDictionary *themesPlist;
+@property(nonatomic, strong) NSDictionary *themesPlist;
 
 //根据主题名称找到相应的主题路径，在各个主题路径对应的文件夹中存储的是主题字体颜色fontColor.plist
-@property (nonatomic,strong) NSDictionary *themeColorPlist;
+@property(nonatomic, strong) NSDictionary *themeColorPlist;
 
 
 //获取主题图片

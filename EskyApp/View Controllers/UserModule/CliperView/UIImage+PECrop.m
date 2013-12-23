@@ -11,35 +11,33 @@
 @implementation UIImage (PECrop)
 
 - (UIImage *)rotatedImageWithtransform:(CGAffineTransform)rotation
-                         croppedToRect:(CGRect)rect
-{
+                         croppedToRect:(CGRect)rect {
     UIImage *rotatedImage = [self rotatedImageWithtransform:rotation];
 
     CGImageRef croppedImage = CGImageCreateWithImageInRect(rotatedImage.CGImage, rect);
     UIImage *image = [UIImage imageWithCGImage:croppedImage scale:self.scale orientation:rotatedImage.imageOrientation];
     CGImageRelease(croppedImage);
-    
+
     return image;
 }
 
-- (UIImage *)rotatedImageWithtransform:(CGAffineTransform)transform
-{
+- (UIImage *)rotatedImageWithtransform:(CGAffineTransform)transform {
     CGSize size = self.size;
-    
+
     UIGraphicsBeginImageContextWithOptions(size,
-                                           YES,                     // Opaque
-                                           self.scale);             // Use image scale
+            YES,                     // Opaque
+            self.scale);             // Use image scale
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
+
     CGContextTranslateCTM(context, size.width / 2, size.height / 2);
     CGContextConcatCTM(context, transform);
     CGContextTranslateCTM(context, size.width / -2, size.height / -2);
     [self drawInRect:CGRectMake(0.0f, 0.0f, size.width, size.height)];
-    
+
     UIImage *rotatedImage = UIGraphicsGetImageFromCurrentImageContext();
-    
+
     UIGraphicsEndImageContext();
-    
+
     return rotatedImage;
 }
 

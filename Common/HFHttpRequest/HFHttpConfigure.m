@@ -13,11 +13,10 @@
 
 @implementation HFHttpConfigure
 
-@synthesize timeInterval,cachePolicy,memoryCapacity;
+@synthesize timeInterval, cachePolicy, memoryCapacity;
 
 
-- (id)init
-{
+- (id)init {
     self = [super init];
     if (self) {
         timeInterval = Default_Time_Interval;

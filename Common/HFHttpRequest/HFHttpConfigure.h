@@ -10,8 +10,8 @@
 
 @interface HFHttpConfigure : NSObject
 
-@property (nonatomic,assign) NSURLRequestCachePolicy cachePolicy;
-@property (nonatomic,assign) NSTimeInterval timeInterval;
-@property (nonatomic,assign) NSUInteger memoryCapacity;
+@property(nonatomic, assign) NSURLRequestCachePolicy cachePolicy;
+@property(nonatomic, assign) NSTimeInterval timeInterval;
+@property(nonatomic, assign) NSUInteger memoryCapacity;
 
 @end

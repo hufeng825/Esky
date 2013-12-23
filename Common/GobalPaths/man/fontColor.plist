@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>kIconColor</key>
-	<string>197,17,37</string>
-	<key>kThemeColor</key>
-	<string>153,153,153</string>
-	<key>kInputTitleColor</key>
-	<string>133,133,133</string>
-	<key>kInputActiveColor</key>
-	<string>133,133,133</string>
-	<key>kInputNormalColor</key>
-	<string>133,133,133</string>
-</dict>
+    <dict>
+        <key>kIconColor</key>
+        <string>197,17,37</string>
+        <key>kThemeColor</key>
+        <string>153,153,153</string>
+        <key>kInputTitleColor</key>
+        <string>133,133,133</string>
+        <key>kInputActiveColor</key>
+        <string>133,133,133</string>
+        <key>kInputNormalColor</key>
+        <string>133,133,133</string>
+    </dict>
 </plist>

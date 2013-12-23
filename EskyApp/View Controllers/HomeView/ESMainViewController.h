@@ -11,6 +11,7 @@
 
 
 #import "UIWebImageView.h"
-@interface ESMainViewController :ESBaseViewController
+
+@interface ESMainViewController : ESBaseViewController
 
 @end

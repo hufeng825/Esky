@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ESBaseModel : NSObject<NSCoding>
+@interface ESBaseModel : NSObject <NSCoding>
 
 @end

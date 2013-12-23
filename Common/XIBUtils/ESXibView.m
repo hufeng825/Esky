@@ -7,8 +7,7 @@
 
 @implementation ESXibView
 
-+ (id)loadFromXib
-{
++ (id)loadFromXib {
     return [ESXibViewUtils loadViewFromXibNamed:NSStringFromClass([self class])];
 }
 @end

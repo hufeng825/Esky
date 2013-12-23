@@ -11,4 +11,5 @@
 
 
 BOOL TTIsStringWithAnyText(id object) {
-    return [object isKindOfClass:[NSString class]]&& [(NSString*)object length] > 0 && object !=nil ;}
+    return [object isKindOfClass:[NSString class]] && [(NSString *) object length] > 0 && object != nil ;
+}

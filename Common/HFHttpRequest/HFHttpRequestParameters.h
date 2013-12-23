@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AFURLRequestSerialization.h"
 
-@protocol  HFMultipartFormData <AFMultipartFormData>
+@protocol HFMultipartFormData <AFMultipartFormData>
 
 @optional
 
@@ -48,18 +48,16 @@
 @end
 
 
+@interface HFHttpRequestParameters : NSObject {
 
-@interface HFHttpRequestParameters : NSObject
-{
-    
 @protected
-	NSMutableDictionary*	_args;
-    NSString* _requestPath;
+    NSMutableDictionary *_args;
+    NSString *_requestPath;
 
 }
 
-@property (nonatomic,copy,readonly) NSDictionary *arg;
-@property (nonatomic,copy,readwrite) NSString *requestPath;
+@property(nonatomic, copy, readonly) NSDictionary *arg;
+@property(nonatomic, copy, readwrite) NSString *requestPath;
 
 - (void)stringWithHost:(NSString *)host api:(NSString *)api;
 

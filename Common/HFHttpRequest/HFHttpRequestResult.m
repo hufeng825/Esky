@@ -25,8 +25,7 @@
 }
 #endif
 
--(id)init
-{
+- (id)init {
     self = [super init];
     if (self) {
         _userInfo = nil;
@@ -39,26 +38,20 @@
 }
 
 
-- (id)initWithData:(id)Json request:(NSURLRequest *)request userInfo:(id)userInfo
-{
-    self =[self init];
-    if (self)
-    {
+- (id)initWithData:(id)Json request:(NSURLRequest *)request userInfo:(id)userInfo {
+    self = [self init];
+    if (self) {
         // Custom initializatison
-        if (Json)
-        {
-            if ([Json isKindOfClass:[NSDictionary class]])
-            {
+        if (Json) {
+            if ([Json isKindOfClass:[NSDictionary class]]) {
                 [self formatData:Json];
             }
-            else
-            {
+            else {
 //                HFDERROR(@"data 数据格式错误")
                 NSLog(@"data 数据格式错误");
             }
         }
-        else
-        {
+        else {
 //            HFDERROR(@"data 为 NULL");
             NSLog(@"data 为 NULL");
         }
@@ -69,17 +62,14 @@
     return self;
 }
 #pragma mark 格式化数据
--(void)formatData:(NSDictionary *)data
-{
+- (void)formatData:(NSDictionary *)data {
     self.code = [data stringForKey:@"code"];
-    self.message = [data stringForKey:@"msg"] ;
-    
-    if ([data objectForKey:@"data"])
-    {
-       self.data =[data objectForKey:@"data"];
+    self.message = [data stringForKey:@"msg"];
+
+    if ([data objectForKey:@"data"]) {
+        self.data = [data objectForKey:@"data"];
     }
-    else
-    {
+    else {
         self.data = nil;
 //        HFDINFO(@"data 为 NULL")
     }
@@ -87,22 +77,19 @@
 
 #pragma mark - public methods
 
--(BOOL)isSuccess
-{
+- (BOOL)isSuccess {
     return (_code && [_code isEqualToString:@"0000"]);
 }
 
 // show error message if should show
-- (void)handleErrorMessage
-{
+- (void)handleErrorMessage {
     if ([self shouldShowErrorMessage]) {
         [self showErrorMessage];
     }
 }
 
--(void)showErrorMessage
-{
-    if (_message && _message.length > 0 ) {
+- (void)showErrorMessage {
+    if (_message && _message.length > 0) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"服务提示"
                                                             message:_message
                                                            delegate:nil
@@ -116,24 +103,19 @@
     }
 }
 
-- (BOOL)isSessionTimeoutError
-{
+- (BOOL)isSessionTimeoutError {
     return (_code && [_code isEqualToString:@"4003"]);
 }
 
-- (BOOL)shouldShowErrorMessage
-{
+- (BOOL)shouldShowErrorMessage {
     return (_code && [_code isEqualToString:@"2000"]);
 }
 @end
 
 
-
-
 @implementation HFHttpErrorRequestResult
 
--(id)init
-{
+- (id)init {
     self = [super init];
     if (self) {
         _userInfo = nil;
@@ -145,17 +127,16 @@
 }
 
 
--(HFHttpErrorRequestResult*) initWithRequest:(NSURLRequest *)request error:(NSError *)error userInfo:(id)userInfo
-{
-    self =[self init];
-    if (self)
-    {
+- (HFHttpErrorRequestResult *)initWithRequest:(NSURLRequest *)request error:(NSError *)error userInfo:(id)userInfo {
+    self = [self init];
+    if (self) {
         // Custom initializatison
         _userInfo = [userInfo copy];
         _request = [request copy];
         _error = [error copy];
     }
-    return self;}
+    return self;
+}
 
 
 @end

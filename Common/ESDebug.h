@@ -57,25 +57,25 @@
 
 // Log-level based logging macros.
 #if ESLOGLEVEL_ERROR <= ESMAXLOGLEVEL
-  #define ESDERROR(xx, ...)  NSLog(xx, ##__VA_ARGS__)
+#define ESDERROR(xx, ...)  NSLog(xx, ##__VA_ARGS__)
 #else
   #define ESDERROR(xx, ...)  ((void)0)
 #endif
 
 #if ESLOGLEVEL_WARNING <= ESMAXLOGLEVEL
-  #define ESDWARNING(xx, ...)  NSLog(xx, ##__VA_ARGS__)
+#define ESDWARNING(xx, ...)  NSLog(xx, ##__VA_ARGS__)
 #else
   #define ESDWARNING(xx, ...)  ((void)0)
 #endif
 
 #if ESLOGLEVEL_INFO <= ESMAXLOGLEVEL
-  #define ESDINFO(xx, ...)  NSLog(xx, ##__VA_ARGS__)
+#define ESDINFO(xx, ...)  NSLog(xx, ##__VA_ARGS__)
 #else
   #define ESDINFO(xx, ...)  ((void)0)
 #endif
 
 #ifdef ESDEBUG
-  #define ESDCONDITIONLOG(condition, xx, ...) { if ((condition)) { \
+#define ESDCONDITIONLOG(condition, xx, ...) { if ((condition)) { \
                                                   NSLog(xx, ##__VA_ARGS__); \
                                                 } \
                                               } ((void)0)

@@ -19,14 +19,14 @@
 
 @interface HFHttpResponArguments : NSObject
 
-@property (nonatomic,copy)     HFHttpSuccessCallBack sucessRespon;
+@property(nonatomic, copy) HFHttpSuccessCallBack sucessRespon;
 
-@property (nonatomic,copy)     HFHttpErrorRequestCallBack failRespon;
+@property(nonatomic, copy) HFHttpErrorRequestCallBack failRespon;
 
-@property (nonatomic,copy)     HFHttpDownloadProgressCallBlock progressBlock;
+@property(nonatomic, copy) HFHttpDownloadProgressCallBlock progressBlock;
 
-@property (nonatomic,strong)   HFHttpConfigure *cachePolicy;
+@property(nonatomic, strong) HFHttpConfigure *cachePolicy;
 
-@property (nonatomic,strong)   id userInfo;
+@property(nonatomic, strong) id userInfo;
 
 @end

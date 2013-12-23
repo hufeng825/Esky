@@ -10,11 +10,11 @@
 
 @interface ESUserModel : ESBaseModel
 
-@property (nonatomic, copy)NSString* email;
-@property (nonatomic, copy)NSString* userId;
-@property (nonatomic, copy)NSString* headUrl;
-@property (nonatomic, copy)NSString* userName;
-@property (nonatomic, copy)NSString* nickName;
+@property(nonatomic, copy) NSString *email;
+@property(nonatomic, copy) NSString *userId;
+@property(nonatomic, copy) NSString *headUrl;
+@property(nonatomic, copy) NSString *userName;
+@property(nonatomic, copy) NSString *nickName;
 
 
 @end

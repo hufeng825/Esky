@@ -14,21 +14,21 @@
 #import "QiniuUploadDelegate.h"
 #import "QiniuSimpleUploader.h"
 
-@interface ESRegisterViewController : ESBaseViewController<UITextFieldDelegate,
-                                                            UIImagePickerControllerDelegate,
-                                                            UIGestureRecognizerDelegate,
-                                                            UINavigationControllerDelegate,
-                                                            QiniuUploadDelegate>
+@interface ESRegisterViewController : ESBaseViewController <UITextFieldDelegate,
+        UIImagePickerControllerDelegate,
+        UIGestureRecognizerDelegate,
+        UINavigationControllerDelegate,
+        QiniuUploadDelegate>
 
-@property (weak, nonatomic) IBOutlet ESHeaderIconImageView *headIconImageView;
-@property (weak, nonatomic) IBOutlet UIButton *registButton;
-@property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
+@property(weak, nonatomic) IBOutlet ESHeaderIconImageView *headIconImageView;
+@property(weak, nonatomic) IBOutlet UIButton *registButton;
+@property(weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
 
 
-@property (weak, nonatomic) IBOutlet FAInputView *emailInput;
-@property (weak, nonatomic) IBOutlet FAInputView *mmInput;
-@property (weak, nonatomic) IBOutlet FAInputView *verifyInput;
-@property (weak, nonatomic) IBOutlet FAInputView *nickNameInput;
+@property(weak, nonatomic) IBOutlet FAInputView *emailInput;
+@property(weak, nonatomic) IBOutlet FAInputView *mmInput;
+@property(weak, nonatomic) IBOutlet FAInputView *verifyInput;
+@property(weak, nonatomic) IBOutlet FAInputView *nickNameInput;
 
 - (IBAction)registerClicked:(id)sender;
 

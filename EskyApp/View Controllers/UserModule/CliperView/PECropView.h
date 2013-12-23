@@ -12,18 +12,19 @@
 
 @interface PECropView : UIView
 
-@property (nonatomic) UIImage *image;
-@property (nonatomic, readonly) UIImage *croppedImage;
-@property (nonatomic, readonly) CGRect zoomedCropRect;
-@property (nonatomic, readonly) CGAffineTransform rotation;
-@property (nonatomic, readonly) BOOL userHasModifiedCropArea;
+@property(nonatomic) UIImage *image;
+@property(nonatomic, readonly) UIImage *croppedImage;
+@property(nonatomic, readonly) CGRect zoomedCropRect;
+@property(nonatomic, readonly) CGAffineTransform rotation;
+@property(nonatomic, readonly) BOOL userHasModifiedCropArea;
 
-@property (nonatomic) BOOL keepingCropAspectRatio;
-@property (nonatomic) CGFloat cropAspectRatio;
+@property(nonatomic) BOOL keepingCropAspectRatio;
+@property(nonatomic) CGFloat cropAspectRatio;
 
-@property (nonatomic) CGRect cropRect;
+@property(nonatomic) CGRect cropRect;
 
-@property (nonatomic) CGFloat rotationAngle;
+@property(nonatomic) CGFloat rotationAngle;
+
 - (void)setRotationAngle:(CGFloat)rotationAngle snap:(BOOL)snap;
 
 @end

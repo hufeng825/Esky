@@ -13,11 +13,11 @@
 
 @interface ESBaseViewController : UIViewController
 
--(void)themeChanged;
+- (void)themeChanged;
 
--(void)showWarning:(NSString *)warningStr;
+- (void)showWarning:(NSString *)warningStr;
 
--(void)showWarning:(NSString *)warningStr yOffset:(float)yOffset;
+- (void)showWarning:(NSString *)warningStr yOffset:(float)yOffset;
 
 - (void)goBack;
 

@@ -13,15 +13,11 @@
 #import "HFHttpResponArguments.h"
 
 
+typedef enum {
+    POSTHttpMethod, //content type = @"application/x-www-form-urlencoded"
+            GETHttpMethod
 
-
-typedef enum
-{
-    POSTHttpMethod,//content type = @"application/x-www-form-urlencoded"
-    GETHttpMethod
-    
-} HFHttpMethod ;
-
+} HFHttpMethod;
 
 
 @interface HFHttpRequestManager : AFHTTPRequestOperationManager
@@ -32,23 +28,23 @@ typedef enum
 + (HFHttpRequestManager *)client;
 
 
-- (void) Url:(NSString *)url
-         parameters:(NSDictionary *)parameters
-         method:(HFHttpMethod)method
-         ResponArgument:(HFHttpResponArguments *)responArguments;
+- (void)Url:(NSString *)url
+ parameters:(NSDictionary *)parameters
+        method:(HFHttpMethod)method
+ResponArgument:(HFHttpResponArguments *)responArguments;
 
-- (void) Url:(NSString *)url
-         parameters:(NSDictionary *)parameters
-         ResponArgument:(HFHttpResponArguments *)responArguments
-         uploadBlock:(HFHttpUploadCallBack)uploadBlock;
+- (void)Url:(NSString *)url
+    parameters:(NSDictionary *)parameters
+ResponArgument:(HFHttpResponArguments *)responArguments
+   uploadBlock:(HFHttpUploadCallBack)uploadBlock;
 
-- (void) cancelRequestByURI:(NSString *)uri;
+- (void)cancelRequestByURI:(NSString *)uri;
 
-- (void) pauseAll;
+- (void)pauseAll;
 
-- (void) resumeAll;
+- (void)resumeAll;
 
-- (void) stopAll;
+- (void)stopAll;
 
 
 @end

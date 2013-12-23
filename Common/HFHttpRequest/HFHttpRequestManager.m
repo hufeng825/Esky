@@ -13,35 +13,33 @@
 @implementation HFHttpRequestManager
 
 
--(id)initWithBaseURL:(NSURL *)url
-{
+- (id)initWithBaseURL:(NSURL *)url {
     self = [super initWithBaseURL:url];
     if (!self) {
         return nil;
     }
 
-   NSSet * contextSet = [NSSet setWithObjects:
-     @"application/json",
-     @"image/jpeg",
-     @"text/json",
-     @"text/javascript",
-     @"text/plain",
-     @"text/html", nil];
-    
+    NSSet *contextSet = [NSSet setWithObjects:
+            @"application/json",
+            @"image/jpeg",
+            @"text/json",
+            @"text/javascript",
+            @"text/plain",
+            @"text/html", nil];
+
     [self.requestSerializer setHTTPMethodsEncodingParametersInURI:contextSet];
 
     [self.responseSerializer setAcceptableContentTypes:contextSet];
-    
+
 
     return self;
 }
 
 
 //非单例模式
-+(HFHttpRequestManager *)client
-{
-    HFHttpRequestManager *client = [[self alloc]initWithBaseURL:nil];
-    #if !__has_feature(objc_arc)
++ (HFHttpRequestManager *)client {
+    HFHttpRequestManager *client = [[self alloc] initWithBaseURL:nil];
+#if !__has_feature(objc_arc)
         [client autorelease];
     #endif
     return client;
@@ -49,13 +47,12 @@
 
 
 //单例模式
-+(HFHttpRequestManager *)sharedClient
-{
++ (HFHttpRequestManager *)sharedClient {
     static HFHttpRequestManager *sharedHttpRequest = nil;
-    static dispatch_once_t onceToken =0;
-    
+    static dispatch_once_t onceToken = 0;
+
     dispatch_once(&onceToken, ^{
-        if(!sharedHttpRequest)
+        if (!sharedHttpRequest)
             sharedHttpRequest = [[HFHttpRequestManager alloc] initWithBaseURL:nil];
 
     });
@@ -67,22 +64,20 @@
 #pragma  mark -
 #pragma mark -  格式化url中的全角支付
 
-- (NSString *)formatUrlStr:(NSString *)url
-{
+- (NSString *)formatUrlStr:(NSString *)url {
     return [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 
 
-- (NSString*)encodeURL:(NSString *)string
-{
-	NSString *newString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)string, NULL, CFSTR(":/?#[]@!$ &'()*+,;=\"<>%{}|\\^~`"), CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding))) ;
-    #if !__has_feature(objc_arc)
+- (NSString *)encodeURL:(NSString *)string {
+    NSString *newString = (NSString *) CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef) string, NULL, CFSTR(":/?#[]@!$ &'()*+,;=\"<>%{}|\\^~`"), CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)));
+#if !__has_feature(objc_arc)
     [newString autorelease];
     #endif
-	if (newString) {
-		return newString;
-	}
-	return @"";
+    if (newString) {
+        return newString;
+    }
+    return @"";
 }
 
 
@@ -90,60 +85,52 @@
 
 #pragma mark -  打印url 可以将post 请求以get 方式打印
 
-- (void)logUrl:(NSString *)urlStr parameters:(NSDictionary *)parameters
-{
-    if (parameters)
-    {
-        NSLog(@"post url  输出 %@?%@",urlStr,[self describeDictionary:parameters]);
+- (void)logUrl:(NSString *)urlStr parameters:(NSDictionary *)parameters {
+    if (parameters) {
+        NSLog(@"post url  输出 %@?%@", urlStr, [self describeDictionary:parameters]);
     }
-    else
-    {
-        NSLog(@"get url 输出 %@",[urlStr description]);
+    else {
+        NSLog(@"get url 输出 %@", [urlStr description]);
     }
 }
 
 
 #pragma mark - 网络状态改变后的一些处理
-- (void)reachabilityStatusChangeBlock
-{
+- (void)reachabilityStatusChangeBlock {
 //        .JSONReadingOptions = NSJSONReadingAllowFragments;
     NSOperationQueue *operationQueue = self.operationQueue;
     //设置网络状态切换模式
-    [self.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status)
-     {
-         switch (status)
-         {
-             case AFNetworkReachabilityStatusUnknown:
-                 ESDINFO(@"AFNetworkReachabilityStatusUnknown");
-                 break;
-             case AFNetworkReachabilityStatusNotReachable:
-                 ESDINFO(@"AFNetworkReachabilityStatusNotReachable");
-                 break;
-             case AFNetworkReachabilityStatusReachableViaWWAN:
-                 ESDINFO(@"AFNetworkReachabilityStatusReachableViaWWAN");
-                 break;
-             case AFNetworkReachabilityStatusReachableViaWiFi:
-                 ESDINFO(@"AFNetworkReachabilityStatusReachableViaWiFi");
-                 [operationQueue setSuspended:NO];
-                 break;
-                 
-             default:
-                 ESDINFO(@"AFNetworkReachabilityStatusUnknown");
-                 [operationQueue setSuspended:YES];
-                 break;
-         }
-     }
-         ];
+    [self.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown:
+                ESDINFO(@"AFNetworkReachabilityStatusUnknown");
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+                ESDINFO(@"AFNetworkReachabilityStatusNotReachable");
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                ESDINFO(@"AFNetworkReachabilityStatusReachableViaWWAN");
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                ESDINFO(@"AFNetworkReachabilityStatusReachableViaWiFi");
+                [operationQueue setSuspended:NO];
+                break;
+
+            default:
+                ESDINFO(@"AFNetworkReachabilityStatusUnknown");
+                [operationQueue setSuspended:YES];
+                break;
+        }
+    }
+    ];
 }
 
 
 #pragma mark - 成功处理
--(AFSucessResponBlock)sucessHandling:(HFHttpSuccessCallBack)callBack
-                            userInfo:(id)userInfo
-{
-    AFSucessResponBlock sucessRespon =  ^(AFHTTPRequestOperation *operation, id responseObject)
-    {
-        HFHttpRequestResult *result = [[HFHttpRequestResult alloc]initWithData:responseObject
+- (AFSucessResponBlock)sucessHandling:(HFHttpSuccessCallBack)callBack
+                             userInfo:(id)userInfo {
+    AFSucessResponBlock sucessRespon = ^(AFHTTPRequestOperation *operation, id responseObject) {
+        HFHttpRequestResult *result = [[HFHttpRequestResult alloc] initWithData:responseObject
                                                                         request:operation.request userInfo:userInfo];
         if (callBack) {
             callBack(result);
@@ -155,11 +142,9 @@
 
 #pragma mark -网络失败处理
 
--(AFFailCallBlock)failHandling:(HFHttpErrorRequestCallBack)callBack
-                      userInfo:(id)userInfo
-{
-    AFFailCallBlock failRespon = ^(AFHTTPRequestOperation *operation, NSError *error)
-    {
+- (AFFailCallBlock)failHandling:(HFHttpErrorRequestCallBack)callBack
+                       userInfo:(id)userInfo {
+    AFFailCallBlock failRespon = ^(AFHTTPRequestOperation *operation, NSError *error) {
         HFHttpErrorRequestResult *errorRequest = [[HFHttpErrorRequestResult alloc] initWithRequest:operation.request error:error userInfo:userInfo];
         if (error.code != -999) {//异步取消
             HFAlert_T_M_BT(@"错误警告", @"网络出错，请检查您的网络设置", @"确定");
@@ -172,10 +157,8 @@
 }
 
 #pragma mark - 提交文件
--(AFUploadBlock)uploadHanding:(HFHttpUploadCallBack)callBack
-{
-    AFUploadBlock uploadBlock = ^(id<HFMultipartFormData> formData)
-    {
+- (AFUploadBlock)uploadHanding:(HFHttpUploadCallBack)callBack {
+    AFUploadBlock uploadBlock = ^(id <HFMultipartFormData> formData) {
         if (callBack) {
             callBack(formData);
         }
@@ -186,12 +169,11 @@
 
 #pragma mark - 设置缓存策略
 - (void)cachePolicy:(HFHttpConfigure *)cachePolicy
-            request:(NSMutableURLRequest *)request
-{
+            request:(NSMutableURLRequest *)request {
     NSURLCache *urlCache = [NSURLCache sharedURLCache];
     if (!cachePolicy) {
-        cachePolicy = [[HFHttpConfigure alloc]init];
-    #if !__has_feature(objc_arc)
+        cachePolicy = [[HFHttpConfigure alloc] init];
+#if !__has_feature(objc_arc)
         [cachePolicy autorelease];
     #endif
     }
@@ -201,15 +183,13 @@
 }
 
 
-- (void)Url:(NSString*)url
-               parameters:(NSDictionary *)parameters
-                   method:(HFHttpMethod)method
-           ResponArgument:(HFHttpResponArguments *)responArguments
-
-{
+- (void)Url:(NSString *)url
+ parameters:(NSDictionary *)parameters
+        method:(HFHttpMethod)method
+ResponArgument:(HFHttpResponArguments *)responArguments {
     if (!responArguments) {
-        responArguments = [[HFHttpResponArguments alloc]init];
-        #if !__has_feature(objc_arc)
+        responArguments = [[HFHttpResponArguments alloc] init];
+#if !__has_feature(objc_arc)
         [responArguments autorelease];
         #endif
     }
@@ -217,145 +197,135 @@
     NSString *urlStr = [self formatUrlStr:url];
 
     //设置错误处理
-    AFFailCallBlock     errorRespon = [self failHandling:responArguments.failRespon
-                                            userInfo:responArguments.userInfo ];
-    
-    AFSucessResponBlock sucessRespon = [self sucessHandling:responArguments.sucessRespon
-                                                     userInfo:responArguments.userInfo];
-    
+    AFFailCallBlock errorRespon = [self failHandling:responArguments.failRespon
+                                            userInfo:responArguments.userInfo];
 
-    AFHTTPRequestOperation *requestOperation ;
-    
+    AFSucessResponBlock sucessRespon = [self sucessHandling:responArguments.sucessRespon
+                                                   userInfo:responArguments.userInfo];
+
+
+    AFHTTPRequestOperation *requestOperation;
+
     //打印url
     [self logUrl:urlStr parameters:parameters];
-    
-    if (method == POSTHttpMethod)
-    {
-      requestOperation =  [self POST:urlStr
+
+    if (method == POSTHttpMethod) {
+        requestOperation = [self POST:urlStr
+                           parameters:parameters
+                              success:sucessRespon
+                              failure:errorRespon];
+    }
+    else if (method == GETHttpMethod) {
+        requestOperation = [self GET:urlStr
                           parameters:parameters
                              success:sucessRespon
                              failure:errorRespon];
     }
-    else if(method == GETHttpMethod)
-    {
-      requestOperation = [self GET:urlStr
-                        parameters:parameters
-                           success:sucessRespon
-                           failure:errorRespon];
-    }
-    
+
     [requestOperation setDownloadProgressBlock:responArguments.progressBlock];
-    
+
     [self reachabilityStatusChangeBlock];
-    
+
     [self cachePolicy:responArguments.cachePolicy
-              request:(NSMutableURLRequest*)requestOperation.request ];
-    requestOperation.userInfo = @{kUserInfoKey: url};
+              request:(NSMutableURLRequest *) requestOperation.request];
+    requestOperation.userInfo = @{kUserInfoKey : url};
 }
 
 - (void)Url:(NSString *)url
- parameters:(NSDictionary *)parameters
- ResponArgument:(HFHttpResponArguments *)responArguments
- uploadBlock:(HFHttpUploadCallBack)uploadBlock
-
-{
+    parameters:(NSDictionary *)parameters
+ResponArgument:(HFHttpResponArguments *)responArguments
+   uploadBlock:(HFHttpUploadCallBack)uploadBlock {
     if (!responArguments) {
-        responArguments = [[HFHttpResponArguments alloc]init];
+        responArguments = [[HFHttpResponArguments alloc] init];
 #if !__has_feature(objc_arc)
         [responArguments autorelease];
 #endif
     }
-    
+
     NSString *urlStr = [self formatUrlStr:url];
-    
+
     //设置错误处理
-    AFFailCallBlock     errorRespon = [self failHandling:responArguments.failRespon
-                                                userInfo:responArguments.userInfo ];
-    
+    AFFailCallBlock errorRespon = [self failHandling:responArguments.failRespon
+                                            userInfo:responArguments.userInfo];
+
     AFSucessResponBlock sucessRespon = [self sucessHandling:responArguments.sucessRespon
                                                    userInfo:responArguments.userInfo];
-    
+
     AFUploadBlock uploadRespon = [self uploadHanding:uploadBlock];
-    
-    AFHTTPRequestOperation *requestOperation ;
-    
+
+    AFHTTPRequestOperation *requestOperation;
+
     //打印url
     [self logUrl:urlStr parameters:parameters];
-    
-    requestOperation =  [self POST:urlStr
-                            parameters:parameters
-                            constructingBodyWithBlock:uploadRespon
-                            success:sucessRespon
-                            failure:errorRespon];
-  
-    
+
+    requestOperation = [self POST:urlStr
+                       parameters:parameters
+        constructingBodyWithBlock:uploadRespon
+                          success:sucessRespon
+                          failure:errorRespon];
+
+
     [requestOperation setDownloadProgressBlock:responArguments.progressBlock];
-    
+
     [self reachabilityStatusChangeBlock];
-    
+
     [self cachePolicy:responArguments.cachePolicy
-              request:(NSMutableURLRequest*)requestOperation.request ];
-    
-    requestOperation.userInfo = @{kUserInfoKey: url};
+              request:(NSMutableURLRequest *) requestOperation.request];
+
+    requestOperation.userInfo = @{kUserInfoKey : url};
 }
 
 
 
 #pragma mark - cancel request
 
-- (void)cancelRequestByURI:(NSString *)uri
-{
+- (void)cancelRequestByURI:(NSString *)uri {
     NSArray *operations = [self.operationQueue operations];
-    
+
     for (AFHTTPRequestOperation *op in operations) {
         if ([uri isEqualToString:[op.userInfo objectForKey:kUserInfoKey]]) {
             [op cancel];
         }
     }
-    
+
 }
 
 
 - (void)pauseAll {
-    
-    [self.operationQueue setSuspended: YES];
+
+    [self.operationQueue setSuspended:YES];
 }
 
 - (void)resumeAll {
-    
-    [self.operationQueue setSuspended: NO];
+
+    [self.operationQueue setSuspended:NO];
 }
 
 
 - (void)stopAll {
-    
+
     [self.operationQueue cancelAllOperations];
 }
 
-- (NSString *) describeDictionary :(NSDictionary *)dict
-{
+- (NSString *)describeDictionary :(NSDictionary *)dict {
     NSArray *keys;
     NSMutableString *parmURLStr = [NSMutableString string];
     NSUInteger i, count;
     id key, value;
-    
+
     keys = [dict allKeys];
     count = [keys count];
-    for (i = 0; i < count; i++)
-    {
-        key = [keys objectAtIndex: i];
-        value = [dict objectForKey: key];
+    for (i = 0; i < count; i++) {
+        key = [keys objectAtIndex:i];
+        value = [dict objectForKey:key];
         //        NSLog (@"Key: %@ for value: %@", key, value);
-        [parmURLStr appendFormat:@"&%@=%@",key,value];
+        [parmURLStr appendFormat:@"&%@=%@", key, value];
     }
     return parmURLStr;
 }
 
 
-
-
-- (void)dealloc
-{
+- (void)dealloc {
     [[self operationQueue] cancelAllOperations];
 }
 @end

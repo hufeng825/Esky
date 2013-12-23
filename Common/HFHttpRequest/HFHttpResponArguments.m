@@ -10,13 +10,12 @@
 
 @implementation HFHttpResponArguments
 
-@synthesize sucessRespon,failRespon,progressBlock,cachePolicy,userInfo;
+@synthesize sucessRespon, failRespon, progressBlock, cachePolicy, userInfo;
 
-- (id)init
-{
+- (id)init {
     self = [super init];
     if (self) {
-        cachePolicy = [[HFHttpConfigure alloc]init];
+        cachePolicy = [[HFHttpConfigure alloc] init];
         failRespon = nil;
         sucessRespon = nil;
         progressBlock = nil;
@@ -25,8 +24,7 @@
     return self;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
 #if !__has_feature(objc_arc)
     [userInfo release];
     [cachePolicy release];

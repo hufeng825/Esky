@@ -8,7 +8,7 @@
 
 #import "ESBaseModel.h"
 
-@interface ESConfig : ESBaseModel{
+@interface ESConfig : ESBaseModel {
     //应用App Store的ID（AppleID）
     NSString *_appStoreId;
     // 应用App Store的Bundle ID
@@ -29,10 +29,11 @@
     // 客户端发布日期
     NSString *_pubdate;
     // UA信息
-    NSString* _userAgent;
+    NSString *_userAgent;
 }
 
-+ (ESConfig* )globalConfig;
++ (ESConfig *)globalConfig;
+
 + (void)setGlobalConfig:(ESConfig *)config;
 
 
@@ -40,23 +41,23 @@
 - (NSString *)udid;
 
 //应用App Store的ID（AppleID）
-@property (nonatomic, copy) NSString *appStoreId;
+@property(nonatomic, copy) NSString *appStoreId;
 // 应用App Store的Bundle ID
-@property (nonatomic, copy) NSString *appBundleID;
+@property(nonatomic, copy) NSString *appBundleID;
 // 客户端版本
-@property (nonatomic, copy) NSString *appversion;
+@property(nonatomic, copy) NSString *appversion;
 // 客户端名称
-@property (nonatomic, copy) NSString *sysName;
+@property(nonatomic, copy) NSString *sysName;
 // 系统版本
-@property (nonatomic, copy) NSString *sysversion;
+@property(nonatomic, copy) NSString *sysversion;
 // 设备型号
-@property (nonatomic, copy) NSString *deviceModel;
+@property(nonatomic, copy) NSString *deviceModel;
 // 客户端信息（client_info）
-@property (nonatomic, copy) NSDictionary *clientInfo;
+@property(nonatomic, copy) NSDictionary *clientInfo;
 
-@property (nonatomic, copy) NSString *currentLanguage;
-@property (nonatomic, copy) NSString *pubdate;
-@property (nonatomic, copy) NSString* userAgent;
+@property(nonatomic, copy) NSString *currentLanguage;
+@property(nonatomic, copy) NSString *pubdate;
+@property(nonatomic, copy) NSString *userAgent;
 
 - (void)updateUserAgent;
 
