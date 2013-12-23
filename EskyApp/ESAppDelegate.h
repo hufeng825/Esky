@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HFTabBarViewController.h"
+#import "ESLeftMenuViewController.h"
 #import "ESMainViewController.h"
 
-@interface ESAppDelegate : UIResponder <UIApplicationDelegate>
+
+@interface ESAppDelegate : UIResponder <UIApplicationDelegate,HFTabBarControllerDelegate>
 
 @property(strong, nonatomic) UIWindow *window;
-@property(strong, nonatomic) ESMainViewController *mainViewController;
+
+@property(strong, nonatomic) HFTabBarViewController *tabViewController;
+@property(strong, nonatomic) ESLeftMenuViewController *leftMenuViewController;
+@property(strong, nonatomic) ESMainViewController *manViewController;
+
 
 @end

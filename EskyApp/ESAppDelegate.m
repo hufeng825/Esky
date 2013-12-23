@@ -15,9 +15,11 @@
 #import "WXApi.h"
 
 #import "FAThemeManager.h"
+#import "YASlidingViewController.h"
+
+
 
 @implementation ESAppDelegate
-@synthesize mainViewController;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -41,13 +43,36 @@
     [self initializePlat];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.mainViewController = [[ESMainViewController alloc] initWithNibName:@"ESMainViewController" bundle:nil];
-    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:self.mainViewController];
+
+    self.tabViewController = [[HFTabBarViewController alloc] initWithNibName:@"HFTabBarViewController" bundle:nil];
+    self.tabViewController.delegate = self;
+    self.manViewController = [[ESMainViewController alloc] initWithNibName:@"ESMainViewController" bundle:nil];
+    
+    
+    [self.tabViewController setSubViewControllers:@[_manViewController]];
+    self.tabViewController.selectedIndex =0;
+
+    
+    
+    self.leftMenuViewController = [[ESLeftMenuViewController alloc]initWithNibName:@"ESLeftMenuViewController" bundle:Nil];
+    
+    
+    
+    YASlidingViewController *slidingViewController = [YASlidingViewController new];
+    slidingViewController.peakAmount = 200.0f;
+    slidingViewController.leftViewController = _leftMenuViewController;
+    
+    slidingViewController.topViewController = _tabViewController;
+    
+    UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:slidingViewController];
+    [slidingViewController.navigationController setNavigationBarHidden:YES];
+    
+
     self.window.rootViewController = nv;
     [self.window makeKeyAndVisible];
 
-
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"back_btn.png"]];
     [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"back_btn.png"]];
 

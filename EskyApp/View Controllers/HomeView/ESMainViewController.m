@@ -14,6 +14,8 @@
 
 #import "ESLoginViewController.h"
 
+#import "UIViewController+SlidingView.h"
+
 
 @interface ESMainViewController ()
 @property(weak, nonatomic) IBOutlet UIWebImageView *testimg;
@@ -42,6 +44,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+    
     self.navigationController.modalTransitionStyle = UIModalTransitionStylePartialCurl;
 
     double delayInSeconds = 2.0;
@@ -192,7 +195,8 @@
 
 
     ESLoginViewController *lg = [[ESLoginViewController alloc] initWithNibName:@"ESLoginViewController" bundle:nil];
-    [self.navigationController presentViewController:lg animated:YES completion:^{
+    UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:lg];
+    [self presentViewController:nv animated:YES completion:^{
         [self chooseModule];
     }];
 

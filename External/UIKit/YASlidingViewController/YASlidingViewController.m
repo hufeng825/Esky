@@ -812,7 +812,7 @@
         // else is must have been to the left
         else if (velocity.x <= 0.0f) {
             // If the swipe has crossed zero
-            if (gestureRecognizer.view.frame.origin.x <= 0 && _lastOrigin.x >= 0) {
+            if (gestureRecognizer.view.frame.origin.x <= 0 && _lastOrigin.x >= 0 && _allowShowRightView == YES) {
                 // Remove the left view
                 [self.leftViewController.view removeFromSuperview];
                 
@@ -891,7 +891,11 @@
                 if ((gestureRecognizer.view.frame.origin.x + gestureRecognizer.view.frame.size.width) >= self.peakThreshold) {
                     [self hideRightAnimated:YES];
                 } else {
-                    [self showRightAnimated:YES];
+                    if (_allowShowRightView == YES) {
+                        [self showRightAnimated:YES];
+                    }else{
+                        [self hideRightAnimated:YES];
+                    }
                 }
             }
         }

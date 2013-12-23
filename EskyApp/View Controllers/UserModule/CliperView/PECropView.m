@@ -145,7 +145,7 @@ static const CGFloat MarginRight = MarginLeft;
 
         if (self.interfaceOrientation != interfaceOrientation) {
             CGRect rect = CGRectMake(self.scrollView.frame.origin.x
-                    , _imageView.height / 2 - 60,
+                    , _imageView.frame.size.height / 2 - 60,
                     self.scrollView.frame.size.width,
                     self.scrollView.frame.size.width
             );

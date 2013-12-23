@@ -16,7 +16,7 @@ enum SlidingViewState : NSInteger {
     SlidingViewStateRightDragging = 3,
     SlidingViewStateRightOpened = 4,
     SlidingViewStateRightLocked = 5,
-    SlidingViewStateClosed = 6
+    SlidingViewStateClosed = 6,
 };
 
 @interface YASlidingViewController : UIViewController {
@@ -34,6 +34,7 @@ enum SlidingViewState : NSInteger {
 // Settings
 @property (nonatomic) BOOL allowOverswipe;
 @property (nonatomic) BOOL allowNavigationBarOnly;
+@property (nonatomic) BOOL allowShowRightView;
 @property (nonatomic) CGFloat topViewOffsetY;
 @property (nonatomic) CGFloat peakAmount;
 @property (nonatomic) CGFloat peakThreshold;
