@@ -7,11 +7,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="1">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="vbb-kD-YMZ" customClass="HFTabBarItem">
-                    <rect key="frame" x="0.0" y="0.0" width="63" height="44"/>
+                    <rect key="frame" x="0.0" y="0.0" width="63" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" backgroundImage="mine_normal.png">
@@ -19,7 +19,7 @@
                     </state>
                 </button>
                 <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="1Ds-yc-uk5" customClass="HFTabBarItem">
-                    <rect key="frame" x="64" y="0.0" width="63" height="44"/>
+                    <rect key="frame" x="64" y="0.0" width="63" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" backgroundImage="skill_normal.png">
@@ -27,7 +27,7 @@
                     </state>
                 </button>
                 <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="XU3-AZ-qS3" customClass="HFTabBarItem">
-                    <rect key="frame" x="128" y="0.0" width="63" height="44"/>
+                    <rect key="frame" x="128" y="0.0" width="63" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" backgroundImage="follow_normal.png">
@@ -35,7 +35,7 @@
                     </state>
                 </button>
                 <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="bNq-6Z-UHe" customClass="HFTabBarItem">
-                    <rect key="frame" x="192" y="0.0" width="63" height="44"/>
+                    <rect key="frame" x="192" y="0.0" width="63" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" backgroundImage="show_normal.png">
@@ -43,7 +43,7 @@
                     </state>
                 </button>
                 <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="3dB-cN-IiI" customClass="HFTabBarItem">
-                    <rect key="frame" x="256" y="0.0" width="63" height="44"/>
+                    <rect key="frame" x="256" y="0.0" width="63" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" backgroundImage="mine_normal.png">

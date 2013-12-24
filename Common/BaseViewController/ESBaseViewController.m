@@ -73,7 +73,7 @@
 
 
 - (void)themeChanged {
-    [self changeBaseBackgourndColorWithImageName:[[FAThemeManager sharedManager] themeImageWithName:@"bg.jpg"]];
+    [self changeBaseBackgourndColorWithImageName:[[FAThemeManager sharedManager] themeImageWithName:@"bg.png"]];
     UIColor *nvBartintColor = [[FAThemeManager sharedManager] themeColorWithName:@"kIconColor"];
     [self.navigationController.navigationBar setTintColor:nvBartintColor];
     NSShadow *shadow = [[NSShadow alloc] init];
