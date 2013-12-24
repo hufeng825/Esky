@@ -11,7 +11,7 @@
 #import <ShareSDK/ShareSDK.h>
 #import <TencentOpenAPI/QQApiInterface.h>
 #import <TencentOpenAPI/TencentOAuth.h>
-#import "WBApi.h"
+#import "WeiboApi.h"
 #import "WXApi.h"
 
 #import "FAThemeManager.h"
@@ -38,8 +38,6 @@
     [ShareSDK registerApp:@"iosv1101"];
 
 
-    //转换链接标记
-    [ShareSDK convertUrlEnabled:YES];
     [self initializePlat];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -113,7 +111,7 @@
     [ShareSDK connectTencentWeiboWithAppKey:@"801307650"
                                   appSecret:@"ae36f4ee3946e1cbb98d6965b0b2ff5c"
                                 redirectUri:@"http://www.sharesdk.cn"
-                                   wbApiCls:[WBApi class]];
+                                   wbApiCls:[WeiboApi class]];
 
     //连接短信分享
     [ShareSDK connectSMS];
@@ -169,7 +167,7 @@
 
 
     //导入腾讯微博需要的外部库类型，如果不需要腾讯微博SSO可以不调用此方法
-    [ShareSDK importTencentWeiboClass:[WBApi class]];
+    [ShareSDK importTencentWeiboClass:[WeiboApi class]];
 
     //导入微信需要的外部库类型，如果不需要微信分享可以不调用此方法
     [ShareSDK importWeChatClass:[WXApi class]];
