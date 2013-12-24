@@ -27,7 +27,6 @@
 @synthesize topOverlayView = _topOverlayView;
 @synthesize leftViewController = _leftViewController;
 @synthesize topViewController = _topViewController;
-@synthesize rightViewController = _rightViewController;
 @synthesize allowOverswipe = _allowOverswipe;
 @synthesize allowNavigationBarOnly = _allowNavigationBarOnly;
 @synthesize topViewOffsetY = _topViewOffsetY;
@@ -77,15 +76,15 @@
     
     // iOS 7, offset it below the status bar
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
-        _topViewOffsetY = 20.0f;
+        _topViewOffsetY = 0.0f;
     } else {
         _topViewOffsetY = 0.0f;
     }
     
     _allowOverswipe = NO;
     _allowNavigationBarOnly = NO;
-    _peakAmount = 280.0f;
-    _peakThreshold = 130.0f;
+    _peakAmount = 140.0f;
+    _peakThreshold = 0.5f;
     _cornerRadius = 0.0f;
     _shadowOpacity = 0.5f;
     _shadowOffsetX = 0.0f;
@@ -194,7 +193,7 @@
     
     // Add the pan gesture recognizer
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-    panGestureRecognizer.cancelsTouchesInView = YES;
+    panGestureRecognizer.cancelsTouchesInView = NO;
     panGestureRecognizer.delegate = self;
     [view addGestureRecognizer:panGestureRecognizer];
     
@@ -244,16 +243,13 @@
     self.backgroundView.frame = CGRectIntegral(backgroundViewFrame);
     CGRect leftViewControllerFrame = CGRectMake(0.0f, self.topViewOffsetY, self.peakAmount, CGRectGetHeight(self.backgroundView.bounds) - self.topViewOffsetY);
     self.leftViewController.view.frame = CGRectIntegral(leftViewControllerFrame);
-    CGRect rightViewControllerFrame = CGRectMake(0.0f + (CGRectGetWidth(self.backgroundView.bounds) - self.peakAmount), self.topViewOffsetY, self.peakAmount, CGRectGetHeight(self.backgroundView.bounds) - self.topViewOffsetY);
-    self.rightViewController.view.frame = CGRectIntegral(rightViewControllerFrame);
     
-    // If the left side is open
-    if (self.viewState == SlidingViewStateLeftOpened) {
+    // If the view state is openeed
+    if (self.viewState == SlidingViewStateOpened) {
         [self showLeftAnimated:animated];
     }
-    // Else if the right side is open
-    else if (self.viewState == SlidingViewStateRightOpened) {
-        [self showRightAnimated:animated];
+    else {
+        [self hideLeftAnimated:animated];
     }
 }
 
@@ -284,15 +280,7 @@
 
 - (void)displayTopViewController:(UIViewController *)viewController animated:(BOOL)animated {
     self.topViewController = viewController;
-    
-    // If the left side is open
-    if (self.viewState == SlidingViewStateLeftOpened) {
-        [self hideLeftAnimated:animated];
-    }
-    // Else if the right side is open
-    else if (self.viewState == SlidingViewStateRightOpened) {
-        [self hideRightAnimated:animated];
-    }
+    [self hideLeftAnimated:animated];
 }
 
 - (void)setLeftViewController:(UIViewController *)leftViewController {
@@ -308,13 +296,9 @@
     [leftViewController willMoveToParentViewController:nil];
     [leftViewController removeFromParentViewController];
     _leftViewController = leftViewController;
+    [self.backgroundView addSubview:leftViewController.view];
     [self addChildViewController:leftViewController];
     [leftViewController didMoveToParentViewController:self];
-    
-    // Add the view
-    if (self.viewState == SlidingViewStateLeftDragging || self.viewState == SlidingViewStateLeftLocked || self.viewState == SlidingViewStateLeftOpened) {
-        [self.backgroundView insertSubview:self.leftViewController.view belowSubview:self.topBackgroundView];
-    }
     
     // Adjust the frame
     CGRect frame = CGRectMake(0.0f, self.topViewOffsetY, self.peakAmount, CGRectGetHeight(self.backgroundView.bounds) - self.topViewOffsetY);
@@ -350,59 +334,25 @@
     topViewController.view.autoresizingMask = self.topBackgroundView.autoresizingMask;
 }
 
-- (void)setRightViewController:(UIViewController *)rightViewController {
-    // Remove the old right view controller
-    if (self.rightViewController) {
-        [self.rightViewController.view removeFromSuperview];
-        [self.rightViewController willMoveToParentViewController:nil];
-        [self.rightViewController removeFromParentViewController];
-    }
-    
-    // Set the new right view controller
-    [rightViewController.view removeFromSuperview];
-    [rightViewController willMoveToParentViewController:nil];
-    [rightViewController removeFromParentViewController];
-    _rightViewController = rightViewController;
-    [self addChildViewController:rightViewController];
-    [rightViewController didMoveToParentViewController:self];
-    
-    // Add the view
-    if (self.viewState == SlidingViewStateRightDragging || self.viewState == SlidingViewStateRightLocked || self.viewState == SlidingViewStateRightOpened) {
-        [self.backgroundView insertSubview:self.rightViewController.view belowSubview:self.topBackgroundView];
-    }
-    
-    // Adjust the frame
-    CGRect frame = CGRectMake(0.0f, self.topViewOffsetY, self.peakAmount, CGRectGetHeight(self.backgroundView.bounds) - self.topViewOffsetY);
-    rightViewController.view.frame = CGRectIntegral(frame);
-    rightViewController.view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleHeight;
-}
-
 #pragma mark -
-#pragma mark View Animation
+#pragma mark Show and Hide Left
 
 - (void)tappedTopOverlayView {
-    // If the left side is open
-    if (self.viewState == SlidingViewStateLeftOpened) {
-        [self hideLeftAnimated:YES];
-    }
-    // Else if the right side is open
-    else if (self.viewState == SlidingViewStateRightOpened) {
-        [self hideRightAnimated:YES];
-    }
+    [self hideLeftAnimated:YES];
 }
 
 - (void)toggleLeftAnimated:(BOOL)animated {
     if (self.viewState == SlidingViewStateClosed) {
         [self showLeftAnimated:animated];
     }
-    else if (self.viewState == SlidingViewStateLeftOpened) {
+    else if (self.viewState == SlidingViewStateOpened) {
         [self hideLeftAnimated:animated];
     }
 }
 
 - (void)showLeftAnimated:(BOOL)animated {
     // Return if the view state is locked
-    if (self.viewState == SlidingViewStateLeftLocked || self.viewState == SlidingViewStateRightLocked) {
+    if (self.viewState == SlidingViewStateLocked) {
         return;
     }
     
@@ -410,13 +360,7 @@
     CGRect rect = CGRectMake(0.0f, self.topViewOffsetY, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - self.topViewOffsetY);
     
     // Dismiss the keyboard if it is showing
-    [self.view endEditing:YES];
-    
-    // Remove the right view
-    [self.rightViewController.view removeFromSuperview];
-    
-    // Add the left view
-    [self.backgroundView insertSubview:self.leftViewController.view belowSubview:self.topBackgroundView];
+    [self.topViewController.view endEditing:YES];
     
     if (animated) {
         [UIView animateWithDuration:self.animationDuration
@@ -430,7 +374,7 @@
                              if (finished) {
                                  // Update the view state
                                  [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
-                                 _viewState = SlidingViewStateLeftOpened;
+                                 _viewState = SlidingViewStateOpened;
                                  
                                  // Remove the overlay view
                                  [self removeTopOverlayView];
@@ -447,7 +391,7 @@
         
         // Update the view state
         [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
-        _viewState = SlidingViewStateLeftOpened;
+        _viewState = SlidingViewStateOpened;
 
         // Remove the overlay view
         [self removeTopOverlayView];
@@ -460,15 +404,12 @@
 
 - (void)hideLeftAnimated:(BOOL)animated {
     // Return if the view state is locked
-    if (self.viewState == SlidingViewStateLeftLocked || self.viewState == SlidingViewStateRightLocked) {
+    if (self.viewState == SlidingViewStateLocked) {
         return;
     }
     
     // Get the rect
     CGRect rect = CGRectMake(0.0f, self.topViewOffsetY, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - self.topViewOffsetY);
-    
-    // Dismiss the keyboard if it is showing
-    [self.view endEditing:YES];
     
     if (animated) {
         [UIView animateWithDuration:self.animationDuration
@@ -486,9 +427,6 @@
                                  
                                  // Remove the overlay view
                                  [self removeTopOverlayView];
-                                 
-                                 // Remove the left view
-                                 [self.leftViewController.view removeFromSuperview];
                              }
                          }];
     }
@@ -502,216 +440,41 @@
         
         // Remove the overlay view
         [self removeTopOverlayView];
-        
-        // Remove the left view
-        [self.leftViewController.view removeFromSuperview];
     }
 }
 
-- (void)toggleRightAnimated:(BOOL)animated {
-    if (self.viewState == SlidingViewStateClosed) {
-        [self showRightAnimated:animated];
-    }
-    else if (self.viewState == SlidingViewStateRightOpened) {
-        [self showRightAnimated:animated];
-    }
-}
-
-- (void)showRightAnimated:(BOOL)animated {
-    // Return if the view state is locked
-    if (self.viewState == SlidingViewStateLeftLocked || self.viewState == SlidingViewStateRightLocked) {
-        return;
-    }
-    
-    // Get the rect
-    CGRect rect = CGRectMake(0.0f, self.topViewOffsetY, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - self.topViewOffsetY);
-    
-    // Dismiss the keyboard if it is showing
-    [self.view endEditing:YES];
-    
-    // Remove the left view
-    [self.leftViewController.view removeFromSuperview];
-    
-    // Add the right view
-    [self.backgroundView insertSubview:self.rightViewController.view belowSubview:self.topBackgroundView];
-    
-    if (animated) {
-        [UIView animateWithDuration:self.animationDuration
-                              delay:self.animationDelay
-                            options:UIViewAnimationOptionCurveEaseInOut  | UIViewAnimationOptionBeginFromCurrentState
-                         animations:^{
-                             // Adjust the top background view frame
-                             self.topBackgroundView.frame = CGRectIntegral(CGRectOffset(rect, -self.peakAmount, 0.0f));
-                         }
-                         completion:^(BOOL finished) {
-                             if (finished) {
-                                 // Update the view state
-                                 [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
-                                 _viewState = SlidingViewStateRightOpened;
-                                 
-                                 // Remove the overlay view
-                                 [self removeTopOverlayView];
-                                 
-                                 // Add the top overlay view to the view
-                                 [self.topViewController.view addSubview:self.topOverlayView];
-                                 [self.topViewController.view bringSubviewToFront:self.topOverlayView];
-                             }
-                         }];
-    }
-    else {
-        // Adjust the top background view frame
-        self.topBackgroundView.frame = CGRectIntegral(CGRectOffset(rect, -self.peakAmount, 0.0f));
-        
-        // Update the view state
-        [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
-        _viewState = SlidingViewStateRightOpened;
-        
-        // Remove the overlay view
-        [self removeTopOverlayView];
-        
-        // Add the top overlay view to the view
-        [self.topViewController.view addSubview:self.topOverlayView];
-        [self.topViewController.view bringSubviewToFront:self.topOverlayView];
-    }
-}
-
-- (void)hideRightAnimated:(BOOL)animated {
-    // Return if the view state is locked
-    if (self.viewState == SlidingViewStateLeftLocked || self.viewState == SlidingViewStateRightLocked) {
-        return;
-    }
-    
-    // Get the rect
-    CGRect rect = CGRectMake(0.0f, self.topViewOffsetY, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - self.topViewOffsetY);
-    
-    // Dismiss the keyboard if it is showing
-    [self.view endEditing:YES];
-    
-    if (animated) {
-        [UIView animateWithDuration:self.animationDuration
-                              delay:self.animationDelay
-                            options:UIViewAnimationOptionCurveEaseInOut  | UIViewAnimationOptionBeginFromCurrentState
-                         animations:^{
-                             // Adjust the top background view frame
-                             self.topBackgroundView.frame = CGRectIntegral(rect);
-                         }
-                         completion:^(BOOL finished) {
-                             if (finished) {
-                                 // Update the view state
-                                 [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
-                                 _viewState = SlidingViewStateClosed;
-                                 
-                                 // Remove the overlay view
-                                 [self removeTopOverlayView];
-                                 
-                                 // Remove the left view
-                                 [self.rightViewController.view removeFromSuperview];
-                             }
-                         }];
-    }
-    else {
-        // Adjust the top background view frame
-        self.topBackgroundView.frame = CGRectIntegral(rect);
-        
-        // Update the view state
-        [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
-        _viewState = SlidingViewStateClosed;
-        
-        // Remove the overlay view
-        [self removeTopOverlayView];
-        
-        // Remove the left view
-        [self.rightViewController.view removeFromSuperview];
-    }
-}
 
 #pragma mark -
 #pragma mark Swiping
 
 - (void)handleSwipe:(UIPanGestureRecognizer *)gestureRecognizer {
     // Return if the view state is locked
-    if (self.viewState == SlidingViewStateLeftLocked || self.viewState == SlidingViewStateRightLocked) {
+    if (self.viewState == SlidingViewStateLocked) {
         return;
     }
-    
-    // Dismiss the keyboard if it is showing
-    [self.view endEditing:YES];
-    
+    CGPoint startingPoint ;
+
     // If we are beginning
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
-        // Get the velocity
-        CGPoint velocity = [gestureRecognizer velocityInView:self.view];
-        
-        // Get the starting point
-        CGPoint startingPoint = [gestureRecognizer locationInView:self.view];
+        // Dismiss the keyboard if it is showing
+        [self.topViewController.view endEditing:YES];
+        startingPoint = [gestureRecognizer locationInView:self.view];
         
         if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone && UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
             if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
                 // we only trigger a swipe if either navigationBarOnly is deactivated
                 // or we swiped in the navigationBar
                 if (!self.allowNavigationBarOnly || startingPoint.y <= 52.0f) {
-                    // If the swipe was to the right
-                    if (velocity.x > 0.0f) {
-                        if (self.viewState != SlidingViewStateRightOpened) {
-                            // Remove the right view
-                            [self.rightViewController.view removeFromSuperview];
-                            
-                            // Add the left view
-                            [self.backgroundView insertSubview:self.leftViewController.view belowSubview:self.topBackgroundView];
-                        }
-                        
-                        // Update the view state
-                        [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
-                        _viewState = SlidingViewStateLeftDragging;
-                    }
-                    // else is must have been to the left
-                    else if (velocity.x <= 0.0f) {
-                        if (self.viewState != SlidingViewStateLeftOpened) {
-                            // Remove the left view
-                            [self.leftViewController.view removeFromSuperview];
-                            
-                            // Add the right view
-                            [self.backgroundView insertSubview:self.rightViewController.view belowSubview:self.topBackgroundView];
-                        }
-                        
-                        // Update the view state
-                        [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
-                        _viewState = SlidingViewStateRightDragging;
-                    }
+                    [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
+                    _viewState = SlidingViewStateDragging;
                 }
             }
             else {
                 // we only trigger a swipe if either navigationBarOnly is deactivated
                 // or we swiped in the navigationBar
                 if (!self.allowNavigationBarOnly || startingPoint.y <= 32.0f) {
-                    // If the swipe was to the right
-                    if (velocity.x > 0.0f) {
-                        if (self.viewState != SlidingViewStateRightOpened) {
-                            // Remove the right view
-                            [self.rightViewController.view removeFromSuperview];
-                            
-                            // Add the left view
-                            [self.backgroundView insertSubview:self.leftViewController.view belowSubview:self.topBackgroundView];
-                        }
-                        
-                        // Update the view state
-                        [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
-                        _viewState = SlidingViewStateLeftDragging;
-                    }
-                    // else is must have been to the left
-                    else if (velocity.x <= 0.0f) {
-                        if (self.viewState != SlidingViewStateLeftOpened) {
-                            // Remove the left view
-                            [self.leftViewController.view removeFromSuperview];
-                            
-                            // Add the right view
-                            [self.backgroundView insertSubview:self.rightViewController.view belowSubview:self.topBackgroundView];
-                        }
-                        
-                        // Update the view state
-                        [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
-                        _viewState = SlidingViewStateRightDragging;
-                    }
+                    [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
+                    _viewState = SlidingViewStateDragging;
                 }
             }
         }
@@ -720,115 +483,24 @@
                 // we only trigger a swipe if either navigationBarOnly is deactivated
                 // or we swiped in the navigationBar
                 if (!self.allowNavigationBarOnly || startingPoint.y <= 64.0f) {
-                    // If the swipe was to the right
-                    if (velocity.x > 0.0f) {
-                        if (self.viewState != SlidingViewStateRightOpened) {
-                            // Remove the right view
-                            [self.rightViewController.view removeFromSuperview];
-                            
-                            // Add the left view
-                            [self.backgroundView insertSubview:self.leftViewController.view belowSubview:self.topBackgroundView];
-                        }
-                        
-                        // Update the view state
-                        [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
-                        _viewState = SlidingViewStateLeftDragging;
-                    }
-                    // else is must have been to the left
-                    else if (velocity.x <= 0.0f) {
-                        if (self.viewState != SlidingViewStateLeftOpened) {
-                            // Remove the left view
-                            [self.leftViewController.view removeFromSuperview];
-                            
-                            // Add the right view
-                            [self.backgroundView insertSubview:self.rightViewController.view belowSubview:self.topBackgroundView];
-                        }
-                        
-                        // Update the view state
-                        [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
-                        _viewState = SlidingViewStateRightDragging;
-                    }
+                    [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
+                    _viewState = SlidingViewStateDragging;
                 }
             }
             else {
                 // we only trigger a swipe if either navigationBarOnly is deactivated
                 // or we swiped in the navigationBar
                 if (!self.allowNavigationBarOnly || startingPoint.y <= 44.0f) {
-                    // If the swipe was to the right
-                    if (velocity.x > 0.0f) {
-                        if (self.viewState != SlidingViewStateRightOpened) {
-                            // Remove the right view
-                            [self.rightViewController.view removeFromSuperview];
-                            
-                            // Add the left view
-                            [self.backgroundView insertSubview:self.leftViewController.view belowSubview:self.topBackgroundView];
-                        }
-                        
-                        // Update the view state
-                        [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
-                        _viewState = SlidingViewStateLeftDragging;
-                    }
-                    // else is must have been to the left
-                    else if (velocity.x <= 0.0f) {
-                        if (self.viewState != SlidingViewStateLeftOpened) {
-                            // Remove the left view
-                            [self.leftViewController.view removeFromSuperview];
-                            
-                            // Add the right view
-                            [self.backgroundView insertSubview:self.rightViewController.view belowSubview:self.topBackgroundView];
-                        }
-                        
-                        // Update the view state
-                        [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
-                        _viewState = SlidingViewStateRightDragging;
-                    }
+                    [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
+                    _viewState = SlidingViewStateDragging;
                 }
             }
         }
     }
-    else if (gestureRecognizer.state == UIGestureRecognizerStateChanged && (self.viewState == SlidingViewStateLeftDragging || self.viewState == SlidingViewStateRightDragging)) {
-        // Get the transaltion
+    else if (gestureRecognizer.state == UIGestureRecognizerStateChanged && self.viewState == SlidingViewStateDragging) {
         CGPoint translation = [gestureRecognizer translationInView:self.view];
         [gestureRecognizer setTranslation:CGPointMake(0, 0) inView:self.view];
         
-        // Get the velocity
-        CGPoint velocity = [gestureRecognizer velocityInView:self.view];
-        
-        // If the swipe was to the right
-        if (velocity.x > 0.0f) {
-            // If the swipe has crossed zero
-            if (gestureRecognizer.view.frame.origin.x >= 0 && _lastOrigin.x <= 0) {
-                // Remove the right view
-                [self.rightViewController.view removeFromSuperview];
-                
-                // Add the left view
-                [self.backgroundView insertSubview:self.leftViewController.view belowSubview:self.topBackgroundView];
-                
-                // Update the view state
-                [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
-                _viewState = SlidingViewStateLeftDragging;
-            }
-        }
-        // else is must have been to the left
-        else if (velocity.x <= 0.0f) {
-            // If the swipe has crossed zero
-            if (gestureRecognizer.view.frame.origin.x <= 0 && _lastOrigin.x >= 0 && _allowShowRightView == YES) {
-                // Remove the left view
-                [self.leftViewController.view removeFromSuperview];
-                
-                // Add the right view
-                [self.backgroundView insertSubview:self.rightViewController.view belowSubview:self.topBackgroundView];
-                
-                // Update the view state
-                [_previousViewStates addObject:[NSNumber numberWithInt:self.viewState]];
-                _viewState = SlidingViewStateRightDragging;
-            }
-        }
-        
-        // Update last origin
-        _lastOrigin = gestureRecognizer.view.frame.origin;
-        
-        // Animate
         [UIView animateWithDuration:0.01f
                               delay:0.0f
                             options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionBeginFromCurrentState
@@ -839,65 +511,25 @@
                              CGRect rect = CGRectMake(0.0f, self.topViewOffsetY, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - self.topViewOffsetY);
                              
                              // Adjust the view
-                             if (self.viewState == SlidingViewStateLeftDragging) {
-                                 if (gestureRecognizer.view.frame.origin.x > self.peakAmount) {
-                                     gestureRecognizer.view.frame = CGRectIntegral(CGRectOffset(rect, self.peakAmount, 0.0f));
-                                 }
+                             if (gestureRecognizer.view.frame.origin.x > self.peakAmount) {
+                                 gestureRecognizer.view.frame = CGRectIntegral(CGRectOffset(rect, self.peakAmount, 0.0f));
                              }
-                             else if (self.viewState == SlidingViewStateRightDragging) {
-                                 if ((gestureRecognizer.view.frame.origin.x + gestureRecognizer.view.frame.size.width) < (gestureRecognizer.view.frame.size.width - self.peakAmount)) {
-                                     gestureRecognizer.view.frame = CGRectIntegral(CGRectOffset(rect, -self.peakAmount, 0.0f));
-                                 }
+                             else if (gestureRecognizer.view.frame.origin.x < 0.0f) {
+                                 gestureRecognizer.view.frame = CGRectIntegral(rect);
                              }
                          }
-                         completion:nil];
+                         completion:^(BOOL finished) {
+                             // Nothing to do
+                         }];
     }
-    else if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        // Get the velocity
+    else if (gestureRecognizer.state == UIGestureRecognizerStateEnded && self.viewState == SlidingViewStateDragging) {
         CGPoint velocity = [gestureRecognizer velocityInView:self.view];
-        
-        // If we are dragging left
-        if (self.viewState == SlidingViewStateLeftDragging) {
-            // If the swipe was to the right
-            if (velocity.x > 0) {
-                if (gestureRecognizer.view.frame.origin.x <= self.peakThreshold) {
-                    [self hideLeftAnimated:YES];
-                }
-                else {
-                    [self showLeftAnimated:YES];
-                }
-            }
-            // else is must have been to the left
-            else if (velocity.x <= 0.0f) {
-                if (gestureRecognizer.view.frame.origin.x >= self.peakThreshold) {
-                    [self showLeftAnimated:YES];
-                } else {
-                    [self hideLeftAnimated:YES];
-                }
-            }
-        }
-        else {
-            // If the swipe was to the right
-            if (velocity.x > 0) {
-                if ((gestureRecognizer.view.frame.origin.x + gestureRecognizer.view.frame.size.width) <= self.peakThreshold) {
-                    [self showRightAnimated:YES];
-                }
-                else {
-                    [self hideRightAnimated:YES];
-                }
-            }
-            // else is must have been to the left
-            else if (velocity.x <= 0.0f) {
-                if ((gestureRecognizer.view.frame.origin.x + gestureRecognizer.view.frame.size.width) >= self.peakThreshold) {
-                    [self hideRightAnimated:YES];
-                } else {
-                    if (_allowShowRightView == YES) {
-                        [self showRightAnimated:YES];
-                    }else{
-                        [self hideRightAnimated:YES];
-                    }
-                }
-            }
+        NSLog(@"%f #  %f----%f",startingPoint.x-velocity.x,gestureRecognizer.view.frame.origin.x,_peakAmount*self.peakThreshold);
+        //---->
+        if (startingPoint.x-velocity.x < 0 ) {
+                [self showLeftAnimated:YES];
+        }else{
+                [self hideLeftAnimated:YES];
         }
     }
 }
