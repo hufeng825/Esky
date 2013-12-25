@@ -44,14 +44,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     
-    MSDynamicsDrawerViewController *dynamicsDrawerViewController =[MSDynamicsDrawerViewController new];
     self.tabViewController = [[HFTabBarViewController alloc] initWithNibName:@"HFTabBarViewController" bundle:nil];
     self.tabViewController.delegate = self;
-    self.manViewController = [[ESMainViewController alloc] initDrawerViewController:dynamicsDrawerViewController];
     
     
-    [self.tabViewController setSubViewControllers:@[_manViewController]];
-    self.tabViewController.selectedIndex =0;
 
     
     
@@ -59,37 +55,24 @@
     
     
     
-//    YASlidingViewController *slidingViewController = [YASlidingViewController new];
-//    slidingViewController.peakAmount = 200.0f;
-//    slidingViewController.leftViewController = _leftMenuViewController;
-//      UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:slidingViewController];
-//    [slidingViewController.navigationController setNavigationBarHidden:YES];
+    YASlidingViewController *slidingViewController = [YASlidingViewController new];
+    slidingViewController.peakAmount = 200.0f;
+    slidingViewController.leftViewController = _leftMenuViewController;
     
-//    slidingViewController.topViewController = _tabViewController;
-//    self.window.rootViewController = nv;
-//    [self.window makeKeyAndVisible];
+    slidingViewController.topViewController = _tabViewController;
     
-    
-    
+    self.manViewController = [[ESMainViewController alloc] initDrawerViewController:slidingViewController];
+    [self.tabViewController setSubViewControllers:@[_manViewController]];
+    self.tabViewController.selectedIndex =0;
 
-    [dynamicsDrawerViewController addStylersFromArray:@[[MSDynamicsDrawerParallaxStyler styler],[MSDynamicsDrawerFadeStyler styler]] forDirection:MSDynamicsDrawerDirectionLeft];
     
-    [dynamicsDrawerViewController setPaneViewController:_tabViewController animated:NO completion:^{
-        // Successfully set the pane view controller
-    }];
-    [dynamicsDrawerViewController setDrawerViewController:_leftMenuViewController forDirection:MSDynamicsDrawerDirectionLeft];
-    dynamicsDrawerViewController.gravityMagnitude = 2;
-    dynamicsDrawerViewController.bounceElasticity = .01;
-    dynamicsDrawerViewController.bounceMagnitude =0.01;
     
-
-  
-
-    self.window.rootViewController = dynamicsDrawerViewController;
+    UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:slidingViewController];
+    [slidingViewController.navigationController setNavigationBarHidden:YES];
+    
+    
+    self.window.rootViewController = nv;
     [self.window makeKeyAndVisible];
-
-
-
  
 
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];

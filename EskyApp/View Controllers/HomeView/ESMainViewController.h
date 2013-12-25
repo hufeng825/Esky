@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "ESBaseViewController.h"
-#import "MSDynamicsDrawerViewController.h"
+#import "YASlidingViewController.h"
 
 #import "UIWebImageView.h"
 
 @interface ESMainViewController : ESBaseViewController
 
-@property (nonatomic, weak) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
+@property (nonatomic, weak) YASlidingViewController *dynamicsDrawerViewController;
 
-- (id)initDrawerViewController:(MSDynamicsDrawerViewController *)dynamicsDrawerViewController;
+- (id)initDrawerViewController:(YASlidingViewController *)dynamicsDrawerViewController;
 
 - (IBAction)dynamicsDrawerRevealLeftBarButtonItemTapped:(id)sender;
 

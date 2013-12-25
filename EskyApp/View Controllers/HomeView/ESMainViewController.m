@@ -16,15 +16,21 @@
 
 #import "UIViewController+SlidingView.h"
 
+#import "iCarousel.h"
+
+#define ITEM_SPACING 255
+
 
 @interface ESMainViewController ()
 @property (weak, nonatomic) IBOutlet UIWebImageView *testimg;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @end
 
 @implementation ESMainViewController
+@synthesize carousel;
 
--(id)initDrawerViewController:(MSDynamicsDrawerViewController *)dynamicsDrawerViewController
+-(id)initDrawerViewController:(YASlidingViewController *)dynamicsDrawerViewController
 {
     self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
     if (self) {
@@ -36,13 +42,72 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    carousel.type = iCarouselTypeCoverFlow;
+//    CGSize offset = CGSizeMake(0.0f,0);
+//    carousel.contentOffset = offset;
+    carousel.scrollSpeed = 0.25;
+    [carousel reloadData];
+    carousel.backgroundColor = [UIColor grayColor];
+
 }
 
 
 - (IBAction)dynamicsDrawerRevealLeftBarButtonItemTapped:(id)sender
 {
-    [self.dynamicsDrawerViewController setPaneState:MSDynamicsDrawerPaneStateOpen inDirection:MSDynamicsDrawerDirectionLeft animated:YES allowUserInterruption:YES completion:nil];
+    [self.dynamicsDrawerViewController toggleLeftAnimated:YES];
+}
+
+
+#pragma mark --
+
+- (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
+{
+    return 30;
+}
+
+- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index
+{
+    UIView *view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",index]]];
+    view.frame = CGRectMake(0, 100, 265, 425);
+    return view;
+}
+
+- (NSUInteger)numberOfPlaceholdersInCarousel:(iCarousel *)carousel
+{
+	return 0;
+}
+
+- (NSUInteger)numberOfVisibleItemsInCarousel:(iCarousel *)carousel
+{
+    return 30;
+}
+
+- (CGFloat)carouselItemWidth:(iCarousel *)carousel
+{
+    return ITEM_SPACING;
+}
+
+- (CATransform3D)carousel:(iCarousel *)_carousel transformForItemView:(UIView *)view withOffset:(CGFloat)offset
+{
+    view.alpha = 1.0 - fminf(fmaxf(offset, 0.0), 1.0);
+    
+    CATransform3D transform = CATransform3DIdentity;
+    transform.m34 = self.carousel.perspective;
+    transform = CATransform3DRotate(transform, M_PI / 8.0, 0, 1.0, 0);
+    return CATransform3DTranslate(transform, 0.0, 0.0, offset * carousel.itemWidth);
+}
+
+- (BOOL)carouselShouldWrap:(iCarousel *)carousel
+{
+    return YES;
+}
+
+#pragma mark iCarousel taps
+
+- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
+{
+//    NSNumber *item = (self.items)[index];
+    NSLog(@"Tapped view number: %d", index);
 }
 
 - (void)didReceiveMemoryWarning {

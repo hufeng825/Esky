@@ -65,6 +65,7 @@
     currentSelectIndex = NSNotFound;
     [self addCallBack];
     [self themeChanged];
+    [self setBackgroundColor:[UIColor clearColor]];
 }
 
 - (void)themeChanged
