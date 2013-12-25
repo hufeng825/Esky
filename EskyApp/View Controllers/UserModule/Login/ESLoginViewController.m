@@ -98,7 +98,7 @@
 
 //因为runloop原因 所以setContentOffset animation 有时候卡顿 所以重写此方法
 - (void)setBgContentOffsetAnimation:(CGFloat)OffsetY {
-    [UIView animateWithDuration:.5 animations:^{
+    [UIView animateWithDuration:.35 animations:^{
         bgScrollView.contentOffset = CGPointMake(0, OffsetY);
     }];
 }
@@ -150,7 +150,7 @@
 - (IBAction)resetPassClick:(id)sender {
     [self viewEndEdit];
     ESModifyPassWordViewController *semiVC = [[ESModifyPassWordViewController alloc] initWithNibName:@"ESModifyPassWordViewController" bundle:nil];
-    [self presentSemiViewController:semiVC withOptions:@{
+    [self.navigationController presentSemiViewController:semiVC withOptions:@{
             KNSemiModalOptionKeys.pushParentBack : @(YES),
             KNSemiModalOptionKeys.animationDuration : @(.5),
             KNSemiModalOptionKeys.shadowOpacity : @(0.5)}];

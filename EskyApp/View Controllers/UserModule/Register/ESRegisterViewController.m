@@ -188,7 +188,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
 //因为runloop原因 所以setContentOffset animation 有时候卡顿 所以重写此方法
 - (void)setBgContentOffsetAnimation:(CGFloat)OffsetY {
     if (self.bgScrollView.contentOffset.y != OffsetY) {
-        [UIView animateWithDuration:.5 animations:^{
+        [UIView animateWithDuration:.35 animations:^{
             self.bgScrollView.contentOffset = CGPointMake(0, OffsetY);
         }];
 

@@ -41,6 +41,10 @@
 		966C7D4E18692F3E00A1B04D /* ShareSDKiPhoneDefaultShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966C7D3718692F3E00A1B04D /* ShareSDKiPhoneDefaultShareViewUI.framework */; };
 		966C7D4F18692F3E00A1B04D /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 966C7D3818692F3E00A1B04D /* ShareSDKiPhoneSimpleShareViewUI.bundle */; };
 		966C7D5018692F3E00A1B04D /* ShareSDKiPhoneSimpleShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966C7D3918692F3E00A1B04D /* ShareSDKiPhoneSimpleShareViewUI.framework */; };
+		966C7D561869575D00A1B04D /* MSDynamicsDrawerStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C7D531869575D00A1B04D /* MSDynamicsDrawerStyler.m */; };
+		966C7D571869575D00A1B04D /* MSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C7D551869575D00A1B04D /* MSDynamicsDrawerViewController.m */; };
+		966C7D5A186A84A400A1B04D /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 966C7D58186A84A400A1B04D /* setting.png */; };
+		966C7D5B186A84A400A1B04D /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966C7D59186A84A400A1B04D /* setting@2x.png */; };
 		967342CB1867E8B900B9D399 /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 967342B51867E8B900B9D399 /* NSArray+Additions.m */; };
 		967342CC1867E8B900B9D399 /* NSDate+HFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 967342B81867E8B900B9D399 /* NSDate+HFExtension.m */; };
 		967342CD1867E8B900B9D399 /* NSDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 967342BB1867E8B900B9D399 /* NSDictionary+Safe.m */; };
@@ -254,6 +258,12 @@
 		966C7D3718692F3E00A1B04D /* ShareSDKiPhoneDefaultShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPhoneDefaultShareViewUI.framework; sourceTree = "<group>"; };
 		966C7D3818692F3E00A1B04D /* ShareSDKiPhoneSimpleShareViewUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKiPhoneSimpleShareViewUI.bundle; sourceTree = "<group>"; };
 		966C7D3918692F3E00A1B04D /* ShareSDKiPhoneSimpleShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPhoneSimpleShareViewUI.framework; sourceTree = "<group>"; };
+		966C7D521869575D00A1B04D /* MSDynamicsDrawerStyler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDynamicsDrawerStyler.h; sourceTree = "<group>"; };
+		966C7D531869575D00A1B04D /* MSDynamicsDrawerStyler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDynamicsDrawerStyler.m; sourceTree = "<group>"; };
+		966C7D541869575D00A1B04D /* MSDynamicsDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDynamicsDrawerViewController.h; sourceTree = "<group>"; };
+		966C7D551869575D00A1B04D /* MSDynamicsDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDynamicsDrawerViewController.m; sourceTree = "<group>"; };
+		966C7D58186A84A400A1B04D /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
+		966C7D59186A84A400A1B04D /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@2x.png"; sourceTree = "<group>"; };
 		967342B41867E8B900B9D399 /* NSArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Additions.h"; sourceTree = "<group>"; };
 		967342B51867E8B900B9D399 /* NSArray+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Additions.m"; sourceTree = "<group>"; };
 		967342B71867E8B900B9D399 /* NSDate+HFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HFExtension.h"; sourceTree = "<group>"; };
@@ -687,6 +697,17 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		966C7D511869575D00A1B04D /* MSDynamicsDrawerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				966C7D521869575D00A1B04D /* MSDynamicsDrawerStyler.h */,
+				966C7D531869575D00A1B04D /* MSDynamicsDrawerStyler.m */,
+				966C7D541869575D00A1B04D /* MSDynamicsDrawerViewController.h */,
+				966C7D551869575D00A1B04D /* MSDynamicsDrawerViewController.m */,
+			);
+			path = MSDynamicsDrawerViewController;
+			sourceTree = "<group>";
+		};
 		967342B21867E8B900B9D399 /* Addition */ = {
 			isa = PBXGroup;
 			children = (
@@ -1086,6 +1107,7 @@
 		96B98ABB1845C6B8002E8552 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				966C7D511869575D00A1B04D /* MSDynamicsDrawerViewController */,
 				966C7D1218692F3D00A1B04D /* ShareSDK_v2.7 */,
 				967342E918680EE900B9D399 /* UIKit */,
 				967342B21867E8B900B9D399 /* Addition */,
@@ -1279,6 +1301,8 @@
 		96B98BB21845E58F002E8552 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				966C7D58186A84A400A1B04D /* setting.png */,
+				966C7D59186A84A400A1B04D /* setting@2x.png */,
 				966C7D081868452E00A1B04D /* follow_normal.png */,
 				966C7D091868452E00A1B04D /* home_normal.png */,
 				966C7D0A1868452E00A1B04D /* mine_normal.png */,
@@ -1509,6 +1533,7 @@
 				966C7D4018692F3E00A1B04D /* ShareSDKLocalizable.strings in Resources */,
 				96C90CDC185F0204005C4ECB /* choosebg@2x.png in Resources */,
 				966C7D4418692F3E00A1B04D /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				966C7D5B186A84A400A1B04D /* setting@2x.png in Resources */,
 				966C7D041868450300A1B04D /* home_normal@2x.png in Resources */,
 				96B98BD41845E58F002E8552 /* icon_head@2x.png in Resources */,
 				96C90CD2185EFB9D005C4ECB /* wenzi2@2x.png in Resources */,
@@ -1538,6 +1563,7 @@
 				96B98A811845C643002E8552 /* Settings.bundle in Resources */,
 				96B98BD91845E58F002E8552 /* reset_mm@2x.png in Resources */,
 				96C90CDB185F0204005C4ECB /* choosebg.png in Resources */,
+				966C7D5A186A84A400A1B04D /* setting.png in Resources */,
 				9645ED811856C487004643C9 /* ESChoseModuleViewController.xib in Resources */,
 				96B98BD11845E58F002E8552 /* e-sky.png in Resources */,
 				96B98BDA1845E58F002E8552 /* rest_mm.png in Resources */,
@@ -1614,6 +1640,7 @@
 				96B98A791845C643002E8552 /* ESUserInfo.m in Sources */,
 				96C90C9E185814DF005C4ECB /* ReachabilityAppDelegate.m in Sources */,
 				96B98A7B1845C643002E8552 /* FAThemeManager.m in Sources */,
+				966C7D571869575D00A1B04D /* MSDynamicsDrawerViewController.m in Sources */,
 				96B98A7A1845C643002E8552 /* ESBaseModel.m in Sources */,
 				96B98B441845C6B8002E8552 /* AFSecurityPolicy.m in Sources */,
 				967342F918680EE900B9D399 /* ESHeaderIconImageView.m in Sources */,
@@ -1660,6 +1687,7 @@
 				96C90CC5185EC1F4005C4ECB /* PECropRectView.m in Sources */,
 				967342CD1867E8B900B9D399 /* NSDictionary+Safe.m in Sources */,
 				967342CF1867E8B900B9D399 /* UIDevice+Additions.m in Sources */,
+				966C7D561869575D00A1B04D /* MSDynamicsDrawerStyler.m in Sources */,
 				96C90C9C185814DF005C4ECB /* ASINetworkQueue.m in Sources */,
 				967342CB1867E8B900B9D399 /* NSArray+Additions.m in Sources */,
 				96B98B971845C81E002E8552 /* ESModifyPassWordViewController.m in Sources */,
