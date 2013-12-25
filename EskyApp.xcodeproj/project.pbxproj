@@ -45,6 +45,7 @@
 		966C7D571869575D00A1B04D /* MSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C7D551869575D00A1B04D /* MSDynamicsDrawerViewController.m */; };
 		966C7D5A186A84A400A1B04D /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 966C7D58186A84A400A1B04D /* setting.png */; };
 		966C7D5B186A84A400A1B04D /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966C7D59186A84A400A1B04D /* setting@2x.png */; };
+		966C7D63186A979A00A1B04D /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C7D62186A979A00A1B04D /* iCarousel.m */; };
 		967342CB1867E8B900B9D399 /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 967342B51867E8B900B9D399 /* NSArray+Additions.m */; };
 		967342CC1867E8B900B9D399 /* NSDate+HFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 967342B81867E8B900B9D399 /* NSDate+HFExtension.m */; };
 		967342CD1867E8B900B9D399 /* NSDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 967342BB1867E8B900B9D399 /* NSDictionary+Safe.m */; };
@@ -264,6 +265,8 @@
 		966C7D551869575D00A1B04D /* MSDynamicsDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDynamicsDrawerViewController.m; sourceTree = "<group>"; };
 		966C7D58186A84A400A1B04D /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		966C7D59186A84A400A1B04D /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@2x.png"; sourceTree = "<group>"; };
+		966C7D61186A979A00A1B04D /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		966C7D62186A979A00A1B04D /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		967342B41867E8B900B9D399 /* NSArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Additions.h"; sourceTree = "<group>"; };
 		967342B51867E8B900B9D399 /* NSArray+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Additions.m"; sourceTree = "<group>"; };
 		967342B71867E8B900B9D399 /* NSDate+HFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HFExtension.h"; sourceTree = "<group>"; };
@@ -708,6 +711,15 @@
 			path = MSDynamicsDrawerViewController;
 			sourceTree = "<group>";
 		};
+		966C7D60186A979A00A1B04D /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				966C7D61186A979A00A1B04D /* iCarousel.h */,
+				966C7D62186A979A00A1B04D /* iCarousel.m */,
+			);
+			path = iCarousel;
+			sourceTree = "<group>";
+		};
 		967342B21867E8B900B9D399 /* Addition */ = {
 			isa = PBXGroup;
 			children = (
@@ -836,6 +848,7 @@
 		967342E918680EE900B9D399 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				966C7D60186A979A00A1B04D /* iCarousel */,
 				96734307186811F400B9D399 /* HFTabBarController */,
 				9673430018680F1900B9D399 /* YASlidingViewController */,
 				967342EA18680EE900B9D399 /* HeaderIconImageView */,
@@ -1623,6 +1636,7 @@
 				967342D21867E8B900B9D399 /* UIViewController+KNSemiModal.m in Sources */,
 				9645ED7B1855C708004643C9 /* ESUserModel.m in Sources */,
 				96B98A771845C643002E8552 /* ESConfig.m in Sources */,
+				966C7D63186A979A00A1B04D /* iCarousel.m in Sources */,
 				96C90CCA185EC1F4005C4ECB /* UIImage+PECrop.m in Sources */,
 				967342D11867E8B900B9D399 /* UIView+Additions.m in Sources */,
 				96B98B621845C6B8002E8552 /* SSKeychainQuery.m in Sources */,
