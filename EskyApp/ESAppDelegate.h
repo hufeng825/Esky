@@ -10,15 +10,15 @@
 #import "HFTabBarViewController.h"
 #import "ESLeftMenuViewController.h"
 #import "ESMainViewController.h"
-
+#import "ESShowCenterViewController.h"
 
 @interface ESAppDelegate : UIResponder <UIApplicationDelegate,HFTabBarControllerDelegate>
 
-@property(strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UIWindow *window;
 
-@property(strong, nonatomic) HFTabBarViewController *tabViewController;
-@property(strong, nonatomic) ESLeftMenuViewController *leftMenuViewController;
-@property(strong, nonatomic) ESMainViewController *manViewController;
-
+@property (strong, nonatomic) HFTabBarViewController *tabViewController;
+@property (strong, nonatomic) ESLeftMenuViewController *leftMenuViewController;
+@property (strong, nonatomic) ESMainViewController *manViewController;
+@property (strong, nonatomic) ESShowCenterViewController *showCenterViewController;
 
 @end

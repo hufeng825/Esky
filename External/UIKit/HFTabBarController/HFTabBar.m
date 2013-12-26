@@ -9,7 +9,7 @@
 #import "HFTabBar.h"
 #import "FAThemeManager.h"
 
-#define kHFItemCount                    3
+#define kHFItemCount                    5
 #define kHFItemTagBegin                 1000
 
 @interface HFTabBar ()

@@ -76,6 +76,13 @@
 		966C7D9E186ABB9D00A1B04D /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 966C7D80186ABB9D00A1B04D /* 7.jpg */; };
 		966C7D9F186ABB9D00A1B04D /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 966C7D81186ABB9D00A1B04D /* 8.jpg */; };
 		966C7DA0186ABB9D00A1B04D /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 966C7D82186ABB9D00A1B04D /* 9.jpg */; };
+		966C7DA4186BD2B400A1B04D /* ESdisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C7DA3186BD2B400A1B04D /* ESdisplayLink.m */; };
+		966C7DA9186BF96500A1B04D /* ESShowCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C7DA7186BF96500A1B04D /* ESShowCenterViewController.m */; };
+		966C7DAA186BF96500A1B04D /* ESShowCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 966C7DA8186BF96500A1B04D /* ESShowCenterViewController.xib */; };
+		966C7DAE186C083D00A1B04D /* ESMenuTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C7DAD186C083D00A1B04D /* ESMenuTabBar.m */; };
+		966C7DB0186C086700A1B04D /* ESMenuTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 966C7DAF186C086700A1B04D /* ESMenuTabBar.xib */; };
+		966C7DB3186C0EEE00A1B04D /* ESMenuBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C7DB2186C0EEE00A1B04D /* ESMenuBarItem.m */; };
+		966C7DB5186C0F4400A1B04D /* ESMenuBarItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 966C7DB4186C0F4400A1B04D /* ESMenuBarItem.xib */; };
 		967342CB1867E8B900B9D399 /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 967342B51867E8B900B9D399 /* NSArray+Additions.m */; };
 		967342CC1867E8B900B9D399 /* NSDate+HFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 967342B81867E8B900B9D399 /* NSDate+HFExtension.m */; };
 		967342CD1867E8B900B9D399 /* NSDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 967342BB1867E8B900B9D399 /* NSDictionary+Safe.m */; };
@@ -327,6 +334,17 @@
 		966C7D80186ABB9D00A1B04D /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
 		966C7D81186ABB9D00A1B04D /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
 		966C7D82186ABB9D00A1B04D /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
+		966C7DA2186BD2B400A1B04D /* ESdisplayLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESdisplayLink.h; path = "EskyApp/View Controllers/HomeView/ESdisplayLink.h"; sourceTree = SOURCE_ROOT; };
+		966C7DA3186BD2B400A1B04D /* ESdisplayLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESdisplayLink.m; path = "EskyApp/View Controllers/HomeView/ESdisplayLink.m"; sourceTree = SOURCE_ROOT; };
+		966C7DA6186BF96500A1B04D /* ESShowCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESShowCenterViewController.h; path = ShowView/ESShowCenterViewController.h; sourceTree = "<group>"; };
+		966C7DA7186BF96500A1B04D /* ESShowCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESShowCenterViewController.m; path = ShowView/ESShowCenterViewController.m; sourceTree = "<group>"; };
+		966C7DA8186BF96500A1B04D /* ESShowCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESShowCenterViewController.xib; path = ShowView/ESShowCenterViewController.xib; sourceTree = "<group>"; };
+		966C7DAC186C083D00A1B04D /* ESMenuTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESMenuTabBar.h; path = ShowView/ShowTabBar/ESMenuTabBar.h; sourceTree = "<group>"; };
+		966C7DAD186C083D00A1B04D /* ESMenuTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESMenuTabBar.m; path = ShowView/ShowTabBar/ESMenuTabBar.m; sourceTree = "<group>"; };
+		966C7DAF186C086700A1B04D /* ESMenuTabBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESMenuTabBar.xib; path = ShowView/ShowTabBar/ESMenuTabBar.xib; sourceTree = "<group>"; };
+		966C7DB1186C0EEE00A1B04D /* ESMenuBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESMenuBarItem.h; path = ShowView/ShowTabBar/ESMenuBarItem.h; sourceTree = "<group>"; };
+		966C7DB2186C0EEE00A1B04D /* ESMenuBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESMenuBarItem.m; path = ShowView/ShowTabBar/ESMenuBarItem.m; sourceTree = "<group>"; };
+		966C7DB4186C0F4400A1B04D /* ESMenuBarItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESMenuBarItem.xib; path = ShowView/ShowTabBar/ESMenuBarItem.xib; sourceTree = "<group>"; };
 		967342B41867E8B900B9D399 /* NSArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Additions.h"; sourceTree = "<group>"; };
 		967342B51867E8B900B9D399 /* NSArray+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Additions.m"; sourceTree = "<group>"; };
 		967342B71867E8B900B9D399 /* NSDate+HFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HFExtension.h"; sourceTree = "<group>"; };
@@ -365,8 +383,8 @@
 		9673430218680F1900B9D399 /* UIViewController+SlidingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SlidingView.m"; sourceTree = "<group>"; };
 		9673430318680F1900B9D399 /* YASlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YASlidingViewController.h; sourceTree = "<group>"; };
 		9673430418680F1900B9D399 /* YASlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YASlidingViewController.m; sourceTree = "<group>"; };
-		96734308186811F400B9D399 /* HFTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTabBar.h; sourceTree = "<group>"; };
-		96734309186811F400B9D399 /* HFTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTabBar.m; sourceTree = "<group>"; };
+		96734308186811F400B9D399 /* HFTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HFTabBar.h; path = ../../External/UIKit/HFTabBarController/HFTabBar.h; sourceTree = "<group>"; };
+		96734309186811F400B9D399 /* HFTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HFTabBar.m; path = ../../External/UIKit/HFTabBarController/HFTabBar.m; sourceTree = "<group>"; };
 		9673430A186811F400B9D399 /* HFTabBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HFTabBar.xib; path = ../../External/UIKit/HFTabBarController/HFTabBar.xib; sourceTree = "<group>"; };
 		9673430B186811F400B9D399 /* HFTabBarControllerAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTabBarControllerAnimation.h; sourceTree = "<group>"; };
 		9673430C186811F400B9D399 /* HFTabBarControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTabBarControllerDelegate.h; sourceTree = "<group>"; };
@@ -817,6 +835,30 @@
 			path = photo;
 			sourceTree = "<group>";
 		};
+		966C7DA5186BF93000A1B04D /* ShowView */ = {
+			isa = PBXGroup;
+			children = (
+				966C7DAB186C07C600A1B04D /* ShowTabBar */,
+				966C7DA6186BF96500A1B04D /* ESShowCenterViewController.h */,
+				966C7DA7186BF96500A1B04D /* ESShowCenterViewController.m */,
+				966C7DA8186BF96500A1B04D /* ESShowCenterViewController.xib */,
+			);
+			name = ShowView;
+			sourceTree = "<group>";
+		};
+		966C7DAB186C07C600A1B04D /* ShowTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				966C7DAC186C083D00A1B04D /* ESMenuTabBar.h */,
+				966C7DAD186C083D00A1B04D /* ESMenuTabBar.m */,
+				966C7DAF186C086700A1B04D /* ESMenuTabBar.xib */,
+				966C7DB1186C0EEE00A1B04D /* ESMenuBarItem.h */,
+				966C7DB2186C0EEE00A1B04D /* ESMenuBarItem.m */,
+				966C7DB4186C0F4400A1B04D /* ESMenuBarItem.xib */,
+			);
+			name = ShowTabBar;
+			sourceTree = "<group>";
+		};
 		967342B21867E8B900B9D399 /* Addition */ = {
 			isa = PBXGroup;
 			children = (
@@ -928,6 +970,8 @@
 		967342E418680E3800B9D399 /* TabViewController */ = {
 			isa = PBXGroup;
 			children = (
+				96734308186811F400B9D399 /* HFTabBar.h */,
+				96734309186811F400B9D399 /* HFTabBar.m */,
 				9673430A186811F400B9D399 /* HFTabBar.xib */,
 			);
 			name = TabViewController;
@@ -1009,8 +1053,6 @@
 		96734307186811F400B9D399 /* HFTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				96734308186811F400B9D399 /* HFTabBar.h */,
-				96734309186811F400B9D399 /* HFTabBar.m */,
 				9673430B186811F400B9D399 /* HFTabBarControllerAnimation.h */,
 				9673430C186811F400B9D399 /* HFTabBarControllerDelegate.h */,
 				9673430D186811F400B9D399 /* HFTabBarItem.h */,
@@ -1339,6 +1381,7 @@
 		96B98B811845C81E002E8552 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				966C7DA5186BF93000A1B04D /* ShowView */,
 				967342E418680E3800B9D399 /* TabViewController */,
 				967342DE1868084200B9D399 /* LeftMenu */,
 				9645ED7C1856C416004643C9 /* ChoseModule */,
@@ -1355,6 +1398,8 @@
 				96B98B831845C81E002E8552 /* ESMainViewController.h */,
 				96B98B841845C81E002E8552 /* ESMainViewController.m */,
 				96B98B851845C81E002E8552 /* ESMainViewController.xib */,
+				966C7DA2186BD2B400A1B04D /* ESdisplayLink.h */,
+				966C7DA3186BD2B400A1B04D /* ESdisplayLink.m */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -1690,6 +1735,7 @@
 				96B98BD91845E58F002E8552 /* reset_mm@2x.png in Resources */,
 				966C7DA0186ABB9D00A1B04D /* 9.jpg in Resources */,
 				96C90CDB185F0204005C4ECB /* choosebg.png in Resources */,
+				966C7DAA186BF96500A1B04D /* ESShowCenterViewController.xib in Resources */,
 				966C7D5A186A84A400A1B04D /* setting.png in Resources */,
 				966C7D8C186ABB9D00A1B04D /* 17.jpg in Resources */,
 				966C7D8B186ABB9D00A1B04D /* 16.jpg in Resources */,
@@ -1710,6 +1756,7 @@
 				96B98BC91845E58F002E8552 /* bt_blue@2x.png in Resources */,
 				96B98BDC1845E58F002E8552 /* translate_bg@2x.png in Resources */,
 				966C7D96186ABB9D00A1B04D /* 26.jpg in Resources */,
+				966C7DB0186C086700A1B04D /* ESMenuTabBar.xib in Resources */,
 				966C7D98186ABB9D00A1B04D /* 28.jpg in Resources */,
 				966C7D4D18692F3E00A1B04D /* ShareSDKiPhoneDefaultShareViewUI.bundle in Resources */,
 				96C90CD4185EFB9D005C4ECB /* womanBt@2x.png in Resources */,
@@ -1726,6 +1773,7 @@
 				96B98BCF1845E58F002E8552 /* dialogue_bg.png in Resources */,
 				96C90CC8185EC1F4005C4ECB /* PEPhotoCropEditor.bundle in Resources */,
 				96B98B7E1845C700002E8552 /* woman in Resources */,
+				966C7DB5186C0F4400A1B04D /* ESMenuBarItem.xib in Resources */,
 				966C7D061868450300A1B04D /* show_normal@2x.png in Resources */,
 				966C7D031868450300A1B04D /* follow_normal@2x.png in Resources */,
 				96C90CD0185EFB9D005C4ECB /* manBt.png in Resources */,
@@ -1758,6 +1806,7 @@
 				96B98B481845C6B8002E8552 /* AFURLSessionManager.m in Sources */,
 				96B98B4D1845C6B8002E8552 /* UIImageView+AFNetworking.m in Sources */,
 				96C90C9D185814DF005C4ECB /* Reachability.m in Sources */,
+				966C7DB3186C0EEE00A1B04D /* ESMenuBarItem.m in Sources */,
 				96C90C96185814DF005C4ECB /* ASIDataCompressor.m in Sources */,
 				96B98B451845C6B8002E8552 /* AFURLConnectionOperation.m in Sources */,
 				96C90CC7185EC1F4005C4ECB /* PECropViewController.m in Sources */,
@@ -1778,6 +1827,7 @@
 				96B98B561845C6B8002E8552 /* JTDateMappings.m in Sources */,
 				96B98A8D1845C643002E8552 /* ESXibViewUtils.m in Sources */,
 				967342E818680ED300B9D399 /* NSData+MD5Digest.m in Sources */,
+				966C7DA9186BF96500A1B04D /* ESShowCenterViewController.m in Sources */,
 				96B98B501845C6B8002E8552 /* EGOCache.m in Sources */,
 				96B98A791845C643002E8552 /* ESUserInfo.m in Sources */,
 				96C90C9E185814DF005C4ECB /* ReachabilityAppDelegate.m in Sources */,
@@ -1791,6 +1841,7 @@
 				96B98B551845C6B8002E8552 /* JTDataMappings.m in Sources */,
 				96B98B4E1845C6B8002E8552 /* UIProgressView+AFNetworking.m in Sources */,
 				96C90CC6185EC1F4005C4ECB /* PECropView.m in Sources */,
+				966C7DA4186BD2B400A1B04D /* ESdisplayLink.m in Sources */,
 				967342FA18680EE900B9D399 /* FAInputView.m in Sources */,
 				96B98B611845C6B8002E8552 /* SSKeychain.m in Sources */,
 				96B98B4C1845C6B8002E8552 /* UIButton+AFNetworking.m in Sources */,
@@ -1835,6 +1886,7 @@
 				96B98B971845C81E002E8552 /* ESModifyPassWordViewController.m in Sources */,
 				96B98B591845C6B8002E8552 /* JTValidMappingKey.m in Sources */,
 				96C90CA2185814DF005C4ECB /* QiniuSimpleUploader.m in Sources */,
+				966C7DAE186C083D00A1B04D /* ESMenuTabBar.m in Sources */,
 				96C90C9A185814DF005C4ECB /* ASIHTTPRequest.m in Sources */,
 				96B98B401845C6B8002E8552 /* AFHTTPRequestOperation.m in Sources */,
 				96734312186811F400B9D399 /* HFTabBar.m in Sources */,

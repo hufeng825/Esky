@@ -17,7 +17,7 @@
 #import "FAThemeManager.h"
 #import "YASlidingViewController.h"
 
-#import "MSDynamicsDrawerViewController.h"
+//#import "MSDynamicsDrawerViewController.h"
 
 
 @implementation ESAppDelegate
@@ -62,7 +62,9 @@
     slidingViewController.topViewController = _tabViewController;
     
     self.manViewController = [[ESMainViewController alloc] initDrawerViewController:slidingViewController];
-    [self.tabViewController setSubViewControllers:@[_manViewController]];
+    self.showCenterViewController = [[ESShowCenterViewController alloc] initDrawerViewController:slidingViewController];
+    
+    [self.tabViewController setSubViewControllers:@[_manViewController,@"",@"",_showCenterViewController]];
     self.tabViewController.selectedIndex =0;
 
     
