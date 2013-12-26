@@ -76,7 +76,6 @@
 		966C7D9E186ABB9D00A1B04D /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 966C7D80186ABB9D00A1B04D /* 7.jpg */; };
 		966C7D9F186ABB9D00A1B04D /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 966C7D81186ABB9D00A1B04D /* 8.jpg */; };
 		966C7DA0186ABB9D00A1B04D /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 966C7D82186ABB9D00A1B04D /* 9.jpg */; };
-		966C7DA4186BD2B400A1B04D /* ESdisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C7DA3186BD2B400A1B04D /* ESdisplayLink.m */; };
 		966C7DA9186BF96500A1B04D /* ESShowCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C7DA7186BF96500A1B04D /* ESShowCenterViewController.m */; };
 		966C7DAA186BF96500A1B04D /* ESShowCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 966C7DA8186BF96500A1B04D /* ESShowCenterViewController.xib */; };
 		966C7DAE186C083D00A1B04D /* ESMenuTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C7DAD186C083D00A1B04D /* ESMenuTabBar.m */; };
@@ -334,8 +333,6 @@
 		966C7D80186ABB9D00A1B04D /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
 		966C7D81186ABB9D00A1B04D /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
 		966C7D82186ABB9D00A1B04D /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
-		966C7DA2186BD2B400A1B04D /* ESdisplayLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESdisplayLink.h; path = "EskyApp/View Controllers/HomeView/ESdisplayLink.h"; sourceTree = SOURCE_ROOT; };
-		966C7DA3186BD2B400A1B04D /* ESdisplayLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESdisplayLink.m; path = "EskyApp/View Controllers/HomeView/ESdisplayLink.m"; sourceTree = SOURCE_ROOT; };
 		966C7DA6186BF96500A1B04D /* ESShowCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESShowCenterViewController.h; path = ShowView/ESShowCenterViewController.h; sourceTree = "<group>"; };
 		966C7DA7186BF96500A1B04D /* ESShowCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESShowCenterViewController.m; path = ShowView/ESShowCenterViewController.m; sourceTree = "<group>"; };
 		966C7DA8186BF96500A1B04D /* ESShowCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESShowCenterViewController.xib; path = ShowView/ESShowCenterViewController.xib; sourceTree = "<group>"; };
@@ -1398,8 +1395,6 @@
 				96B98B831845C81E002E8552 /* ESMainViewController.h */,
 				96B98B841845C81E002E8552 /* ESMainViewController.m */,
 				96B98B851845C81E002E8552 /* ESMainViewController.xib */,
-				966C7DA2186BD2B400A1B04D /* ESdisplayLink.h */,
-				966C7DA3186BD2B400A1B04D /* ESdisplayLink.m */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -1841,7 +1836,6 @@
 				96B98B551845C6B8002E8552 /* JTDataMappings.m in Sources */,
 				96B98B4E1845C6B8002E8552 /* UIProgressView+AFNetworking.m in Sources */,
 				96C90CC6185EC1F4005C4ECB /* PECropView.m in Sources */,
-				966C7DA4186BD2B400A1B04D /* ESdisplayLink.m in Sources */,
 				967342FA18680EE900B9D399 /* FAInputView.m in Sources */,
 				96B98B611845C6B8002E8552 /* SSKeychain.m in Sources */,
 				96B98B4C1845C6B8002E8552 /* UIButton+AFNetworking.m in Sources */,

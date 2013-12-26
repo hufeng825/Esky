@@ -72,23 +72,24 @@
 
 - (void)doTouchUpInside {
     
-     self.isActive = !self.isActive;
+     self.isActive = YES;
 
     if (block)
     {
-        block(self.index,self.isActive);
+        block(self.tag,self.isActive);
     }
     
 }
 
 - (void)setIsActive:(BOOL)isActive
 {
+    NSLog(@"%d",self.tag);
     if (_isActive != isActive) {
         _isActive = isActive ;
         if (isActive) {
-            [self changeTextColor:RGBCOLOR(133, 133, 133)];
-        }else{
             [self changeTextColor:[UIColor whiteColor]];
+        }else{
+            [self changeTextColor:RGBCOLOR(133, 133, 133)];
         }
     }
 }

@@ -42,7 +42,7 @@
                     </items>
                 </navigationBar>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ul9-2C-OjB" customClass="ESMenuTabBar">
-                    <rect key="frame" x="0.0" y="108" width="320" height="103"/>
+                    <rect key="frame" x="0.0" y="108" width="320" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>

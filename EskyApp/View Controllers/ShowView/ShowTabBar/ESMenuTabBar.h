@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol  ESMenuTabBarDelegate;
+
 @interface ESMenuTabBar : UIView
+@property (nonatomic,assign) NSInteger currentSelectIndex;
+@property (nonatomic,weak) id <ESMenuTabBarDelegate> delegate;
+@end
+
+
+@protocol ESMenuTabBarDelegate <NSObject>
+
+-(void)itemClicked:(NSInteger)index;
 
 @end

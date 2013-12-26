@@ -16,7 +16,6 @@
 
 #import "UIViewController+SlidingView.h"
 
-#import "ESdisplayLink.h"
 
 #define ITEM_SPACING 265
 

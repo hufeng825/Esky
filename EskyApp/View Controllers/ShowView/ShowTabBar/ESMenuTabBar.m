@@ -7,13 +7,18 @@
 //
 
 #import "ESMenuTabBar.h"
+#import "ESMenuBarItem.h"
 
 
 @interface ESMenuTabBar ()
 
-@property (nonatomic, weak) UIView * customView;
-
+@property (nonatomic, weak)    UIView * customView;
+@property (nonatomic, strong)  UIView * activeBg;
+@property (nonatomic, assign)  NSInteger itemCount;
 @end
+
+#define kMenuItemTagBegin 200
+
 
 @implementation ESMenuTabBar
 
@@ -47,14 +52,99 @@
     }
 }
 
+- (void)addBg
+{
+    _itemCount = 0;
+    for (id view in [_customView subviews]) {
+        if ([view isKindOfClass:[ESMenuBarItem class] ]) {
+            _itemCount ++ ;
+            UIView *bgView = [[UIView alloc]initWithFrame:((UIView*)view).frame ];
+            [bgView setBackgroundColor:[UIColor whiteColor]];
+            [bgView setAlpha:.8];
+            [self insertSubview:bgView belowSubview:_customView];
+        }
+    }
+    [self insertSubview:self.activeBg belowSubview:_customView];
+}
+
+- (UIView *)activeBg
+{
+    if (!_activeBg) {
+        self.activeBg = [[UIView alloc]initWithFrame:CGRectZero];
+        _activeBg.backgroundColor = [UIColor redColor];
+        _activeBg.alpha = .8;
+    }
+    return _activeBg;
+}
 
 - (void)commonInit
 {
     self.customView = [self loadViewFromXibNamed:NSStringFromClass([self class]) withFileOwner:self];
     _customView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-    [self addSubview:_customView];
     [self setBackgroundColor:[UIColor clearColor]];
+    [self addSubview:_customView];
+    [self addBg];
+    [self addCallBack];
 }
+
+
+- (void)addCallBack
+{
+    for (NSInteger i = 0 ; i < _itemCount; i ++) {
+        __weak __typeof(self)weakSelf = self;
+        [self addCallBack:^(NSInteger tag,BOOL isActive)
+         {
+             [weakSelf deselectSelectedItemWithOut:tag];
+              CGRect rect =[weakSelf menuItem:tag-kMenuItemTagBegin ].frame;
+             [UIView transitionWithView:weakSelf.activeBg duration:.5 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                 [weakSelf.activeBg setFrame:rect];
+             } completion:nil];
+             if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(itemClicked:)])
+             {
+                 [weakSelf.delegate itemClicked:tag];
+             }
+         } index:i];
+    }
+}
+
+
+- (void)addCallBack:(ItemClickBlock)block index:(NSInteger)index
+{
+    ESMenuBarItem *item = [self menuItem: index];
+    item.block =block;
+}
+
+
+- (ESMenuBarItem *)menuItem:(NSInteger)index
+{
+    int i = index+kMenuItemTagBegin;
+    id view = [self.customView viewWithTag:i];
+    if ([view isKindOfClass:[ESMenuBarItem class] ]) {
+        return (ESMenuBarItem *)view;
+    }else{
+        NSAssert(NO, @"No index tag item ");
+        return nil;
+    }
+}
+
+
+- (void)selectItemAtIndex:(NSInteger)index
+{
+    self.currentSelectIndex = index ;
+    [[self menuItem:index] setIsActive:YES];
+};
+
+
+- (void)deselectSelectedItemWithOut:(NSInteger)tag
+{
+    for (NSInteger i = 0 ; i < _itemCount; i ++) {
+        ESMenuBarItem *item = [self menuItem: i];
+        if (item.tag != tag) {
+            item.isActive = NO ;
+        }
+    }
+};
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
