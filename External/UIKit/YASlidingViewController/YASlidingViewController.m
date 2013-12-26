@@ -365,7 +365,7 @@
     if (animated) {
         [UIView animateWithDuration:self.animationDuration
                               delay:self.animationDelay
-                            options:UIViewAnimationOptionCurveEaseInOut  | UIViewAnimationOptionBeginFromCurrentState
+                            options:UIViewAnimationOptionCurveEaseOut  | UIViewAnimationOptionBeginFromCurrentState
                          animations:^{
                              // Adjust the top background view frame
                              self.topBackgroundView.frame = CGRectIntegral(CGRectOffset(rect, self.peakAmount, 0.0f));
@@ -414,7 +414,7 @@
     if (animated) {
         [UIView animateWithDuration:self.animationDuration
                               delay:self.animationDelay
-                            options:UIViewAnimationOptionCurveEaseInOut  | UIViewAnimationOptionBeginFromCurrentState
+                            options:UIViewAnimationOptionCurveEaseOut  | UIViewAnimationOptionBeginFromCurrentState
                          animations:^{
                              // Adjust the top background view frame
                              self.topBackgroundView.frame = CGRectIntegral(rect);
@@ -503,7 +503,7 @@
         
         [UIView animateWithDuration:0.01f
                               delay:0.0f
-                            options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionBeginFromCurrentState
+                            options:UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionBeginFromCurrentState
                          animations:^{
                              gestureRecognizer.view.center = CGPointMake(gestureRecognizer.view.center.x + translation.x, gestureRecognizer.view.center.y);
                              

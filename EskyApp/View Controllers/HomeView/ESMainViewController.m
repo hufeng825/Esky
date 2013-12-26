@@ -16,9 +16,8 @@
 
 #import "UIViewController+SlidingView.h"
 
-#import "iCarousel.h"
 
-#define ITEM_SPACING 255
+#define ITEM_SPACING 270
 
 
 @interface ESMainViewController ()
@@ -42,19 +41,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    carousel.type = iCarouselTypeCoverFlow;
+    carousel.type = iCarouselTypeCylinder;
 //    CGSize offset = CGSizeMake(0.0f,0);
 //    carousel.contentOffset = offset;
     carousel.scrollSpeed = 0.25;
     [carousel reloadData];
-    carousel.backgroundColor = [UIColor grayColor];
+//    carousel.backgroundColor = [UIColor grayColor];
+    [carousel scrollByNumberOfItems:5 duration:1];
 
 }
 
+#pragma mark -
 
 - (IBAction)dynamicsDrawerRevealLeftBarButtonItemTapped:(id)sender
 {
     [self.dynamicsDrawerViewController toggleLeftAnimated:YES];
+}
+
+
+
+- (IBAction)switchCarouselType
+{
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"选择类型" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"直线", @"圆圈", @"反向圆圈", @"圆桶", @"反向圆桶", @"封面展示", @"封面展示2", @"纸牌", nil];
+    [sheet showInView:self.view];
+   
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    for (UIView *view in carousel.visibleItemViews)
+    {
+        view.alpha = 1.0;
+    }
+    
+    [UIView beginAnimations:nil context:nil];
+    carousel.type = buttonIndex;
+    [UIView commitAnimations];
+    
 }
 
 
@@ -68,7 +91,7 @@
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index
 {
     UIView *view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",index]]];
-    view.frame = CGRectMake(0, 100, 265, 425);
+    view.frame = CGRectMake(0, 0, 265, 425);
     return view;
 }
 

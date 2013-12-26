@@ -38,8 +38,9 @@ iCarouselType;
 @interface iCarousel : UIView
 #ifdef __i386__
 {
-    id<iCarouselDelegate> delegate;
-    id<iCarouselDataSource> dataSource;
+//    id<iCarouselDelegate> delegate;
+//    id<iCarouselDataSource> dataSource;
+
     iCarouselType type;
     CGFloat perspective;
     NSInteger numberOfItems;
@@ -53,7 +54,6 @@ iCarouselType;
     CGFloat scrollOffset;
     CGFloat offsetMultiplier;
     CGFloat startVelocity;
-    id timer;
     BOOL decelerating;
     BOOL scrollEnabled;
     CGFloat decelerationRate;
@@ -79,8 +79,10 @@ iCarouselType;
 }
 #endif
 
-@property (nonatomic, assign) IBOutlet id<iCarouselDataSource> dataSource;
-@property (nonatomic, assign) IBOutlet id<iCarouselDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id<iCarouselDataSource> dataSource;
+@property (nonatomic, weak) IBOutlet id<iCarouselDelegate> delegate;
+//@property (nonatomic, weak) id timer;
+
 @property (nonatomic, assign) iCarouselType type;
 @property (nonatomic, assign) CGFloat perspective;
 @property (nonatomic, assign) CGFloat decelerationRate;

@@ -21,7 +21,7 @@
 @interface iCarousel ()
 
 @property (nonatomic, strong) UIView *contentView;
-@property (nonatomic, retain) NSDictionary *itemViews;
+@property (nonatomic, strong) NSDictionary *itemViews;
 @property (nonatomic, assign) NSInteger previousItemIndex;
 @property (nonatomic, assign) NSInteger numberOfPlaceholdersToShow;
 @property (nonatomic, assign) NSInteger numberOfVisibleItems;
@@ -34,7 +34,7 @@
 @property (nonatomic, assign) BOOL scrolling;
 @property (nonatomic, assign) NSTimeInterval startTime;
 @property (nonatomic, assign) CGFloat startVelocity;
-@property (nonatomic, assign) id timer;
+@property (nonatomic, strong) id timer;
 @property (nonatomic, assign) BOOL decelerating;
 @property (nonatomic, assign) CGFloat previousTranslation;
 @property (nonatomic, assign) BOOL shouldWrap;
@@ -1080,19 +1080,19 @@ NSInteger compareViewDepth(id obj1, id obj2, void *context)
     if (!timer)
     {
         
-#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
-        
-        timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(step)];
-        [timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
-        
-#else
+//#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+//        
+//        self.timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(step)];
+//        [timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+//        
+//#else
         
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f/60.0f
                                                       target:self
                                                     selector:@selector(step)
                                                     userInfo:nil
                                                      repeats:YES];
-#endif
+//#endif
         
     }
 }

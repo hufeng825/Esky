@@ -37,6 +37,11 @@
                                     </connections>
                                 </button>
                             </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" title="Style" id="7VC-jH-pOp">
+                                <connections>
+                                    <action selector="switchCarouselType" destination="-1" id="fUz-AF-XUI"/>
+                                </connections>
+                            </barButtonItem>
                         </navigationItem>
                     </items>
                 </navigationBar>
