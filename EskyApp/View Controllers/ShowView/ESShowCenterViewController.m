@@ -8,7 +8,6 @@
 
 #import "ESShowCenterViewController.h"
 
-#import "ESMenuTabBar.h"
 
 @interface ESShowCenterViewController ()
 @property (weak, nonatomic) IBOutlet ESMenuTabBar *test;
@@ -34,12 +33,17 @@
 }
 
 
+-(void)itemClicked:(NSInteger)index
+{
+    NSLog(@"%d",index);
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 //    [_test  setTextWithTitleStr:@"胡峰呢个" titleEnglistStr:@"dd"];
+    _test.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning

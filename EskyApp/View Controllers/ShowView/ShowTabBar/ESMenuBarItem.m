@@ -66,8 +66,6 @@
     self.tap.numberOfTouchesRequired = 1;
     self.tap.numberOfTapsRequired = 1;
     [self addGestureRecognizer:self.tap];
-
-    
 }
 
 - (void)doTouchUpInside {

@@ -102,6 +102,14 @@
 
 }
 
+- (void)tabBarController:(HFTabBarViewController *)tabBarController
+    selectViewController:(UIViewController *)viewController
+                 atIndex:(HFTabBarIndex *)index
+{
+    if (index.toIndex != 0) {
+//        _manViewController 
+    }
+}
 
 - (void)initializePlat {
     /**
@@ -152,9 +160,6 @@
     [ShareSDK connectQQWithQZoneAppKey:@"100371282"
                      qqApiInterfaceCls:[QQApiInterface class]
                        tencentOAuthCls:[TencentOAuth class]];
-
-
-
 
     //连接邮件
     [ShareSDK connectMail];

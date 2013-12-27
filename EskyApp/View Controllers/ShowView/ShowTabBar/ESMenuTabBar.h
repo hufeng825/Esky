@@ -13,11 +13,14 @@
 @interface ESMenuTabBar : UIView
 @property (nonatomic,assign) NSInteger currentSelectIndex;
 @property (nonatomic,weak) id <ESMenuTabBarDelegate> delegate;
+- (void)selectMenuItemAtIndex:(NSInteger)index;
+
 @end
 
 
 @protocol ESMenuTabBarDelegate <NSObject>
 
 -(void)itemClicked:(NSInteger)index;
+
 
 @end
