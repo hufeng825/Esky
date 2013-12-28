@@ -80,7 +80,7 @@
     {
         [[self nextResponder]touchesBegan:touches withEvent:event];
     }
-        [self timerInvalidate];
+    [self timerInvalidate];
     [super touchesBegan:touches withEvent:event];
     NSLog(@"MyScrollView touch Began");
 }
@@ -210,7 +210,7 @@
 
 - (NSUInteger)numberOfVisibleItemsInCarousel:(iCarousel *)carousel
 {
-    return 30;
+    return 5;
 }
 
 - (CGFloat)carouselItemWidth:(iCarousel *)carousel

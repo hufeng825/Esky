@@ -524,7 +524,6 @@
     }
     else if (gestureRecognizer.state == UIGestureRecognizerStateEnded && self.viewState == SlidingViewStateDragging) {
         CGPoint velocity = [gestureRecognizer velocityInView:self.view];
-        NSLog(@"%f #  %f----%f",startingPoint.x-velocity.x,gestureRecognizer.view.frame.origin.x,_peakAmount*self.peakThreshold);
         //---->
         if (startingPoint.x-velocity.x < 0 ) {
                 [self showLeftAnimated:YES];
