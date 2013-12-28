@@ -71,8 +71,7 @@
 {
     if (!_activeBg) {
         self.activeBg = [[UIView alloc]initWithFrame:CGRectZero];
-        _activeBg.backgroundColor = [UIColor redColor];
-        _activeBg.alpha = .8;
+        _activeBg.backgroundColor = RGBACOLOR(207, 23, 37,0.8);
     }
     return _activeBg;
 }
@@ -85,6 +84,7 @@
     [self addSubview:_customView];
     [self addBg];
     [self addCallBack];
+    [self selectMenuItemAtIndex:0];
 }
 
 
@@ -96,9 +96,12 @@
          {
              [weakSelf deselectSelectedItemWithOut:tag];
               CGRect rect =[weakSelf menuItem:tag-kMenuItemTagBegin ].frame;
-             [UIView transitionWithView:weakSelf.activeBg duration:.5 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+             [UIView transitionWithView:weakSelf.activeBg duration:.2 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
                  [weakSelf.activeBg setFrame:rect];
-             } completion:nil];
+             } completion:^(BOOL finished) {
+                 if (finished) {
+                 }
+             }];
              if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(itemClicked:)])
              {
                  [weakSelf.delegate itemClicked:tag];
@@ -128,10 +131,23 @@
 }
 
 
-- (void)selectItemAtIndex:(NSInteger)index
+- (void)selectMenuItemAtIndex:(NSInteger)index
 {
     self.currentSelectIndex = index ;
     [[self menuItem:index] setIsActive:YES];
+    [self deselectSelectedItemWithOut:(index+kMenuItemTagBegin)];
+    CGRect rect =[self menuItem:index ].frame;
+    [UIView transitionWithView:self.activeBg duration:.3 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        [self.activeBg setFrame:rect];
+    } completion:^(BOOL finished) {
+        if (finished) {
+        }
+    }];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(itemClicked:)])
+    {
+        [self.delegate itemClicked:index];
+    }
+    
 };
 
 

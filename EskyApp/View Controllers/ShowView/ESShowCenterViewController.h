@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "YASlidingViewController.h"
 #import "ESBaseViewController.h"
+#import "ESMenuTabBar.h"
 
-@interface ESShowCenterViewController :ESBaseViewController
+@interface ESShowCenterViewController :ESBaseViewController<ESMenuTabBarDelegate>
 
 @property (nonatomic, weak) YASlidingViewController *dynamicsDrawerViewController;
 

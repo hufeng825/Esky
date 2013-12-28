@@ -17,13 +17,14 @@
 #import "UIViewController+SlidingView.h"
 
 
-#define ITEM_SPACING 265
-
+#define kITEM_SPACING 265
+#define kTimeInterval 1.5
 
 @interface ESMainViewController ()
 @property (weak, nonatomic) IBOutlet UIWebImageView *testimg;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
+@property (strong, nonatomic) NSTimer *timer;
 @end
 
 @implementation ESMainViewController
@@ -46,10 +47,30 @@
 //    carousel.contentOffset = offset;
     carousel.scrollSpeed = 0.28;
     [carousel reloadData];
-    
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3.5 target:self selector:@selector(step) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+}
 
+/*为了节省资源 跳到其他页面 需要将timer 暂停*/
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self timerStart];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self timerInvalidate];
+}
+
+- (void)timerStart
+{
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:kTimeInterval target:self selector:@selector(step) userInfo:nil repeats:YES];
+//    [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
+}
+
+- (void)timerInvalidate
+{
+    [self.timer invalidate];
 }
 
 
@@ -59,16 +80,32 @@
     {
         [[self nextResponder]touchesBegan:touches withEvent:event];
     }
+        [self timerInvalidate];
     [super touchesBegan:touches withEvent:event];
-    //NSLog(@"MyScrollView touch Began");
+    NSLog(@"MyScrollView touch Began");
 }
-   
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"MyScrollView touch cancle");
+    if(!carousel.dragging)
+    {
+        [[self nextResponder]touchesBegan:touches withEvent:event];
+    }else {
+        [self timerStart];
+    }
+    [super touchesCancelled:touches withEvent:event];
+}
+
+
 - (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
 {
+    NSLog(@"MyScrollView touch end");
     if(!carousel.dragging)
     {
         [[self nextResponder] touchesEnded:touches withEvent:event];
     }
+        [self timerStart];
     [super touchesEnded:touches withEvent:event];
 }
 
@@ -118,12 +155,10 @@
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
-//- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index
 {
-//    UIView *view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",index]]];
     if (view == nil)
     {
-        view = [[UIImageView alloc]initWithFrame:CGRectMake(0, 200, ITEM_SPACING, 425)];
+        view = [[UIImageView alloc]initWithFrame:CGRectMake(0, 200, kITEM_SPACING, 425)];
     }
     ((UIImageView *)view).image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",index]];
     return view;
@@ -180,7 +215,7 @@
 
 - (CGFloat)carouselItemWidth:(iCarousel *)carousel
 {
-    return ITEM_SPACING;
+    return kITEM_SPACING;
 }
 
 
