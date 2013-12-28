@@ -87,6 +87,16 @@
  *设置statubar
  *------------------------------------------*/
 
+- (void)changeStatusBackground {
+    if(IOSVersion > 6.0) {
+    UIView *fixbar = [[UIView alloc] init];
+    fixbar.frame = CGRectMake(0, 0, 320, 20);
+    fixbar.backgroundColor = [UIColor blackColor]; // the default color of iOS7 bacground or any color suits your design
+    [self.view addSubview:fixbar];
+    }
+}
+
+
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
@@ -95,9 +105,13 @@
     return NO;
 }
 
+
 - (void)viewDidLoad {
     [self themeChanged];
     [super viewDidLoad];
+    
+    [self changeStatusBackground];
+
     // Do any additional setup after loading the view from its nib.
 }
 

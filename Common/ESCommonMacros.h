@@ -65,7 +65,7 @@ objectForKey:@"AppleLanguages"]                                    \
 objectAtIndex : 0];
 
 // ios版本
-#define IOSVersion              [[[UIDevice currentDevice] systemVersion] floatValue];
+#define IOSVersion          [[[UIDevice currentDevice] systemVersion] floatValue]
 
 #define NEW(CLASS_NAME)  [[CLASS_NAME alloc]init]
 
