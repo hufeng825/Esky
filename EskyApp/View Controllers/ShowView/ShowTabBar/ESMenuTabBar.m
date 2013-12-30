@@ -104,7 +104,7 @@
              }];
              if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(itemClicked:)])
              {
-                 [weakSelf.delegate itemClicked:tag];
+                 [weakSelf.delegate itemClicked:tag-kMenuItemTagBegin];
              }
          } index:i];
     }
@@ -115,6 +115,16 @@
 {
     ESMenuBarItem *item = [self menuItem: index];
     item.block =block;
+}
+
+- (void)initItemsTitles:(NSArray *)array
+{
+    for (int i=0 ;i< [array count];i++) {
+        @autoreleasepool {
+            NSDictionary *dict = [array objectAtIndex:i];
+            [ [self menuItem:i] setTextWithTitleStr:[dict stringForKey:@"Title"]  titleEnglistStr:[dict stringForKey:@"EnglishTitle"]];
+        }
+    }
 }
 
 

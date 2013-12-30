@@ -10,9 +10,11 @@
 
 
 @interface ESPictureItem ()
-
 @property (nonatomic, weak) UIView * customView;
-
+@property (nonatomic, weak) UIView * typeBg;
+@property (nonatomic, weak) UILabel * typeLabel;
+@property (nonatomic, weak) UIImageView *imageView;
+@property (nonatomic, weak) UILabel * pageView;
 @end
 
 @implementation ESPictureItem
@@ -57,7 +59,25 @@
     [self setBackgroundColor:[UIColor clearColor]];
 }
 
+- (UIImageView *)imageView
+{
+    return (UIImageView *)[self.customView viewWithTag:100];
+}
 
+- (UIView *)typeBg
+{
+    return [self.customView viewWithTag:101];
+}
+
+- (UILabel *)typeLabel
+{
+    return (UILabel *)[self.customView viewWithTag:102];
+}
+
+- (UILabel *)pageViewLabel
+{
+    return (UILabel *)[self.customView viewWithTag:103];
+}
 
 
 @end

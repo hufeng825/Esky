@@ -13,7 +13,9 @@
 @interface ESMenuTabBar : UIView
 @property (nonatomic,assign) NSInteger currentSelectIndex;
 @property (nonatomic,weak) id <ESMenuTabBarDelegate> delegate;
+
 - (void)selectMenuItemAtIndex:(NSInteger)index;
+- (void)initItemsTitles:(NSArray *)array;
 
 @end
 

@@ -39,12 +39,19 @@
 -(void)itemClicked:(NSInteger)index
 {
     NSLog(@"%d",index);
+    [_scrollView setContentOffset:CGPointMake(index*_scrollView.width, 0) animated:YES];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     _test.delegate = self;
+    
+    [_test  initItemsTitles:@[
+      @{@"Title":@"最新", @"EnglishTitle":@"SHOW TIME"},
+      @{@"Title":@"达人", @"EnglishTitle":@"SHOW"},
+      @{@"Title":@"点评", @"EnglishTitle":@"FASHION"},
+    ]];
     
     for (int i=0; i<3; i++) {
         UIView *vc = [[UIView alloc]initWithFrame:CGRectMake(i*_scrollView.width, 0, _scrollView.width, _scrollView.height)];

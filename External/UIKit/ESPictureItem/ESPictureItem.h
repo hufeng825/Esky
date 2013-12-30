@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, PictureStyle){
+    ProfessorPictureStyle  = 0,
+    ActivePictureStyle  = 1 ,
+    NormalPictureStyle = 2
+    };
+
 @interface ESPictureItem : UIView
 
 @end

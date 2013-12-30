@@ -18,7 +18,7 @@
 
 
 #define kITEM_SPACING 265
-#define kTimeInterval 2.5
+#define kTimeInterval 2
 
 @interface ESMainViewController ()
 @property (weak, nonatomic) IBOutlet UIWebImageView *testimg;
@@ -77,7 +77,7 @@
 
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
-    NSLog(@"MyScrollView touch Began");
+    NSLog(@"MyScrollView touch Began %d",carousel.dragging);
     if(!carousel.dragging)
     {
         [[self nextResponder]touchesBegan:touches withEvent:event];
@@ -106,7 +106,7 @@
     {
         [[self nextResponder] touchesEnded:touches withEvent:event];
     }
-        [self timerStart];
+    [self timerStart];
     [super touchesEnded:touches withEvent:event];
 }
 
