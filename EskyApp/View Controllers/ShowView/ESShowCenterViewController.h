@@ -10,6 +10,8 @@
 #import "YASlidingViewController.h"
 #import "ESBaseViewController.h"
 #import "ESMenuTabBar.h"
+#import "ESPictureItem.h"
+
 
 @interface ESShowCenterViewController :ESBaseViewController<ESMenuTabBarDelegate>
 

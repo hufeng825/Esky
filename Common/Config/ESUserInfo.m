@@ -13,7 +13,6 @@
 
 - (id)initWithDictionary:(NSDictionary *)info {
     self = [super init];
-
     if (self) {
         @autoreleasepool {
             self.gender = [info stringForKey:@"gender"];

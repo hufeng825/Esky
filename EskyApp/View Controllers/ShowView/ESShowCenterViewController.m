@@ -10,6 +10,8 @@
 
 
 @interface ESShowCenterViewController ()
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet ESMenuTabBar *test;
 
 @end
@@ -33,6 +35,7 @@
 }
 
 
+#pragma mark - itemDelegate
 -(void)itemClicked:(NSInteger)index
 {
     NSLog(@"%d",index);
@@ -41,10 +44,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-//    [_test  setTextWithTitleStr:@"胡峰呢个" titleEnglistStr:@"dd"];
     _test.delegate = self;
+    
+    for (int i=0; i<3; i++) {
+        UIView *vc = [[UIView alloc]initWithFrame:CGRectMake(i*_scrollView.width, 0, _scrollView.width, _scrollView.height)];
+        vc.backgroundColor = RGB(rand()%255, rand()%255, rand()%255);
+        [_scrollView addSubview:vc];
+    }
+    
+    [_scrollView setContentSize:CGSizeMake(_scrollView.width*3, _scrollView.height)];
+
+
 }
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    CGFloat pageWidth = scrollView.frame.size.width;
+    int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    [_test selectMenuItemAtIndex:page];
+}
+
+
+
 
 - (void)didReceiveMemoryWarning
 {

@@ -18,7 +18,7 @@
 
 
 #define kITEM_SPACING 265
-#define kTimeInterval 1.5
+#define kTimeInterval 2.5
 
 @interface ESMainViewController ()
 @property (weak, nonatomic) IBOutlet UIWebImageView *testimg;
@@ -45,8 +45,9 @@
     carousel.type = iCarouselTypeRotary;
 //    CGSize offset = CGSizeMake(0.0f,100);
 //    carousel.contentOffset = offset;
-    carousel.scrollSpeed = 0.28;
+    carousel.scrollSpeed = 0.18;
     [carousel reloadData];
+    carousel.pagingEnabled = YES;
 }
 
 /*为了节省资源 跳到其他页面 需要将timer 暂停*/
@@ -76,13 +77,13 @@
 
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
+    NSLog(@"MyScrollView touch Began");
     if(!carousel.dragging)
     {
         [[self nextResponder]touchesBegan:touches withEvent:event];
     }
     [self timerInvalidate];
     [super touchesBegan:touches withEvent:event];
-    NSLog(@"MyScrollView touch Began");
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
@@ -158,7 +159,7 @@
 {
     if (view == nil)
     {
-        view = [[UIImageView alloc]initWithFrame:CGRectMake(0, 200, kITEM_SPACING, 425)];
+        view = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kITEM_SPACING, 425)];
     }
     ((UIImageView *)view).image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",index]];
     return view;

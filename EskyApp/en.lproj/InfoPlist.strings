@@ -1,2 +1,2 @@
 /* Localized versions of Info.plist keys */
-
+NSPhotoLibraryUsageDescription = "您拒绝后无法添加头像哦";

@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ESShowCenterViewController">
             <connections>
+                <outlet property="scrollView" destination="o2k-9g-F9e" id="OcG-Rh-6E5"/>
                 <outlet property="test" destination="ul9-2C-OjB" id="UCR-Jv-DYF"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -42,14 +43,21 @@
                     </items>
                 </navigationBar>
                 <view contentMode="scaleToFill" id="ul9-2C-OjB" customClass="ESMenuTabBar">
-                    <rect key="frame" x="0.0" y="64" width="320" height="42"/>
+                    <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" id="o2k-9g-F9e">
+                    <rect key="frame" x="5" y="111" width="310" height="452"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="5f6-Ps-yKC"/>
+                    </connections>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
     <resources>
