@@ -16,4 +16,10 @@ typedef NS_ENUM(NSInteger, PictureStyle){
 
 @interface ESPictureItem : UIView
 
+@property (assign, nonatomic) PictureStyle style;
+
+- (void) setPageviewCount:(NSString *)str;
+
+- (void) setStyle:(PictureStyle)style;
+
 @end

@@ -59,6 +59,32 @@
     [self setBackgroundColor:[UIColor clearColor]];
 }
 
+- (void) setStyle:(PictureStyle)style
+{
+    switch (style) {
+        case ProfessorPictureStyle:
+            [self showStyle:YES];
+            [[self typeLabel] setText:@"专家点评" ];
+            break;
+        case ActivePictureStyle:
+            [self showStyle:YES];
+            [[self typeLabel] setText:@"活动" ];
+            break;
+        case NormalPictureStyle:
+            [self showStyle:NO];
+            break;
+
+        default:
+            break;
+    }
+}
+
+
+- (void) setPageviewCount:(NSString *)str
+{
+    [[self pageViewLabel] setText:str ];
+}
+
 - (UIImageView *)imageView
 {
     return (UIImageView *)[self.customView viewWithTag:100];
@@ -77,6 +103,12 @@
 - (UILabel *)pageViewLabel
 {
     return (UILabel *)[self.customView viewWithTag:103];
+}
+
+- (void) showStyle:(BOOL)isYes
+{
+    [[self typeBg] setHidden:!isYes];
+    [[self typeLabel]setHidden:!isYes];
 }
 
 

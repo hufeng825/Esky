@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="scrollView" destination="o2k-9g-F9e" id="OcG-Rh-6E5"/>
                 <outlet property="test" destination="ul9-2C-OjB" id="UCR-Jv-DYF"/>
+                <outlet property="test1" destination="vd7-vC-qd4" id="mxN-zL-9kQ"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>

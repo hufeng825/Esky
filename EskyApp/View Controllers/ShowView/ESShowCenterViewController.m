@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet ESMenuTabBar *test;
 
+@property (weak, nonatomic) IBOutlet ESPictureItem *test1;
+
 @end
 
 @implementation ESShowCenterViewController
@@ -61,7 +63,7 @@
     
     [_scrollView setContentSize:CGSizeMake(_scrollView.width*3, _scrollView.height)];
 
-
+    [_test1 setStyle:NormalPictureStyle];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
