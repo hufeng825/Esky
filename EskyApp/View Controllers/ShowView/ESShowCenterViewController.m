@@ -7,7 +7,7 @@
 //
 
 #import "ESShowCenterViewController.h"
-
+#import "ESTalentPictureItem.h"
 
 @interface ESShowCenterViewController ()
 
@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet ESMenuTabBar *test;
 
 @property (weak, nonatomic) IBOutlet ESPictureItem *test1;
+@property (weak, nonatomic) IBOutlet ESTalentPictureItem *test2;
 
 @end
 
@@ -64,6 +65,11 @@
     [_scrollView setContentSize:CGSizeMake(_scrollView.width*3, _scrollView.height)];
 
     [_test1 setStyle:NormalPictureStyle];
+    
+    _test2.block =^{
+        NSLog(@"yui");
+    };
+    
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView

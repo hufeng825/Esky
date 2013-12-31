@@ -9,6 +9,7 @@
                 <outlet property="scrollView" destination="o2k-9g-F9e" id="OcG-Rh-6E5"/>
                 <outlet property="test" destination="ul9-2C-OjB" id="UCR-Jv-DYF"/>
                 <outlet property="test1" destination="vd7-vC-qd4" id="mxN-zL-9kQ"/>
+                <outlet property="test2" destination="SFv-g7-koA" id="yry-ss-mr4"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -56,12 +57,12 @@
                     </connections>
                 </scrollView>
                 <view contentMode="scaleToFill" id="vd7-vC-qd4" customClass="ESPictureItem">
-                    <rect key="frame" x="6" y="265" width="147" height="211"/>
+                    <rect key="frame" x="6" y="265" width="147" height="210.5"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </view>
-                <view contentMode="scaleToFill" id="SFv-g7-koA" customClass="ESPictureItem">
+                <view contentMode="scaleToFill" id="SFv-g7-koA" customClass="ESTalentPictureItem">
                     <rect key="frame" x="167" y="265" width="147" height="211"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

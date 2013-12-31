@@ -37,12 +37,16 @@
     self.layer.masksToBounds =YES;
     self.layer.cornerRadius = self.frame.size.width / 2;
     self.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.layer.borderWidth =3.0f;
+    if (self.width >30) {
+        self.layer.borderWidth = 3.0f;
+    }else{
+        self.layer.borderWidth = .8f;
+    }
     self.layer.rasterizationScale = [UIScreen mainScreen].scale;
     self.layer.shouldRasterize =YES;
     self.clipsToBounds = YES;
 
-    
+    self.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"icon_head" ofType:@"png"]];
 //    self.layer.backgroundColor = (__bridge CGColorRef)([UIColor clearColor]);
 //    self.layer.shadowColor = [UIColor blackColor].CGColor;
 //    self.layer.shadowOffset = CGSizeMake(5,15);
@@ -62,13 +66,5 @@
     return _singleTap;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end
