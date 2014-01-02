@@ -12,12 +12,20 @@
 
 typedef void (^TalentClickCallBack)();
 
+typedef NS_ENUM(BOOL,Gende){
+    ManGende  = YES,
+    WOMANGende  = NO 
+};
+
+
 @interface ESTalentPictureItem : UIImageView
 
-@property(nonatomic,copy) TalentClickCallBack block;
+@property (nonatomic, copy) TalentClickCallBack block;
+@property (nonatomic, assign) Gende gende;
 
 - (void)setHeaderIcon:(NSString *)url;
 - (void)setTalentName:(NSString *)name;
+- (void)setGende:(Gende)gende;
 
 
 @end

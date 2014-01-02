@@ -68,7 +68,46 @@
     
     _test2.block =^{
         NSLog(@"yui");
+        [self buttonClicked:_test2];
     };
+    
+}
+
+- (IBAction)buttonClicked:(id)sender {
+    UIView *senderView = (UIView*)sender;
+    if (![senderView isKindOfClass:[UIView class]])
+        return;
+    
+    UIView *icon =sender;
+    
+    //move along the path
+    UIBezierPath *movePath = [UIBezierPath bezierPath];
+    [movePath moveToPoint:icon.center];
+    NSLog(@"%f %f",[senderView convertPoint:icon.center fromView:self.view].x,[senderView convertPoint:icon.center fromView:self.view].y);
+    [movePath addQuadCurveToPoint:[senderView convertPoint:icon.center toView:self.view]
+                     controlPoint:CGPointMake([senderView convertPoint:icon.center fromView:self.view].x ,0)];
+    
+    CAKeyframeAnimation *moveAnim = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    moveAnim.path = movePath.CGPath;
+    moveAnim.removedOnCompletion = NO;
+    
+    
+    //Scale Animation
+    CABasicAnimation *scaleAnim = [CABasicAnimation animationWithKeyPath:@"transform"];
+    scaleAnim.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+    scaleAnim.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(1,1, 1)];
+    scaleAnim.removedOnCompletion = YES;
+    
+    
+
+    
+    
+    CAAnimationGroup *animGroup = [CAAnimationGroup animation];
+    animGroup.animations = [NSArray arrayWithObjects:moveAnim, scaleAnim, nil];
+    animGroup.duration = 1.0;
+    [icon.layer addAnimation:animGroup forKey:nil];
+    
+    // create timer with time of animation to change the image.
     
 }
 

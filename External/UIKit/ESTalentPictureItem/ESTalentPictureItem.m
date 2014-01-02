@@ -7,22 +7,30 @@
 //
 
 #import "ESTalentPictureItem.h"
+#import "FAThemeManager.h"
+
+
 
 #define blurGgHight 35
 #define headWith 30
-#define spaceWith 10
+#define spaceWith 5
 
 @interface ESTalentPictureItem ()
 @property (nonatomic ,strong) UIView  *blurBg;
 @property (nonatomic ,strong) UILabel *nameLabel;
+@property (nonatomic ,strong) UIImageView *gendeView;
 @property (nonatomic ,strong) ESHeaderIconImageView *talentHeadIcon;
 @property (nonatomic ,strong) UITapGestureRecognizer *singleTap ;
 
 @end
 
 @implementation ESTalentPictureItem
-@synthesize talentHeadIcon,nameLabel,block;
+@synthesize talentHeadIcon,nameLabel,gendeView,block,gende;
 
+- (void)themeChanged
+{
+    [self setGende:self.gende];
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -52,8 +60,10 @@
     [self addSubview:_blurBg];
     [self addSubview:self.talentHeadIcon];
     [self addSubview:self.nameLabel];
-    
-    [self setTalentName:@"文字超出限制显示省略号"];
+    [self addSubview:self.gendeView];
+    [self setTalentName:@"文字超"];
+    [self setGende:ManGende];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(themeChanged) name:kThemeChangedNotification object:nil];
 }
 
 - (ESHeaderIconImageView *)talentHeadIcon
@@ -73,12 +83,13 @@
 {
     if (TTIsStringWithAnyText(name)) {
         [self nameLabel].text = name;
-        CGSize maximumLabelSize = CGSizeMake(90, blurGgHight);
+        CGSize maximumLabelSize = CGSizeMake(65, blurGgHight);
         CGSize expectedSize = [self.nameLabel sizeThatFits:maximumLabelSize];
         [
           [self nameLabel] setWidth:
              (maximumLabelSize.width > expectedSize.width ? expectedSize.width :  maximumLabelSize.width)
          ];
+        [self updateGendeViewCoord];
     }
 }
 
@@ -111,19 +122,40 @@
 }
 
 
-- (UILabel *)nameLabel
+- (UILabel *) nameLabel
 {
     if (!nameLabel) {
         nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(talentHeadIcon.frame.origin.x+talentHeadIcon.width+spaceWith,
-                                                             self.blurBg.frame.origin.y,
-                                                             100,
-                                                             blurGgHight)];
+                                self.blurBg.frame.origin.y,
+                                80,
+                                blurGgHight)];
         [nameLabel setTextColor:[UIColor whiteColor]];
         [nameLabel setNumberOfLines:1];
-        [nameLabel setBackgroundColor:[UIColor redColor] ];
         [nameLabel setFont:[UIFont systemFontOfSize:14]];
     }
     return nameLabel;
+}
+
+- (UIImageView *) gendeView
+{
+    if (!gendeView) {
+    gendeView = [[UIImageView alloc]initWithFrame:CGRectMake(nameLabel.frame.origin.x+nameLabel.frame.size.width+spaceWith,self.height-blurGgHight/2-17/2, 12, 17)];
+    };
+    return gendeView;
+}
+
+- (void) updateGendeViewCoord
+{
+    [self.gendeView setFrame:CGRectMake(nameLabel.frame.origin.x+nameLabel.frame.size.width+spaceWith,self.height-blurGgHight/2-17/2,12,17)];
+}
+
+- (void) setGende:(Gende)gend
+{
+    if (gende == ManGende) {
+        self.gendeView.image = [[FAThemeManager sharedManager] themeImageWithName:@"manGende.png"];
+    }else{
+        self.gendeView.image = [[FAThemeManager sharedManager] themeImageWithName:@"womanGende.png"];
+    }
 }
 
 /*
