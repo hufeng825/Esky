@@ -53,17 +53,17 @@
 
 - (void)commonInit
 {
+    self.autoresizingMask =UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
      _blurBg =  [[UIView alloc]initWithFrame:CGRectMake(0, self.height-blurGgHight, self.width,blurGgHight)];
     [_blurBg setBackgroundColor:[UIColor blackColor]];
-    [_blurBg setAlpha:.8];
-    self.autoresizingMask =UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+    [_blurBg setAlpha:.6];
     [self addSubview:_blurBg];
     [self addSubview:self.talentHeadIcon];
     [self addSubview:self.nameLabel];
     [self addSubview:self.gendeView];
-    [self setTalentName:@"文字超"];
     [self setGende:ManGende];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(themeChanged) name:kThemeChangedNotification object:nil];
+    [self setTalentName:@"Hason Jan"];
 }
 
 - (ESHeaderIconImageView *)talentHeadIcon
@@ -83,7 +83,7 @@
 {
     if (TTIsStringWithAnyText(name)) {
         [self nameLabel].text = name;
-        CGSize maximumLabelSize = CGSizeMake(65, blurGgHight);
+        CGSize maximumLabelSize = CGSizeMake(75, blurGgHight);
         CGSize expectedSize = [self.nameLabel sizeThatFits:maximumLabelSize];
         [
           [self nameLabel] setWidth:

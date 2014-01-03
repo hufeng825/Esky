@@ -6,10 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ESShowCenterViewController">
             <connections>
+                <outlet property="commentTableView" destination="0Cu-V5-a91" id="Rvg-7j-pnC"/>
                 <outlet property="scrollView" destination="o2k-9g-F9e" id="OcG-Rh-6E5"/>
+                <outlet property="showTableView" destination="LXY-Y7-Zo2" id="e6k-Q4-miT"/>
+                <outlet property="showTimeTableView" destination="zwe-4x-mSE" id="Bog-sp-Ru3"/>
                 <outlet property="test" destination="ul9-2C-OjB" id="UCR-Jv-DYF"/>
-                <outlet property="test1" destination="vd7-vC-qd4" id="mxN-zL-9kQ"/>
-                <outlet property="test2" destination="SFv-g7-koA" id="yry-ss-mr4"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -49,48 +50,50 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" id="o2k-9g-F9e">
-                    <rect key="frame" x="5" y="111" width="310" height="452"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" id="o2k-9g-F9e">
+                    <rect key="frame" x="0.0" y="109" width="320" height="418"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="5f6-Ps-yKC"/>
                     </connections>
                 </scrollView>
-                <view contentMode="scaleToFill" id="vd7-vC-qd4" customClass="ESPictureItem">
-                    <rect key="frame" x="6" y="265" width="147" height="210.5"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </view>
-                <view contentMode="scaleToFill" id="SFv-g7-koA" customClass="ESTalentPictureItem">
-                    <rect key="frame" x="167" y="265" width="147" height="211"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </view>
-                <view contentMode="scaleToFill" id="azy-oj-i0j" customClass="ESPictureItem">
-                    <rect key="frame" x="110" y="116" width="100" height="143"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </view>
-                <view contentMode="scaleToFill" id="6PC-n0-XDL" customClass="ESPictureItem">
-                    <rect key="frame" x="214" y="116" width="100" height="143"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </view>
-                <view contentMode="scaleToFill" id="oyg-bh-ip3" customClass="ESPictureItem">
-                    <rect key="frame" x="6" y="116" width="100" height="143"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
+        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="148" sectionHeaderHeight="2" sectionFooterHeight="2" id="zwe-4x-mSE">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="452"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="dataSource" destination="-1" id="j5k-VE-l1v"/>
+                <outlet property="delegate" destination="-1" id="nfz-Il-WMN"/>
+            </connections>
+        </tableView>
+        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="212" sectionHeaderHeight="2" sectionFooterHeight="2" id="LXY-Y7-Zo2">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="452"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dataSource" destination="-1" id="ivG-sJ-PzX"/>
+                <outlet property="delegate" destination="-1" id="BBt-Nm-ZL2"/>
+            </connections>
+        </tableView>
+        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="218" sectionHeaderHeight="2" sectionFooterHeight="2" id="0Cu-V5-a91">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="452"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dataSource" destination="-1" id="cCu-ol-5rH"/>
+                <outlet property="delegate" destination="-1" id="M30-QD-yCl"/>
+            </connections>
+        </tableView>
     </objects>
     <resources>
         <image name="setting.png" width="20" height="15"/>

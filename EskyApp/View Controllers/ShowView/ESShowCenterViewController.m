@@ -9,17 +9,26 @@
 #import "ESShowCenterViewController.h"
 #import "ESTalentPictureItem.h"
 
+#import "ESShowTimeCell.h"
+#import "ESShowCell.h"
+#import "ESCommentCell.h"
+
+
 @interface ESShowCenterViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet ESMenuTabBar *test;
 
-@property (weak, nonatomic) IBOutlet ESPictureItem *test1;
-@property (weak, nonatomic) IBOutlet ESTalentPictureItem *test2;
+
+@property (strong, nonatomic) IBOutlet UITableView *showTimeTableView;
+@property (strong, nonatomic) IBOutlet UITableView *showTableView;
+@property (strong, nonatomic) IBOutlet UITableView *commentTableView;
 
 @end
 
 @implementation ESShowCenterViewController
+
+@synthesize showTimeTableView,showTableView,commentTableView;
 
 -(id)initDrawerViewController:(YASlidingViewController *)dynamicsDrawerViewController
 {
@@ -56,20 +65,21 @@
       @{@"Title":@"点评", @"EnglishTitle":@"FASHION"},
     ]];
     
+    NSArray *array = @[showTimeTableView,showTableView,commentTableView];
     for (int i=0; i<3; i++) {
-        UIView *vc = [[UIView alloc]initWithFrame:CGRectMake(i*_scrollView.width, 0, _scrollView.width, _scrollView.height)];
-        vc.backgroundColor = RGB(rand()%255, rand()%255, rand()%255);
-        [_scrollView addSubview:vc];
+        UITableView *tabView = [array objectAtIndex:i];
+        tabView.frame =CGRectMake(i*_scrollView.width, 0, _scrollView.width, _scrollView.height);
+        [_scrollView addSubview:tabView];
     }
     
     [_scrollView setContentSize:CGSizeMake(_scrollView.width*3, _scrollView.height)];
 
-    [_test1 setStyle:NormalPictureStyle];
-    
-    _test2.block =^{
-        NSLog(@"yui");
-        [self buttonClicked:_test2];
-    };
+//    [_test1 setStyle:NormalPictureStyle];
+//    
+//    _test2.block =^{
+//        NSLog(@"yui");
+//        [self buttonClicked:_test2];
+//    };
     
 }
 
@@ -125,6 +135,69 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark -tableView delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 20;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView == showTableView ) {
+        static NSString *showidentificer = @"ESShowCell";
+        ESShowCell *cell = [tableView dequeueReusableCellWithIdentifier:showidentificer];
+        if (cell == nil) {
+            cell = [ESShowCell cellFromXib];
+        }
+        return cell;
+    }else if (tableView == showTimeTableView ){
+       static NSString *showTimeidentificer = @"ESShowTimeCell";
+        ESShowTimeCell *cell = [tableView dequeueReusableCellWithIdentifier:showTimeidentificer];
+        if (cell == nil) {
+            cell = [ESShowTimeCell cellFromXib];
+        }
+        return cell;
+    }else if (tableView == commentTableView){
+       static NSString *commentidentificer = @"ESCommentCell";
+        ESCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:commentidentificer];
+        if (!cell) {
+            cell = [ESCommentCell cellFromXib];
+        }
+        [[cell starts]setRating:3];
+        return cell;
+    }
+    
+    return Nil;
+    
+//    BalancePlanManageInformation *model = [self.listArray objectAtIndexSafe:indexPath.row];
+//    [cell setupDatas:model];
+//    
+//    //变更按钮点击
+//    [cell setChangeBtnClickBlock:^(BalancePlanManageInformation *data) {
+//        [self showChangeViewController:data];
+//    }];
+//    
+//    //终止按钮点击
+//    [cell setStopBtnClickBlock:^(BalancePlanManageInformation *data) {
+//        [self showStopViewController:data];
+//        _selectedStopPlanIndex = indexPath.row;
+//    }];
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    BalancePlanManageInformation *model = [self.listArray objectAtIndex:indexPath.row];
+//    BalancePlanManageDetailViewController *detailVC = [[BalancePlanManageDetailViewController alloc] init];
+//    [detailVC setBalancePlanManageInfoModel:model];
+//    [self.navigationController pushViewController:detailVC animated:YES];
+//    [[BalancePlanTabBarViewController GetInstance] hideTabBarAnimated:YES];
+//    [detailVC release];
 }
 
 @end
