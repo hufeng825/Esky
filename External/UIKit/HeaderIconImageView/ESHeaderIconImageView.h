@@ -12,6 +12,7 @@
 
 @property (nonatomic,strong)  UITapGestureRecognizer *singleTap ;
 
+- (UIImage *)imageByDrawingCircleOnImage:(UIImage *)image;
 
 
 @end

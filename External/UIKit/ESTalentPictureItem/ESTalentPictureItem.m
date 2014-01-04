@@ -19,7 +19,7 @@
 @property (nonatomic ,strong) UIView  *blurBg;
 @property (nonatomic ,strong) UILabel *nameLabel;
 @property (nonatomic ,strong) UIImageView *gendeView;
-@property (nonatomic ,strong) ESHeaderIconImageView *talentHeadIcon;
+@property (nonatomic ,strong) UIImageView *talentHeadIcon;
 @property (nonatomic ,strong) UITapGestureRecognizer *singleTap ;
 
 @end
@@ -66,11 +66,12 @@
     [self setTalentName:@"Hason Jan"];
 }
 
-- (ESHeaderIconImageView *)talentHeadIcon
+- (UIImageView *)talentHeadIcon
 {
     if (!talentHeadIcon) {
         talentHeadIcon  = [[ESHeaderIconImageView alloc]initWithFrame:CGRectMake(15,self.height-blurGgHight/2-headWith/2, headWith, headWith)];
     }
+    talentHeadIcon.image = [UIImage imageNamed:@"talentHeadIcon"];
     return talentHeadIcon;
 }
 

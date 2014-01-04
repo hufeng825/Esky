@@ -127,7 +127,7 @@ static NSString *QiniuBucketName = @"hufeng";
 
 
 - (void)cropViewController:(PECropViewController *)controller didFinishCroppingImage:(UIImage *)croppedImage {
-    self.headIconImageView.image = croppedImage;
+    self.headIconImageView.image = [self.headIconImageView imageByDrawingCircleOnImage: croppedImage];
     [controller dismissViewControllerAnimated:YES completion:NULL];
     double delayInSeconds = 2.5;
     __weak __typeof (self) weakSelf = self;

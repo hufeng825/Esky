@@ -51,7 +51,13 @@
 -(void)itemClicked:(NSInteger)index
 {
     NSLog(@"%d",index);
-    [_scrollView setContentOffset:CGPointMake(index*_scrollView.width, 0) animated:YES];
+    [UIView animateWithDuration:0.5f delay:0 options:(
+                                                      UIViewAnimationOptionAllowUserInteraction |
+                                                      UIViewAnimationOptionBeginFromCurrentState |
+                                                      UIViewAnimationOptionCurveEaseInOut
+                                                      ) animations: ^ {
+        [_scrollView setContentOffset:CGPointMake(index*_scrollView.width, 0) animated:NO];
+    } completion:nil];
 }
 
 - (void)viewDidLoad
@@ -121,11 +127,16 @@
     
 }
 
+#pragma mark - scrollView delegate
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    CGFloat pageWidth = scrollView.frame.size.width;
-    int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    [_test selectMenuItemAtIndex:page];
+    if (scrollView == _scrollView) {
+        CGFloat pageWidth = scrollView.frame.size.width;
+        int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+        [_test selectMenuItemAtIndex:page];
+    }
+   
 }
 
 

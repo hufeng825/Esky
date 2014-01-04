@@ -19,6 +19,8 @@
 
 //#import "MSDynamicsDrawerViewController.h"
 
+#import "ESLoginViewController.h"
+
 
 @implementation ESAppDelegate
 
@@ -64,7 +66,10 @@
     self.manViewController = [[ESMainViewController alloc] initDrawerViewController:slidingViewController];
     self.showCenterViewController = [[ESShowCenterViewController alloc] initDrawerViewController:slidingViewController];
     
-    [self.tabViewController setSubViewControllers:@[_manViewController,@"",@"",_showCenterViewController]];
+    
+    ESLoginViewController *vc = [[ESLoginViewController alloc]initWithNibName:@"ESLoginViewController" bundle:nil];
+    
+    [self.tabViewController setSubViewControllers:@[_manViewController,@"",@"",_showCenterViewController,vc]];
     self.tabViewController.selectedIndex =0;
 
     
