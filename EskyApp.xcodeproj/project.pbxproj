@@ -123,6 +123,14 @@
 		9688BD67184C903B00F9A8E9 /* HFHttpRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD66184C903B00F9A8E9 /* HFHttpRequestParameters.m */; };
 		9688BD7118507A3A00F9A8E9 /* ESRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD7018507A3A00F9A8E9 /* ESRequestParameters.m */; };
 		9688BD7418507A7700F9A8E9 /* ESRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD7318507A7700F9A8E9 /* ESRequest.m */; };
+		968F7B44187885F900BD9425 /* ESExpertCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 968F7B43187885F900BD9425 /* ESExpertCommentCell.m */; };
+		968F7B461878861E00BD9425 /* ESExpertCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 968F7B451878861E00BD9425 /* ESExpertCommentCell.xib */; };
+		968F7B4918790A0B00BD9425 /* ESUserCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 968F7B4818790A0B00BD9425 /* ESUserCommentCell.m */; };
+		968F7B4B18790B6700BD9425 /* ESUserCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 968F7B4A18790B6700BD9425 /* ESUserCommentCell.xib */; };
+		968F7B4D1879117400BD9425 /* ESShowCommentNumber.xib in Resources */ = {isa = PBXBuildFile; fileRef = 968F7B4C1879117400BD9425 /* ESShowCommentNumber.xib */; };
+		968F7B501879127A00BD9425 /* ESShowCommentNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 968F7B4F1879127A00BD9425 /* ESShowCommentNumber.m */; };
+		968F7B531879144A00BD9425 /* ESEditorSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 968F7B521879144A00BD9425 /* ESEditorSectionView.m */; };
+		968F7B551879147400BD9425 /* ESEditorSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 968F7B541879147400BD9425 /* ESEditorSectionView.xib */; };
 		96B98A0D1845C56D002E8552 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98A0C1845C56D002E8552 /* Foundation.framework */; };
 		96B98A0F1845C56D002E8552 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98A0E1845C56D002E8552 /* CoreGraphics.framework */; };
 		96B98A111845C56D002E8552 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98A101845C56D002E8552 /* UIKit.framework */; };
@@ -251,6 +259,11 @@
 		96C90CD8185F0011005C4ECB /* wenzi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CD6185F0011005C4ECB /* wenzi@2x.png */; };
 		96C90CDB185F0204005C4ECB /* choosebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CD9185F0204005C4ECB /* choosebg.png */; };
 		96C90CDC185F0204005C4ECB /* choosebg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CDA185F0204005C4ECB /* choosebg@2x.png */; };
+		96E939551877F9AD004E4BEE /* ESInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E939531877F9AD004E4BEE /* ESInfoViewController.m */; };
+		96E939561877F9AD004E4BEE /* ESInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E939541877F9AD004E4BEE /* ESInfoViewController.xib */; };
+		96E9395A18783378004E4BEE /* HFCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E9395918783378004E4BEE /* HFCycleScrollView.m */; };
+		96E9395D1878450A004E4BEE /* ESShowEditorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E9395C1878450A004E4BEE /* ESShowEditorCell.m */; };
+		96E9395F1878453B004E4BEE /* ESShowEditorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E9395E1878453B004E4BEE /* ESShowEditorCell.xib */; };
 		96F8AA6A1856FAFC000612C5 /* CSAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8AA691856FAFC000612C5 /* CSAnimation.m */; };
 		96F9D7AF1855B4BA00C8ACE4 /* ESRegisterViewController_4inch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96F9D7AE1855B4BA00C8ACE4 /* ESRegisterViewController_4inch.xib */; };
 /* End PBXBuildFile section */
@@ -426,6 +439,18 @@
 		9688BD7018507A3A00F9A8E9 /* ESRequestParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESRequestParameters.m; path = Request/ESRequestParameters.m; sourceTree = "<group>"; };
 		9688BD7218507A7700F9A8E9 /* ESRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESRequest.h; path = Request/ESRequest.h; sourceTree = "<group>"; };
 		9688BD7318507A7700F9A8E9 /* ESRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESRequest.m; path = Request/ESRequest.m; sourceTree = "<group>"; };
+		968F7B42187885F900BD9425 /* ESExpertCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESExpertCommentCell.h; path = ShowView/InfoViewController/ESExpertCommentCell.h; sourceTree = "<group>"; };
+		968F7B43187885F900BD9425 /* ESExpertCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESExpertCommentCell.m; path = ShowView/InfoViewController/ESExpertCommentCell.m; sourceTree = "<group>"; };
+		968F7B451878861E00BD9425 /* ESExpertCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESExpertCommentCell.xib; path = ShowView/InfoViewController/ESExpertCommentCell.xib; sourceTree = "<group>"; };
+		968F7B4718790A0B00BD9425 /* ESUserCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESUserCommentCell.h; path = ShowView/InfoViewController/ESUserCommentCell.h; sourceTree = "<group>"; };
+		968F7B4818790A0B00BD9425 /* ESUserCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESUserCommentCell.m; path = ShowView/InfoViewController/ESUserCommentCell.m; sourceTree = "<group>"; };
+		968F7B4A18790B6700BD9425 /* ESUserCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESUserCommentCell.xib; path = ShowView/InfoViewController/ESUserCommentCell.xib; sourceTree = "<group>"; };
+		968F7B4C1879117400BD9425 /* ESShowCommentNumber.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESShowCommentNumber.xib; path = ShowView/InfoViewController/ESShowCommentNumber.xib; sourceTree = "<group>"; };
+		968F7B4E1879127A00BD9425 /* ESShowCommentNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESShowCommentNumber.h; path = ShowView/InfoViewController/ESShowCommentNumber.h; sourceTree = "<group>"; };
+		968F7B4F1879127A00BD9425 /* ESShowCommentNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESShowCommentNumber.m; path = ShowView/InfoViewController/ESShowCommentNumber.m; sourceTree = "<group>"; };
+		968F7B511879144A00BD9425 /* ESEditorSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESEditorSectionView.h; path = ShowView/InfoViewController/ESEditorSectionView.h; sourceTree = "<group>"; };
+		968F7B521879144A00BD9425 /* ESEditorSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESEditorSectionView.m; path = ShowView/InfoViewController/ESEditorSectionView.m; sourceTree = "<group>"; };
+		968F7B541879147400BD9425 /* ESEditorSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESEditorSectionView.xib; path = ShowView/InfoViewController/ESEditorSectionView.xib; sourceTree = "<group>"; };
 		96B98A091845C56D002E8552 /* EskyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EskyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B98A0C1845C56D002E8552 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96B98A0E1845C56D002E8552 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -635,6 +660,14 @@
 		96C90CD9185F0204005C4ECB /* choosebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = choosebg.png; sourceTree = "<group>"; };
 		96C90CDA185F0204005C4ECB /* choosebg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "choosebg@2x.png"; sourceTree = "<group>"; };
 		96CEEBDA1845FAFD0045F15E /* ESDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDebug.h; sourceTree = "<group>"; };
+		96E939521877F9AD004E4BEE /* ESInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESInfoViewController.h; path = ShowView/InfoViewController/ESInfoViewController.h; sourceTree = "<group>"; };
+		96E939531877F9AD004E4BEE /* ESInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESInfoViewController.m; path = ShowView/InfoViewController/ESInfoViewController.m; sourceTree = "<group>"; };
+		96E939541877F9AD004E4BEE /* ESInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESInfoViewController.xib; path = ShowView/InfoViewController/ESInfoViewController.xib; sourceTree = "<group>"; };
+		96E9395818783378004E4BEE /* HFCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFCycleScrollView.h; sourceTree = "<group>"; };
+		96E9395918783378004E4BEE /* HFCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFCycleScrollView.m; sourceTree = "<group>"; };
+		96E9395B1878450A004E4BEE /* ESShowEditorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESShowEditorCell.h; path = ShowView/InfoViewController/ESShowEditorCell.h; sourceTree = "<group>"; };
+		96E9395C1878450A004E4BEE /* ESShowEditorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESShowEditorCell.m; path = ShowView/InfoViewController/ESShowEditorCell.m; sourceTree = "<group>"; };
+		96E9395E1878453B004E4BEE /* ESShowEditorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESShowEditorCell.xib; path = ShowView/InfoViewController/ESShowEditorCell.xib; sourceTree = "<group>"; };
 		96F8AA681856FAFC000612C5 /* CSAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAnimation.h; sourceTree = "<group>"; };
 		96F8AA691856FAFC000612C5 /* CSAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAnimation.m; sourceTree = "<group>"; };
 		96F9D7AE1855B4BA00C8ACE4 /* ESRegisterViewController_4inch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESRegisterViewController_4inch.xib; sourceTree = "<group>"; };
@@ -865,6 +898,7 @@
 		966C7DA5186BF93000A1B04D /* Show */ = {
 			isa = PBXGroup;
 			children = (
+				96E939511877F96D004E4BEE /* InfoViewController */,
 				966C7DD7187684B600A1B04D /* ShowTimeCell */,
 				966C7DDD187684BA00A1B04D /* ShowCell */,
 				966C7DC7187658D900A1B04D /* CommentCell */,
@@ -1078,6 +1112,7 @@
 		967342E918680EE900B9D399 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				96E9395718783378004E4BEE /* HFCycleScrollView */,
 				966C7DCD1876642100A1B04D /* StartsControl */,
 				966C7DC21872745100A1B04D /* ESTalentPictureItem */,
 				966C7DB81871092E00A1B04D /* ESPictureItem */,
@@ -1685,6 +1720,40 @@
 			path = CliperView;
 			sourceTree = "<group>";
 		};
+		96E939511877F96D004E4BEE /* InfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				96E939521877F9AD004E4BEE /* ESInfoViewController.h */,
+				96E939531877F9AD004E4BEE /* ESInfoViewController.m */,
+				96E939541877F9AD004E4BEE /* ESInfoViewController.xib */,
+				968F7B511879144A00BD9425 /* ESEditorSectionView.h */,
+				968F7B521879144A00BD9425 /* ESEditorSectionView.m */,
+				968F7B541879147400BD9425 /* ESEditorSectionView.xib */,
+				968F7B4E1879127A00BD9425 /* ESShowCommentNumber.h */,
+				968F7B4F1879127A00BD9425 /* ESShowCommentNumber.m */,
+				968F7B4C1879117400BD9425 /* ESShowCommentNumber.xib */,
+				968F7B4718790A0B00BD9425 /* ESUserCommentCell.h */,
+				968F7B4818790A0B00BD9425 /* ESUserCommentCell.m */,
+				968F7B4A18790B6700BD9425 /* ESUserCommentCell.xib */,
+				968F7B42187885F900BD9425 /* ESExpertCommentCell.h */,
+				968F7B43187885F900BD9425 /* ESExpertCommentCell.m */,
+				968F7B451878861E00BD9425 /* ESExpertCommentCell.xib */,
+				96E9395B1878450A004E4BEE /* ESShowEditorCell.h */,
+				96E9395C1878450A004E4BEE /* ESShowEditorCell.m */,
+				96E9395E1878453B004E4BEE /* ESShowEditorCell.xib */,
+			);
+			name = InfoViewController;
+			sourceTree = "<group>";
+		};
+		96E9395718783378004E4BEE /* HFCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				96E9395818783378004E4BEE /* HFCycleScrollView.h */,
+				96E9395918783378004E4BEE /* HFCycleScrollView.m */,
+			);
+			path = HFCycleScrollView;
+			sourceTree = "<group>";
+		};
 		96F8AA671856FAFC000612C5 /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
@@ -1787,6 +1856,7 @@
 				966C7D85186ABB9D00A1B04D /* 10.jpg in Resources */,
 				96C90CDC185F0204005C4ECB /* choosebg@2x.png in Resources */,
 				966C7D4418692F3E00A1B04D /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				96E9395F1878453B004E4BEE /* ESShowEditorCell.xib in Resources */,
 				966C7D99186ABB9D00A1B04D /* 29.jpg in Resources */,
 				966C7D5B186A84A400A1B04D /* setting@2x.png in Resources */,
 				966C7D041868450300A1B04D /* home_normal@2x.png in Resources */,
@@ -1849,9 +1919,11 @@
 				966C7D111868452E00A1B04D /* skill_normal.png in Resources */,
 				96B98BCA1845E58F002E8552 /* bt_grey.png in Resources */,
 				96B98B981845C81E002E8552 /* ESModifyPassWordViewController.xib in Resources */,
+				968F7B4B18790B6700BD9425 /* ESUserCommentCell.xib in Resources */,
 				96B98BC91845E58F002E8552 /* bt_blue@2x.png in Resources */,
 				96B98BDC1845E58F002E8552 /* translate_bg@2x.png in Resources */,
 				966C7D96186ABB9D00A1B04D /* 26.jpg in Resources */,
+				968F7B551879147400BD9425 /* ESEditorSectionView.xib in Resources */,
 				966C7DB0186C086700A1B04D /* ESMenuTabBar.xib in Resources */,
 				966C7D98186ABB9D00A1B04D /* 28.jpg in Resources */,
 				966C7D4D18692F3E00A1B04D /* ShareSDKiPhoneDefaultShareViewUI.bundle in Resources */,
@@ -1867,6 +1939,7 @@
 				96B98BD81845E58F002E8552 /* icon_weibo@2x.png in Resources */,
 				966C7D8A186ABB9D00A1B04D /* 15.jpg in Resources */,
 				966C7D051868450300A1B04D /* mine_normal@2x.png in Resources */,
+				968F7B4D1879117400BD9425 /* ESShowCommentNumber.xib in Resources */,
 				96B98BCF1845E58F002E8552 /* dialogue_bg.png in Resources */,
 				96C90CC8185EC1F4005C4ECB /* PEPhotoCropEditor.bundle in Resources */,
 				96B98B7E1845C700002E8552 /* woman in Resources */,
@@ -1876,7 +1949,9 @@
 				96C90CD0185EFB9D005C4ECB /* manBt.png in Resources */,
 				966C7D0E1868452E00A1B04D /* home_normal.png in Resources */,
 				966C7D95186ABB9D00A1B04D /* 25.jpg in Resources */,
+				96E939561877F9AD004E4BEE /* ESInfoViewController.xib in Resources */,
 				966C7D84186ABB9D00A1B04D /* 1.jpg in Resources */,
+				968F7B461878861E00BD9425 /* ESExpertCommentCell.xib in Resources */,
 				966C7DDB187684B600A1B04D /* ESShowTimeCell.xib in Resources */,
 				967342FC18680EE900B9D399 /* checkmark.png in Resources */,
 				966C7D4118692F3E00A1B04D /* Resource.bundle in Resources */,
@@ -1932,6 +2007,7 @@
 				966C7DCA1876593000A1B04D /* ESCommentCell.m in Sources */,
 				96C90C9E185814DF005C4ECB /* ReachabilityAppDelegate.m in Sources */,
 				96B98A7B1845C643002E8552 /* FAThemeManager.m in Sources */,
+				96E9395D1878450A004E4BEE /* ESShowEditorCell.m in Sources */,
 				966C7D571869575D00A1B04D /* MSDynamicsDrawerViewController.m in Sources */,
 				96B98A7A1845C643002E8552 /* ESBaseModel.m in Sources */,
 				96B98B441845C6B8002E8552 /* AFSecurityPolicy.m in Sources */,
@@ -1956,18 +2032,22 @@
 				96C90C9F185814DF005C4ECB /* GTMBase64.m in Sources */,
 				966C7DDC187684B600A1B04D /* ESShowTimeCell.m in Sources */,
 				96B98A1D1845C56D002E8552 /* ESAppDelegate.m in Sources */,
+				968F7B4918790A0B00BD9425 /* ESUserCommentCell.m in Sources */,
 				96B98B411845C6B8002E8552 /* AFHTTPRequestOperationManager.m in Sources */,
+				96E939551877F9AD004E4BEE /* ESInfoViewController.m in Sources */,
 				967342FF18680EE900B9D399 /* UIWebImageView.m in Sources */,
 				96B98A8A1845C643002E8552 /* HFHttpRequestResult.m in Sources */,
 				96B98A741845C643002E8552 /* ESBaseViewController.m in Sources */,
 				96B98B951845C81E002E8552 /* ESLoginViewController.m in Sources */,
 				967342CE1867E8B900B9D399 /* NSString+Additions.m in Sources */,
+				968F7B531879144A00BD9425 /* ESEditorSectionView.m in Sources */,
 				96734315186811F400B9D399 /* HFTabBarViewController.m in Sources */,
 				96B98B4B1845C6B8002E8552 /* UIAlertView+AFNetworking.m in Sources */,
 				96B98A8B1845C643002E8552 /* HFHttpResponArguments.m in Sources */,
 				96B98B581845C6B8002E8552 /* JTSetMappings.m in Sources */,
 				966C7DD01876642100A1B04D /* ESRatingControl.m in Sources */,
 				96C90C95185814DF005C4ECB /* ASIAuthenticationDialog.m in Sources */,
+				96E9395A18783378004E4BEE /* HFCycleScrollView.m in Sources */,
 				96C90CA1185814DF005C4ECB /* QiniuPutExtra.m in Sources */,
 				9673430618680F1900B9D399 /* YASlidingViewController.m in Sources */,
 				96B98A891845C643002E8552 /* HFHttpConfigure.m in Sources */,
@@ -1979,10 +2059,12 @@
 				96B98B461845C6B8002E8552 /* AFURLRequestSerialization.m in Sources */,
 				96B98B491845C6B8002E8552 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				96C90CC5185EC1F4005C4ECB /* PECropRectView.m in Sources */,
+				968F7B44187885F900BD9425 /* ESExpertCommentCell.m in Sources */,
 				967342CD1867E8B900B9D399 /* NSDictionary+Safe.m in Sources */,
 				967342CF1867E8B900B9D399 /* UIDevice+Additions.m in Sources */,
 				966C7D561869575D00A1B04D /* MSDynamicsDrawerStyler.m in Sources */,
 				96C90C9C185814DF005C4ECB /* ASINetworkQueue.m in Sources */,
+				968F7B501879127A00BD9425 /* ESShowCommentNumber.m in Sources */,
 				967342CB1867E8B900B9D399 /* NSArray+Additions.m in Sources */,
 				96B98B971845C81E002E8552 /* ESModifyPassWordViewController.m in Sources */,
 				96B98B591845C6B8002E8552 /* JTValidMappingKey.m in Sources */,

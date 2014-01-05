@@ -71,7 +71,7 @@
     if (!talentHeadIcon) {
         talentHeadIcon  = [[ESHeaderIconImageView alloc]initWithFrame:CGRectMake(15,self.height-blurGgHight/2-headWith/2, headWith, headWith)];
     }
-    talentHeadIcon.image = [UIImage imageNamed:@"talentHeadIcon"];
+    talentHeadIcon.image = [UIImage imageNamed:@"icon_head"];
     return talentHeadIcon;
 }
 

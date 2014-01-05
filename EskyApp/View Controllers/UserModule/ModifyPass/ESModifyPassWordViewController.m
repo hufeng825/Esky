@@ -33,7 +33,7 @@
 }
 
 - (void)viewDidLoad {
-    [super themeChanged];
+    [self themeChanged];
     // Do any additional setup after loading the view from its nib.
     double delayInSeconds = .1;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t) (delayInSeconds * NSEC_PER_SEC));

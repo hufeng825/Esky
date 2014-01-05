@@ -74,12 +74,15 @@
 
 - (void)themeChanged {
     [self changeBaseBackgourndColorWithImageName:[[FAThemeManager sharedManager] themeImageWithName:@"bg.png"]];
-    UIColor *nvBartintColor = [[FAThemeManager sharedManager] themeColorWithName:@"kIconColor"];
+    UIColor *nvBartintColor = [UIColor blackColor];
+//    [[FAThemeManager sharedManager] themeColorWithName:@"kIconColor"];
     [self.navigationController.navigationBar setTintColor:nvBartintColor];
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
     shadow.shadowOffset = CGSizeMake(0, .3);
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : nvBartintColor, NSShadowAttributeName : shadow, NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:22.0]}];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : nvBartintColor,
+        NSShadowAttributeName : shadow,
+        NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue" size:22.0]}];
 //    [self.navigationController.navigationBar setNeedsDisplay];
 }
 
@@ -91,7 +94,7 @@
     if(IOSVersion > 6.0) {
     UIView *fixbar = [[UIView alloc] init];
     fixbar.frame = CGRectMake(0, 0, 320, 20);
-    fixbar.backgroundColor = [UIColor blackColor]; // the default color of iOS7 bacground or any color suits your design
+    fixbar.backgroundColor = [UIColor whiteColor]; // the default color of iOS7 bacground or any color suits your design
     [self.view addSubview:fixbar];
     }
 }

@@ -14,6 +14,8 @@
 #import "ESCommentCell.h"
 
 
+#import "ESInfoViewController.h"
+
 @interface ESShowCenterViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -89,6 +91,12 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
 - (IBAction)buttonClicked:(id)sender {
     UIView *senderView = (UIView*)sender;
     if (![senderView isKindOfClass:[UIView class]])
@@ -151,10 +159,16 @@
 
 #pragma mark -tableView delegate
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 20;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -202,7 +216,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    ESInfoViewController *vc = [[ESInfoViewController alloc] initWithNibName:@"ESInfoViewController" bundle:nil];
+    [vc.navigationController setNavigationBarHidden:NO];
+    [self.navigationController pushViewController:vc animated:YES];
 //    BalancePlanManageInformation *model = [self.listArray objectAtIndex:indexPath.row];
 //    BalancePlanManageDetailViewController *detailVC = [[BalancePlanManageDetailViewController alloc] init];
 //    [detailVC setBalancePlanManageInfoModel:model];

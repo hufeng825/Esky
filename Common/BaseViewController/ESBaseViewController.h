@@ -21,4 +21,5 @@
 
 - (void)goBack;
 
+- (void)changeStatusBackground ;
 @end
