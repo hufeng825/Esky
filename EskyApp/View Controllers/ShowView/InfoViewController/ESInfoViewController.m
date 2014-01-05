@@ -17,8 +17,11 @@
 
 #import "CSAnimation.h"
 
+#import "CLImageEditor.h"
 
-@interface ESInfoViewController ()
+
+@interface ESInfoViewController ()<CLImageEditorDelegate, CLImageEditorThemeDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+
 
 @property (strong, nonatomic) IBOutlet UITableView *infoCurrentTable;
 @property (weak,   nonatomic) IBOutlet HFCycleScrollView *cycleView;
@@ -52,6 +55,9 @@
 
    // [_cycleView addSubview:_infoCurrentTable];
     [self performSelector:@selector(animationShow) withObject:nil afterDelay:.1];
+    
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"camera.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(pushedNewBtn)];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -66,6 +72,85 @@
     [_cycleView reloadData];
     Class <CSAnimation> class = [CSAnimation classForAnimationType:CSAnimationTypeZoomOut];
     [class performAnimationOnView:_cycleView duration:.6 delay:.1];
+}
+
+
+
+
+
+#pragma mark share 
+
+- (void)viewOnWillDisplay:(UIViewController *)viewController shareType:(ShareType)shareType {
+    //    [viewController.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"iPhoneNavigationBarBG.png"]];
+    NSString *logTitleStr = @"私享家登录授权";
+    [viewController.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    viewController.navigationItem.rightBarButtonItem = nil;
+    viewController.title = logTitleStr;
+    
+    //    UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    //    [viewController.view addSubview:button];
+    
+}
+
+
+- (void)customShareMenuClickHandler:(UIButton *)sender
+{
+    //定义菜单分享列表
+    NSArray *shareList = [ShareSDK getShareListWithType:ShareTypeSinaWeibo, ShareTypeWeixiTimeline ,ShareTypeWeixiSession,nil];
+    
+    //创建分享内容
+    id<ISSContent> publishContent = [ShareSDK content:@"测试内容"
+                                       defaultContent:@""
+                                                image:nil
+                                                title:@"时尚先生"
+                                                  url:@"http://www.baidu.com"
+                                          description:@"这是一条测信息"
+                                            mediaType:SSPublishContentMediaTypeNews];
+    
+    //创建容器
+    id<ISSContainer> container = [ShareSDK container];
+    [container setIPadContainerWithView:sender arrowDirect:UIPopoverArrowDirectionUp];
+    
+    id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
+                                                         allowCallback:YES
+                                                         authViewStyle:SSAuthViewStyleModal
+                                                          viewDelegate:nil
+                                               authManagerViewDelegate:nil];
+    
+    //在授权页面中添加关注官方微博
+    [authOptions setFollowAccounts:[NSDictionary dictionaryWithObjectsAndKeys:
+                                    [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"阿里巴巴"],
+                                    SHARE_TYPE_NUMBER(ShareTypeSinaWeibo),
+                                    [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"阿里巴巴"],
+                                    SHARE_TYPE_NUMBER(ShareTypeTencentWeibo),
+                                    nil]];
+    
+    //显示分享菜单
+    [ShareSDK showShareActionSheet:container
+                         shareList:shareList
+                           content:publishContent
+                     statusBarTips:YES
+                       authOptions:authOptions
+                      shareOptions:[ShareSDK defaultShareOptionsWithTitle:nil
+                                                          oneKeyShareList:[NSArray defaultOneKeyShareList]
+                                                           qqButtonHidden:NO
+                                                    wxSessionButtonHidden:YES
+                                                   wxTimelineButtonHidden:YES
+                                                     showKeyboardOnAppear:NO
+                                                        shareViewDelegate:nil
+                                                      friendsViewDelegate:nil
+                                                    picViewerViewDelegate:nil]
+                            result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                                
+                                if (state == SSPublishContentStateSuccess)
+                                {
+                                    NSLog(@"分享成功");
+                                }
+                                else if (state == SSPublishContentStateFail)
+                                {
+                                    NSLog(@"分享失败,错误码:%d,错误描述:%@", [error errorCode], [error errorDescription]);
+                                }
+                            }];
 }
 
 #pragma mark -cycle delegate
@@ -84,6 +169,7 @@
     infoTable.backgroundColor = [UIColor clearColor];
     infoTable.alwaysBounceVertical = YES;
     infoTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+    infoTable.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     return infoTable;
 }
 
@@ -151,6 +237,11 @@
         if (indexPath.row == 0) {
             ESShowEditorCell *cell = [ESShowEditorCell cellFromXib];
             cell.testImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",rand()%19]];
+            __weak __typeof(self)weakSelf = self;
+            cell.shareBlock=^(id userInfo){
+                NSLog(@"#####");
+                [weakSelf  customShareMenuClickHandler:nil];
+            };
             return cell;
         }else if(indexPath.row == 1){
             ESExpertCommentCell *cell = [ESExpertCommentCell cellFromXib];

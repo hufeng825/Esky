@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ESBaseViewController.h"
 #import "HFCycleScrollView.h"
+#import <ShareSDK/ShareSDK.h>
+
 
 @interface ESInfoViewController : ESBaseViewController<HFCycleScrollViewDatasource,HFCycleScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 

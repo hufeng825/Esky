@@ -15,8 +15,10 @@
 
 
 #import "ESInfoViewController.h"
+#import "CLImageEditor.h"
 
-@interface ESShowCenterViewController ()
+
+@interface ESShowCenterViewController ()<CLImageEditorDelegate, CLImageEditorThemeDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet ESMenuTabBar *test;
@@ -40,6 +42,49 @@
     }
     return self;
 }
+
+
+- (IBAction)pushedNewBtn
+{
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照", @"相册", nil];
+    [sheet showInView:self.view.window];
+}
+#pragma mark- ImagePicker delegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    CLImageEditor *editor = [[CLImageEditor alloc] initWithImage:image];
+    editor.delegate = self;
+    
+    [picker pushViewController:editor animated:YES];
+}
+#pragma mark- Actionsheet delegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex==actionSheet.cancelButtonIndex){
+        return;
+    }
+    
+    UIImagePickerControllerSourceType type = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    if([UIImagePickerController isSourceTypeAvailable:type]){
+        if(buttonIndex==0 && [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+            type = UIImagePickerControllerSourceTypeCamera;
+        }
+        
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.allowsEditing = NO;
+        picker.delegate   = self;
+        picker.sourceType = type;
+        
+        [self presentViewController:picker animated:YES completion:nil];
+    }
+}
+
+
 
 #pragma mark -
 

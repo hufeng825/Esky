@@ -11,6 +11,7 @@
 @interface ESShowEditorCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *testImage;
+@property (copy, nonatomic) void (^shareBlock)(id userInfo);
 
 + (ESShowEditorCell *)cellFromXib;
 

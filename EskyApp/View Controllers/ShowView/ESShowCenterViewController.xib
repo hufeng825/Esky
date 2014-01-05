@@ -31,7 +31,7 @@
                         <navigationItem title="秀场" id="Dtp-z9-ULa">
                             <barButtonItem key="leftBarButtonItem" id="HI8-52-jXJ">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="KJG-md-D7H">
-                                    <rect key="frame" x="16" y="13" width="20" height="18"/>
+                                    <rect key="frame" x="16" y="2" width="40" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <state key="normal" image="setting.png">
@@ -39,6 +39,19 @@
                                     </state>
                                     <connections>
                                         <action selector="dynamicsDrawerRevealLeftBarButtonItemTapped:" destination="-2" eventType="touchUpInside" id="D28-0j-uWL"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" style="plain" id="KLD-uI-g1P">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sOf-k0-HCE">
+                                    <rect key="frame" x="264" y="2" width="40" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" image="camera.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="pushedNewBtn" destination="-1" eventType="touchUpInside" id="Bz7-kN-Igo"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
@@ -96,6 +109,7 @@
         </tableView>
     </objects>
     <resources>
+        <image name="camera.png" width="22" height="19"/>
         <image name="setting.png" width="20" height="15"/>
     </resources>
 </document>
