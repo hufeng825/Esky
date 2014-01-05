@@ -1,5 +1,5 @@
 //
-//  ESUserCommentCell.h
+//  ESShowCommentCell.h
 //  EskyApp
 //
 //  Created by jason on 14-1-5.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ESUserCommentCell : UITableViewCell
+@interface ESShowCommentCell : UITableViewCell
 
-+ (ESUserCommentCell *)cellFromXib;
++ (ESShowCommentCell *)cellFromXib;
 
 @end

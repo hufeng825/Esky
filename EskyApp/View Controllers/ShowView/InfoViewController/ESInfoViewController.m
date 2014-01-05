@@ -10,9 +10,10 @@
 
 #import "ESShowEditorCell.h"
 #import "ESExpertCommentCell.h"
-#import "ESUserCommentCell.h"
 #import "ESShowCommentNumber.h"
 #import "ESEditorSectionView.h"
+#import "ESShowSendCommentCell.h"
+#import "ESShowCommentCell.h"
 
 #import "CSAnimation.h"
 
@@ -82,6 +83,7 @@
     infoTable.dataSource = self;
     infoTable.backgroundColor = [UIColor clearColor];
     infoTable.alwaysBounceVertical = YES;
+    infoTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     return infoTable;
 }
 
@@ -99,6 +101,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (section == 0) {
+        return 2;
+    }else if(section ==1){
+        return 30;
+    }
     return 2;
 }
 
@@ -109,6 +116,10 @@
             return 336;
         }else
             return 200;
+    }else if(indexPath.section == 1){
+        if (indexPath != 0) {
+            return 50;
+        }
     }
     return UITableViewAutomaticDimension;
 }
@@ -150,8 +161,13 @@
     }
     else if(indexPath.section == 1)
     {
-        ESUserCommentCell *cell = [ESUserCommentCell cellFromXib];
-        return cell;
+        if (indexPath.row == 0) {
+            ESShowSendCommentCell *cell = [ESShowSendCommentCell cellFromXib];
+            return cell;
+        }else{
+            ESShowCommentCell *cell = [ESShowCommentCell cellFromXib];
+            return cell;
+        }
     }
 
     return Nil;

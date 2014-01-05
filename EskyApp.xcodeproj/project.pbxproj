@@ -125,12 +125,14 @@
 		9688BD7418507A7700F9A8E9 /* ESRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD7318507A7700F9A8E9 /* ESRequest.m */; };
 		968F7B44187885F900BD9425 /* ESExpertCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 968F7B43187885F900BD9425 /* ESExpertCommentCell.m */; };
 		968F7B461878861E00BD9425 /* ESExpertCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 968F7B451878861E00BD9425 /* ESExpertCommentCell.xib */; };
-		968F7B4918790A0B00BD9425 /* ESUserCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 968F7B4818790A0B00BD9425 /* ESUserCommentCell.m */; };
-		968F7B4B18790B6700BD9425 /* ESUserCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 968F7B4A18790B6700BD9425 /* ESUserCommentCell.xib */; };
 		968F7B4D1879117400BD9425 /* ESShowCommentNumber.xib in Resources */ = {isa = PBXBuildFile; fileRef = 968F7B4C1879117400BD9425 /* ESShowCommentNumber.xib */; };
 		968F7B501879127A00BD9425 /* ESShowCommentNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 968F7B4F1879127A00BD9425 /* ESShowCommentNumber.m */; };
 		968F7B531879144A00BD9425 /* ESEditorSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 968F7B521879144A00BD9425 /* ESEditorSectionView.m */; };
 		968F7B551879147400BD9425 /* ESEditorSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 968F7B541879147400BD9425 /* ESEditorSectionView.xib */; };
+		968F7B5818792D3500BD9425 /* ESShowSendCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 968F7B5718792D3500BD9425 /* ESShowSendCommentCell.m */; };
+		968F7B5A18792D4F00BD9425 /* ESShowSendCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 968F7B5918792D4F00BD9425 /* ESShowSendCommentCell.xib */; };
+		968F7B5E18792F4700BD9425 /* ESShowCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 968F7B5D18792F4700BD9425 /* ESShowCommentCell.m */; };
+		968F7B6018792F6400BD9425 /* ESShowCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 968F7B5F18792F6400BD9425 /* ESShowCommentCell.xib */; };
 		96B98A0D1845C56D002E8552 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98A0C1845C56D002E8552 /* Foundation.framework */; };
 		96B98A0F1845C56D002E8552 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98A0E1845C56D002E8552 /* CoreGraphics.framework */; };
 		96B98A111845C56D002E8552 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B98A101845C56D002E8552 /* UIKit.framework */; };
@@ -442,15 +444,18 @@
 		968F7B42187885F900BD9425 /* ESExpertCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESExpertCommentCell.h; path = ShowView/InfoViewController/ESExpertCommentCell.h; sourceTree = "<group>"; };
 		968F7B43187885F900BD9425 /* ESExpertCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESExpertCommentCell.m; path = ShowView/InfoViewController/ESExpertCommentCell.m; sourceTree = "<group>"; };
 		968F7B451878861E00BD9425 /* ESExpertCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESExpertCommentCell.xib; path = ShowView/InfoViewController/ESExpertCommentCell.xib; sourceTree = "<group>"; };
-		968F7B4718790A0B00BD9425 /* ESUserCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESUserCommentCell.h; path = ShowView/InfoViewController/ESUserCommentCell.h; sourceTree = "<group>"; };
-		968F7B4818790A0B00BD9425 /* ESUserCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESUserCommentCell.m; path = ShowView/InfoViewController/ESUserCommentCell.m; sourceTree = "<group>"; };
-		968F7B4A18790B6700BD9425 /* ESUserCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESUserCommentCell.xib; path = ShowView/InfoViewController/ESUserCommentCell.xib; sourceTree = "<group>"; };
 		968F7B4C1879117400BD9425 /* ESShowCommentNumber.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESShowCommentNumber.xib; path = ShowView/InfoViewController/ESShowCommentNumber.xib; sourceTree = "<group>"; };
 		968F7B4E1879127A00BD9425 /* ESShowCommentNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESShowCommentNumber.h; path = ShowView/InfoViewController/ESShowCommentNumber.h; sourceTree = "<group>"; };
 		968F7B4F1879127A00BD9425 /* ESShowCommentNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESShowCommentNumber.m; path = ShowView/InfoViewController/ESShowCommentNumber.m; sourceTree = "<group>"; };
 		968F7B511879144A00BD9425 /* ESEditorSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESEditorSectionView.h; path = ShowView/InfoViewController/ESEditorSectionView.h; sourceTree = "<group>"; };
 		968F7B521879144A00BD9425 /* ESEditorSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESEditorSectionView.m; path = ShowView/InfoViewController/ESEditorSectionView.m; sourceTree = "<group>"; };
 		968F7B541879147400BD9425 /* ESEditorSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESEditorSectionView.xib; path = ShowView/InfoViewController/ESEditorSectionView.xib; sourceTree = "<group>"; };
+		968F7B5618792D3500BD9425 /* ESShowSendCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESShowSendCommentCell.h; path = ShowView/InfoViewController/ESShowSendCommentCell.h; sourceTree = "<group>"; };
+		968F7B5718792D3500BD9425 /* ESShowSendCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESShowSendCommentCell.m; path = ShowView/InfoViewController/ESShowSendCommentCell.m; sourceTree = "<group>"; };
+		968F7B5918792D4F00BD9425 /* ESShowSendCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESShowSendCommentCell.xib; path = ShowView/InfoViewController/ESShowSendCommentCell.xib; sourceTree = "<group>"; };
+		968F7B5C18792F4700BD9425 /* ESShowCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESShowCommentCell.h; path = ShowView/InfoViewController/ESShowCommentCell.h; sourceTree = "<group>"; };
+		968F7B5D18792F4700BD9425 /* ESShowCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESShowCommentCell.m; path = ShowView/InfoViewController/ESShowCommentCell.m; sourceTree = "<group>"; };
+		968F7B5F18792F6400BD9425 /* ESShowCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESShowCommentCell.xib; path = ShowView/InfoViewController/ESShowCommentCell.xib; sourceTree = "<group>"; };
 		96B98A091845C56D002E8552 /* EskyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EskyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B98A0C1845C56D002E8552 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96B98A0E1845C56D002E8552 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1203,6 +1208,31 @@
 			name = Request;
 			sourceTree = "<group>";
 		};
+		968F7B5B18792F1200BD9425 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				968F7B5618792D3500BD9425 /* ESShowSendCommentCell.h */,
+				968F7B5718792D3500BD9425 /* ESShowSendCommentCell.m */,
+				968F7B5918792D4F00BD9425 /* ESShowSendCommentCell.xib */,
+				968F7B5C18792F4700BD9425 /* ESShowCommentCell.h */,
+				968F7B5D18792F4700BD9425 /* ESShowCommentCell.m */,
+				968F7B5F18792F6400BD9425 /* ESShowCommentCell.xib */,
+				968F7B511879144A00BD9425 /* ESEditorSectionView.h */,
+				968F7B521879144A00BD9425 /* ESEditorSectionView.m */,
+				968F7B541879147400BD9425 /* ESEditorSectionView.xib */,
+				968F7B4E1879127A00BD9425 /* ESShowCommentNumber.h */,
+				968F7B4F1879127A00BD9425 /* ESShowCommentNumber.m */,
+				968F7B4C1879117400BD9425 /* ESShowCommentNumber.xib */,
+				968F7B42187885F900BD9425 /* ESExpertCommentCell.h */,
+				968F7B43187885F900BD9425 /* ESExpertCommentCell.m */,
+				968F7B451878861E00BD9425 /* ESExpertCommentCell.xib */,
+				96E9395B1878450A004E4BEE /* ESShowEditorCell.h */,
+				96E9395C1878450A004E4BEE /* ESShowEditorCell.m */,
+				96E9395E1878453B004E4BEE /* ESShowEditorCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		96B98A001845C56D002E8552 = {
 			isa = PBXGroup;
 			children = (
@@ -1723,24 +1753,10 @@
 		96E939511877F96D004E4BEE /* InfoViewController */ = {
 			isa = PBXGroup;
 			children = (
+				968F7B5B18792F1200BD9425 /* Cell */,
 				96E939521877F9AD004E4BEE /* ESInfoViewController.h */,
 				96E939531877F9AD004E4BEE /* ESInfoViewController.m */,
 				96E939541877F9AD004E4BEE /* ESInfoViewController.xib */,
-				968F7B511879144A00BD9425 /* ESEditorSectionView.h */,
-				968F7B521879144A00BD9425 /* ESEditorSectionView.m */,
-				968F7B541879147400BD9425 /* ESEditorSectionView.xib */,
-				968F7B4E1879127A00BD9425 /* ESShowCommentNumber.h */,
-				968F7B4F1879127A00BD9425 /* ESShowCommentNumber.m */,
-				968F7B4C1879117400BD9425 /* ESShowCommentNumber.xib */,
-				968F7B4718790A0B00BD9425 /* ESUserCommentCell.h */,
-				968F7B4818790A0B00BD9425 /* ESUserCommentCell.m */,
-				968F7B4A18790B6700BD9425 /* ESUserCommentCell.xib */,
-				968F7B42187885F900BD9425 /* ESExpertCommentCell.h */,
-				968F7B43187885F900BD9425 /* ESExpertCommentCell.m */,
-				968F7B451878861E00BD9425 /* ESExpertCommentCell.xib */,
-				96E9395B1878450A004E4BEE /* ESShowEditorCell.h */,
-				96E9395C1878450A004E4BEE /* ESShowEditorCell.m */,
-				96E9395E1878453B004E4BEE /* ESShowEditorCell.xib */,
 			);
 			name = InfoViewController;
 			sourceTree = "<group>";
@@ -1849,6 +1865,7 @@
 				96B98BCB1845E58F002E8552 /* bt_grey@2x.png in Resources */,
 				966C7D91186ABB9D00A1B04D /* 21.jpg in Resources */,
 				966C7D88186ABB9D00A1B04D /* 13.jpg in Resources */,
+				968F7B5A18792D4F00BD9425 /* ESShowSendCommentCell.xib in Resources */,
 				966C7D87186ABB9D00A1B04D /* 12.jpg in Resources */,
 				966C7D9C186ABB9D00A1B04D /* 5.jpg in Resources */,
 				96B98BD21845E58F002E8552 /* e-sky@2x.png in Resources */,
@@ -1858,6 +1875,7 @@
 				966C7D4418692F3E00A1B04D /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				96E9395F1878453B004E4BEE /* ESShowEditorCell.xib in Resources */,
 				966C7D99186ABB9D00A1B04D /* 29.jpg in Resources */,
+				968F7B6018792F6400BD9425 /* ESShowCommentCell.xib in Resources */,
 				966C7D5B186A84A400A1B04D /* setting@2x.png in Resources */,
 				966C7D041868450300A1B04D /* home_normal@2x.png in Resources */,
 				96B98BD41845E58F002E8552 /* icon_head@2x.png in Resources */,
@@ -1919,7 +1937,6 @@
 				966C7D111868452E00A1B04D /* skill_normal.png in Resources */,
 				96B98BCA1845E58F002E8552 /* bt_grey.png in Resources */,
 				96B98B981845C81E002E8552 /* ESModifyPassWordViewController.xib in Resources */,
-				968F7B4B18790B6700BD9425 /* ESUserCommentCell.xib in Resources */,
 				96B98BC91845E58F002E8552 /* bt_blue@2x.png in Resources */,
 				96B98BDC1845E58F002E8552 /* translate_bg@2x.png in Resources */,
 				966C7D96186ABB9D00A1B04D /* 26.jpg in Resources */,
@@ -1982,6 +1999,7 @@
 				966C7DB3186C0EEE00A1B04D /* ESMenuBarItem.m in Sources */,
 				96C90C96185814DF005C4ECB /* ASIDataCompressor.m in Sources */,
 				96B98B451845C6B8002E8552 /* AFURLConnectionOperation.m in Sources */,
+				968F7B5818792D3500BD9425 /* ESShowSendCommentCell.m in Sources */,
 				96C90CC7185EC1F4005C4ECB /* PECropViewController.m in Sources */,
 				967342D21867E8B900B9D399 /* UIViewController+KNSemiModal.m in Sources */,
 				9645ED7B1855C708004643C9 /* ESUserModel.m in Sources */,
@@ -2032,7 +2050,6 @@
 				96C90C9F185814DF005C4ECB /* GTMBase64.m in Sources */,
 				966C7DDC187684B600A1B04D /* ESShowTimeCell.m in Sources */,
 				96B98A1D1845C56D002E8552 /* ESAppDelegate.m in Sources */,
-				968F7B4918790A0B00BD9425 /* ESUserCommentCell.m in Sources */,
 				96B98B411845C6B8002E8552 /* AFHTTPRequestOperationManager.m in Sources */,
 				96E939551877F9AD004E4BEE /* ESInfoViewController.m in Sources */,
 				967342FF18680EE900B9D399 /* UIWebImageView.m in Sources */,
@@ -2047,6 +2064,7 @@
 				96B98B581845C6B8002E8552 /* JTSetMappings.m in Sources */,
 				966C7DD01876642100A1B04D /* ESRatingControl.m in Sources */,
 				96C90C95185814DF005C4ECB /* ASIAuthenticationDialog.m in Sources */,
+				968F7B5E18792F4700BD9425 /* ESShowCommentCell.m in Sources */,
 				96E9395A18783378004E4BEE /* HFCycleScrollView.m in Sources */,
 				96C90CA1185814DF005C4ECB /* QiniuPutExtra.m in Sources */,
 				9673430618680F1900B9D399 /* YASlidingViewController.m in Sources */,
