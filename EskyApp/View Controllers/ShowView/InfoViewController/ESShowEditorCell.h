@@ -10,7 +10,6 @@
 
 @interface ESShowEditorCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *testImage;
 @property (copy, nonatomic) void (^shareBlock)(id userInfo);
 @property (copy, nonatomic) void (^loveBlock)(id userInfo);
 

@@ -47,6 +47,6 @@
     </objects>
     <resources>
         <image name="icon_head.png" width="75" height="75"/>
-        <image name="man/manGende.png" width="768" height="1024"/>
+        <image name="man/manGende.png" width="548" height="856"/>
     </resources>
 </document>

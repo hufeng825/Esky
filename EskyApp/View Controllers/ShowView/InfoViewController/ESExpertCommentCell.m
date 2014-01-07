@@ -34,7 +34,7 @@
 //        starts = [[ESRatingControl alloc]initWithLocation:CGPointMake(202, 27) emptyColor:[UIColor yellowColor]
 //                                               solidColor:[UIColor redColor]
 //                                             andMaxRating:5];
-        starts = [ [ESRatingControl alloc]initWithLocation:CGPointMake(202, 24) emptyImage:[UIImage imageNamed:@"man/starempty.png"] solidImage:[UIImage imageNamed:@"man/starsolid.png"] andMaxRating:5];
+    starts = [ [ESRatingControl alloc]initWithLocation:CGPointMake(202, 24) emptyImage:[UIImage imageNamed:@"man/starempty.png"] solidImage:[UIImage imageNamed:@"man/starsolid.png"] andMaxRating:5];
     }
     [self addSubview:starts];
     [starts setEnabled:NO];

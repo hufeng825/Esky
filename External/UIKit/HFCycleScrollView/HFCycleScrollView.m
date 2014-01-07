@@ -8,6 +8,10 @@
 
 #import "HFCycleScrollView.h"
 
+@interface HFCycleScrollView()
+@property (nonatomic,assign) NSInteger preNum;
+@end
+
 @implementation HFCycleScrollView
 
 @synthesize scrollView ;
@@ -53,7 +57,7 @@
     scrollView.alwaysBounceHorizontal = YES;
     self.scrollView.delaysContentTouches = NO;
     self.scrollView.canCancelContentTouches = NO;
-
+    _preNum = HUGE_VAL;
 }
 
 - (void)setDataource:(id<HFCycleScrollViewDatasource>)newdatasourcen
@@ -147,8 +151,9 @@
         _curPage = [self validPageValue:_curPage-1];
         [self loadData];
     }
-    if ( delegate && [delegate respondsToSelector:@selector(scrollToCurrentIndex:)] ) {
+    if ( delegate && [delegate respondsToSelector:@selector(scrollToCurrentIndex:)] && _curPage != _preNum ) {
         [delegate scrollToCurrentIndex:_curPage];
+        _preNum = _curPage;
     }
 }
 

@@ -18,6 +18,8 @@
 		9645ED7B1855C708004643C9 /* ESUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9645ED7A1855C708004643C9 /* ESUserModel.m */; };
 		9645ED801856C487004643C9 /* ESChoseModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9645ED7E1856C487004643C9 /* ESChoseModuleViewController.m */; };
 		9645ED811856C487004643C9 /* ESChoseModuleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9645ED7F1856C487004643C9 /* ESChoseModuleViewController.xib */; };
+		96563090187C379D0098499B /* ESShowEditorImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9656308F187C379D0098499B /* ESShowEditorImageCell.m */; };
+		96563094187C37EA0098499B /* ESShowEditorImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96563093187C37EA0098499B /* ESShowEditorImageCell.xib */; };
 		966C7D031868450300A1B04D /* follow_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966C7CFE1868450300A1B04D /* follow_normal@2x.png */; };
 		966C7D041868450300A1B04D /* home_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966C7CFF1868450300A1B04D /* home_normal@2x.png */; };
 		966C7D051868450300A1B04D /* mine_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 966C7D001868450300A1B04D /* mine_normal@2x.png */; };
@@ -322,6 +324,9 @@
 		9645ED7D1856C487004643C9 /* ESChoseModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESChoseModuleViewController.h; path = ChoseModule/ESChoseModuleViewController.h; sourceTree = "<group>"; };
 		9645ED7E1856C487004643C9 /* ESChoseModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESChoseModuleViewController.m; path = ChoseModule/ESChoseModuleViewController.m; sourceTree = "<group>"; };
 		9645ED7F1856C487004643C9 /* ESChoseModuleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESChoseModuleViewController.xib; path = ChoseModule/ESChoseModuleViewController.xib; sourceTree = "<group>"; };
+		9656308E187C379D0098499B /* ESShowEditorImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESShowEditorImageCell.h; path = ShowView/InfoViewController/ESShowEditorImageCell.h; sourceTree = "<group>"; };
+		9656308F187C379D0098499B /* ESShowEditorImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESShowEditorImageCell.m; path = ShowView/InfoViewController/ESShowEditorImageCell.m; sourceTree = "<group>"; };
+		96563093187C37EA0098499B /* ESShowEditorImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESShowEditorImageCell.xib; path = ShowView/InfoViewController/ESShowEditorImageCell.xib; sourceTree = "<group>"; };
 		966C7CFE1868450300A1B04D /* follow_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "follow_normal@2x.png"; sourceTree = "<group>"; };
 		966C7CFF1868450300A1B04D /* home_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_normal@2x.png"; sourceTree = "<group>"; };
 		966C7D001868450300A1B04D /* mine_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_normal@2x.png"; sourceTree = "<group>"; };
@@ -1300,6 +1305,9 @@
 				968F7B42187885F900BD9425 /* ESExpertCommentCell.h */,
 				968F7B43187885F900BD9425 /* ESExpertCommentCell.m */,
 				968F7B451878861E00BD9425 /* ESExpertCommentCell.xib */,
+				9656308E187C379D0098499B /* ESShowEditorImageCell.h */,
+				9656308F187C379D0098499B /* ESShowEditorImageCell.m */,
+				96563093187C37EA0098499B /* ESShowEditorImageCell.xib */,
 				96E9395B1878450A004E4BEE /* ESShowEditorCell.h */,
 				96E9395C1878450A004E4BEE /* ESShowEditorCell.m */,
 				96E9395E1878453B004E4BEE /* ESShowEditorCell.xib */,
@@ -2126,6 +2134,7 @@
 				967342E3186808A000B9D399 /* ESLeftMenuViewController.xib in Resources */,
 				96C90CD8185F0011005C4ECB /* wenzi@2x.png in Resources */,
 				96B98BCB1845E58F002E8552 /* bt_grey@2x.png in Resources */,
+				96563094187C37EA0098499B /* ESShowEditorImageCell.xib in Resources */,
 				968F7B5A18792D4F00BD9425 /* ESShowSendCommentCell.xib in Resources */,
 				96018ED3187BAEB7001E2898 /* head0.png in Resources */,
 				968F7C9018795CF000BD9425 /* camera@2x.png in Resources */,
@@ -2390,6 +2399,7 @@
 				96B98B471845C6B8002E8552 /* AFURLResponseSerialization.m in Sources */,
 				967342E2186808A000B9D399 /* ESLeftMenuViewController.m in Sources */,
 				966C7DBB1871097F00A1B04D /* ESPictureItem.m in Sources */,
+				96563090187C379D0098499B /* ESShowEditorImageCell.m in Sources */,
 				96B98A191845C56D002E8552 /* main.m in Sources */,
 				968F7C7818795A6800BD9425 /* CLSpotEffect.m in Sources */,
 			);

@@ -14,6 +14,7 @@
 #import "ESEditorSectionView.h"
 #import "ESShowSendCommentCell.h"
 #import "ESShowCommentCell.h"
+#import "ESShowEditorImageCell.h"
 
 #import "CSAnimation.h"
 
@@ -195,7 +196,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 1;
+        return 2;
     }else if(section ==1){
         return 1;
     }else
@@ -206,10 +207,13 @@
 {
     if(indexPath.section == 0){
         if (indexPath.row == 0) {
-//            if (_isResetCellHight) {
-//                return 386;
-//            }
-            return 336;
+//            if (_isResetCellHight == NO)
+            {
+                return 458;
+            }
+//            return 207;
+        }else{
+            return 123;
         }
     }else if(indexPath.section == 1){
             return 188;
@@ -255,9 +259,36 @@
     if (indexPath.section == 0)
     {
         if (indexPath.row == 0) {
-            ESShowEditorCell *cell = [ESShowEditorCell cellFromXib];
+            static NSString *showEditorImageidentificer = @"ESShowEditorImageCell";
+            ESShowEditorImageCell *cell = [tableView dequeueReusableCellWithIdentifier:showEditorImageidentificer];
+            if (!cell) {
+                cell = [ESShowEditorImageCell cellFromXib];
+                _isResetCellHight = YES;
+                cell.testImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png",rand()%10]];
+            }
+            
+//            if (_isResetCellHight) {
+
+//                double delayInSeconds = 1;
+//                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+//                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+//                    [self.infoCurrentTable beginUpdates];
+//                    NSIndexPath *resetPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//                    [tableView reloadRowsAtIndexPaths:@[resetPath] withRowAnimation:UITableViewRowAnimationFade];
+//                    [tableView endUpdates ];
+//
+//                    _isResetCellHight = NO;
+//                });
+//            }
+            return cell;
+        }
+        else if (indexPath.row == 1) {
+            static NSString *showEditoridentificer = @"ESShowEditorCell";
+            ESShowEditorCell *cell = [tableView dequeueReusableCellWithIdentifier:showEditoridentificer];
+            if (!cell) {
+                cell = [ESShowEditorCell cellFromXib];
+            }
             _isResetCellHight = YES;
-            cell.testImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png",rand()%10]];
             __weak __typeof(self)weakSelf = self;
             __weak  ESShowEditorCell *weakCell = cell;
             cell.shareBlock =^(id userInfo){
@@ -267,22 +298,34 @@
             cell.loveBlock =^(id userInfo){
                weakCell.loveCountLabel.text = [NSString stringWithFormat:@"%d",[weakCell.loveCountLabel.text intValue]+1];
             };
-            
             return cell;
         }
 
     }
     else if(indexPath.section == 1)
     {
-            ESExpertCommentCell *cell = [ESExpertCommentCell cellFromXib];
+        static NSString *expertCommentCellidentificer = @"ESExpertCommentCell";
+        ESExpertCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:expertCommentCellidentificer];
+        if (!cell) {
+            cell = [ESExpertCommentCell cellFromXib];
+        }
             cell.starts.rating = rand()%5;
             return cell;
     }else{
         if (indexPath.row == 0) {
-            ESShowSendCommentCell *cell = [ESShowSendCommentCell cellFromXib];
+            static NSString *showSendCommentCellidentificer = @"ESShowSendCommentCell";
+            ESShowSendCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:showSendCommentCellidentificer];
+            if (!cell) {
+                cell = [ESShowSendCommentCell cellFromXib];
+            }
             return cell;
         }else{
-            ESShowCommentCell *cell = [ESShowCommentCell cellFromXib];
+            static NSString *showCommentCellidentificer = @"ESShowCommentCell";
+            ESShowCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:showCommentCellidentificer];
+            if (!cell) {
+                cell = [ESShowCommentCell cellFromXib];
+            }
+
             return cell;
         }
     }

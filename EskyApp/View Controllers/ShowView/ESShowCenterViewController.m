@@ -237,7 +237,7 @@
             cell = [ESCommentCell cellFromXib];
         }
         [[cell starts]setRating:rand()%5];
-        cell.editorImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"head%d",rand()%6]];
+        cell.editorImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"head%d.png",rand()%6]];
         return cell;
     }
     
