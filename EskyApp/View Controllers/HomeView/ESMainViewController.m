@@ -39,10 +39,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    carousel.type = iCarouselTypeRotary;
+    carousel.type = iCarouselTypeInvertedCylinder;
 //    CGSize offset = CGSizeMake(0.0f,100);
 //    carousel.contentOffset = offset;
-    carousel.scrollSpeed = 0.18;
+    carousel.bounces = YES;
+    carousel.scrollToItemBoundary = YES;
+    carousel.stopAtItemBoundary = YES;
+//    carousel.scrollSpeed = 0.18;
     [carousel reloadData];
     carousel.pagingEnabled = YES;
 }
@@ -158,7 +161,7 @@
     {
         view = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kITEM_SPACING, 425)];
     }
-    ((UIImageView *)view).image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",index]];
+    ((UIImageView *)view).image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png",index]];
     return view;
 }
 - (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value

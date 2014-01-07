@@ -60,7 +60,7 @@
             _itemCount ++ ;
             UIView *bgView = [[UIView alloc]initWithFrame:((UIView*)view).frame ];
             [bgView setBackgroundColor:[UIColor whiteColor]];
-            [bgView setAlpha:.8];
+            [bgView setAlpha:.9];
             [self insertSubview:bgView belowSubview:_customView];
         }
     }
@@ -71,7 +71,8 @@
 {
     if (!_activeBg) {
         self.activeBg = [[UIView alloc]initWithFrame:CGRectZero];
-        _activeBg.backgroundColor = RGBACOLOR(207, 23, 37,0.8);
+//      
+        _activeBg.backgroundColor = RGBACOLOR(207, 23, 37,1);
     }
     return _activeBg;
 }

@@ -46,12 +46,13 @@
     scrollView.backgroundColor = [UIColor clearColor];
     self.backgroundColor = [UIColor clearColor];
     [self addSubview:scrollView];
+    
     scrollView.directionalLockEnabled = YES;
     _curPage = 0;
+    
     scrollView.alwaysBounceHorizontal = YES;
-
     self.scrollView.delaysContentTouches = NO;
-    self.scrollView.canCancelContentTouches = YES;
+    self.scrollView.canCancelContentTouches = NO;
 
 }
 
@@ -145,6 +146,9 @@
     if(x <= 0) {
         _curPage = [self validPageValue:_curPage-1];
         [self loadData];
+    }
+    if ( delegate && [delegate respondsToSelector:@selector(scrollToCurrentIndex:)] ) {
+        [delegate scrollToCurrentIndex:_curPage];
     }
 }
 

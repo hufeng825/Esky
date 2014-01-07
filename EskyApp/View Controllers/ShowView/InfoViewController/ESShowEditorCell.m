@@ -12,7 +12,7 @@
 
 
 @implementation ESShowEditorCell
-@synthesize shareBlock;
+@synthesize shareBlock,loveBlock;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -32,14 +32,29 @@
 - (IBAction)loveClicked:(id)sender {
     Class <CSAnimation> class = [CSAnimation classForAnimationType:CSAnimationTypeMorph];
     [class performAnimationOnView:sender duration:.45
-     
                             delay:0];
+    if (loveBlock) {
+        loveBlock(nil);
+    }
 }
 
 - (IBAction)shareClicker:(id)sender {
     if (shareBlock) {
         shareBlock(nil);
     }
+}
+
+- (IBAction)resetHeight:(id)sender {
+    HFAlert(@"稍后完成");
+//    id view = [self superview];
+//    
+//    while ([view isKindOfClass:[UITableView class]] == NO) {
+//        view = [view superview];
+//    }
+//    
+//    UITableView *tableView = (UITableView *)view;
+//    [tableView beginUpdates];
+//    [tableView endUpdates];
 }
 
 + (ESShowEditorCell *)cellFromXib

@@ -85,8 +85,8 @@
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 //    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
 
-    [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"back_btn.png"]];
-    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"back_btn.png"]];
+    [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"back.png"]];
+    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"back@2x.png"]];
 
 
 
@@ -198,7 +198,7 @@
 - (void)themeFunction {
     NSString *lastSaveTheme = [USER_DEFAULT objectForKey:kThemeChangedNotification];
     if (!TTIsStringWithAnyText(lastSaveTheme)) {
-        [[FAThemeManager sharedManager] setThemeName:@"woman"];
+        [[FAThemeManager sharedManager] setThemeName:@"man"];
     }
     else if (![[[FAThemeManager sharedManager] themeName]
             isEqualToString:lastSaveTheme]) {

@@ -30,7 +30,7 @@
                         <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                     </textAttributes>
                     <items>
-                        <navigationItem title="首页" id="LgU-Le-MmB">
+                        <navigationItem id="LgU-Le-MmB">
                             <barButtonItem key="leftBarButtonItem" id="Gna-41-gKP">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="C7P-6s-A0g">
                                     <rect key="frame" x="16" y="13" width="20" height="18"/>
@@ -62,6 +62,10 @@
                         <outlet property="delegate" destination="-1" id="78p-rN-5hX"/>
                     </connections>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" id="ICV-dh-0UQ">
+                    <rect key="frame" x="110" y="27" width="101" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -76,6 +80,7 @@
         </label>
     </objects>
     <resources>
+        <image name="logo.png" width="101" height="29"/>
         <image name="setting.png" width="20" height="15"/>
     </resources>
 </document>

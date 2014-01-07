@@ -17,7 +17,7 @@
                         <rect key="frame" x="8" y="7" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" 我也来评论一个" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A0d-G7-BtC">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" 我也来评论一个" minimumFontSize="17" background="input.png" translatesAutoresizingMaskIntoConstraints="NO" id="A0d-G7-BtC">
                         <rect key="frame" x="55" y="7" width="245" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="textColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
@@ -30,5 +30,6 @@
     </objects>
     <resources>
         <image name="icon_head.png" width="75" height="75"/>
+        <image name="input.png" width="260" height="30"/>
     </resources>
 </document>

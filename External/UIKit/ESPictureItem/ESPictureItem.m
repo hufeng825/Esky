@@ -57,6 +57,9 @@
     _customView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     [self addSubview:_customView];
     [self setBackgroundColor:[UIColor clearColor]];
+    
+    self.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png",rand()%10]];
+    self.style = rand()%2;
 }
 
 - (void) setStyle:(PictureStyle)style

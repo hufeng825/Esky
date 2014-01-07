@@ -214,7 +214,6 @@
     return 20;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (tableView == showTableView ) {
@@ -237,7 +236,8 @@
         if (!cell) {
             cell = [ESCommentCell cellFromXib];
         }
-        [[cell starts]setRating:3];
+        [[cell starts]setRating:rand()%5];
+        cell.editorImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"head%d",rand()%6]];
         return cell;
     }
     

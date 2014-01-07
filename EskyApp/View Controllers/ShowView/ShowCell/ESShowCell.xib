@@ -7,20 +7,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ESShowCell" id="Pft-KE-PKz" customClass="ESShowCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="218"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="222"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pft-KE-PKz" id="i04-Yn-zcm">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="217"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="221"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hK-yh-TWa" customClass="ESPictureItem">
-                        <rect key="frame" x="10" y="3" width="147" height="211"/>
+                        <rect key="frame" x="9" y="10" width="147" height="211"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     </view>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nzB-3F-Cok" customClass="ESPictureItem">
-                        <rect key="frame" x="163" y="3" width="147" height="211"/>
+                        <rect key="frame" x="164" y="10" width="147" height="211"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

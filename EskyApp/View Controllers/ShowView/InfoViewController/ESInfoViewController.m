@@ -25,6 +25,7 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *infoCurrentTable;
 @property (weak,   nonatomic) IBOutlet HFCycleScrollView *cycleView;
+@property (assign, nonatomic) BOOL isResetCellHight;
 
 @end
 
@@ -56,7 +57,7 @@
    // [_cycleView addSubview:_infoCurrentTable];
     [self performSelector:@selector(animationShow) withObject:nil afterDelay:.1];
     
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"camera.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(pushedNewBtn)];
+   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(goBack)];
 
 }
 
@@ -75,10 +76,16 @@
 }
 
 
+#pragma mark -  scrollViewDelegate
+
+-(void)scrollToCurrentIndex:(NSInteger)index
+{
+    NSLog(@"#######%d",index);
+    _isResetCellHight = NO;
+}
 
 
-
-#pragma mark share 
+#pragma mark - share
 
 - (void)viewOnWillDisplay:(UIViewController *)viewController shareType:(ShareType)shareType {
     //    [viewController.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"iPhoneNavigationBarBG.png"]];
@@ -182,28 +189,32 @@
 #pragma mark -tableView delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
 {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 2;
+        return 1;
     }else if(section ==1){
-        return 30;
-    }
-    return 2;
+        return 1;
+    }else
+    return 4;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.section == 0){
         if (indexPath.row == 0) {
+//            if (_isResetCellHight) {
+//                return 386;
+//            }
             return 336;
-        }else
-            return 200;
+        }
     }else if(indexPath.section == 1){
-        if (indexPath != 0) {
+            return 188;
+    }else{
+        if (indexPath.row != 0) {
             return 50;
         }
     }
@@ -218,6 +229,12 @@
     }
     if (section == 1) {
         ESShowCommentNumber *view = [ESShowCommentNumber viewFromXib];
+        view.infoTextLabel.text = @"专家点评";
+        return view;
+    }
+    if (section == 2) {
+        ESShowCommentNumber *view = [ESShowCommentNumber viewFromXib];
+        view.infoTextLabel.text = @"3条评论";
         return view;
     }
     return Nil;
@@ -225,7 +242,10 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 44;
+    if (section == 0) {
+        return 44;
+    }
+    return 29;
 //    return UITableViewAutomaticDimension;
 }
 
@@ -236,22 +256,28 @@
     {
         if (indexPath.row == 0) {
             ESShowEditorCell *cell = [ESShowEditorCell cellFromXib];
-            cell.testImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",rand()%19]];
+            _isResetCellHight = YES;
+            cell.testImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png",rand()%10]];
             __weak __typeof(self)weakSelf = self;
-            cell.shareBlock=^(id userInfo){
+            __weak  ESShowEditorCell *weakCell = cell;
+            cell.shareBlock =^(id userInfo){
                 NSLog(@"#####");
                 [weakSelf  customShareMenuClickHandler:nil];
             };
-            return cell;
-        }else if(indexPath.row == 1){
-            ESExpertCommentCell *cell = [ESExpertCommentCell cellFromXib];
-            cell.starts.rating = rand()%5;
+            cell.loveBlock =^(id userInfo){
+               weakCell.loveCountLabel.text = [NSString stringWithFormat:@"%d",[weakCell.loveCountLabel.text intValue]+1];
+            };
+            
             return cell;
         }
 
     }
     else if(indexPath.section == 1)
     {
+            ESExpertCommentCell *cell = [ESExpertCommentCell cellFromXib];
+            cell.starts.rating = rand()%5;
+            return cell;
+    }else{
         if (indexPath.row == 0) {
             ESShowSendCommentCell *cell = [ESShowSendCommentCell cellFromXib];
             return cell;

@@ -61,7 +61,7 @@ static NSString *QiniuBucketName = @"hufeng";
 
     [self.bgScrollView setContentSize:CGSizeMake(self.view.width, self.view.height + 10)];
 
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_btn"] style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
 
     [self.headIconImageView.singleTap addTarget:self action:@selector(BtClick)];
     [self initInputs];

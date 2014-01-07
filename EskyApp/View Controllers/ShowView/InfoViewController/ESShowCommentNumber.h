@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ESShowCommentNumber : UIView
+
+@property (weak, nonatomic) IBOutlet UILabel *infoTextLabel;
+
 + (ESShowCommentNumber *)viewFromXib;
 
 @end

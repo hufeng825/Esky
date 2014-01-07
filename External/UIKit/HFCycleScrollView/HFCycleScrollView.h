@@ -20,7 +20,7 @@
 @property (nonatomic,readonly) UIScrollView *scrollView;
 @property (nonatomic,assign) NSInteger currentPage;
 @property (nonatomic,assign,setter = setDataource:) id<HFCycleScrollViewDatasource> datasource;
-@property (nonatomic,assign,setter = setDelegate:) id<HFCycleScrollViewDelegate> delegate;
+@property (nonatomic,weak,setter = setDelegate:) id<HFCycleScrollViewDelegate> delegate;
 
 - (void)reloadData;
 - (void)setViewContent:(UIView *)view atIndex:(NSInteger)index;
@@ -30,8 +30,8 @@
 @protocol HFCycleScrollViewDelegate <NSObject>
 
 @optional
-- (void)didClickPage:(HFCycleScrollView *)csView atIndex:(NSInteger)index;
-
+//- (void)didClickPage:(HFCycleScrollView *)csView atIndex:(NSInteger)index;
+- (void)scrollToCurrentIndex:(NSInteger)index;
 @end
 
 @protocol HFCycleScrollViewDatasource <NSObject>

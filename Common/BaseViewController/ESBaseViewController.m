@@ -95,7 +95,10 @@
     UIView *fixbar = [[UIView alloc] init];
     fixbar.frame = CGRectMake(0, 0, 320, 20);
     fixbar.backgroundColor = [UIColor whiteColor]; // the default color of iOS7 bacground or any color suits your design
-    [self.view addSubview:fixbar];
+    fixbar.alpha = .9;
+//        UIToolbar *view = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 20)];
+//        view.opaque = YES;
+        [self.view addSubview:fixbar];
     }
 }
 

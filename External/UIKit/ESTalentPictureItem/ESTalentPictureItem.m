@@ -64,6 +64,8 @@
     [self setGende:ManGende];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(themeChanged) name:kThemeChangedNotification object:nil];
     [self setTalentName:@"Hason Jan"];
+    self.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png",rand()%10]];
+//    [self setImageWithURL:[NSURL URLWithString:@"http://eskyapp.qiniudn.com/16896545H981159.JPG"]];
 }
 
 - (UIImageView *)talentHeadIcon

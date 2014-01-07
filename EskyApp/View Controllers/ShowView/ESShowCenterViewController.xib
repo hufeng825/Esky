@@ -19,6 +19,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" id="o2k-9g-F9e">
+                    <rect key="frame" x="0.0" y="109" width="320" height="459"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="5f6-Ps-yKC"/>
+                    </connections>
+                </scrollView>
                 <navigationBar contentMode="center" id="aSO-b6-67R">
                     <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -29,7 +37,7 @@
                     </textAttributes>
                     <items>
                         <navigationItem title="秀场" id="Dtp-z9-ULa">
-                            <barButtonItem key="leftBarButtonItem" id="HI8-52-jXJ">
+                            <barButtonItem key="leftBarButtonItem" title="Item" id="HI8-52-jXJ">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="KJG-md-D7H">
                                     <rect key="frame" x="16" y="2" width="40" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -43,11 +51,11 @@
                                 </button>
                             </barButtonItem>
                             <barButtonItem key="rightBarButtonItem" style="plain" id="KLD-uI-g1P">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sOf-k0-HCE">
+                                <button key="customView" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sOf-k0-HCE">
                                     <rect key="frame" x="264" y="2" width="40" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" image="camera.png">
+                                    <state key="normal">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
@@ -61,22 +69,13 @@
                 <view contentMode="scaleToFill" id="ul9-2C-OjB" customClass="ESMenuTabBar">
                     <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" id="o2k-9g-F9e">
-                    <rect key="frame" x="0.0" y="109" width="320" height="418"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="5f6-Ps-yKC"/>
-                    </connections>
-                </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
-        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="148" sectionHeaderHeight="2" sectionFooterHeight="2" id="zwe-4x-mSE">
+        <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="153" sectionHeaderHeight="2" sectionFooterHeight="2" id="zwe-4x-mSE">
             <rect key="frame" x="0.0" y="0.0" width="320" height="452"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -87,7 +86,7 @@
                 <outlet property="delegate" destination="-1" id="nfz-Il-WMN"/>
             </connections>
         </tableView>
-        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="212" sectionHeaderHeight="2" sectionFooterHeight="2" id="LXY-Y7-Zo2">
+        <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="222" sectionHeaderHeight="2" sectionFooterHeight="2" id="LXY-Y7-Zo2">
             <rect key="frame" x="0.0" y="0.0" width="320" height="452"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -97,7 +96,7 @@
                 <outlet property="delegate" destination="-1" id="BBt-Nm-ZL2"/>
             </connections>
         </tableView>
-        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="218" sectionHeaderHeight="2" sectionFooterHeight="2" id="0Cu-V5-a91">
+        <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="221" sectionHeaderHeight="2" sectionFooterHeight="2" id="0Cu-V5-a91">
             <rect key="frame" x="0.0" y="0.0" width="320" height="452"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -109,7 +108,6 @@
         </tableView>
     </objects>
     <resources>
-        <image name="camera.png" width="22" height="19"/>
         <image name="setting.png" width="20" height="15"/>
     </resources>
 </document>

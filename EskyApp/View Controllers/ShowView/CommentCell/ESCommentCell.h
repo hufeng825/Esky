@@ -15,6 +15,9 @@
 
 @property (nonatomic, strong) ESRatingControl *starts;
 
+@property (weak, nonatomic) IBOutlet ESHeaderIconImageView *editorImageView;
+
+
 + (ESCommentCell *)cellFromXib ;
 
 - (ESRatingControl *)starts;

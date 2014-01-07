@@ -10,20 +10,20 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view alpha="0.79999999999999982" tag="200" contentMode="scaleToFill" id="fIM-TG-AfV" customClass="ESMenuBarItem">
-                    <rect key="frame" x="0.0" y="0.0" width="106" height="35"/>
+                <view tag="200" contentMode="scaleToFill" id="fIM-TG-AfV" customClass="ESMenuBarItem">
+                    <rect key="frame" x="0.0" y="0.0" width="107" height="35"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <view alpha="0.80000000000000004" tag="201" contentMode="scaleToFill" id="2uP-qM-AAR" customClass="ESMenuBarItem">
+                <view tag="201" contentMode="scaleToFill" id="2uP-qM-AAR" customClass="ESMenuBarItem">
                     <rect key="frame" x="107" y="0.0" width="106" height="35"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <view alpha="0.80000000000000004" tag="202" contentMode="scaleToFill" id="stw-Et-9tB" customClass="ESMenuBarItem">
+                <view tag="202" contentMode="scaleToFill" id="stw-Et-9tB" customClass="ESMenuBarItem">
                     <rect key="frame" x="214" y="0.0" width="106" height="35"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
