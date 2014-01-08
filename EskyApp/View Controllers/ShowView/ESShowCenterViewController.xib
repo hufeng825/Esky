@@ -75,7 +75,7 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
-        <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="153" sectionHeaderHeight="2" sectionFooterHeight="2" id="zwe-4x-mSE">
+        <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="150" sectionHeaderHeight="2" sectionFooterHeight="2" id="zwe-4x-mSE">
             <rect key="frame" x="0.0" y="0.0" width="320" height="452"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -86,7 +86,7 @@
                 <outlet property="delegate" destination="-1" id="nfz-Il-WMN"/>
             </connections>
         </tableView>
-        <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="222" sectionHeaderHeight="2" sectionFooterHeight="2" id="LXY-Y7-Zo2">
+        <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="218" sectionHeaderHeight="2" sectionFooterHeight="2" id="LXY-Y7-Zo2">
             <rect key="frame" x="0.0" y="0.0" width="320" height="452"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -96,7 +96,7 @@
                 <outlet property="delegate" destination="-1" id="BBt-Nm-ZL2"/>
             </connections>
         </tableView>
-        <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="221" sectionHeaderHeight="2" sectionFooterHeight="2" id="0Cu-V5-a91">
+        <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="220" sectionHeaderHeight="2" sectionFooterHeight="2" id="0Cu-V5-a91">
             <rect key="frame" x="0.0" y="0.0" width="320" height="452"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

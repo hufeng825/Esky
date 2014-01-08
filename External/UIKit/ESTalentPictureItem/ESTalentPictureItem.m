@@ -11,7 +11,7 @@
 
 
 
-#define blurGgHight 35
+#define blurGgHight 40
 #define headWith 30
 #define spaceWith 5
 
