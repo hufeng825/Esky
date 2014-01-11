@@ -10,6 +10,8 @@
 
 @interface ESShowSendCommentCell : UITableViewCell
 
+@property (copy, nonatomic) void (^editBlock)(UITextView *textView);
+
 + (ESShowSendCommentCell *)cellFromXib;
 
 @end

@@ -16,6 +16,7 @@
 
 #import "ESInfoViewController.h"
 #import "CLImageEditor.h"
+#import "ESPublishViewController.h"
 
 
 @interface ESShowCenterViewController ()<CLImageEditorDelegate, CLImageEditorThemeDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UIActionSheetDelegate>
@@ -84,6 +85,19 @@
     }
 }
 
+#pragma mark - Imageeditfinsh Delegate
+
+- (void)imageEditor:(CLImageEditor*)editor didFinishEdittingWithImage:(UIImage*)image
+{
+    [editor dismissViewControllerAnimated:YES completion:^{
+        ESPublishViewController *vc = [[ESPublishViewController alloc]initWithImage:image];
+        UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:vc];
+        [self.navigationController presentViewController:nv animated:YES completion:^{
+            
+        }];
+
+    }];
+}
 
 
 #pragma mark -

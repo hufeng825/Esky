@@ -17,13 +17,26 @@
 #import "ESShowEditorImageCell.h"
 
 #import "CSAnimation.h"
-
+#import "FaceBoard.h"
 #import "CLImageEditor.h"
-
+#import "UIView+Additions.h"
 
 @interface ESInfoViewController ()<CLImageEditorDelegate, CLImageEditorThemeDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+{
+    BOOL isFirstShowKeyboard;
+    
+    BOOL isButtonClicked;
+    
+    BOOL isKeyboardShowing;
+    
+    BOOL isSystemBoardShow;
 
+}
+@property (weak, nonatomic) IBOutlet UIButton *keyboardButton;
+@property (strong, nonatomic) IBOutlet UIView *toolBar;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
+@property (strong, nonatomic) FaceBoard *faceBoard;
 @property (strong, nonatomic) IBOutlet UITableView *infoCurrentTable;
 @property (weak,   nonatomic) IBOutlet HFCycleScrollView *cycleView;
 @property (assign, nonatomic) BOOL isResetCellHight;
@@ -60,6 +73,15 @@
     
    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(goBack)];
 
+    [self addObserver];
+    isFirstShowKeyboard = YES;
+    [_toolBar setTop:self.view.height];
+    [self.view addSubview:_toolBar];
+    _faceBoard = [[FaceBoard alloc] init];
+    [_textView.layer setCornerRadius:6];
+    [_textView.layer setMasksToBounds:YES];
+    
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -90,6 +112,7 @@
 
 - (void)viewOnWillDisplay:(UIViewController *)viewController shareType:(ShareType)shareType {
     //    [viewController.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"iPhoneNavigationBarBG.png"]];
+    
     NSString *logTitleStr = @"私享家登录授权";
     [viewController.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     viewController.navigationItem.rightBarButtonItem = nil;
@@ -267,19 +290,6 @@
                 cell.testImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png",rand()%10]];
             }
             
-//            if (_isResetCellHight) {
-
-//                double delayInSeconds = 1;
-//                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-//                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-//                    [self.infoCurrentTable beginUpdates];
-//                    NSIndexPath *resetPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//                    [tableView reloadRowsAtIndexPaths:@[resetPath] withRowAnimation:UITableViewRowAnimationFade];
-//                    [tableView endUpdates ];
-//
-//                    _isResetCellHight = NO;
-//                });
-//            }
             return cell;
         }
         else if (indexPath.row == 1) {
@@ -318,6 +328,10 @@
             if (!cell) {
                 cell = [ESShowSendCommentCell cellFromXib];
             }
+            cell.editBlock=^(UITextView *textView){
+              
+                [_textView becomeFirstResponder];
+            };
             return cell;
         }else{
             static NSString *showCommentCellidentificer = @"ESShowCommentCell";
@@ -338,6 +352,158 @@
 //{
 //
 //}
+
+-(void)addObserver
+{
+    
+[[NSNotificationCenter defaultCenter] addObserver:self
+                                         selector:@selector(keyboardWillShow:)
+                                             name:UIKeyboardWillShowNotification
+                                           object:nil];
+
+[[NSNotificationCenter defaultCenter] addObserver:self
+                                         selector:@selector(keyboardWillHide:)
+                                             name:UIKeyboardWillHideNotification
+                                           object:nil];
+
+[[NSNotificationCenter defaultCenter] addObserver:self
+                                         selector:@selector(keyboardDidHide:)
+                                             name:UIKeyboardDidHideNotification
+                                           object:nil];
+}
+
+/** ################################ UIKeyboardNotification ################################ **/
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    
+    isKeyboardShowing = YES;
+    
+    NSDictionary *userInfo = [notification userInfo];
+    NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    
+    CGRect keyboardRect = [aValue CGRectValue];
+    keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
+    
+    NSValue *animationDurationValue = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSTimeInterval animationDuration;
+    [animationDurationValue getValue:&animationDuration];
+    
+    [UIView animateWithDuration:animationDuration
+                     animations:^{
+                         [self.view bringSubviewToFront:_toolBar];
+                         _toolBar.top = (self.view.frame.size.height-keyboardRect.size.height-_toolBar.frame.size.height);
+                     }];
+    
+    if ( isFirstShowKeyboard ) {
+        
+        isFirstShowKeyboard = NO;
+        
+        isSystemBoardShow = !isButtonClicked;
+    }
+    
+    if ( isSystemBoardShow ) {
+        
+        [_keyboardButton setImage:[UIImage imageNamed:@"board_emoji"]
+                        forState:UIControlStateNormal];
+    }
+    else {
+        
+        [_keyboardButton setImage:[UIImage imageNamed:@"board_system"]
+                        forState:UIControlStateNormal];
+    }
+
+}
+
+
+/** ################################ ViewController ################################ **/
+
+- (IBAction)faceBoardClick:(id)sender {
+    
+    isButtonClicked = YES;
+    
+    if ( isKeyboardShowing ) {
+        
+        [_textView resignFirstResponder];
+    }
+    else {
+        
+        if ( isFirstShowKeyboard ) {
+            
+            isFirstShowKeyboard = NO;
+            
+            isSystemBoardShow = NO;
+        }
+        
+        if ( !isSystemBoardShow ) {
+            
+            _textView.inputView = _faceBoard;
+        }
+        
+        [_textView becomeFirstResponder];
+    }}
+
+- (IBAction)faceBoardHide:(id)sender {
+    
+    _textView.text = nil;
+    
+    [_textView resignFirstResponder];
+    
+    isFirstShowKeyboard = YES;
+    
+    isButtonClicked = NO;
+    
+    _textView.inputView = nil;
+    
+    [_keyboardButton setImage:[UIImage imageNamed:@"board_emoji"]
+                    forState:UIControlStateNormal];
+    
+    
+}
+
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    
+    NSDictionary *userInfo = [notification userInfo];
+    
+    NSValue *animationDurationValue = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSTimeInterval animationDuration;
+    [animationDurationValue getValue:&animationDuration];
+    
+    [UIView animateWithDuration:animationDuration
+                     animations:^{
+                         [UIView animateWithDuration:animationDuration
+                                          animations:^{
+                                              [self.view bringSubviewToFront:_toolBar];
+                                              _toolBar.top = (self.view.frame.size.height+_toolBar.frame.size.height);
+                                          }];
+                         
+                     }];
+}
+
+- (void)keyboardDidHide:(NSNotification *)notification {
+    
+    isKeyboardShowing = NO;
+    
+    if ( isButtonClicked ) {
+        
+        isButtonClicked = NO;
+        
+        if ( ![_textView.inputView isEqual:_faceBoard] ) {
+            
+            isSystemBoardShow = NO;
+            
+            _textView.inputView = _faceBoard;
+        }
+        else {
+            
+            isSystemBoardShow = YES;
+            
+            _textView.inputView = nil;
+        }
+        
+        [_textView becomeFirstResponder];
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {

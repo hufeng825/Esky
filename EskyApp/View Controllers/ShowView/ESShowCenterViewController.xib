@@ -27,7 +27,7 @@
                         <outlet property="delegate" destination="-1" id="5f6-Ps-yKC"/>
                     </connections>
                 </scrollView>
-                <navigationBar contentMode="center" id="aSO-b6-67R">
+                <navigationBar contentMode="center" translucent="NO" id="aSO-b6-67R">
                     <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <inset key="insetFor6xAndEarlier" minX="-10" minY="20" maxX="10" maxY="0.0"/>
@@ -52,10 +52,10 @@
                             </barButtonItem>
                             <barButtonItem key="rightBarButtonItem" style="plain" id="KLD-uI-g1P">
                                 <button key="customView" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sOf-k0-HCE">
-                                    <rect key="frame" x="264" y="2" width="40" height="40"/>
+                                    <rect key="frame" x="282" y="12" width="22" height="19"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal">
+                                    <state key="normal" image="camera.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
@@ -108,6 +108,7 @@
         </tableView>
     </objects>
     <resources>
+        <image name="camera.png" width="22" height="19"/>
         <image name="setting.png" width="20" height="15"/>
     </resources>
 </document>

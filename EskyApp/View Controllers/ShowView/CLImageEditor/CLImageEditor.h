@@ -9,10 +9,11 @@
 
 #import "CLImageToolInfo.h"
 #import "CLImageEditorTheme.h"
+#import "ESBaseViewController.h"
 
 @protocol CLImageEditorDelegate;
 
-@interface CLImageEditor : UIViewController
+@interface CLImageEditor : ESBaseViewController
 {
     
 }

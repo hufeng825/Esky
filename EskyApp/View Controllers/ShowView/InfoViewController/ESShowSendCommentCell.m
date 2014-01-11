@@ -19,6 +19,13 @@
     }
     return self;
 }
+- (IBAction)beginEdit:(id)sender {
+//    UITableView *tableView = (UITableView *)self.superview.superview;
+//    [tableView scrollToRowAtIndexPath:[tableView indexPathForCell:self] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    if (_editBlock) {
+        _editBlock(nil);
+    }
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
