@@ -29,12 +29,12 @@
     // Image tools are sorted according to the dockedNumber in tool bar.
     // Override point for tool bar customization
     NSArray *tools = @[
+                       @"CLClippingTool",
                        @"CLFilterTool",
                        @"CLAdjustmentTool",
                        @"CLEffectTool",
                        @"CLBlurTool",
                        @"CLRotateTool",
-                       @"CLClippingTool",
                        @"CLToneCurveTool",
                        ];
     return [tools indexOfObject:NSStringFromClass(self)];

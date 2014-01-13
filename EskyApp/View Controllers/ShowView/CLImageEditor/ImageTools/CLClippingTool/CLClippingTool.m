@@ -94,6 +94,9 @@
                      animations:^{
                          _menuContainer.transform = CGAffineTransformIdentity;
                      }];
+
+    _gridView.clippingRatio = [[CLRatio alloc] initWithValue1:10 value2:7];
+
 }
 
 - (void)cleanup
@@ -132,11 +135,11 @@
     CGFloat x = 0;
     
     NSMutableArray *array = [NSMutableArray array];
-    [array addObject:[[CLRatio alloc] initWithValue1:0 value2:0]];
-    [array addObject:[[CLRatio alloc] initWithValue1:1 value2:1]];
-    [array addObject:[[CLRatio alloc] initWithValue1:4 value2:3]];
-    [array addObject:[[CLRatio alloc] initWithValue1:3 value2:2]];
-    [array addObject:[[CLRatio alloc] initWithValue1:16 value2:9]];
+//    [array addObject:[[CLRatio alloc] initWithValue1:0 value2:0]];
+//    [array addObject:[[CLRatio alloc] initWithValue1:1 value2:1]];
+//    [array addObject:[[CLRatio alloc] initWithValue1:4 value2:3]];
+//    [array addObject:[[CLRatio alloc] initWithValue1:3 value2:2]];
+    [array addObject:[[CLRatio alloc] initWithValue1:10 value2:7]];
     
     CGSize  imgSize = self.editor.imageView.image.size;
     CGFloat maxW = MIN(imgSize.width, imgSize.height);
@@ -172,10 +175,11 @@
     
     self.selectedMenu = view;
     
-    if(view.ratio.ratio==0){
-        _gridView.clippingRatio = nil;
-    }
-    else{
+//    if(view.ratio.ratio==0){
+//        _gridView.clippingRatio = nil;
+//    }
+//    else
+    {
         _gridView.clippingRatio = view.ratio;
     }
 }

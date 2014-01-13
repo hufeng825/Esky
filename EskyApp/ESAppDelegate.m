@@ -82,8 +82,8 @@
     [self.window makeKeyAndVisible];
  
 
-//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-//    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+//    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
 
     [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"back.png"]];
     [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"back@2x.png"]];

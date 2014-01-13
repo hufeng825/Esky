@@ -7,9 +7,11 @@
 //
 
 #import "ESBaseViewController.h"
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDK/ISSShareViewDelegate.h>
 
 
-@interface ESPublishViewController : ESBaseViewController<UITextViewDelegate>
+@interface ESPublishViewController : ESBaseViewController<UITextViewDelegate,ISSShareViewDelegate>
 
 - (id)initWithImage:(UIImage *)image;
 

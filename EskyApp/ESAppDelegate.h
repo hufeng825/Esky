@@ -12,6 +12,7 @@
 #import "ESMainViewController.h"
 #import "ESShowCenterViewController.h"
 
+
 @interface ESAppDelegate : UIResponder <UIApplicationDelegate,HFTabBarControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
