@@ -1292,7 +1292,7 @@
 			name = ChoseModule;
 			sourceTree = "<group>";
 		};
-		966C7D1218692F3D00A1B04D /* ShareSDK_v2.7 */ = {
+		966C7D1218692F3D00A1B04D /* ShareSDK_v2.8.1 */ = {
 			isa = PBXGroup;
 			children = (
 				966C7D1318692F3D00A1B04D /* Connection */,
@@ -1301,7 +1301,7 @@
 				966C7D3318692F3D00A1B04D /* ShareSDK.framework */,
 				966C7D3418692F3E00A1B04D /* UI */,
 			);
-			name = ShareSDK_v2.7;
+			name = ShareSDK_v2.8.1;
 			path = External/ShareSDK_v2.7;
 			sourceTree = SOURCE_ROOT;
 		};
@@ -2150,7 +2150,7 @@
 			isa = PBXGroup;
 			children = (
 				966C7D511869575D00A1B04D /* MSDynamicsDrawerViewController */,
-				966C7D1218692F3D00A1B04D /* ShareSDK_v2.7 */,
+				966C7D1218692F3D00A1B04D /* ShareSDK_v2.8.1 */,
 				967342E918680EE900B9D399 /* UIKit */,
 				967342B21867E8B900B9D399 /* Addition */,
 				96C90C6C185814DE005C4ECB /* Qiniu */,

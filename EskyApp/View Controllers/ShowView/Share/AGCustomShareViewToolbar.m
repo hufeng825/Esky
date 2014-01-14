@@ -52,6 +52,24 @@
         
         _oneKeyShareListArray = [[NSMutableArray alloc] initWithObjects:
                                  [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                  SHARE_TYPE_NUMBER(ShareTypeQQSpace),
+                                  @"type",
+                                  [NSNumber numberWithBool:NO],
+                                  @"selected",
+                                  nil],
+                                 [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                  SHARE_TYPE_NUMBER(ShareTypeWeixiTimeline),
+                                  @"type",
+                                  [NSNumber numberWithBool:NO],
+                                  @"selected",
+                                  nil],
+                                 [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                  SHARE_TYPE_NUMBER(ShareTypeWeixiSession),
+                                  @"type",
+                                  [NSNumber numberWithBool:NO],
+                                  @"selected",
+                                  nil],
+                                 [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                   SHARE_TYPE_NUMBER(ShareTypeSinaWeibo),
                                   @"type",
                                   [NSNumber numberWithBool:NO],
@@ -63,25 +81,7 @@
                                   [NSNumber numberWithBool:NO],
                                   @"selected",
                                   nil],
-                                  [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   SHARE_TYPE_NUMBER(ShareTypeQQSpace),
-                                   @"type",
-                                   [NSNumber numberWithBool:NO],
-                                   @"selected",
-                                   nil],
-                                 [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                  SHARE_TYPE_NUMBER(ShareTypeWeixiTimeline),
-                                  @"type",
-                                  [NSNumber numberWithBool:NO],
-                                  @"selected",
-                                  nil],
-                                  [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   SHARE_TYPE_NUMBER(ShareTypeWeixiSession),
-                                   @"type",
-                                   [NSNumber numberWithBool:NO],
-                                   @"selected",
-                                   nil],
-                                 nil];
+                                nil];
         
         
         
@@ -128,7 +128,7 @@
         NSDictionary *item = [_oneKeyShareListArray objectAtIndex:i];
         if ([[item objectForKey:@"selected"] boolValue])
         {
-            [clients addObject:[item objectForKey:@"type"]];
+            [clients addObject:item ];
         }
     }
     
@@ -156,12 +156,45 @@
                                                                       
                                                                       if ([ShareSDK hasAuthorizedWithType:shareType])
                                                                       {
-                                                                          BOOL selected = ! [[item objectForKey:@"selected"] boolValue];
-                                                                          [item setObject:[NSNumber numberWithBool:selected] forKey:@"selected"];
+                                                                         
+                                                                          if (indexPath.row == 0 || indexPath.row == 1 ||indexPath.row == 2)
+                                                                          {
+                                                                              BOOL selected = ! [[item objectForKey:@"selected"] boolValue];
+
+                                                                              for (int i =0 ; i<3 ; i++)
+                                                                              {
+                                                                                  NSMutableDictionary *_item = [_oneKeyShareListArray objectAtIndex:i];
+                                                                                  [_item setObject:[NSNumber numberWithBool:NO] forKey:@"selected"];
+                                                                               }
+                                                                                 [item setObject:[NSNumber numberWithBool:selected] forKey:@"selected"];
+                                                                            }
+                                                                           else
+                                                                            {
+                                                                              BOOL selected = ! [[item objectForKey:@"selected"] boolValue];
+                                                                              [item setObject:[NSNumber numberWithBool:selected] forKey:@"selected"];
+                                                                            }
                                                                           [_tableView reloadData];
                                                                       }
                                                                       else
                                                                       {
+                                                                          if (indexPath.row == 0 || indexPath.row == 1 ||indexPath.row == 2)
+                                                                          {
+                                                                              BOOL selected = ! [[item objectForKey:@"selected"] boolValue];
+                                                                              
+                                                                              for (int i =0 ; i<3 ; i++)
+                                                                              {
+                                                                                  NSMutableDictionary *_item = [_oneKeyShareListArray objectAtIndex:i];
+                                                                                  [_item setObject:[NSNumber numberWithBool:NO] forKey:@"selected"];
+                                                                              }
+                                                                              [item setObject:[NSNumber numberWithBool:selected] forKey:@"selected"];
+                                                                              [_tableView reloadData];
+                                                                              //微信或者qq控件不支持一键分享 需要跳转客户端
+                                                                              return ;
+                                                                          }
+                                                                          
+                                                                          
+                    
+                                                                          
                                                                           id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
                                                                                                                                allowCallback:YES
                                                                                                                                authViewStyle:SSAuthViewStyleModal
@@ -202,17 +235,8 @@
     if (indexPath.row < [_oneKeyShareListArray count])
     {
         NSDictionary *item = [_oneKeyShareListArray objectAtIndex:indexPath.row];
-//        UIImage *icon = [ShareSDK getClientIconWithType:[[item objectForKey:@"type"] integerValue]];
         itemView.iconImageView.image = [self getClientIconWithType:item];
-//        
-//        if ([[item objectForKey:@"selected"] boolValue])
-//        {
-//            itemView.iconImageView.alpha = 1;
-//        }
-//        else
-//        {
-//            itemView.iconImageView.alpha = 0.5;
-//        }
+
     }
     
     return itemView;
