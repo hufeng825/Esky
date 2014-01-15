@@ -68,7 +68,13 @@
     _faceBoard = [[FaceBoard alloc]init];
     isKeyBoardState = YES;
     if (self.isViewLoaded) {
-        _sendImageView.image = _sendimage;
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            __block UIImage *img =  [_sendimage compressedImage];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                _sendImageView.image = img;
+            });
+        });
     }
     [self updateWordCount];
     
@@ -142,10 +148,8 @@
 
 #pragma mark - Share
 
-- (void)sendImageContent:(id<ISSContent>)content
+- (id<ISSAuthOptions>) creatauthOptions
 {
-
-    
     id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
                                                          allowCallback:YES
                                                          authViewStyle:SSAuthViewStyleFullScreenPopup
@@ -159,16 +163,22 @@
                                     [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
                                     SHARE_TYPE_NUMBER(ShareTypeTencentWeibo),
                                     nil]];
-    
+    return authOptions;
+}
+
+
+- (void)sendImageContent:(id<ISSContent>)content
+{
     [ShareSDK shareContent:content
                       type:ShareTypeWeixiSession
-               authOptions:authOptions
+               authOptions:[self creatauthOptions]
              statusBarTips:YES
                     result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
                         
                         if (state == SSPublishContentStateSuccess)
                         {
                             NSLog(@"success");
+                            [self dismissViewControllerAnimated:YES completion:nil];
                         }
                         else if (state == SSPublishContentStateFail)
                         {
@@ -188,46 +198,48 @@
 
 - (void)sendTimelineImageContent:(id<ISSContent>)content
 {
-    
-    id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
-                                                         allowCallback:YES
-                                                         authViewStyle:SSAuthViewStyleFullScreenPopup
-                                                          viewDelegate:nil
-                                               authManagerViewDelegate:nil];
-    
-    //在授权页面中添加关注官方微博
-    [authOptions setFollowAccounts:[NSDictionary dictionaryWithObjectsAndKeys:
-                                    [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
-                                    SHARE_TYPE_NUMBER(ShareTypeSinaWeibo),
-                                    [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
-                                    SHARE_TYPE_NUMBER(ShareTypeTencentWeibo),
-                                    nil]];
-    
     [ShareSDK shareContent:content
                       type:ShareTypeWeixiTimeline
-               authOptions:authOptions
+               authOptions:[self creatauthOptions]
              statusBarTips:YES
                     result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
                         
                         if (state == SSPublishContentStateSuccess)
                         {
                             NSLog(@"success");
+                            [self dismissViewControllerAnimated:YES completion:nil];
+
                         }
                         else if (state == SSPublishContentStateFail)
                         {
+                            HFAlert(@"分享失败,错误码:%d,错误描述:%@",[error errorCode],  [error errorDescription]);
+
                             if ([error errorCode] == -22003)
                             {
-                                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示"
-                                                                                    message:[error errorDescription]
-                                                                                   delegate:nil
-                                                                          cancelButtonTitle:@"知道了"
-                                                                          otherButtonTitles:nil];
-                                [alertView show];
                             }
                         }
                     }];
 }
 
+
+- (void)sendToQQSpaceImageContent:(id<ISSContent>)publishContent
+{
+    [ShareSDK shareContent:publishContent
+                      type:ShareTypeQQSpace
+               authOptions:[self creatauthOptions]
+             statusBarTips:YES
+                    result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+        
+        if (state == SSPublishContentStateSuccess)
+        {
+            NSLog(@"发表成功");
+        }
+        else if (state == SSPublishContentStateFail)
+        {
+            NSLog(@"发布失败!error code == %d, error code == %@", [error errorCode], [error errorDescription]);
+        }
+    }];
+}
 
 - (void)publishButtonClickHandler:(id)sender
 {
@@ -252,24 +264,14 @@
                                             mediaType:SSPublishContentMediaTypeImage];
     
     NSMutableDictionary *item;
-    for (int i =0; i<3; i++) {
-        item = [selectedClients objectAtIndex:0];
+    for (int i =0; i< [selectedClients count]; i++) {
+        item = [selectedClients objectAtIndex:i];
         ShareType shareType = [[item objectForKey:@"type"] integerValue];
         BOOL selected =  [[item objectForKey:@"selected"] boolValue];
         if (selected) {
             switch (shareType) {
                 case ShareTypeQQSpace:
-                    //定制QQ空间信息
-                    [publishContent addQQSpaceUnitWithTitle:@"Hello QQ空间"
-                                                        url:INHERIT_VALUE
-                                                       site:nil
-                                                    fromUrl:nil
-                                                    comment:INHERIT_VALUE
-                                                    summary:INHERIT_VALUE
-                                                      image:INHERIT_VALUE
-                                                       type:INHERIT_VALUE
-                                                    playUrl:nil
-                                                       nswb:nil];
+                    [self sendToQQSpaceImageContent:publishContent];
                     break;
                 case ShareTypeWeixiSession:
                     [self sendImageContent: publishContent];
@@ -284,45 +286,32 @@
     }
 
     
-    id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
-                                                         allowCallback:YES
-                                                         authViewStyle:SSAuthViewStyleFullScreenPopup
-                                                          viewDelegate:self
-                                               authManagerViewDelegate:nil];
-    
-    //在授权页面中添加关注官方微博
-    [authOptions setFollowAccounts:[NSDictionary dictionaryWithObjectsAndKeys:
-                                    [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
-                                    SHARE_TYPE_NUMBER(ShareTypeSinaWeibo),
-                                    [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
-                                    SHARE_TYPE_NUMBER(ShareTypeTencentWeibo),
-                                    nil]];
-    
     NSMutableArray *array = [NSMutableArray array];
     for (NSDictionary *dict in selectedClients) {
-        if ([[item objectForKey:@"type"] integerValue] != ShareTypeWeixiSession) {
+        if ([[item objectForKey:@"type"] integerValue] != ShareTypeWeixiSession &&
+            [[item objectForKey:@"type"] integerValue] != ShareTypeWeixiTimeline &&
+            [[item objectForKey:@"type"] integerValue] != ShareTypeQQSpace
+            ) {
             [array addObject: [item objectForKey:@"type"] ];
         }
     }
     
     BOOL needAuth = NO;
-    if ([selectedClients count] == 1)
+    if ([array count] == 1)
     {
         ShareType shareType = [ [[selectedClients objectAtIndex:0] objectForKey:@"type"]  integerValue];
         if (![ShareSDK hasAuthorizedWithType:shareType])
         {
             needAuth = YES;
             [ShareSDK getUserInfoWithType:shareType
-                              authOptions:authOptions
+                              authOptions:[self creatauthOptions]
                                    result:^(BOOL result, id<ISSPlatformUser> userInfo, id<ICMErrorInfo> error) {
-                                       
                                        if (result)
                                        {
-                                          
                                            //分享内容
                                            [ShareSDK oneKeyShareContent:publishContent
                                                               shareList:array
-                                                            authOptions:authOptions
+                                                            authOptions:[self creatauthOptions]
                                                           statusBarTips:YES
                                                                  result:nil];
                                            
@@ -334,24 +323,21 @@
     
     if (!needAuth)
     {
-     
         //分享内容
         [ShareSDK oneKeyShareContent:publishContent
                            shareList:array
-                         authOptions:authOptions
+                         authOptions:[self creatauthOptions]
                        statusBarTips:YES
                               result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end){
                                   if(state ==  SSPublishContentStateSuccess)
                                   {
-                                      
                                       NSLog(@"分享成功");
+                                      [self dismissViewControllerAnimated:YES completion:nil];
                                       
                                   }
                                   else if(state ==  SSPublishContentStateFail)
                                   {
-                                      
-                                      NSLog(@"分享失败,错误码:%d,错误描述:%@",[error errorCode],  [error errorDescription]);
-                                      
+                                      HFAlert(@"分享失败,错误码:%d,错误描述:%@",[error errorCode],  [error errorDescription]);
                                   }
 
                               }
@@ -396,7 +382,6 @@
     }else{
         _faceBoard.inputTextView = nil;
         self.contextView.inputView = nil ;
-
     }
     [self.contextView becomeFirstResponder];
 }

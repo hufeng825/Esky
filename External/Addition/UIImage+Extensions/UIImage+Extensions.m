@@ -15,8 +15,8 @@
 #define toCF (CFTypeRef)
 #endif
 
-#define MAX_IMAGEPIX 256.0          // max pix 200.0px
-#define MAX_IMAGEDATA_LEN 50000.0   // max data length 5K
+#define MAX_IMAGEPIX 1080.0          // max pix 1080.0px
+#define MAX_IMAGEDATA_LEN 500000.0   // max data length 50K
 
 
 CGFloat DegreesToRadian(CGFloat degrees) {return degrees * M_PI / 180;};

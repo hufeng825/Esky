@@ -157,31 +157,31 @@
                                                                       if ([ShareSDK hasAuthorizedWithType:shareType])
                                                                       {
                                                                          
-                                                                          if (indexPath.row == 0 || indexPath.row == 1 ||indexPath.row == 2)
+//                                                                          if (indexPath.row == 0 || indexPath.row == 1 ||indexPath.row == 2)
                                                                           {
                                                                               BOOL selected = ! [[item objectForKey:@"selected"] boolValue];
 
-                                                                              for (int i =0 ; i<3 ; i++)
+                                                                              for (int i =0 ; i<5 ; i++)
                                                                               {
                                                                                   NSMutableDictionary *_item = [_oneKeyShareListArray objectAtIndex:i];
                                                                                   [_item setObject:[NSNumber numberWithBool:NO] forKey:@"selected"];
                                                                                }
                                                                                  [item setObject:[NSNumber numberWithBool:selected] forKey:@"selected"];
                                                                             }
-                                                                           else
-                                                                            {
-                                                                              BOOL selected = ! [[item objectForKey:@"selected"] boolValue];
-                                                                              [item setObject:[NSNumber numberWithBool:selected] forKey:@"selected"];
-                                                                            }
+//                                                                           else
+//                                                                            {
+//                                                                              BOOL selected = ! [[item objectForKey:@"selected"] boolValue];
+//                                                                              [item setObject:[NSNumber numberWithBool:selected] forKey:@"selected"];
+//                                                                            }
                                                                           [_tableView reloadData];
                                                                       }
                                                                       else
                                                                       {
-                                                                          if (indexPath.row == 0 || indexPath.row == 1 ||indexPath.row == 2)
+//                                                                          if (indexPath.row == 0 || indexPath.row == 1 ||indexPath.row == 2)
                                                                           {
                                                                               BOOL selected = ! [[item objectForKey:@"selected"] boolValue];
                                                                               
-                                                                              for (int i =0 ; i<3 ; i++)
+                                                                              for (int i =0 ; i<5 ; i++)
                                                                               {
                                                                                   NSMutableDictionary *_item = [_oneKeyShareListArray objectAtIndex:i];
                                                                                   [_item setObject:[NSNumber numberWithBool:NO] forKey:@"selected"];

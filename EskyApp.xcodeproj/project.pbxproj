@@ -30,7 +30,6 @@
 		966C7D0F1868452E00A1B04D /* mine_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 966C7D0A1868452E00A1B04D /* mine_normal.png */; };
 		966C7D101868452E00A1B04D /* show_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 966C7D0B1868452E00A1B04D /* show_normal.png */; };
 		966C7D111868452E00A1B04D /* skill_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 966C7D0C1868452E00A1B04D /* skill_normal.png */; };
-		966C7D3A18692F3E00A1B04D /* MailConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966C7D1418692F3D00A1B04D /* MailConnection.framework */; };
 		966C7D3B18692F3E00A1B04D /* QQConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966C7D1518692F3D00A1B04D /* QQConnection.framework */; };
 		966C7D3C18692F3E00A1B04D /* QZoneConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966C7D1618692F3D00A1B04D /* QZoneConnection.framework */; };
 		966C7D3D18692F3E00A1B04D /* SinaWeiboConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966C7D1718692F3D00A1B04D /* SinaWeiboConnection.framework */; };
@@ -558,7 +557,6 @@
 		966C7D0A1868452E00A1B04D /* mine_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_normal.png; sourceTree = "<group>"; };
 		966C7D0B1868452E00A1B04D /* show_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = show_normal.png; sourceTree = "<group>"; };
 		966C7D0C1868452E00A1B04D /* skill_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skill_normal.png; sourceTree = "<group>"; };
-		966C7D1418692F3D00A1B04D /* MailConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MailConnection.framework; sourceTree = "<group>"; };
 		966C7D1518692F3D00A1B04D /* QQConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QQConnection.framework; sourceTree = "<group>"; };
 		966C7D1618692F3D00A1B04D /* QZoneConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QZoneConnection.framework; sourceTree = "<group>"; };
 		966C7D1718692F3D00A1B04D /* SinaWeiboConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SinaWeiboConnection.framework; sourceTree = "<group>"; };
@@ -1240,7 +1238,6 @@
 				966C7D4718692F3E00A1B04D /* libTCWeiboSDK.a in Frameworks */,
 				96B98BA81845CC56002E8552 /* libsqlite3.dylib in Frameworks */,
 				96B98BA61845CBA8002E8552 /* SystemConfiguration.framework in Frameworks */,
-				966C7D3A18692F3E00A1B04D /* MailConnection.framework in Frameworks */,
 				966C7D3E18692F3E00A1B04D /* WeChatConnection.framework in Frameworks */,
 				966C7D5018692F3E00A1B04D /* ShareSDKiPhoneSimpleShareViewUI.framework in Frameworks */,
 				96B98BA41845CB28002E8552 /* MobileCoreServices.framework in Frameworks */,
@@ -1292,7 +1289,7 @@
 			name = ChoseModule;
 			sourceTree = "<group>";
 		};
-		966C7D1218692F3D00A1B04D /* ShareSDK_v2.8.1 */ = {
+		966C7D1218692F3D00A1B04D /* ShareSDK_v2.8.2 */ = {
 			isa = PBXGroup;
 			children = (
 				966C7D1318692F3D00A1B04D /* Connection */,
@@ -1301,7 +1298,7 @@
 				966C7D3318692F3D00A1B04D /* ShareSDK.framework */,
 				966C7D3418692F3E00A1B04D /* UI */,
 			);
-			name = ShareSDK_v2.8.1;
+			name = ShareSDK_v2.8.2;
 			path = External/ShareSDK_v2.7;
 			sourceTree = SOURCE_ROOT;
 		};
@@ -1309,7 +1306,6 @@
 			isa = PBXGroup;
 			children = (
 				968F7B611879461400BD9425 /* TencentWeiboConnection.framework */,
-				966C7D1418692F3D00A1B04D /* MailConnection.framework */,
 				966C7D1518692F3D00A1B04D /* QQConnection.framework */,
 				966C7D1618692F3D00A1B04D /* QZoneConnection.framework */,
 				966C7D1718692F3D00A1B04D /* SinaWeiboConnection.framework */,
@@ -2150,7 +2146,7 @@
 			isa = PBXGroup;
 			children = (
 				966C7D511869575D00A1B04D /* MSDynamicsDrawerViewController */,
-				966C7D1218692F3D00A1B04D /* ShareSDK_v2.8.1 */,
+				966C7D1218692F3D00A1B04D /* ShareSDK_v2.8.2 */,
 				967342E918680EE900B9D399 /* UIKit */,
 				967342B21867E8B900B9D399 /* Addition */,
 				96C90C6C185814DE005C4ECB /* Qiniu */,
