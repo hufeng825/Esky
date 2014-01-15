@@ -35,7 +35,7 @@
 
 - (void)updateStyle
 {
-	self.titleLabel.font = [UIFont systemFontOfSize:17.0];
+	self.titleLabel.font = [UIFont systemFontOfSize:22.0];
     [self.titleLabel setTextColor:RGB(33, 33, 33)];
 	self.alpha = 0.98;
 	
@@ -50,7 +50,7 @@
 		{
 			case REDActionSheetButtonTypeDefault:
 				self.backgroundColor = [UIColor whiteColor];
-				[self setTitleColor:RGB(33, 33, 33) forState:UIControlStateNormal];
+				[self setTitleColor:RGB(66, 66, 66) forState:UIControlStateNormal];
 				break;
 			case REDActionSheetButtonTypeCancel:
 //				self.backgroundColor = [UIColor colorWithRed:0.204 green:0.204 blue:0.204 alpha:1];
