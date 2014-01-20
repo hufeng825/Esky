@@ -43,6 +43,7 @@
 {
     scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
     scrollView.delegate = self;
+    scrollView.scrollEnabled = NO;
     scrollView.contentSize = CGSizeMake(self.bounds.size.width * 3, self.bounds.size.height);
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.contentOffset = CGPointMake(self.bounds.size.width, 0);
@@ -58,6 +59,34 @@
     self.scrollView.delaysContentTouches = NO;
     self.scrollView.canCancelContentTouches = NO;
     _preNum = HUGE_VAL;
+    
+    scrollView.alwaysBounceVertical = YES ;
+    
+    UISwipeGestureRecognizer * Swipeleft=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeleft:)];
+    Swipeleft.direction=UISwipeGestureRecognizerDirectionLeft;
+    [self addGestureRecognizer:Swipeleft];
+    
+    UISwipeGestureRecognizer * Swiperight=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swiperight:)];
+    Swiperight.direction=UISwipeGestureRecognizerDirectionRight;
+    [self addGestureRecognizer:Swiperight];
+    
+}
+
+-(void)swipeleft:(UISwipeGestureRecognizer*)gestureRecognizer
+{
+//    [scrollView setContentOffset:CGPointMake(scrollView.frame.size.width, 0) animated:YES];
+
+    //Do what you want here
+    _curPage = [self validPageValue:_curPage+1];
+    [self loadData];
+}
+
+-(void)swiperight:(UISwipeGestureRecognizer*)gestureRecognizer
+{
+    //Do what you want here
+//    [scrollView setContentOffset:CGPointMake(scrollView.frame.size.width, 0) animated:YES];
+    _curPage = [self validPageValue:_curPage-1];
+    [self loadData];
 }
 
 - (void)setDataource:(id<HFCycleScrollViewDatasource>)newdatasourcen
@@ -137,9 +166,17 @@
 }
 
 #pragma mark - UIScrollViewDelegate
+- (void)setBgContentOffsetAnimation:(CGFloat)Offsetx OffsetY:(CGFloat)OffsetY {
+    [UIView animateWithDuration:1 delay:.5 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        self.scrollView.contentOffset = CGPointMake(Offsetx, OffsetY);
+    } completion:nil ];
+}
+
+
 - (void)scrollViewDidScroll:(UIScrollView *)aScrollView {
     int x = aScrollView.contentOffset.x;
     
+
     //往下翻一张
     if(x >= (2*self.frame.size.width)) {
         _curPage = [self validPageValue:_curPage+1];

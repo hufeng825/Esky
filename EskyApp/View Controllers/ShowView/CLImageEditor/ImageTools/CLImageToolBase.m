@@ -33,7 +33,7 @@
                        @"CLFilterTool",
                        @"CLAdjustmentTool",
                        @"CLEffectTool",
-                       @"CLBlurTool",
+                       /*@"CLBlurTool",*/
                        @"CLRotateTool",
                        @"CLToneCurveTool",
                        ];

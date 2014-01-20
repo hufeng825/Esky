@@ -103,7 +103,6 @@
 
 -(void)scrollToCurrentIndex:(NSInteger)index
 {
-    NSLog(@"#######%d",index);
     _isResetCellHight = NO;
 }
 
@@ -201,6 +200,10 @@
     infoTable.alwaysBounceVertical = YES;
     infoTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     infoTable.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    infoTable.bounces = YES;
+    infoTable.delaysContentTouches = YES;
+    infoTable.canCancelContentTouches = YES;
+    infoTable.directionalLockEnabled = YES;
     return infoTable;
 }
 
@@ -209,6 +212,16 @@
 //    [super touchesBegan:touches withEvent:event];
 //    //my code
 //}
+-(void)scrollViewWillBeginDragging:(UIScrollView *)ascrollView
+{
+    NSLog(@"##################11");
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)aScrollView {
+    
+    NSLog(@"##################22");
+
+}
 
 #pragma mark -tableView delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
@@ -272,7 +285,7 @@
     if (section == 0) {
         return 44;
     }
-    return 29;
+    return 32;
 //    return UITableViewAutomaticDimension;
 }
 

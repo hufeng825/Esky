@@ -7,10 +7,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ESShowCenterViewController">
             <connections>
                 <outlet property="commentTableView" destination="0Cu-V5-a91" id="Rvg-7j-pnC"/>
+                <outlet property="menutab" destination="ul9-2C-OjB" id="JxJ-nR-EOF"/>
                 <outlet property="scrollView" destination="o2k-9g-F9e" id="OcG-Rh-6E5"/>
                 <outlet property="showTableView" destination="LXY-Y7-Zo2" id="e6k-Q4-miT"/>
                 <outlet property="showTimeTableView" destination="zwe-4x-mSE" id="Bog-sp-Ru3"/>
-                <outlet property="test" destination="ul9-2C-OjB" id="UCR-Jv-DYF"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>

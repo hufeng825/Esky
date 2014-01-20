@@ -11,7 +11,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view tag="200" contentMode="scaleToFill" id="fIM-TG-AfV" customClass="ESMenuBarItem">
-                    <rect key="frame" x="0.0" y="0.0" width="107" height="35"/>
+                    <rect key="frame" x="0.0" y="0.0" width="106" height="35"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>

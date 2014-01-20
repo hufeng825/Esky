@@ -24,7 +24,7 @@
 @interface ESShowCenterViewController ()<CLImageEditorDelegate, CLImageEditorThemeDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet ESMenuTabBar *test;
+@property (weak, nonatomic) IBOutlet ESMenuTabBar *menutab;
 
 
 @property (strong, nonatomic) IBOutlet UITableView *showTimeTableView;
@@ -129,9 +129,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _test.delegate = self;
+    _menutab.delegate = self;
     
-    [_test  initItemsTitles:@[
+    [_menutab  initItemsTitles:@[
       @{@"Title":@"最新", @"EnglishTitle":@"SHOW TIME"},
       @{@"Title":@"达人", @"EnglishTitle":@"SHOW"},
       @{@"Title":@"点评", @"EnglishTitle":@"FASHION"},
@@ -206,7 +206,7 @@
     if (scrollView == _scrollView) {
         CGFloat pageWidth = scrollView.frame.size.width;
         int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-        [_test selectMenuItemAtIndex:page];
+        [_menutab selectMenuItemAtIndex:page];
     }
    
 }

@@ -69,7 +69,9 @@
     
     ESLoginViewController *vc = [[ESLoginViewController alloc]initWithNibName:@"ESLoginViewController" bundle:nil];
     
-    [self.tabViewController setSubViewControllers:@[_manViewController,@"",@"",_showCenterViewController,vc]];
+    self.skillHomeViewController = [[ESSkillHomeViewController alloc]initDrawerViewController:slidingViewController];
+    
+    [self.tabViewController setSubViewControllers:@[_manViewController,_skillHomeViewController,@"",_showCenterViewController,vc]];
     self.tabViewController.selectedIndex =0;
 
     
