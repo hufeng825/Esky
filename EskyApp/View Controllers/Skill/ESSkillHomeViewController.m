@@ -173,6 +173,7 @@
         cell = [ESSkillExpertCommentCell cellFromXib];
     }
     cell.starts.rating = rand()%5;
+    [cell toSetTestImageView];
     return cell;
     }
     return nil;

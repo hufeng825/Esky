@@ -17,5 +17,8 @@
 
 + (ESSkillExpertCommentCell *)cellFromXib;
 
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *itemsImageView;
+
+- (void) toSetTestImageView;
 
 @end

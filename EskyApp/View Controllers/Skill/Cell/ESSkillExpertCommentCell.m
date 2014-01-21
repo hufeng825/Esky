@@ -7,6 +7,7 @@
 //
 
 #import "ESSkillExpertCommentCell.h"
+#import "NSArray+Additions.h"
 
 @implementation ESSkillExpertCommentCell
 @synthesize starts;
@@ -42,9 +43,27 @@
     return starts;
 }
 
+- (void) toSetTestImageView
+{
+    NSMutableArray *array = [NSMutableArray array];
+    for (int i=0; i<5; i++) {
+        [array addObject:[NSString stringWithFormat:@"skill%d.png",i] ];
+    }
+    [array  scramble];
+    
+    for (int i=0 ; i<5; i++ ) {
+        ((UIImageView *)[_itemsImageView objectAtIndex:i]).image = [UIImage imageNamed: array[i] ];
+    }
+}
+
+
+
 + (ESSkillExpertCommentCell *)cellFromXib
 {
+    
     return [ESXibViewUtils loadViewFromXibNamed:@"ESSkillExpertCommentCell"];
 }
+
+
 
 @end

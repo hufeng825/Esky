@@ -342,7 +342,7 @@
 		96E275A9188E68CE00C0137D /* skill3.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E275A2188E68CE00C0137D /* skill3.png */; };
 		96E275AA188E68CE00C0137D /* skill4.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E275A3188E68CE00C0137D /* skill4.png */; };
 		96E275AB188E68CE00C0137D /* skill5.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E275A4188E68CE00C0137D /* skill5.png */; };
-		96E275AC188E68CE00C0137D /* skill6.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E275A5188E68CE00C0137D /* skill6.png */; };
+		96E275AC188E68CE00C0137D /* skill0.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E275A5188E68CE00C0137D /* skill0.png */; };
 		96E939551877F9AD004E4BEE /* ESInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E939531877F9AD004E4BEE /* ESInfoViewController.m */; };
 		96E939561877F9AD004E4BEE /* ESInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E939541877F9AD004E4BEE /* ESInfoViewController.xib */; };
 		96E9395A18783378004E4BEE /* HFCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E9395918783378004E4BEE /* HFCycleScrollView.m */; };
@@ -1065,7 +1065,7 @@
 		96E275A2188E68CE00C0137D /* skill3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skill3.png; sourceTree = "<group>"; };
 		96E275A3188E68CE00C0137D /* skill4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skill4.png; sourceTree = "<group>"; };
 		96E275A4188E68CE00C0137D /* skill5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skill5.png; sourceTree = "<group>"; };
-		96E275A5188E68CE00C0137D /* skill6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skill6.png; sourceTree = "<group>"; };
+		96E275A5188E68CE00C0137D /* skill0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skill0.png; sourceTree = "<group>"; };
 		96E939521877F9AD004E4BEE /* ESInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESInfoViewController.h; path = ShowView/InfoViewController/ESInfoViewController.h; sourceTree = "<group>"; };
 		96E939531877F9AD004E4BEE /* ESInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESInfoViewController.m; path = ShowView/InfoViewController/ESInfoViewController.m; sourceTree = "<group>"; };
 		96E939541877F9AD004E4BEE /* ESInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESInfoViewController.xib; path = ShowView/InfoViewController/ESInfoViewController.xib; sourceTree = "<group>"; };
@@ -2424,7 +2424,7 @@
 				96E275A2188E68CE00C0137D /* skill3.png */,
 				96E275A3188E68CE00C0137D /* skill4.png */,
 				96E275A4188E68CE00C0137D /* skill5.png */,
-				96E275A5188E68CE00C0137D /* skill6.png */,
+				96E275A5188E68CE00C0137D /* skill0.png */,
 				96B87D71188CC91E008D224E /* filtrate.png */,
 				96B87D72188CC91E008D224E /* filtrate@2x.png */,
 				96B87D6D188CC8D9008D224E /* skillTitleBtNormal.png */,
@@ -3236,7 +3236,7 @@
 				96FDA7DA187FF1B100D05F42 /* 056.png in Resources */,
 				96FDA7B7187FF1B100D05F42 /* 038@2x.png in Resources */,
 				96FDA770187FF1B100D05F42 /* 003.png in Resources */,
-				96E275AC188E68CE00C0137D /* skill6.png in Resources */,
+				96E275AC188E68CE00C0137D /* skill0.png in Resources */,
 				96FDA7D7187FF1B100D05F42 /* 054@2x.png in Resources */,
 				96FDA7FA187FF1B100D05F42 /* 072.png in Resources */,
 				96FDA76C187FF1B100D05F42 /* 001.png in Resources */,
