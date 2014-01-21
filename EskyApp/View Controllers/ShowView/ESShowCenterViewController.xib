@@ -39,7 +39,7 @@
                         <navigationItem title="秀场" id="Dtp-z9-ULa">
                             <barButtonItem key="leftBarButtonItem" title="Item" id="HI8-52-jXJ">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="KJG-md-D7H">
-                                    <rect key="frame" x="16" y="2" width="40" height="40"/>
+                                    <rect key="frame" x="16" y="13" width="20" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <state key="normal" image="setting.png">

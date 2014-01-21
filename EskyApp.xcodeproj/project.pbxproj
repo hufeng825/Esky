@@ -327,6 +327,22 @@
 		96C90CD8185F0011005C4ECB /* wenzi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CD6185F0011005C4ECB /* wenzi@2x.png */; };
 		96C90CDB185F0204005C4ECB /* choosebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CD9185F0204005C4ECB /* choosebg.png */; };
 		96C90CDC185F0204005C4ECB /* choosebg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C90CDA185F0204005C4ECB /* choosebg@2x.png */; };
+		96E27590188E1B1F00C0137D /* ESSkillEditorSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E2758B188E1B1F00C0137D /* ESSkillEditorSectionView.m */; };
+		96E27591188E1B1F00C0137D /* ESSkillEditorSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E2758C188E1B1F00C0137D /* ESSkillEditorSectionView.xib */; };
+		96E27592188E1B1F00C0137D /* ESSkillExpertCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E2758E188E1B1F00C0137D /* ESSkillExpertCommentCell.m */; };
+		96E27593188E1B1F00C0137D /* ESSkillExpertCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E2758F188E1B1F00C0137D /* ESSkillExpertCommentCell.xib */; };
+		96E27597188E21CC00C0137D /* ESSkillShowEditorImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E27594188E21CC00C0137D /* ESSkillShowEditorImageCell.m */; };
+		96E27598188E21CC00C0137D /* ESSkillShowEditorImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E27595188E21CC00C0137D /* ESSkillShowEditorImageCell.xib */; };
+		96E2759C188E505900C0137D /* dan0.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E27599188E505900C0137D /* dan0.png */; };
+		96E2759D188E505900C0137D /* dan1.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E2759A188E505900C0137D /* dan1.png */; };
+		96E2759E188E505900C0137D /* dan2.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E2759B188E505900C0137D /* dan2.png */; };
+		96E275A6188E68CE00C0137D /* dan3.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E2759F188E68CE00C0137D /* dan3.png */; };
+		96E275A7188E68CE00C0137D /* skill1.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E275A0188E68CE00C0137D /* skill1.png */; };
+		96E275A8188E68CE00C0137D /* skill2.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E275A1188E68CE00C0137D /* skill2.png */; };
+		96E275A9188E68CE00C0137D /* skill3.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E275A2188E68CE00C0137D /* skill3.png */; };
+		96E275AA188E68CE00C0137D /* skill4.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E275A3188E68CE00C0137D /* skill4.png */; };
+		96E275AB188E68CE00C0137D /* skill5.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E275A4188E68CE00C0137D /* skill5.png */; };
+		96E275AC188E68CE00C0137D /* skill6.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E275A5188E68CE00C0137D /* skill6.png */; };
 		96E939551877F9AD004E4BEE /* ESInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E939531877F9AD004E4BEE /* ESInfoViewController.m */; };
 		96E939561877F9AD004E4BEE /* ESInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E939541877F9AD004E4BEE /* ESInfoViewController.xib */; };
 		96E9395A18783378004E4BEE /* HFCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E9395918783378004E4BEE /* HFCycleScrollView.m */; };
@@ -1031,6 +1047,25 @@
 		96C90CD9185F0204005C4ECB /* choosebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = choosebg.png; sourceTree = "<group>"; };
 		96C90CDA185F0204005C4ECB /* choosebg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "choosebg@2x.png"; sourceTree = "<group>"; };
 		96CEEBDA1845FAFD0045F15E /* ESDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDebug.h; sourceTree = "<group>"; };
+		96E2758A188E1B1F00C0137D /* ESSkillEditorSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSkillEditorSectionView.h; sourceTree = "<group>"; };
+		96E2758B188E1B1F00C0137D /* ESSkillEditorSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSkillEditorSectionView.m; sourceTree = "<group>"; };
+		96E2758C188E1B1F00C0137D /* ESSkillEditorSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESSkillEditorSectionView.xib; sourceTree = "<group>"; };
+		96E2758D188E1B1F00C0137D /* ESSkillExpertCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSkillExpertCommentCell.h; sourceTree = "<group>"; };
+		96E2758E188E1B1F00C0137D /* ESSkillExpertCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSkillExpertCommentCell.m; sourceTree = "<group>"; };
+		96E2758F188E1B1F00C0137D /* ESSkillExpertCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESSkillExpertCommentCell.xib; sourceTree = "<group>"; };
+		96E27594188E21CC00C0137D /* ESSkillShowEditorImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSkillShowEditorImageCell.m; sourceTree = "<group>"; };
+		96E27595188E21CC00C0137D /* ESSkillShowEditorImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESSkillShowEditorImageCell.xib; sourceTree = "<group>"; };
+		96E27596188E21CC00C0137D /* ESSkillShowEditorImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSkillShowEditorImageCell.h; sourceTree = "<group>"; };
+		96E27599188E505900C0137D /* dan0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dan0.png; sourceTree = "<group>"; };
+		96E2759A188E505900C0137D /* dan1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dan1.png; sourceTree = "<group>"; };
+		96E2759B188E505900C0137D /* dan2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dan2.png; sourceTree = "<group>"; };
+		96E2759F188E68CE00C0137D /* dan3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dan3.png; sourceTree = "<group>"; };
+		96E275A0188E68CE00C0137D /* skill1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skill1.png; sourceTree = "<group>"; };
+		96E275A1188E68CE00C0137D /* skill2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skill2.png; sourceTree = "<group>"; };
+		96E275A2188E68CE00C0137D /* skill3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skill3.png; sourceTree = "<group>"; };
+		96E275A3188E68CE00C0137D /* skill4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skill4.png; sourceTree = "<group>"; };
+		96E275A4188E68CE00C0137D /* skill5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skill5.png; sourceTree = "<group>"; };
+		96E275A5188E68CE00C0137D /* skill6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skill6.png; sourceTree = "<group>"; };
 		96E939521877F9AD004E4BEE /* ESInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESInfoViewController.h; path = ShowView/InfoViewController/ESInfoViewController.h; sourceTree = "<group>"; };
 		96E939531877F9AD004E4BEE /* ESInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESInfoViewController.m; path = ShowView/InfoViewController/ESInfoViewController.m; sourceTree = "<group>"; };
 		96E939541877F9AD004E4BEE /* ESInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESInfoViewController.xib; path = ShowView/InfoViewController/ESInfoViewController.xib; sourceTree = "<group>"; };
@@ -1985,6 +2020,7 @@
 		96B87D63188CB55D008D224E /* Skill */ = {
 			isa = PBXGroup;
 			children = (
+				96E27589188E1B1F00C0137D /* Cell */,
 				96B87D75188CF87B008D224E /* MenuItem */,
 				96B87D64188CB582008D224E /* ESSkillHomeViewController.h */,
 				96B87D65188CB582008D224E /* ESSkillHomeViewController.m */,
@@ -2382,6 +2418,13 @@
 		96B98BB21845E58F002E8552 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				96E2759F188E68CE00C0137D /* dan3.png */,
+				96E275A0188E68CE00C0137D /* skill1.png */,
+				96E275A1188E68CE00C0137D /* skill2.png */,
+				96E275A2188E68CE00C0137D /* skill3.png */,
+				96E275A3188E68CE00C0137D /* skill4.png */,
+				96E275A4188E68CE00C0137D /* skill5.png */,
+				96E275A5188E68CE00C0137D /* skill6.png */,
 				96B87D71188CC91E008D224E /* filtrate.png */,
 				96B87D72188CC91E008D224E /* filtrate@2x.png */,
 				96B87D6D188CC8D9008D224E /* skillTitleBtNormal.png */,
@@ -2474,6 +2517,9 @@
 				96B98BC71845E58F002E8552 /* translate_bg@2x.png */,
 				96018EC8187BA56F001E2898 /* logo.png */,
 				96018EC9187BA56F001E2898 /* logo@2x.png */,
+				96E27599188E505900C0137D /* dan0.png */,
+				96E2759A188E505900C0137D /* dan1.png */,
+				96E2759B188E505900C0137D /* dan2.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -2564,6 +2610,23 @@
 				96C90CC4185EC1F4005C4ECB /* UIImage+PECrop.m */,
 			);
 			path = CliperView;
+			sourceTree = "<group>";
+		};
+		96E27589188E1B1F00C0137D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				96E27596188E21CC00C0137D /* ESSkillShowEditorImageCell.h */,
+				96E27594188E21CC00C0137D /* ESSkillShowEditorImageCell.m */,
+				96E27595188E21CC00C0137D /* ESSkillShowEditorImageCell.xib */,
+				96E2758A188E1B1F00C0137D /* ESSkillEditorSectionView.h */,
+				96E2758B188E1B1F00C0137D /* ESSkillEditorSectionView.m */,
+				96E2758C188E1B1F00C0137D /* ESSkillEditorSectionView.xib */,
+				96E2758D188E1B1F00C0137D /* ESSkillExpertCommentCell.h */,
+				96E2758E188E1B1F00C0137D /* ESSkillExpertCommentCell.m */,
+				96E2758F188E1B1F00C0137D /* ESSkillExpertCommentCell.xib */,
+			);
+			name = Cell;
+			path = Skill/Cell;
 			sourceTree = "<group>";
 		};
 		96E939511877F96D004E4BEE /* InfoViewController */ = {
@@ -2896,12 +2959,14 @@
 				96FDA7BE187FF1B100D05F42 /* 042.png in Resources */,
 				967342E3186808A000B9D399 /* ESLeftMenuViewController.xib in Resources */,
 				96C90CD8185F0011005C4ECB /* wenzi@2x.png in Resources */,
+				96E2759E188E505900C0137D /* dan2.png in Resources */,
 				96FDA7EE187FF1B100D05F42 /* 066.png in Resources */,
 				96FDA79E187FF1B100D05F42 /* 026.png in Resources */,
 				96B98BCB1845E58F002E8552 /* bt_grey@2x.png in Resources */,
 				96FDA80F187FF1B100D05F42 /* 082@2x.png in Resources */,
 				96FDA767187FF1B100D05F42 /* active_page_image@2x.png in Resources */,
 				96FDA7D2187FF1B100D05F42 /* 052.png in Resources */,
+				96E275A7188E68CE00C0137D /* skill1.png in Resources */,
 				96563094187C37EA0098499B /* ESShowEditorImageCell.xib in Resources */,
 				96FDA780187FF1B100D05F42 /* 011.png in Resources */,
 				96FDA7D4187FF1B100D05F42 /* 053.png in Resources */,
@@ -2966,8 +3031,10 @@
 				967C59791883865200B3B68C /* button_plus@2x.png in Resources */,
 				96FDA7AA187FF1B100D05F42 /* 032.png in Resources */,
 				96B98A821845C643002E8552 /* themes.plist in Resources */,
+				96E275AA188E68CE00C0137D /* skill4.png in Resources */,
 				96C90CD1185EFB9D005C4ECB /* manBt@2x.png in Resources */,
 				96FDA7A0187FF1B100D05F42 /* 027.png in Resources */,
+				96E275AB188E68CE00C0137D /* skill5.png in Resources */,
 				96FDA778187FF1B100D05F42 /* 007.png in Resources */,
 				96C90CD7185F0011005C4ECB /* wenzi.png in Resources */,
 				96FDA811187FF1B100D05F42 /* 083@2x.png in Resources */,
@@ -2989,12 +3056,14 @@
 				967C59A01883DEB300B3B68C /* ShareTypeTencentWeibo_disable.png in Resources */,
 				96018ED4187BAEB7001E2898 /* head1.png in Resources */,
 				96FDA7A4187FF1B100D05F42 /* 029.png in Resources */,
+				96E275A8188E68CE00C0137D /* skill2.png in Resources */,
 				96FDA7AF187FF1B100D05F42 /* 034@2x.png in Resources */,
 				96B87D6B188CC88F008D224E /* skillTitleBt.png in Resources */,
 				96B98BD01845E58F002E8552 /* dialogue_bg@2x.png in Resources */,
 				96FDA785187FF1B100D05F42 /* 013@2x.png in Resources */,
 				96FDA7BF187FF1B100D05F42 /* 042@2x.png in Resources */,
 				9690A553187C03CE008D9555 /* 9.png in Resources */,
+				96E2759D188E505900C0137D /* dan1.png in Resources */,
 				96FDA7FB187FF1B100D05F42 /* 072@2x.png in Resources */,
 				967C59B21883E56900B3B68C /* ShareTypeQQSpace.png in Resources */,
 				96FDA805187FF1B100D05F42 /* 077@2x.png in Resources */,
@@ -3014,6 +3083,7 @@
 				96FDA76B187FF1B100D05F42 /* backFaceSelect@2x.png in Resources */,
 				9690A550187C03CE008D9555 /* 6.png in Resources */,
 				96FDA804187FF1B100D05F42 /* 077.png in Resources */,
+				96E27598188E21CC00C0137D /* ESSkillShowEditorImageCell.xib in Resources */,
 				96FDA78C187FF1B100D05F42 /* 017.png in Resources */,
 				967C59A31883DEB300B3B68C /* ShareTypeTencentWeibo@2x.png in Resources */,
 				96FDA7FD187FF1B100D05F42 /* 073@2x.png in Resources */,
@@ -3039,6 +3109,7 @@
 				96FDA822187FF6B000D05F42 /* tag.png in Resources */,
 				96FDA7D9187FF1B100D05F42 /* 055@2x.png in Resources */,
 				96FDA7C7187FF1B100D05F42 /* 046@2x.png in Resources */,
+				96E27593188E1B1F00C0137D /* ESSkillExpertCommentCell.xib in Resources */,
 				96FDA783187FF1B100D05F42 /* 012@2x.png in Resources */,
 				96FDA6A9187FC9DB00D05F42 /* ESPublishViewController.xib in Resources */,
 				96B98BCD1845E58F002E8552 /* check_true@2x.png in Resources */,
@@ -3082,6 +3153,7 @@
 				967C59A11883DEB300B3B68C /* ShareTypeTencentWeibo_disable@2x.png in Resources */,
 				96FDA771187FF1B100D05F42 /* 003@2x.png in Resources */,
 				96FDA823187FF6B000D05F42 /* tag@2x.png in Resources */,
+				96E27591188E1B1F00C0137D /* ESSkillEditorSectionView.xib in Resources */,
 				966C7D4618692F3E00A1B04D /* WeiboSDK.bundle in Resources */,
 				9690A53D187BFE53008D9555 /* input.png in Resources */,
 				96FDA7F4187FF1B100D05F42 /* 069.png in Resources */,
@@ -3092,6 +3164,7 @@
 				967C59A21883DEB300B3B68C /* ShareTypeTencentWeibo.png in Resources */,
 				96FDA779187FF1B100D05F42 /* 007@2x.png in Resources */,
 				96FDA7CA187FF1B100D05F42 /* 048.png in Resources */,
+				96E275A6188E68CE00C0137D /* dan3.png in Resources */,
 				966C7D111868452E00A1B04D /* skill_normal.png in Resources */,
 				96B98BCA1845E58F002E8552 /* bt_grey.png in Resources */,
 				96FDA80D187FF1B100D05F42 /* 081@2x.png in Resources */,
@@ -3123,6 +3196,7 @@
 				96FDA78B187FF1B100D05F42 /* 016@2x.png in Resources */,
 				96FDA769187FF1B100D05F42 /* backFace@2x.png in Resources */,
 				9690A54A187C03CE008D9555 /* 0.png in Resources */,
+				96E275A9188E68CE00C0137D /* skill3.png in Resources */,
 				96FDA824187FF6B000D05F42 /* smile@2x.png in Resources */,
 				96FDA7CD187FF1B100D05F42 /* 049@2x.png in Resources */,
 				96FDA7C4187FF1B100D05F42 /* 045.png in Resources */,
@@ -3162,6 +3236,7 @@
 				96FDA7DA187FF1B100D05F42 /* 056.png in Resources */,
 				96FDA7B7187FF1B100D05F42 /* 038@2x.png in Resources */,
 				96FDA770187FF1B100D05F42 /* 003.png in Resources */,
+				96E275AC188E68CE00C0137D /* skill6.png in Resources */,
 				96FDA7D7187FF1B100D05F42 /* 054@2x.png in Resources */,
 				96FDA7FA187FF1B100D05F42 /* 072.png in Resources */,
 				96FDA76C187FF1B100D05F42 /* 001.png in Resources */,
@@ -3181,6 +3256,7 @@
 				96FDA819187FF1B100D05F42 /* faceMap_en.plist in Resources */,
 				96FDA799187FF1B100D05F42 /* 023@2x.png in Resources */,
 				9690A53E187BFE53008D9555 /* input@2x.png in Resources */,
+				96E2759C188E505900C0137D /* dan0.png in Resources */,
 				96FDA7F3187FF1B100D05F42 /* 068@2x.png in Resources */,
 				96FDA7AD187FF1B100D05F42 /* 033@2x.png in Resources */,
 				96FDA800187FF1B100D05F42 /* 075.png in Resources */,
@@ -3325,6 +3401,7 @@
 				968F7C7F18795A6800BD9425 /* CLToneCurveTool.m in Sources */,
 				96B98A8B1845C643002E8552 /* HFHttpResponArguments.m in Sources */,
 				96B98B581845C6B8002E8552 /* JTSetMappings.m in Sources */,
+				96E27597188E21CC00C0137D /* ESSkillShowEditorImageCell.m in Sources */,
 				968F7C8618795A6800BD9425 /* CLClassList.m in Sources */,
 				968F7C7418795A6800BD9425 /* CLHighlightShadowEffect.m in Sources */,
 				966C7DD01876642100A1B04D /* ESRatingControl.m in Sources */,
@@ -3335,6 +3412,7 @@
 				968F7C6F18795A6800BD9425 /* CLAdjustmentTool.m in Sources */,
 				9673430618680F1900B9D399 /* YASlidingViewController.m in Sources */,
 				96B98A891845C643002E8552 /* HFHttpConfigure.m in Sources */,
+				96E27590188E1B1F00C0137D /* ESSkillEditorSectionView.m in Sources */,
 				96FDA817187FF1B100D05F42 /* FaceButton.m in Sources */,
 				96B98A761845C643002E8552 /* CommonCH.m in Sources */,
 				96C90CA0185814DF005C4ECB /* JSONKit.m in Sources */,
@@ -3370,6 +3448,7 @@
 				96B98B401845C6B8002E8552 /* AFHTTPRequestOperation.m in Sources */,
 				96734312186811F400B9D399 /* HFTabBar.m in Sources */,
 				968F7C8118795A6800BD9425 /* CLColorPickerView.m in Sources */,
+				96E27592188E1B1F00C0137D /* ESSkillExpertCommentCell.m in Sources */,
 				968F7C8218795A6800BD9425 /* CLImageEditorTheme+Private.m in Sources */,
 				96FDA81A187FF1B100D05F42 /* GrayPageControl.m in Sources */,
 				967342CC1867E8B900B9D399 /* NSDate+HFExtension.m in Sources */,

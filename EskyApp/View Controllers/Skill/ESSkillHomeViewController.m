@@ -10,6 +10,10 @@
 #import "UIView+Additions.h"
 #import "ESShowCell.h"
 
+#import "ESSkillEditorSectionView.h"
+#import "ESSkillExpertCommentCell.h"
+#import "ESSkillShowEditorImageCell.h"
+
 @interface ESSkillHomeViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
@@ -110,52 +114,68 @@
 }
 
 #pragma mark -tableView delegate
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+        return 44;
+    //    return UITableViewAutomaticDimension;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    NSArray *array = @[@"Jason",@"Candy",@"Trime",@"Hanme"];
+    ESSkillEditorSectionView *view = [ESSkillEditorSectionView viewFromXib];
+    view.headIconView.image = [UIImage imageNamed:[NSString stringWithFormat:@"head%d.png",rand()%5]];
+    view.nameLabel.text = array[rand()%4];
+    if (section%2==0) {
+        view.genderImageView.image = [UIImage imageNamed:@"man/manGende.png"];
+    }else{
+        view.genderImageView.image = [UIImage imageNamed:@"man/womanGende.png"];
+    }
+    return view;
+}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 20;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 40;
+    return 2;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+        if (indexPath.row == 0) {
+                return 195;
+        }else{
+            return 188;
+        }
+       return UITableViewAutomaticDimension;
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    if (indexPath.row == 0) {
+        static NSString *showEditorImageidentificer = @"ESShowEditorImageCell";
+        ESSkillShowEditorImageCell *cell = [tableView dequeueReusableCellWithIdentifier:showEditorImageidentificer];
+        if (!cell) {
+            cell = [ESSkillShowEditorImageCell cellFromXib];
+        }
+        cell.testImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"dan%d.png",rand()%4]];
+        return cell;
+    }else{
+    static NSString *expertCommentCellidentificer = @"ESSkillExpertCommentCell";
+    ESSkillExpertCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:expertCommentCellidentificer];
+    if (!cell) {
+        cell = [ESSkillExpertCommentCell cellFromXib];
     }
-    
-    // Set the data for this cell:
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%d",indexPath.row];
-    
-    // set the accessory view:
-    cell.accessoryType =  UITableViewCellAccessoryDisclosureIndicator;
-    
+    cell.starts.rating = rand()%5;
     return cell;
-//    if (tableView == _trendyitemsTable ) {
-//        static NSString *showidentificer = @"ESShowCell";
-//        ESShowCell *cell = [tableView dequeueReusableCellWithIdentifier:showidentificer];
-//        if (cell == nil) {
-//            cell = [ESShowCell cellFromXib];
-//        }
-//        return cell;
-//    }else if (tableView == _subjectTable ){
-//        static NSString *showidentificer = @"ESShowCell";
-//        ESShowCell *cell = [tableView dequeueReusableCellWithIdentifier:showidentificer];
-//        if (cell == nil) {
-//            cell = [ESShowCell cellFromXib];
-//        }
-//        return cell;
-//    }
-    return Nil;
-    
+    }
+    return nil;
 }
 
 
