@@ -71,7 +71,12 @@
     
     self.skillHomeViewController = [[ESSkillHomeViewController alloc]initDrawerViewController:slidingViewController];
     
-    [self.tabViewController setSubViewControllers:@[_manViewController,_skillHomeViewController,@"",_showCenterViewController,vc]];
+    
+    
+    ESMyViewController *tmp = [[ESMyViewController alloc]initWithNibName:@"ESMyViewController" bundle:nil];
+    
+    
+    [self.tabViewController setSubViewControllers:@[_manViewController,_skillHomeViewController,tmp,_showCenterViewController,vc]];
     self.tabViewController.selectedIndex =0;
 
     

@@ -13,7 +13,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.jpg" id="WGn-BQ-DiW" customClass="ESTalentPictureItem">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="WGn-BQ-DiW" customClass="ESTalentPictureItem">
                         <rect key="frame" x="1" y="9" width="147" height="211"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
@@ -98,7 +98,6 @@
     </objects>
     <resources>
         <image name="1.png" width="358" height="512"/>
-        <image name="2.jpg" width="548" height="856"/>
         <image name="2.png" width="358" height="512"/>
         <image name="3.png" width="358" height="512"/>
         <image name="5.png" width="358" height="512"/>

@@ -15,10 +15,11 @@
 
 
 #import "ESInfoViewController.h"
+
 #import "CLImageEditor.h"
+#import "REDActionSheet.h"
 #import "ESPublishViewController.h"
 
-#import "REDActionSheet.h"
 
 
 @interface ESShowCenterViewController ()<CLImageEditorDelegate, CLImageEditorThemeDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>

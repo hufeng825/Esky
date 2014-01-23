@@ -122,7 +122,7 @@
             newVC.view.frame = CGRectMake(CGRectGetMinX(self.view.bounds), CGRectGetMinY(self.view.bounds), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
             
             if (_animationActive) {
-                [self transitionFromViewController:oldVC toViewController:newVC duration:_animationDuration options:UIViewAnimationOptionCurveLinear|UIViewAnimationOptionTransitionCrossDissolve animations:^{} completion:^(BOOL finished) {
+                [self transitionFromViewController:oldVC toViewController:newVC duration:_animationDuration options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionTransitionCrossDissolve animations:^{} completion:^(BOOL finished) {
                     [oldVC removeFromParentViewController];
                     [newVC didMoveToParentViewController:self];
                 }];

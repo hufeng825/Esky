@@ -14,6 +14,9 @@
 #import "ESSkillExpertCommentCell.h"
 #import "ESSkillShowEditorImageCell.h"
 
+
+#import "ESInfoViewController.h"
+
 @interface ESSkillHomeViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
@@ -179,5 +182,17 @@
     return nil;
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    ESInfoViewController *vc = [[ESInfoViewController alloc] initWithNibName:@"ESInfoViewController" bundle:nil];
+    [vc.navigationController setNavigationBarHidden:NO];
+    [self.navigationController pushViewController:vc animated:YES];
+    //    BalancePlanManageInformation *model = [self.listArray objectAtIndex:indexPath.row];
+    //    BalancePlanManageDetailViewController *detailVC = [[BalancePlanManageDetailViewController alloc] init];
+    //    [detailVC setBalancePlanManageInfoModel:model];
+    //    [self.navigationController pushViewController:detailVC animated:YES];
+    //    [[BalancePlanTabBarViewController GetInstance] hideTabBarAnimated:YES];
+    //    [detailVC release];
+}
 @end

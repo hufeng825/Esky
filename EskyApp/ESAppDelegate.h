@@ -13,6 +13,7 @@
 #import "ESShowCenterViewController.h"
 #import "ESSkillHomeViewController.h"
 
+#import "ESMyViewController.h"
 
 @interface ESAppDelegate : UIResponder <UIApplicationDelegate,HFTabBarControllerDelegate>
 
