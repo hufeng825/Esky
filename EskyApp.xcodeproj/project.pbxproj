@@ -127,6 +127,17 @@
 		967C59B11883E56900B3B68C /* ShareTypeQQSpace_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 967C59AD1883E56900B3B68C /* ShareTypeQQSpace_disable@2x.png */; };
 		967C59B21883E56900B3B68C /* ShareTypeQQSpace.png in Resources */ = {isa = PBXBuildFile; fileRef = 967C59AE1883E56900B3B68C /* ShareTypeQQSpace.png */; };
 		967C59B31883E56900B3B68C /* ShareTypeQQSpace@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 967C59AF1883E56900B3B68C /* ShareTypeQQSpace@2x.png */; };
+		9685E3AD18923E1C00293458 /* ESMyMenuBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9685E3A818923E1C00293458 /* ESMyMenuBarItem.m */; };
+		9685E3AE18923E1C00293458 /* ESMyMenuBarItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3A918923E1C00293458 /* ESMyMenuBarItem.xib */; };
+		9685E3AF18923E1C00293458 /* ESMyMenuTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9685E3AB18923E1C00293458 /* ESMyMenuTabBar.m */; };
+		9685E3B018923E1C00293458 /* ESMyMenuTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3AC18923E1C00293458 /* ESMyMenuTabBar.xib */; };
+		9685E3BB18923E3C00293458 /* ACTimeScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 9685E3B318923E3C00293458 /* ACTimeScroller.m */; };
+		9685E3BC18923E3C00293458 /* timescroll_hourhand.png in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3B518923E3C00293458 /* timescroll_hourhand.png */; };
+		9685E3BD18923E3C00293458 /* timescroll_hourhand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3B618923E3C00293458 /* timescroll_hourhand@2x.png */; };
+		9685E3BE18923E3C00293458 /* timescroll_minutehand.png in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3B718923E3C00293458 /* timescroll_minutehand.png */; };
+		9685E3BF18923E3C00293458 /* timescroll_minutehand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3B818923E3C00293458 /* timescroll_minutehand@2x.png */; };
+		9685E3C018923E3C00293458 /* timescroll_pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3B918923E3C00293458 /* timescroll_pointer.png */; };
+		9685E3C118923E3C00293458 /* timescroll_pointer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3BA18923E3C00293458 /* timescroll_pointer@2x.png */; };
 		9688BD67184C903B00F9A8E9 /* HFHttpRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD66184C903B00F9A8E9 /* HFHttpRequestParameters.m */; };
 		9688BD7118507A3A00F9A8E9 /* ESRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD7018507A3A00F9A8E9 /* ESRequestParameters.m */; };
 		9688BD7418507A7700F9A8E9 /* ESRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD7318507A7700F9A8E9 /* ESRequest.m */; };
@@ -725,6 +736,20 @@
 		967C59AD1883E56900B3B68C /* ShareTypeQQSpace_disable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShareTypeQQSpace_disable@2x.png"; sourceTree = "<group>"; };
 		967C59AE1883E56900B3B68C /* ShareTypeQQSpace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShareTypeQQSpace.png; sourceTree = "<group>"; };
 		967C59AF1883E56900B3B68C /* ShareTypeQQSpace@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShareTypeQQSpace@2x.png"; sourceTree = "<group>"; };
+		9685E3A718923E1C00293458 /* ESMyMenuBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESMyMenuBarItem.h; sourceTree = "<group>"; };
+		9685E3A818923E1C00293458 /* ESMyMenuBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESMyMenuBarItem.m; sourceTree = "<group>"; };
+		9685E3A918923E1C00293458 /* ESMyMenuBarItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESMyMenuBarItem.xib; sourceTree = "<group>"; };
+		9685E3AA18923E1C00293458 /* ESMyMenuTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESMyMenuTabBar.h; sourceTree = "<group>"; };
+		9685E3AB18923E1C00293458 /* ESMyMenuTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESMyMenuTabBar.m; sourceTree = "<group>"; };
+		9685E3AC18923E1C00293458 /* ESMyMenuTabBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESMyMenuTabBar.xib; sourceTree = "<group>"; };
+		9685E3B218923E3C00293458 /* ACTimeScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACTimeScroller.h; sourceTree = "<group>"; };
+		9685E3B318923E3C00293458 /* ACTimeScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACTimeScroller.m; sourceTree = "<group>"; };
+		9685E3B518923E3C00293458 /* timescroll_hourhand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timescroll_hourhand.png; sourceTree = "<group>"; };
+		9685E3B618923E3C00293458 /* timescroll_hourhand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timescroll_hourhand@2x.png"; sourceTree = "<group>"; };
+		9685E3B718923E3C00293458 /* timescroll_minutehand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timescroll_minutehand.png; sourceTree = "<group>"; };
+		9685E3B818923E3C00293458 /* timescroll_minutehand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timescroll_minutehand@2x.png"; sourceTree = "<group>"; };
+		9685E3B918923E3C00293458 /* timescroll_pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timescroll_pointer.png; sourceTree = "<group>"; };
+		9685E3BA18923E3C00293458 /* timescroll_pointer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timescroll_pointer@2x.png"; sourceTree = "<group>"; };
 		9688BD65184C903B00F9A8E9 /* HFHttpRequestParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpRequestParameters.h; sourceTree = "<group>"; };
 		9688BD66184C903B00F9A8E9 /* HFHttpRequestParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpRequestParameters.m; sourceTree = "<group>"; };
 		9688BD6F18507A3A00F9A8E9 /* ESRequestParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESRequestParameters.h; path = Request/ESRequestParameters.h; sourceTree = "<group>"; };
@@ -1813,6 +1838,46 @@
 			path = ShowView/Share;
 			sourceTree = "<group>";
 		};
+		9685E3A618923E1C00293458 /* MyMenuTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				9685E3B118923E3C00293458 /* ACTimeScroller */,
+				9685E3B418923E3C00293458 /* Assets */,
+				9685E3A718923E1C00293458 /* ESMyMenuBarItem.h */,
+				9685E3A818923E1C00293458 /* ESMyMenuBarItem.m */,
+				9685E3A918923E1C00293458 /* ESMyMenuBarItem.xib */,
+				9685E3AA18923E1C00293458 /* ESMyMenuTabBar.h */,
+				9685E3AB18923E1C00293458 /* ESMyMenuTabBar.m */,
+				9685E3AC18923E1C00293458 /* ESMyMenuTabBar.xib */,
+			);
+			name = MyMenuTabBar;
+			path = My/MyMenuTabBar;
+			sourceTree = "<group>";
+		};
+		9685E3B118923E3C00293458 /* ACTimeScroller */ = {
+			isa = PBXGroup;
+			children = (
+				9685E3B218923E3C00293458 /* ACTimeScroller.h */,
+				9685E3B318923E3C00293458 /* ACTimeScroller.m */,
+			);
+			name = ACTimeScroller;
+			path = "EskyApp/View Controllers/My/ACTimeScroller";
+			sourceTree = SOURCE_ROOT;
+		};
+		9685E3B418923E3C00293458 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9685E3B518923E3C00293458 /* timescroll_hourhand.png */,
+				9685E3B618923E3C00293458 /* timescroll_hourhand@2x.png */,
+				9685E3B718923E3C00293458 /* timescroll_minutehand.png */,
+				9685E3B818923E3C00293458 /* timescroll_minutehand@2x.png */,
+				9685E3B918923E3C00293458 /* timescroll_pointer.png */,
+				9685E3BA18923E3C00293458 /* timescroll_pointer@2x.png */,
+			);
+			name = Assets;
+			path = "EskyApp/View Controllers/My/Assets";
+			sourceTree = SOURCE_ROOT;
+		};
 		9688BD61184C8D6000F9A8E9 /* Request */ = {
 			isa = PBXGroup;
 			children = (
@@ -2642,6 +2707,7 @@
 		96E275AD188F968B00C0137D /* My */ = {
 			isa = PBXGroup;
 			children = (
+				9685E3A618923E1C00293458 /* MyMenuTabBar */,
 				96E275AE188F96CD00C0137D /* ESMyViewController.h */,
 				96E275AF188F96CD00C0137D /* ESMyViewController.m */,
 				96E275B0188F96CD00C0137D /* ESMyViewController.xib */,
@@ -3015,6 +3081,7 @@
 				96FDA7DD187FF1B100D05F42 /* 057@2x.png in Resources */,
 				96FDA808187FF1B100D05F42 /* 079.png in Resources */,
 				96FDA809187FF1B100D05F42 /* 079@2x.png in Resources */,
+				9685E3BC18923E3C00293458 /* timescroll_hourhand.png in Resources */,
 				96FDA7F8187FF1B100D05F42 /* 071.png in Resources */,
 				966C7D4018692F3E00A1B04D /* ShareSDKLocalizable.strings in Resources */,
 				96FDA774187FF1B100D05F42 /* 005.png in Resources */,
@@ -3135,6 +3202,7 @@
 				96B98A751845C643002E8552 /* ESBaseViewController.xib in Resources */,
 				966C7DBD18710C9F00A1B04D /* ESPictureItem.xib in Resources */,
 				96FDA7BA187FF1B100D05F42 /* 040.png in Resources */,
+				9685E3BE18923E3C00293458 /* timescroll_minutehand.png in Resources */,
 				96FDA7B4187FF1B100D05F42 /* 037.png in Resources */,
 				96FDA822187FF6B000D05F42 /* tag.png in Resources */,
 				96FDA7D9187FF1B100D05F42 /* 055@2x.png in Resources */,
@@ -3143,6 +3211,7 @@
 				96FDA783187FF1B100D05F42 /* 012@2x.png in Resources */,
 				96FDA6A9187FC9DB00D05F42 /* ESPublishViewController.xib in Resources */,
 				96B98BCD1845E58F002E8552 /* check_true@2x.png in Resources */,
+				9685E3C018923E3C00293458 /* timescroll_pointer.png in Resources */,
 				96B98A171845C56D002E8552 /* InfoPlist.strings in Resources */,
 				967342FD18680EE900B9D399 /* checkmark@2x.png in Resources */,
 				967C59A51883DEB300B3B68C /* ShareTypeWeixiSession_disable@2x.png in Resources */,
@@ -3192,6 +3261,7 @@
 				96FDA7AE187FF1B100D05F42 /* 034.png in Resources */,
 				96FDA792187FF1B100D05F42 /* 020.png in Resources */,
 				967C59A21883DEB300B3B68C /* ShareTypeTencentWeibo.png in Resources */,
+				9685E3C118923E3C00293458 /* timescroll_pointer@2x.png in Resources */,
 				96FDA779187FF1B100D05F42 /* 007@2x.png in Resources */,
 				96FDA7CA187FF1B100D05F42 /* 048.png in Resources */,
 				96E275A6188E68CE00C0137D /* dan3.png in Resources */,
@@ -3200,6 +3270,7 @@
 				96FDA80D187FF1B100D05F42 /* 081@2x.png in Resources */,
 				967C599D1883DEB300B3B68C /* ShareTypeSinaWeibo_disable@2x.png in Resources */,
 				96B98B981845C81E002E8552 /* ESModifyPassWordViewController.xib in Resources */,
+				9685E3BF18923E3C00293458 /* timescroll_minutehand@2x.png in Resources */,
 				96FDA7C8187FF1B100D05F42 /* 047.png in Resources */,
 				9690A54F187C03CE008D9555 /* 5.png in Resources */,
 				96B98BC91845E58F002E8552 /* bt_blue@2x.png in Resources */,
@@ -3214,6 +3285,7 @@
 				96B87D73188CC91E008D224E /* filtrate.png in Resources */,
 				96FDA7EF187FF1B100D05F42 /* 066@2x.png in Resources */,
 				96B98BDC1845E58F002E8552 /* translate_bg@2x.png in Resources */,
+				9685E3AE18923E1C00293458 /* ESMyMenuBarItem.xib in Resources */,
 				96FDA7FC187FF1B100D05F42 /* 073.png in Resources */,
 				96FDA789187FF1B100D05F42 /* 015@2x.png in Resources */,
 				968F7B551879147400BD9425 /* ESEditorSectionView.xib in Resources */,
@@ -3264,10 +3336,12 @@
 				96FDA7E0187FF1B100D05F42 /* 059.png in Resources */,
 				96B98BD81845E58F002E8552 /* icon_weibo@2x.png in Resources */,
 				96FDA7B2187FF1B100D05F42 /* 036.png in Resources */,
+				9685E3BD18923E3C00293458 /* timescroll_hourhand@2x.png in Resources */,
 				96FDA7DA187FF1B100D05F42 /* 056.png in Resources */,
 				96FDA7B7187FF1B100D05F42 /* 038@2x.png in Resources */,
 				96FDA770187FF1B100D05F42 /* 003.png in Resources */,
 				96E275AC188E68CE00C0137D /* skill0.png in Resources */,
+				9685E3B018923E1C00293458 /* ESMyMenuTabBar.xib in Resources */,
 				96FDA7D7187FF1B100D05F42 /* 054@2x.png in Resources */,
 				96FDA7FA187FF1B100D05F42 /* 072.png in Resources */,
 				96FDA76C187FF1B100D05F42 /* 001.png in Resources */,
@@ -3343,6 +3417,7 @@
 				968F7C7D18795A6800BD9425 /* CLImageToolBase.m in Sources */,
 				96C90C97185814DF005C4ECB /* ASIDataDecompressor.m in Sources */,
 				96B98B481845C6B8002E8552 /* AFURLSessionManager.m in Sources */,
+				9685E3AD18923E1C00293458 /* ESMyMenuBarItem.m in Sources */,
 				96B98B4D1845C6B8002E8552 /* UIImageView+AFNetworking.m in Sources */,
 				968F7C7318795A6800BD9425 /* CLGloomEffect.m in Sources */,
 				96C90C9D185814DF005C4ECB /* Reachability.m in Sources */,
@@ -3386,6 +3461,7 @@
 				968F7C7C18795A6800BD9425 /* CLFilterTool.m in Sources */,
 				968F7C6C18795A6800BD9425 /* CLImageEditor.m in Sources */,
 				96E9395D1878450A004E4BEE /* ESShowEditorCell.m in Sources */,
+				9685E3AF18923E1C00293458 /* ESMyMenuTabBar.m in Sources */,
 				968F7C8018795A6800BD9425 /* CLCircleView.m in Sources */,
 				966C7D571869575D00A1B04D /* MSDynamicsDrawerViewController.m in Sources */,
 				96B98A7A1845C643002E8552 /* ESBaseModel.m in Sources */,
@@ -3470,6 +3546,7 @@
 				968F7B501879127A00BD9425 /* ESShowCommentNumber.m in Sources */,
 				968F7C7E18795A6800BD9425 /* CLRotateTool.m in Sources */,
 				967342CB1867E8B900B9D399 /* NSArray+Additions.m in Sources */,
+				9685E3BB18923E3C00293458 /* ACTimeScroller.m in Sources */,
 				96B98B971845C81E002E8552 /* ESModifyPassWordViewController.m in Sources */,
 				96B98B591845C6B8002E8552 /* JTValidMappingKey.m in Sources */,
 				96C90CA2185814DF005C4ECB /* QiniuSimpleUploader.m in Sources */,

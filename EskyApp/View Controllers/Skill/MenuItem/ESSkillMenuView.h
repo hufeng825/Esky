@@ -1,5 +1,5 @@
 //
-//  ESSkillMenuView.h
+//  ESMyMenuView.h
 //  EskyApp
 //
 //  Created by jason on 14-1-20.
@@ -11,7 +11,7 @@
 static CGFloat   const kSkillAnimationDuration = 0.5;
 
 
-@interface ESSkillMenuView : UIView
+@interface ESSkillMenuView: UIView
 
 @property (nonatomic,assign) BOOL isShow;
 

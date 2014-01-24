@@ -14,13 +14,23 @@
 #import "UIView+Additions.h"
 #import "UIScrollView+HFParallaxHeader.h"
 #import "ESCommonMacros.h"
-@interface ESMyViewController ()<CLImageEditorDelegate, CLImageEditorThemeDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+#import "ESMyMenuTabBar.h"
 
+#import "ACTimeScroller.h"
+
+
+
+@interface ESMyViewController ()<CLImageEditorDelegate, CLImageEditorThemeDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,ESMyMenuTabBarDelegate,ACTimeScrollerDelegate>
+{
+    NSMutableArray *_datasource;
+    ACTimeScroller *_timeScroller;
+}
 @property (weak,   nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIImageView *headView;
 @property (strong, nonatomic) UIImageView *headIcon;
 @property (strong, nonatomic) UIImageView *genderView;
 @property (strong, nonatomic) UILabel *nameLabel;
+@property (strong, nonatomic) ESMyMenuTabBar *menutabBar;
 @end
 
 const float HeadHight = 160.f;
@@ -42,7 +52,23 @@ const float HeadHight = 160.f;
     // Do any additional setup after loading the view from its nib.
     [self setUpHeadView];
     [self setBgContentOffsetAnimation:-HeadHight];//此处防止初始化页面错位的
+    _timeScroller = [[ACTimeScroller alloc] initWithDelegate:self];
+    [self setupDatasource];
+    [_tableView delaysContentTouches];
 
+}
+
+#pragma mark - ACTimeScrollerDelegate Methods
+
+- (UITableView *)tableViewForTimeScroller:(ACTimeScroller *)timeScroller
+{
+    return [self tableView];
+}
+
+- (NSDate *)timeScroller:(ACTimeScroller *)timeScroller dateForCell:(UITableViewCell *)cell
+{
+    NSIndexPath *indexPath = [[self tableView] indexPathForCell:cell];
+    return _datasource[[indexPath row]];
 }
 
 
@@ -155,18 +181,36 @@ const float HeadHight = 160.f;
 {
     if (section == 0) {
         return 30;
+    }else{
+        return 35;
     }
     return UITableViewAutomaticDimension;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    if (section == 0) {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0,0,320,30)];
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(5, 0, view.width, view.height)];
     label.text = @"签名: 走自己的时尚之路";
     [view addSubview:label];
     view.backgroundColor = RGBACOLOR(255, 255, 255, .5);
     return view;
+    }else{
+        if (!_menutabBar) {
+            _menutabBar = [[ESMyMenuTabBar alloc]initWithFrame:CGRectMake(0, 0, 320, 35)];
+            _menutabBar.delegate = self;
+            
+            [_menutabBar  initItemsTitles:@[
+                                            @{@"Title":@"粉丝", @"EnglishTitle":@"(1)"},
+                                            @{@"Title":@"关注", @"EnglishTitle":@""},
+                                            @{@"Title":@"相册", @"EnglishTitle":@""},
+                                            @{@"Title":@"收藏", @"EnglishTitle":@""},
+                                            ]];
+        }
+        return _menutabBar;
+    
+    }
 }
 
 
@@ -196,6 +240,9 @@ const float HeadHight = 160.f;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == 0) {
+        
+    }
     
     static NSString * showUserInfoCellIdentifier = @"ShowUserInfoCell";
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:showUserInfoCellIdentifier];
@@ -223,5 +270,45 @@ const float HeadHight = 160.f;
     //    [[BalancePlanTabBarViewController GetInstance] hideTabBarAnimated:YES];
     //    [detailVC release];
 }
+
+- (void)setupDatasource
+{
+    _datasource = [NSMutableArray new];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    NSDate *today = [NSDate date];
+    NSDateComponents *todayComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:today];
+    
+    for (int i = [todayComponents day]; i >= -15; i--)
+    {
+        [components setYear:[todayComponents year]];
+        [components setMonth:[todayComponents month]];
+        [components setDay:i];
+        [components setHour:arc4random() % 23];
+        [components setMinute:arc4random() % 59];
+        
+        NSDate *date = [calendar dateFromComponents:components];
+        [_datasource addObject:date];
+    }
+}
+
+#pragma mark - UIScrollViewDelegate Methods
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [_timeScroller scrollViewWillBeginDragging];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [_timeScroller scrollViewDidScroll];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [_timeScroller scrollViewDidEndDecelerating];
+}
+
 
 @end
