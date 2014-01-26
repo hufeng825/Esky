@@ -138,6 +138,10 @@
 		9685E3BF18923E3C00293458 /* timescroll_minutehand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3B818923E3C00293458 /* timescroll_minutehand@2x.png */; };
 		9685E3C018923E3C00293458 /* timescroll_pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3B918923E3C00293458 /* timescroll_pointer.png */; };
 		9685E3C118923E3C00293458 /* timescroll_pointer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3BA18923E3C00293458 /* timescroll_pointer@2x.png */; };
+		9685E3C41892435F00293458 /* ESMyPictureTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9685E3C31892435F00293458 /* ESMyPictureTableCell.m */; };
+		9685E3C61892455700293458 /* ESMyPictureTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3C51892455700293458 /* ESMyPictureTableCell.xib */; };
+		9685E3C918924EC600293458 /* trash.png in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3C718924EC600293458 /* trash.png */; };
+		9685E3CA18924EC600293458 /* trash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3C818924EC600293458 /* trash@2x.png */; };
 		9688BD67184C903B00F9A8E9 /* HFHttpRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD66184C903B00F9A8E9 /* HFHttpRequestParameters.m */; };
 		9688BD7118507A3A00F9A8E9 /* ESRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD7018507A3A00F9A8E9 /* ESRequestParameters.m */; };
 		9688BD7418507A7700F9A8E9 /* ESRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD7318507A7700F9A8E9 /* ESRequest.m */; };
@@ -750,6 +754,11 @@
 		9685E3B818923E3C00293458 /* timescroll_minutehand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timescroll_minutehand@2x.png"; sourceTree = "<group>"; };
 		9685E3B918923E3C00293458 /* timescroll_pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timescroll_pointer.png; sourceTree = "<group>"; };
 		9685E3BA18923E3C00293458 /* timescroll_pointer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timescroll_pointer@2x.png"; sourceTree = "<group>"; };
+		9685E3C21892435F00293458 /* ESMyPictureTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESMyPictureTableCell.h; path = "EskyApp/View Controllers/My/ESMyPictureTableCell.h"; sourceTree = SOURCE_ROOT; };
+		9685E3C31892435F00293458 /* ESMyPictureTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESMyPictureTableCell.m; path = "EskyApp/View Controllers/My/ESMyPictureTableCell.m"; sourceTree = SOURCE_ROOT; };
+		9685E3C51892455700293458 /* ESMyPictureTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESMyPictureTableCell.xib; sourceTree = "<group>"; };
+		9685E3C718924EC600293458 /* trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trash.png; sourceTree = "<group>"; };
+		9685E3C818924EC600293458 /* trash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trash@2x.png"; sourceTree = "<group>"; };
 		9688BD65184C903B00F9A8E9 /* HFHttpRequestParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpRequestParameters.h; sourceTree = "<group>"; };
 		9688BD66184C903B00F9A8E9 /* HFHttpRequestParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpRequestParameters.m; sourceTree = "<group>"; };
 		9688BD6F18507A3A00F9A8E9 /* ESRequestParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESRequestParameters.h; path = Request/ESRequestParameters.h; sourceTree = "<group>"; };
@@ -1849,6 +1858,9 @@
 				9685E3AA18923E1C00293458 /* ESMyMenuTabBar.h */,
 				9685E3AB18923E1C00293458 /* ESMyMenuTabBar.m */,
 				9685E3AC18923E1C00293458 /* ESMyMenuTabBar.xib */,
+				9685E3C21892435F00293458 /* ESMyPictureTableCell.h */,
+				9685E3C31892435F00293458 /* ESMyPictureTableCell.m */,
+				9685E3C51892455700293458 /* ESMyPictureTableCell.xib */,
 			);
 			name = MyMenuTabBar;
 			path = My/MyMenuTabBar;
@@ -2493,6 +2505,8 @@
 		96B98BB21845E58F002E8552 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				9685E3C718924EC600293458 /* trash.png */,
+				9685E3C818924EC600293458 /* trash@2x.png */,
 				96E2759F188E68CE00C0137D /* dan3.png */,
 				96E275A0188E68CE00C0137D /* skill1.png */,
 				96E275A1188E68CE00C0137D /* skill2.png */,
@@ -3091,6 +3105,7 @@
 				966C7D4418692F3E00A1B04D /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				96FDA7ED187FF1B100D05F42 /* 065@2x.png in Resources */,
 				96E9395F1878453B004E4BEE /* ESShowEditorCell.xib in Resources */,
+				9685E3CA18924EC600293458 /* trash@2x.png in Resources */,
 				96FDA7CE187FF1B100D05F42 /* 050.png in Resources */,
 				96FDA80E187FF1B100D05F42 /* 082.png in Resources */,
 				96FDA76D187FF1B100D05F42 /* 001@2x.png in Resources */,
@@ -3251,6 +3266,7 @@
 				966C7D0D1868452E00A1B04D /* follow_normal.png in Resources */,
 				967C59A11883DEB300B3B68C /* ShareTypeTencentWeibo_disable@2x.png in Resources */,
 				96FDA771187FF1B100D05F42 /* 003@2x.png in Resources */,
+				9685E3C918924EC600293458 /* trash.png in Resources */,
 				96FDA823187FF6B000D05F42 /* tag@2x.png in Resources */,
 				96E27591188E1B1F00C0137D /* ESSkillEditorSectionView.xib in Resources */,
 				966C7D4618692F3E00A1B04D /* WeiboSDK.bundle in Resources */,
@@ -3260,6 +3276,7 @@
 				96018ECA187BA56F001E2898 /* logo.png in Resources */,
 				96FDA7AE187FF1B100D05F42 /* 034.png in Resources */,
 				96FDA792187FF1B100D05F42 /* 020.png in Resources */,
+				9685E3C61892455700293458 /* ESMyPictureTableCell.xib in Resources */,
 				967C59A21883DEB300B3B68C /* ShareTypeTencentWeibo.png in Resources */,
 				9685E3C118923E3C00293458 /* timescroll_pointer@2x.png in Resources */,
 				96FDA779187FF1B100D05F42 /* 007@2x.png in Resources */,
@@ -3440,6 +3457,7 @@
 				9688BD67184C903B00F9A8E9 /* HFHttpRequestParameters.m in Sources */,
 				967342FE18680EE900B9D399 /* MBProgressHUD.m in Sources */,
 				96C90CA3185814DF005C4ECB /* QiniuUtils.m in Sources */,
+				9685E3C41892435F00293458 /* ESMyPictureTableCell.m in Sources */,
 				96B98B4F1845C6B8002E8552 /* UIWebView+AFNetworking.m in Sources */,
 				968F7C7B18795A6800BD9425 /* CLFilterBase.m in Sources */,
 				96B98B421845C6B8002E8552 /* AFHTTPSessionManager.m in Sources */,

@@ -143,11 +143,16 @@
             
             if (imageView.frame.size.width == 7.0f || imageView.frame.size.width == 5.0f || imageView.frame.size.width == 3.5f)
             {
-                imageView.clipsToBounds = NO;
-                [imageView addSubview:self];
-                imageView.image = [UIImage imageNamed:@"timescroll_hourhand.png"];
-                _scrollBar = imageView;
-                _savedTableViewSize = _tableView.frame.size;
+                UIImageView *imageView = (UIImageView *)subview;
+                
+                if (imageView.frame.size.width == 7.0f || imageView.frame.size.width == 5.0f || imageView.frame.size.width == 3.5f)
+                {
+                    imageView.clipsToBounds = NO;
+                    [imageView addSubview:self];
+                    _scrollBar = imageView;
+                    _savedTableViewSize = _tableView.frame.size;
+                }
+
             }
         }
     }
@@ -358,8 +363,9 @@
         dateLabelString = [self.monthDayDateFormatter stringFromDate:date];
         dateLabelAlpha = 1.0f;
         
-        CGFloat width = [dateLabelString sizeWithFont:_dateLabel.font].width + 50.0f;
-        
+        CGFloat width =  [dateLabelString sizeWithFont:_dateLabel.font].width + 50.0f;
+
+
         backgroundFrame = CGRectMake(CGRectGetWidth(self.frame) - width, 0.0f, width, CGRectGetHeight(self.frame));
     }
     else

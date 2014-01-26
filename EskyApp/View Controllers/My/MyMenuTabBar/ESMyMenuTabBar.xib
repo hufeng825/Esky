@@ -7,26 +7,26 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="1">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view tag="200" contentMode="scaleToFill" id="fIM-TG-AfV" customClass="ESMyMenuBarItem">
-                    <rect key="frame" x="0.0" y="0.0" width="80" height="35"/>
+                    <rect key="frame" x="0.0" y="0.0" width="80" height="45"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view tag="201" contentMode="scaleToFill" id="2uP-qM-AAR" customClass="ESMyMenuBarItem">
-                    <rect key="frame" x="80" y="0.0" width="80" height="35"/>
+                    <rect key="frame" x="80" y="0.0" width="80" height="45"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view tag="202" contentMode="scaleToFill" id="stw-Et-9tB" customClass="ESMyMenuBarItem">
-                    <rect key="frame" x="160" y="0.0" width="80" height="35"/>
+                    <rect key="frame" x="160" y="0.0" width="80" height="45"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view tag="203" contentMode="scaleToFill" id="4WQ-ti-Ka4" customClass="ESMyMenuBarItem">
-                    <rect key="frame" x="240" y="0.0" width="80" height="35"/>
+                    <rect key="frame" x="240" y="0.0" width="80" height="45"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>

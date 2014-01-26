@@ -15,15 +15,21 @@
 #import "UIScrollView+HFParallaxHeader.h"
 #import "ESCommonMacros.h"
 #import "ESMyMenuTabBar.h"
-
+#import "ESMyPictureTableCell.h"
 #import "ACTimeScroller.h"
 
-
+typedef NS_ENUM(NSInteger, MyTableStyle) {
+    MyFansTableType,
+    MyFollowTableType,
+    MyPicureTableType,
+    MyEnshrineTableType
+};
 
 @interface ESMyViewController ()<CLImageEditorDelegate, CLImageEditorThemeDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,ESMyMenuTabBarDelegate,ACTimeScrollerDelegate>
 {
     NSMutableArray *_datasource;
     ACTimeScroller *_timeScroller;
+    MyTableStyle _currentType;
 }
 @property (weak,   nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIImageView *headView;
@@ -55,6 +61,21 @@ const float HeadHight = 160.f;
     _timeScroller = [[ACTimeScroller alloc] initWithDelegate:self];
     [self setupDatasource];
     [_tableView delaysContentTouches];
+    _currentType = MyPicureTableType;
+    
+    if (!_menutabBar) {
+        _menutabBar = [[ESMyMenuTabBar alloc]initWithFrame:CGRectMake(0, 0, 320, 45)];
+        _menutabBar.delegate = self;
+        
+        [_menutabBar  initItemsTitles:@[
+                                        @{@"Title":@"粉丝", @"EnglishTitle":@""},
+                                        @{@"Title":@"关注", @"EnglishTitle":@""},
+                                        @{@"Title":@"相册", @"EnglishTitle":@"(30)"},
+                                        @{@"Title":@"收藏", @"EnglishTitle":@""},
+                                        ]];
+        _currentType = MyPicureTableType;
+    }
+    [_menutabBar selectMenuItemAtIndex:2];
 
 }
 
@@ -175,100 +196,121 @@ const float HeadHight = 160.f;
     }];
 }
 
+#pragma mark - MenuBarItem
+-(void)itemClicked:(NSInteger)index
+{
+    switch (index) {
+        case 0:
+            _currentType = MyFansTableType;
+            break;
+        case 1:
+            _currentType = MyFollowTableType;
+            break;
+        case 2:
+            _currentType = MyPicureTableType;
+            break;
+        case 3:
+            _currentType = MyEnshrineTableType;
+            break;
+        default:
+            break;
+    }
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
 
 #pragma mark -tableView delegate
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
         return 30;
-    }else{
-        return 35;
-    }
+    }else if(section ==1)
+    {
+        return 43;
+    }else
     return UITableViewAutomaticDimension;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0,0,320,30)];
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(20,0,300,30)];
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(5, 0, view.width, view.height)];
     label.text = @"签名: 走自己的时尚之路";
     [view addSubview:label];
     view.backgroundColor = RGBACOLOR(255, 255, 255, .5);
     return view;
-    }else{
-        if (!_menutabBar) {
-            _menutabBar = [[ESMyMenuTabBar alloc]initWithFrame:CGRectMake(0, 0, 320, 35)];
-            _menutabBar.delegate = self;
-            
-            [_menutabBar  initItemsTitles:@[
-                                            @{@"Title":@"粉丝", @"EnglishTitle":@"(1)"},
-                                            @{@"Title":@"关注", @"EnglishTitle":@""},
-                                            @{@"Title":@"相册", @"EnglishTitle":@""},
-                                            @{@"Title":@"收藏", @"EnglishTitle":@""},
-                                            ]];
-        }
+    }else if(section ==1){
         return _menutabBar;
-    
-    }
+    }else return nil;
 }
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
         return 0;
-    }else
-    return 2;
+    }else if(section == 1){
+        return 0;
+    }else{
+        if (_currentType == MyPicureTableType) {
+            return 20;
+        }else{
+            return 1;
+        }
+    };
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
-        return 195;
-    }else{
-        return 188;
-    }
-    return UITableViewAutomaticDimension;
+    return 215;
+//    return UITableViewAutomaticDimension;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        
+        return nil;
+    }else if(indexPath.section ==2){
+        if (_currentType == MyPicureTableType) {
+            static NSString *showEditorImageidentificer = @"ESMyPictureTableCell";
+            ESMyPictureTableCell *cell = [tableView dequeueReusableCellWithIdentifier:showEditorImageidentificer];
+            if (!cell) {
+                cell = [ESMyPictureTableCell cellFromXib];
+            }
+                
+            NSArray *array = @[@"收藏的不错哈",@"Candy推荐的 嘻嘻",@"好看吗?",@"好喜欢"];
+            cell.label.text = array[rand()%4];
+            cell.imageview.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png",rand()%10]];
+            cell.indexPath = indexPath;
+            return cell;
+        }else{
+            static NSString * showUserInfoCellIdentifier = @"ShowUserInfoCell";
+            UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:showUserInfoCellIdentifier];
+            if (cell == nil)
+            {
+                // Create a cell to display an ingredient.
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                               reuseIdentifier:showUserInfoCellIdentifier];
+            }
+            // Configure the cell.
+            cell.textLabel.text=@"暂无数据";
+            return cell;
+        }
+    }else{
+        return nil;
     }
-    
-    static NSString * showUserInfoCellIdentifier = @"ShowUserInfoCell";
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:showUserInfoCellIdentifier];
-    if (cell == nil)
-    {
-        // Create a cell to display an ingredient.
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                       reuseIdentifier:showUserInfoCellIdentifier]
-                ;
-    }
-    
-    // Configure the cell.
-    cell.textLabel.text=@"签名";
-    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
-    //    BalancePlanManageInformation *model = [self.listArray objectAtIndex:indexPath.row];
-    //    BalancePlanManageDetailViewController *detailVC = [[BalancePlanManageDetailViewController alloc] init];
-    //    [detailVC setBalancePlanManageInfoModel:model];
-    //    [self.navigationController pushViewController:detailVC animated:YES];
-    //    [[BalancePlanTabBarViewController GetInstance] hideTabBarAnimated:YES];
-    //    [detailVC release];
 }
 
 - (void)setupDatasource
@@ -292,6 +334,8 @@ const float HeadHight = 160.f;
         [_datasource addObject:date];
     }
 }
+
+
 
 #pragma mark - UIScrollViewDelegate Methods
 

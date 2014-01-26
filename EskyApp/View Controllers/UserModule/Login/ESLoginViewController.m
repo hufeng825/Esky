@@ -174,6 +174,7 @@
                                                 authManagerViewDelegate:self];
     [ShareSDK getUserInfoWithType:ShareTypeQQSpace authOptions:authOptions result:^(BOOL result, id <ISSPlatformUser> userInfo, id <ICMErrorInfo> error) {
         if (result) {
+            NSLog(@"%@",userInfo);
             HFAlert(@"登录成功");
             [self goBack];
         }
