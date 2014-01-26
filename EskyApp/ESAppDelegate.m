@@ -73,10 +73,10 @@
     
     
     
-    ESMyViewController *tmp = [[ESMyViewController alloc]initWithName:@"Jason" imageUrl:@"http://www.it.com.cn/dghome/img/2009/06/23/17/090623_tv_tf2_13h.jpg"];
+    ESFollowViewController *follow = [[ESFollowViewController alloc]initDrawerViewController:slidingViewController];
     
     
-    [self.tabViewController setSubViewControllers:@[_manViewController,_skillHomeViewController,tmp,_showCenterViewController,vc]];
+    [self.tabViewController setSubViewControllers:@[_manViewController,_skillHomeViewController,follow,_showCenterViewController,vc]];
     self.tabViewController.selectedIndex =0;
 
     
