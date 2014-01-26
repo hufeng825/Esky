@@ -17,6 +17,9 @@
 #import "ESMyMenuTabBar.h"
 #import "ESMyPictureTableCell.h"
 #import "ACTimeScroller.h"
+#import "UIImage+Extensions.h"
+#import "ESHeaderIconImageView.h"
+#import "UIWebImageView.h"
 
 typedef NS_ENUM(NSInteger, MyTableStyle) {
     MyFansTableType,
@@ -33,24 +36,32 @@ typedef NS_ENUM(NSInteger, MyTableStyle) {
 }
 @property (weak,   nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIImageView *headView;
-@property (strong, nonatomic) UIImageView *headIcon;
+@property (strong, nonatomic) ESHeaderIconImageView *headIcon;
 @property (strong, nonatomic) UIImageView *genderView;
 @property (strong, nonatomic) UILabel *nameLabel;
 @property (strong, nonatomic) ESMyMenuTabBar *menutabBar;
+@property (strong, nonatomic) NSString *nameStr;
+@property (strong, nonatomic) NSString *imageUrl;
+
 @end
 
 const float HeadHight = 160.f;
 
 @implementation ESMyViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithName:(NSString *)name imageUrl:(NSString *)imageUrl
+
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
     if (self) {
         // Custom initialization
+        self.nameStr = name;
+        self.imageUrl = imageUrl;
     }
     return self;
 }
+
+
 
 - (void)viewDidLoad
 {
@@ -64,7 +75,7 @@ const float HeadHight = 160.f;
     _currentType = MyPicureTableType;
     
     if (!_menutabBar) {
-        _menutabBar = [[ESMyMenuTabBar alloc]initWithFrame:CGRectMake(0, 0, 320, 45)];
+        _menutabBar = [[ESMyMenuTabBar alloc]initWithFrame:CGRectMake(0, 0, 320, 38)];
         _menutabBar.delegate = self;
         
         [_menutabBar  initItemsTitles:@[
@@ -75,7 +86,9 @@ const float HeadHight = 160.f;
                                         ]];
         _currentType = MyPicureTableType;
     }
+    
     [_menutabBar selectMenuItemAtIndex:2];
+    
 
 }
 
@@ -96,22 +109,37 @@ const float HeadHight = 160.f;
 - (void) setUpHeadView
 {
     self.headView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0,320, 160)];
-    self.headIcon = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
-    self.headView.image = [UIImage imageNamed:@"1.png"];
+    self.headIcon = [[ESHeaderIconImageView alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
+//    self.headView.image = [[UIImage imageNamed:@"test.png"] blurredImage:1];
+    
+    UIImage *img = [UIImage imageNamed:@"test.png"];
+ 
+    [self.headIcon setImageWithURL:[NSURL URLWithString:self.imageUrl] placeholderImage:img];
+    
+//    UIImageView *tmpImageView = [[UIImageView alloc]init];
+    __weak typeof(self) weakSelf = self;
+    [weakSelf.headView setImageWithURLRequest:[NSURLRequest requestWithURL: [NSURL URLWithString:self.imageUrl] ] placeholderImage:img success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        self.headView.image = [image blurredImage:.05];
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+    }];
+    
+    
+    
     [self.headView addSubview: _headIcon];
     [self.headIcon centerInSuperView];
     [self.tableView addParallaxWithView:self.headView andHeight:HeadHight];
     [self.headView setContentMode:UIViewContentModeScaleAspectFill];
-    self.headIcon.image = [UIImage imageNamed:@"head0.png"];
-    self.genderView = [[UIImageView alloc]initWithFrame:CGRectMake(self.headIcon.left-10,0,15,25)];
+    self.headIcon.image = [UIImage imageNamed:@"test.png"];
+    self.genderView = [[UIImageView alloc]initWithFrame:CGRectMake(self.headIcon.left-10,0,15,20)];
     [self.headView addSubview:_genderView];
     self.genderView.image = [UIImage imageNamed:@"man/womanGende.png"];
-    self.genderView.top=_headIcon.top+_headIcon.height+5;
+    self.genderView.top=_headIcon.top+_headIcon.height+7;
     
     self.nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.genderView.left+self.genderView.width+4, self.genderView.top,100, self.genderView.height)];
     self.nameLabel.textColor = [UIColor whiteColor];
     [self.headView addSubview:_nameLabel];
-    self.nameLabel.text = @"Json Wam";
+    self.nameLabel.text = _nameStr;
+    
     [self.nameLabel setAutoresizingMask: UIViewAutoresizingFlexibleTopMargin];
     [self.headIcon setAutoresizingMask: UIViewAutoresizingFlexibleTopMargin];
     [self.genderView setAutoresizingMask: UIViewAutoresizingFlexibleTopMargin];
@@ -166,8 +194,8 @@ const float HeadHight = 160.f;
         }
         
 	};
-	[actionSheet showInView:self.view];
     
+	[actionSheet showInView:self.view];
     
 }
 #pragma mark- ImagePicker delegate
@@ -226,7 +254,7 @@ const float HeadHight = 160.f;
         return 30;
     }else if(section ==1)
     {
-        return 43;
+        return 36;
     }else
     return UITableViewAutomaticDimension;
 }

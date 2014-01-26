@@ -167,7 +167,7 @@
         if (!cell) {
             cell = [ESSkillShowEditorImageCell cellFromXib];
         }
-        cell.testImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"dan%d.png",rand()%4]];
+      cell.testImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"dan%d.png",rand()%4]];
         return cell;
     }else{
     static NSString *expertCommentCellidentificer = @"ESSkillExpertCommentCell";

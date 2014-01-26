@@ -24,7 +24,7 @@
                         <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                     </textAttributes>
                     <items>
-                        <navigationItem title="我的私想家" id="asq-qZ-8dZ">
+                        <navigationItem title="我的私享家" id="asq-qZ-8dZ">
                             <barButtonItem key="leftBarButtonItem" title="Item" id="ThL-P1-5GM">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="uhQ-GL-5xW">
                                     <rect key="frame" x="16" y="13" width="20" height="18"/>
@@ -33,6 +33,9 @@
                                     <state key="normal" image="setting.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="goBack" destination="-2" eventType="touchUpInside" id="2Pc-ye-1Kp"/>
+                                    </connections>
                                 </button>
                             </barButtonItem>
                             <barButtonItem key="rightBarButtonItem" id="5bA-YF-uJl">

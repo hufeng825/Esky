@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+#import <Accelerate/Accelerate.h>
+#import <QuartzCore/QuartzCore.h>
 @interface UIImage (CS_Extensions)
 - (UIImage *)imageAtRect:(CGRect)rect;
 - (UIImage *)imageByScalingProportionallyToMinimumSize:(CGSize)targetSize;
@@ -24,5 +25,7 @@
 - (CGFloat)compressionQuality;
 - (NSData *)compressedData;
 - (NSData *)compressedData:(CGFloat)compressionQuality;
+
+- (UIImage*)blurredImage:(CGFloat)blurAmount;
 
 @end;

@@ -10,4 +10,8 @@
 #import "ESBaseViewController.h"
 
 @interface ESMyViewController : ESBaseViewController
+
+- (id)initWithName:(NSString *)name imageUrl:(NSString *)imageUrl;
+
+
 @end

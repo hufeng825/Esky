@@ -11,7 +11,7 @@
 #import "UIViewController+KNSemiModal.h"
 #import "ESRegisterViewController.h"
 #import "ESModifyPassWordViewController.h"
-
+#import "ESMyViewController.h"
 #import "ESRequest.h"
 
 
@@ -174,12 +174,11 @@
                                                 authManagerViewDelegate:self];
     [ShareSDK getUserInfoWithType:ShareTypeQQSpace authOptions:authOptions result:^(BOOL result, id <ISSPlatformUser> userInfo, id <ICMErrorInfo> error) {
         if (result) {
-            NSLog(@"%@",userInfo);
             HFAlert(@"登录成功");
             [self goBack];
+            [self.navigationController presentViewController:[self getVCWith:userInfo] animated:YES completion:Nil];
         }
     }];
-
 
 }
 
@@ -191,6 +190,11 @@
                                                 authManagerViewDelegate:self];
     [ShareSDK getUserInfoWithType:ShareTypeSinaWeibo authOptions:authOptions result:^(BOOL result, id <ISSPlatformUser> userInfo, id <ICMErrorInfo> error) {
         if (result) {
+            NSLog(@"%@",userInfo);
+
+            [self.navigationController presentViewController:[self getVCWith:userInfo] animated:YES completion:Nil];
+
+            
             //创建分享内容
             id <ISSContent> publishContent = [ShareSDK content:@"content"
                                                 defaultContent:@"ceshi"
@@ -199,6 +203,7 @@
                                                            url:nil
                                                    description:nil
                                                      mediaType:SSPublishContentMediaTypeText];
+            
             [ShareSDK shareContent:publishContent
                               type:ShareTypeSinaWeibo
                        authOptions:nil
@@ -218,6 +223,10 @@
 
 #pragma mark
 
+-(ESMyViewController *)getVCWith:(id <ISSPlatformUser>) userInfo{
+    ESMyViewController *vc = [[ESMyViewController alloc]initWithName:userInfo.nickname imageUrl:userInfo.profileImage];
+    return vc;
+}
 
 - (void)login {
     if ([self checkParameter]) {
@@ -227,12 +236,16 @@
             NSLog(@"");
             if ([result isSuccess]) {
                 ESUserModel *user = [ESUserModel objectFromJSONObject:result.data mapping:nil];
+                ESMyViewController *vc = [[ESMyViewController alloc]initWithName:user.userName imageUrl:user.headUrl];
+
+                [self.navigationController presentViewController:vc animated:YES completion:Nil];
+
                 [result showErrorMessage];
                 [weakSelf goBack];
             } else {
                 [result showErrorMessage];
             }
-        }            failRespon:^(HFHttpErrorRequestResult *erroresult) {
+        }       failRespon:^(HFHttpErrorRequestResult *erroresult) {
             NSLog(@"");
         }      requestParameter:postObject];
     }

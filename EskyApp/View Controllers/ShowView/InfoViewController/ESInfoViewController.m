@@ -300,7 +300,8 @@
             if (!cell) {
                 cell = [ESShowEditorImageCell cellFromXib];
                 _isResetCellHight = YES;
-                cell.testImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png",rand()%10]];
+               cell.testImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png",rand()%10]];
+//                cell.testImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png",1]];
             }
             
             return cell;

@@ -142,6 +142,7 @@
 		9685E3C61892455700293458 /* ESMyPictureTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3C51892455700293458 /* ESMyPictureTableCell.xib */; };
 		9685E3C918924EC600293458 /* trash.png in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3C718924EC600293458 /* trash.png */; };
 		9685E3CA18924EC600293458 /* trash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3C818924EC600293458 /* trash@2x.png */; };
+		9685E3CC1894B33800293458 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3CB1894B33800293458 /* test.png */; };
 		9688BD67184C903B00F9A8E9 /* HFHttpRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD66184C903B00F9A8E9 /* HFHttpRequestParameters.m */; };
 		9688BD7118507A3A00F9A8E9 /* ESRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD7018507A3A00F9A8E9 /* ESRequestParameters.m */; };
 		9688BD7418507A7700F9A8E9 /* ESRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD7318507A7700F9A8E9 /* ESRequest.m */; };
@@ -759,6 +760,7 @@
 		9685E3C51892455700293458 /* ESMyPictureTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESMyPictureTableCell.xib; sourceTree = "<group>"; };
 		9685E3C718924EC600293458 /* trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trash.png; sourceTree = "<group>"; };
 		9685E3C818924EC600293458 /* trash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trash@2x.png"; sourceTree = "<group>"; };
+		9685E3CB1894B33800293458 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		9688BD65184C903B00F9A8E9 /* HFHttpRequestParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpRequestParameters.h; sourceTree = "<group>"; };
 		9688BD66184C903B00F9A8E9 /* HFHttpRequestParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpRequestParameters.m; sourceTree = "<group>"; };
 		9688BD6F18507A3A00F9A8E9 /* ESRequestParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESRequestParameters.h; path = Request/ESRequestParameters.h; sourceTree = "<group>"; };
@@ -1850,17 +1852,12 @@
 		9685E3A618923E1C00293458 /* MyMenuTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				9685E3B118923E3C00293458 /* ACTimeScroller */,
-				9685E3B418923E3C00293458 /* Assets */,
 				9685E3A718923E1C00293458 /* ESMyMenuBarItem.h */,
 				9685E3A818923E1C00293458 /* ESMyMenuBarItem.m */,
 				9685E3A918923E1C00293458 /* ESMyMenuBarItem.xib */,
 				9685E3AA18923E1C00293458 /* ESMyMenuTabBar.h */,
 				9685E3AB18923E1C00293458 /* ESMyMenuTabBar.m */,
 				9685E3AC18923E1C00293458 /* ESMyMenuTabBar.xib */,
-				9685E3C21892435F00293458 /* ESMyPictureTableCell.h */,
-				9685E3C31892435F00293458 /* ESMyPictureTableCell.m */,
-				9685E3C51892455700293458 /* ESMyPictureTableCell.xib */,
 			);
 			name = MyMenuTabBar;
 			path = My/MyMenuTabBar;
@@ -1889,6 +1886,26 @@
 			name = Assets;
 			path = "EskyApp/View Controllers/My/Assets";
 			sourceTree = SOURCE_ROOT;
+		};
+		9685E3CD1894E45F00293458 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9685E3C21892435F00293458 /* ESMyPictureTableCell.h */,
+				9685E3C31892435F00293458 /* ESMyPictureTableCell.m */,
+				9685E3C51892455700293458 /* ESMyPictureTableCell.xib */,
+			);
+			name = Cell;
+			path = My/MyMenuTabBar;
+			sourceTree = "<group>";
+		};
+		9685E3CE1894E47700293458 /* TimeScroller */ = {
+			isa = PBXGroup;
+			children = (
+				9685E3B118923E3C00293458 /* ACTimeScroller */,
+				9685E3B418923E3C00293458 /* Assets */,
+			);
+			name = TimeScroller;
+			sourceTree = "<group>";
 		};
 		9688BD61184C8D6000F9A8E9 /* Request */ = {
 			isa = PBXGroup;
@@ -2594,6 +2611,7 @@
 				96B98BBD1845E58F002E8552 /* e-sky@2x.png */,
 				96B98BBE1845E58F002E8552 /* icon_head.png */,
 				96B98BBF1845E58F002E8552 /* icon_head@2x.png */,
+				9685E3CB1894B33800293458 /* test.png */,
 				96B98BC01845E58F002E8552 /* icon_qq.png */,
 				96B98BC11845E58F002E8552 /* icon_qq@2x.png */,
 				96C90CD9185F0204005C4ECB /* choosebg.png */,
@@ -2721,6 +2739,8 @@
 		96E275AD188F968B00C0137D /* My */ = {
 			isa = PBXGroup;
 			children = (
+				9685E3CE1894E47700293458 /* TimeScroller */,
+				9685E3CD1894E45F00293458 /* Cell */,
 				9685E3A618923E1C00293458 /* MyMenuTabBar */,
 				96E275AE188F96CD00C0137D /* ESMyViewController.h */,
 				96E275AF188F96CD00C0137D /* ESMyViewController.m */,
@@ -3280,6 +3300,7 @@
 				967C59A21883DEB300B3B68C /* ShareTypeTencentWeibo.png in Resources */,
 				9685E3C118923E3C00293458 /* timescroll_pointer@2x.png in Resources */,
 				96FDA779187FF1B100D05F42 /* 007@2x.png in Resources */,
+				9685E3CC1894B33800293458 /* test.png in Resources */,
 				96FDA7CA187FF1B100D05F42 /* 048.png in Resources */,
 				96E275A6188E68CE00C0137D /* dan3.png in Resources */,
 				966C7D111868452E00A1B04D /* skill_normal.png in Resources */,
