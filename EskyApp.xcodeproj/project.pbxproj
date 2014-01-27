@@ -151,6 +151,9 @@
 		9685E3DF1895FF6900293458 /* ESFollowSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3DD1895FF6900293458 /* ESFollowSectionView.xib */; };
 		9685E3E2189601B500293458 /* ESFollowImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9685E3E1189601B500293458 /* ESFollowImageViewCell.m */; };
 		9685E3E41896022500293458 /* ESFollowImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3E31896022500293458 /* ESFollowImageViewCell.xib */; };
+		9685E3E81896221900293458 /* follow0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3E51896221900293458 /* follow0.jpg */; };
+		9685E3E91896221900293458 /* follow1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3E61896221900293458 /* follow1.jpg */; };
+		9685E3EA1896221900293458 /* follow2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3E71896221900293458 /* follow2.jpg */; };
 		9688BD67184C903B00F9A8E9 /* HFHttpRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD66184C903B00F9A8E9 /* HFHttpRequestParameters.m */; };
 		9688BD7118507A3A00F9A8E9 /* ESRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD7018507A3A00F9A8E9 /* ESRequestParameters.m */; };
 		9688BD7418507A7700F9A8E9 /* ESRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD7318507A7700F9A8E9 /* ESRequest.m */; };
@@ -781,6 +784,9 @@
 		9685E3E0189601B500293458 /* ESFollowImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESFollowImageViewCell.h; path = Follow/Cell/ESFollowImageViewCell.h; sourceTree = "<group>"; };
 		9685E3E1189601B500293458 /* ESFollowImageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESFollowImageViewCell.m; path = Follow/Cell/ESFollowImageViewCell.m; sourceTree = "<group>"; };
 		9685E3E31896022500293458 /* ESFollowImageViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESFollowImageViewCell.xib; path = Follow/Cell/ESFollowImageViewCell.xib; sourceTree = "<group>"; };
+		9685E3E51896221900293458 /* follow0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = follow0.jpg; sourceTree = "<group>"; };
+		9685E3E61896221900293458 /* follow1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = follow1.jpg; sourceTree = "<group>"; };
+		9685E3E71896221900293458 /* follow2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = follow2.jpg; sourceTree = "<group>"; };
 		9688BD65184C903B00F9A8E9 /* HFHttpRequestParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpRequestParameters.h; sourceTree = "<group>"; };
 		9688BD66184C903B00F9A8E9 /* HFHttpRequestParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpRequestParameters.m; sourceTree = "<group>"; };
 		9688BD6F18507A3A00F9A8E9 /* ESRequestParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESRequestParameters.h; path = Request/ESRequestParameters.h; sourceTree = "<group>"; };
@@ -2570,6 +2576,9 @@
 		96B98BB21845E58F002E8552 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				9685E3E51896221900293458 /* follow0.jpg */,
+				9685E3E61896221900293458 /* follow1.jpg */,
+				9685E3E71896221900293458 /* follow2.jpg */,
 				9685E3C718924EC600293458 /* trash.png */,
 				9685E3C818924EC600293458 /* trash@2x.png */,
 				96E2759F188E68CE00C0137D /* dan3.png */,
@@ -3197,6 +3206,7 @@
 				96FDA7C5187FF1B100D05F42 /* 045@2x.png in Resources */,
 				96FDA821187FF6B000D05F42 /* smile.png in Resources */,
 				96B98B9A1845C81E002E8552 /* ESRegisterViewController.xib in Resources */,
+				9685E3E81896221900293458 /* follow0.jpg in Resources */,
 				96B87D68188CB582008D224E /* ESSkillHomeViewController.xib in Resources */,
 				96FDA7F5187FF1B100D05F42 /* 069@2x.png in Resources */,
 				96FDA7F7187FF1B100D05F42 /* 070@2x.png in Resources */,
@@ -3336,6 +3346,7 @@
 				967C59A11883DEB300B3B68C /* ShareTypeTencentWeibo_disable@2x.png in Resources */,
 				96FDA771187FF1B100D05F42 /* 003@2x.png in Resources */,
 				9685E3C918924EC600293458 /* trash.png in Resources */,
+				9685E3E91896221900293458 /* follow1.jpg in Resources */,
 				96FDA823187FF6B000D05F42 /* tag@2x.png in Resources */,
 				96E27591188E1B1F00C0137D /* ESSkillEditorSectionView.xib in Resources */,
 				966C7D4618692F3E00A1B04D /* WeiboSDK.bundle in Resources */,
@@ -3436,6 +3447,7 @@
 				96FDA76C187FF1B100D05F42 /* 001.png in Resources */,
 				96FDA77F187FF1B100D05F42 /* 010@2x.png in Resources */,
 				966C7D051868450300A1B04D /* mine_normal@2x.png in Resources */,
+				9685E3EA1896221900293458 /* follow2.jpg in Resources */,
 				968F7B4D1879117400BD9425 /* ESShowCommentNumber.xib in Resources */,
 				96FDA78E187FF1B100D05F42 /* 018.png in Resources */,
 				96B98BCF1845E58F002E8552 /* dialogue_bg.png in Resources */,

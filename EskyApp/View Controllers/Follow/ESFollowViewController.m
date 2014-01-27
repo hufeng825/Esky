@@ -129,10 +129,9 @@
         ESFollowImageViewCell *cell = [tableView dequeueReusableCellWithIdentifier:followImageidentificer];
         if (!cell) {
             cell = [ESFollowImageViewCell cellFromXib];
-            cell.contextImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png",rand()%10]];
             //                cell.testImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png",1]];
         }
-        
+        cell.contextImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"follow%d.jpg",rand()%3]];
         return cell;
     }
     else if (indexPath.row == 1) {
