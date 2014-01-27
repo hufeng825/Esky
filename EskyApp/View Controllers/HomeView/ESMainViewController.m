@@ -42,12 +42,13 @@
     carousel.type = iCarouselTypeInvertedCylinder;
 //    CGSize offset = CGSizeMake(0.0f,100);
 //    carousel.contentOffset = offset;
+    
     carousel.bounces = YES;
     carousel.scrollToItemBoundary = YES;
     carousel.stopAtItemBoundary = YES;
 //    carousel.scrollSpeed = 0.18;
     [carousel reloadData];
-    carousel.pagingEnabled = YES;
+    carousel.pagingEnabled = YES;//为了保证滑动不会错过更多页面
 }
 
 /*为了节省资源 跳到其他页面 需要将timer 暂停*/
