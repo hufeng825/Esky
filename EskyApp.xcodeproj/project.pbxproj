@@ -145,6 +145,12 @@
 		9685E3CC1894B33800293458 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3CB1894B33800293458 /* test.png */; };
 		9685E3D318950FC600293458 /* ESFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9685E3D118950FC600293458 /* ESFollowViewController.m */; };
 		9685E3D418950FC600293458 /* ESFollowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3D218950FC600293458 /* ESFollowViewController.xib */; };
+		9685E3D81895FA3900293458 /* ESFollowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9685E3D71895FA3900293458 /* ESFollowCell.m */; };
+		9685E3DA1895FA6500293458 /* ESFollowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3D91895FA6500293458 /* ESFollowCell.xib */; };
+		9685E3DE1895FF6900293458 /* ESFollowSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9685E3DC1895FF6900293458 /* ESFollowSectionView.m */; };
+		9685E3DF1895FF6900293458 /* ESFollowSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3DD1895FF6900293458 /* ESFollowSectionView.xib */; };
+		9685E3E2189601B500293458 /* ESFollowImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9685E3E1189601B500293458 /* ESFollowImageViewCell.m */; };
+		9685E3E41896022500293458 /* ESFollowImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9685E3E31896022500293458 /* ESFollowImageViewCell.xib */; };
 		9688BD67184C903B00F9A8E9 /* HFHttpRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD66184C903B00F9A8E9 /* HFHttpRequestParameters.m */; };
 		9688BD7118507A3A00F9A8E9 /* ESRequestParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD7018507A3A00F9A8E9 /* ESRequestParameters.m */; };
 		9688BD7418507A7700F9A8E9 /* ESRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688BD7318507A7700F9A8E9 /* ESRequest.m */; };
@@ -766,6 +772,15 @@
 		9685E3D018950FC600293458 /* ESFollowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESFollowViewController.h; path = Follow/ESFollowViewController.h; sourceTree = "<group>"; };
 		9685E3D118950FC600293458 /* ESFollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESFollowViewController.m; path = Follow/ESFollowViewController.m; sourceTree = "<group>"; };
 		9685E3D218950FC600293458 /* ESFollowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESFollowViewController.xib; path = Follow/ESFollowViewController.xib; sourceTree = "<group>"; };
+		9685E3D61895FA3900293458 /* ESFollowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESFollowCell.h; path = Follow/Cell/ESFollowCell.h; sourceTree = "<group>"; };
+		9685E3D71895FA3900293458 /* ESFollowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESFollowCell.m; path = Follow/Cell/ESFollowCell.m; sourceTree = "<group>"; };
+		9685E3D91895FA6500293458 /* ESFollowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESFollowCell.xib; path = Follow/Cell/ESFollowCell.xib; sourceTree = "<group>"; };
+		9685E3DB1895FF6900293458 /* ESFollowSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESFollowSectionView.h; path = Follow/Cell/ESFollowSectionView.h; sourceTree = "<group>"; };
+		9685E3DC1895FF6900293458 /* ESFollowSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESFollowSectionView.m; path = Follow/Cell/ESFollowSectionView.m; sourceTree = "<group>"; };
+		9685E3DD1895FF6900293458 /* ESFollowSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESFollowSectionView.xib; path = Follow/Cell/ESFollowSectionView.xib; sourceTree = "<group>"; };
+		9685E3E0189601B500293458 /* ESFollowImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESFollowImageViewCell.h; path = Follow/Cell/ESFollowImageViewCell.h; sourceTree = "<group>"; };
+		9685E3E1189601B500293458 /* ESFollowImageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESFollowImageViewCell.m; path = Follow/Cell/ESFollowImageViewCell.m; sourceTree = "<group>"; };
+		9685E3E31896022500293458 /* ESFollowImageViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ESFollowImageViewCell.xib; path = Follow/Cell/ESFollowImageViewCell.xib; sourceTree = "<group>"; };
 		9688BD65184C903B00F9A8E9 /* HFHttpRequestParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpRequestParameters.h; sourceTree = "<group>"; };
 		9688BD66184C903B00F9A8E9 /* HFHttpRequestParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpRequestParameters.m; sourceTree = "<group>"; };
 		9688BD6F18507A3A00F9A8E9 /* ESRequestParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESRequestParameters.h; path = Request/ESRequestParameters.h; sourceTree = "<group>"; };
@@ -1926,6 +1941,15 @@
 		9685E3D51895105300293458 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				9685E3DB1895FF6900293458 /* ESFollowSectionView.h */,
+				9685E3DC1895FF6900293458 /* ESFollowSectionView.m */,
+				9685E3DD1895FF6900293458 /* ESFollowSectionView.xib */,
+				9685E3D61895FA3900293458 /* ESFollowCell.h */,
+				9685E3D71895FA3900293458 /* ESFollowCell.m */,
+				9685E3D91895FA6500293458 /* ESFollowCell.xib */,
+				9685E3E0189601B500293458 /* ESFollowImageViewCell.h */,
+				9685E3E1189601B500293458 /* ESFollowImageViewCell.m */,
+				9685E3E31896022500293458 /* ESFollowImageViewCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -3353,6 +3377,7 @@
 				96FDA789187FF1B100D05F42 /* 015@2x.png in Resources */,
 				968F7B551879147400BD9425 /* ESEditorSectionView.xib in Resources */,
 				96FDA793187FF1B100D05F42 /* 020@2x.png in Resources */,
+				9685E3DF1895FF6900293458 /* ESFollowSectionView.xib in Resources */,
 				96FDA790187FF1B100D05F42 /* 019.png in Resources */,
 				96FDA7A3187FF1B100D05F42 /* 028@2x.png in Resources */,
 				966C7DB0186C086700A1B04D /* ESMenuTabBar.xib in Resources */,
@@ -3407,6 +3432,7 @@
 				9685E3B018923E1C00293458 /* ESMyMenuTabBar.xib in Resources */,
 				96FDA7D7187FF1B100D05F42 /* 054@2x.png in Resources */,
 				96FDA7FA187FF1B100D05F42 /* 072.png in Resources */,
+				9685E3DA1895FA6500293458 /* ESFollowCell.xib in Resources */,
 				96FDA76C187FF1B100D05F42 /* 001.png in Resources */,
 				96FDA77F187FF1B100D05F42 /* 010@2x.png in Resources */,
 				966C7D051868450300A1B04D /* mine_normal@2x.png in Resources */,
@@ -3442,6 +3468,7 @@
 				96FDA768187FF1B100D05F42 /* backFace.png in Resources */,
 				96FDA81B187FF1B100D05F42 /* inactive_page_image.png in Resources */,
 				96FDA796187FF1B100D05F42 /* 022.png in Resources */,
+				9685E3E41896022500293458 /* ESFollowImageViewCell.xib in Resources */,
 				966C7D0E1868452E00A1B04D /* home_normal.png in Resources */,
 				96E939561877F9AD004E4BEE /* ESInfoViewController.xib in Resources */,
 				96FDA7A7187FF1B100D05F42 /* 030@2x.png in Resources */,
@@ -3495,6 +3522,7 @@
 				968F7C7118795A6800BD9425 /* CLClippingTool.m in Sources */,
 				9645ED7B1855C708004643C9 /* ESUserModel.m in Sources */,
 				96B98A771845C643002E8552 /* ESConfig.m in Sources */,
+				9685E3DE1895FF6900293458 /* ESFollowSectionView.m in Sources */,
 				968F7C7218795A6800BD9425 /* CLBloomEffect.m in Sources */,
 				966C7D63186A979A00A1B04D /* iCarousel.m in Sources */,
 				96C90CCA185EC1F4005C4ECB /* UIImage+PECrop.m in Sources */,
@@ -3541,6 +3569,7 @@
 				96B98B611845C6B8002E8552 /* SSKeychain.m in Sources */,
 				96B87D78188CFA54008D224E /* ESSkillMenuView.m in Sources */,
 				96B98B4C1845C6B8002E8552 /* UIButton+AFNetworking.m in Sources */,
+				9685E3E2189601B500293458 /* ESFollowImageViewCell.m in Sources */,
 				968F7C8818795A6800BD9425 /* UIDevice+SystemVersion.m in Sources */,
 				968F7C7A18795A6800BD9425 /* CLEffectTool.m in Sources */,
 				968F7C8518795A6800BD9425 /* UIView+CLImageToolInfo.m in Sources */,
@@ -3638,6 +3667,7 @@
 				966C7DBB1871097F00A1B04D /* ESPictureItem.m in Sources */,
 				96FDA816187FF1B100D05F42 /* FaceBoard.m in Sources */,
 				96FDA6A8187FC9DB00D05F42 /* ESPublishViewController.m in Sources */,
+				9685E3D81895FA3900293458 /* ESFollowCell.m in Sources */,
 				96563090187C379D0098499B /* ESShowEditorImageCell.m in Sources */,
 				96B98A191845C56D002E8552 /* main.m in Sources */,
 				968F7C7818795A6800BD9425 /* CLSpotEffect.m in Sources */,

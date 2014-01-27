@@ -98,7 +98,7 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setCalendar:self.calendar];
     [dateFormatter setTimeZone:self.calendar.timeZone];
-    [dateFormatter setDateFormat:@"h:mm a"];
+    [dateFormatter setDateFormat:@"hh:mm"];
     self.timeDateFormatter = dateFormatter;
     
     dateFormatter = [[NSDateFormatter alloc] init];

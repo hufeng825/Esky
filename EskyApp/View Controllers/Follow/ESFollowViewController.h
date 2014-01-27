@@ -9,6 +9,7 @@
 #import "ESBaseViewController.h"
 #import "YASlidingViewController.h"
 @interface ESFollowViewController : ESBaseViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, weak) YASlidingViewController *dynamicsDrawerViewController;
 
